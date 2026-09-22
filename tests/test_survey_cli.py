@@ -146,8 +146,29 @@ def test_the_json_log_counts_outcomes_and_checks():
     ]
     d = json.loads(render.records_json(recs))
     r = d["rounds"][0]
-    assert r == {"round": 1, "repositories": 2, "advanced": 1, "no_change": 0,
-                 "blocked": 1, "checks_run": 2, "checks_passed": 1}
+    assert r == {"round": 1, "repositories": 2, "records": 2, "advanced": 1,
+                 "no_change": 0, "blocked": 1, "checks_run": 2, "checks_passed": 1}
+
+
+def test_a_round_that_opens_one_repository_twice_still_counts_it_once():
+    # Round 2 did this: verifying godot-refcheck's own entry against the
+    # corpus found five false positives, so the repository was opened again
+    # in the same round. Counting records said "5 repositories" in a round of
+    # four - the engine misreporting itself.
+    recs = [
+        Record(round=2, repo="one", outcome="advanced", head_before="a" * 40,
+               head_after="b" * 40, summary="first pass", verifications=[PASS]),
+        Record(round=2, repo="one", outcome="advanced", head_before="b" * 40,
+               head_after="c" * 40, summary="the correction", verifications=[PASS]),
+        Record(round=2, repo="two", outcome="no-change", reason="nothing open"),
+    ]
+    d = json.loads(render.records_json(recs))["rounds"][0]
+    assert d["repositories"] == 2 and d["records"] == 3
+
+    md = render.records_markdown(recs)
+    assert "2 repositories over 3 records" in md
+    # Both records still get their own row: the correction is not hidden.
+    assert md.count("| [one](") == 2
 
 
 # --- command line ---------------------------------------------------------

@@ -72,8 +72,19 @@ def records_markdown(records: list[Record]) -> str:
         # a fifth of round 1's checks were run precisely to fail. Records
         # written before `expect` existed cannot say which, so the line only
         # claims what it can prove and names the negative controls it knows.
+        # Repositories, not records. A round can open the same repository
+        # twice - round 2 did, because verifying godot-refcheck's own round-2
+        # entry against the corpus found five false positives that entry had
+        # not been measured against. Counting records called that "5
+        # repositories" in a round of four, which is the exact failure this
+        # engine exists to catch, in the engine.
+        depolar = {r.repo for r in rs}
         cumle = "%d repositories, %d advanced, %d checks recorded, %d returned what they were run to return." % (
-            len(rs), len(advanced), checks, gecen)
+            len(depolar), len(advanced), checks, gecen)
+        if len(rs) != len(depolar):
+            cumle = cumle.replace(
+                "%d repositories," % len(depolar),
+                "%d repositories over %d records," % (len(depolar), len(rs)), 1)
         if negatif:
             cumle += (" %d of them are negative controls - checks recorded because "
                       "they had to fail." % len(negatif))
@@ -99,13 +110,18 @@ def records_json(records: list[Record]) -> str:
     by_round: dict[str, dict] = {}
     for r in records:
         b = by_round.setdefault(str(r.round), {
-            "round": r.round, "repositories": 0, "advanced": 0,
+            "round": r.round, "repositories": 0, "records": 0, "advanced": 0,
             "no_change": 0, "blocked": 0, "checks_run": 0, "checks_passed": 0,
+            "_repos": set(),
         })
-        b["repositories"] += 1
+        b["records"] += 1
+        b["_repos"].add(r.repo)
+        b["repositories"] = len(b["_repos"])
         b[{"advanced": "advanced", "no-change": "no_change", "blocked": "blocked"}[r.outcome]] += 1
         b["checks_run"] += len(r.verifications)
         b["checks_passed"] += sum(1 for v in r.verifications if v.passed)
+    for b in by_round.values():
+        b.pop("_repos", None)
     return json.dumps({
         "schema": 1,
         "rounds": [by_round[k] for k in sorted(by_round, key=int)],

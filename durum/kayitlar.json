@@ -4,6 +4,7 @@
   {
    "round": 1,
    "repositories": 27,
+   "records": 27,
    "advanced": 27,
    "no_change": 0,
    "blocked": 0,
@@ -13,11 +14,12 @@
   {
    "round": 2,
    "repositories": 4,
-   "advanced": 4,
+   "records": 5,
+   "advanced": 5,
    "no_change": 0,
    "blocked": 0,
-   "checks_run": 23,
-   "checks_passed": 23
+   "checks_run": 32,
+   "checks_passed": 32
   }
  ],
  "records": [
@@ -1516,6 +1518,93 @@
    "headroom_before": null,
    "headroom_after": null,
    "at": "2026-09-22T19:57:43Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "godot-refcheck",
+   "outcome": "advanced",
+   "head_before": "f7217ed6ea51702d106f7322efe34ff6c015f95e",
+   "head_after": "61d5e8c3f4cb429a3b8dde83539ac196dbd1983c",
+   "summary": "Ayni turda ikinci kayit, cunku ilkinin dayandigi olcum eksikti. missing-node-path bu hesabin bes Godot projesinde olculmus ve temiz cikmisti; deponun kendi kalibrasyon korpusuna -- onbir bakimli ucuncu taraf deposu, 237 proje -- hic kosulmamisti. Kosulunca 15 dugum bulgusu verdi ve besi yanlisti. Ikisi de ayni kor nokta: add_child(sahne.instantiate()) ile eklenen cocuk O sahnenin KOK dugumunun adini alir (godot-demo-projects'te PackedScene parametresiyle geliyor, dialogic'te disa aktarilmis diziyle), ve has_node(\"X\") ile korunan bir yol zaten yazarin \"olmayabilir\" dedigi yerdir. Ayrica bir satirda ayni yol iki kez yaziliysa iki ofset var ama yargilanacak tek iddia -- material-maker'in paint.gd:910 satiri kelimesi kelimesine iki kez basiliyordu. Korpus artik 50 bulgu bildiriyor (41 + 9 dugum), dokuzu da elle dogrulandi ve docs/corpus.md'de tek tek yaziyor; resmi demo projelerindeki ayni kusur hem 4.x hem 3.x dalinda duruyor. Asil mesele kapiya baglandi: haftalik Corpus isi tabloyu basip ne bulursa bulsun yesil kaliyordu, yani bu siniftaki bir gerileme onu hic kirmazdi. Artik --expect docs/corpus.md ile beklenen toplami belgenin kendi satirindan okuyor; sayi ile belge birbirinden ayri kayamiyor. 128 -> 133 test.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "cargo test",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "133 test, yerelde",
+     "output_tail": "133 passed",
+     "expect": 0
+    },
+    {
+     "command": "cargo clippy --all-targets -- -D warnings; cargo fmt --check",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "iki kapi da temiz",
+     "output_tail": "no warnings",
+     "expect": 0
+    },
+    {
+     "command": "python3 tools/corpus.py --expect docs/corpus.md",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "237 gercek proje, 19.305 dosya: belgelenen 50 ile uyusuyor",
+     "output_tail": "agrees with docs/corpus.md: 50 findings",
+     "expect": 0
+    },
+    {
+     "command": "python3 tools/corpus.py --expect docs/corpus.md  # belgeye 49 yazilmis",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "negatif kontrol: kapi gercekten kapi mi",
+     "output_tail": "documents 49 findings; this run reports 50",
+     "expect": 1
+    },
+    {
+     "command": "godot-refcheck tests/projects/nodepath  # bubble.tscn'in kok adi degistirilmis",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "negatif kontrol: kok-adi kurali olmasa $Bubble bildirilirdi",
+     "output_tail": "3 errors",
+     "expect": 1
+    },
+    {
+     "command": "godot-refcheck tests/projects/nodepath  # has_node koruyucusu kaldirilmis",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "negatif kontrol: koruyucu kurali olmasa $Optional bildirilirdi",
+     "output_tail": "3 errors",
+     "expect": 1
+    },
+    {
+     "command": "godot-refcheck <bes gercek Godot projesi> --recursive",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "850 kusur dosya, hala hicbir bulgu yok",
+     "output_tail": "0 errors",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35778919844/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "61d5e8c3'te CI: uc isletim sistemi, lint, code scanning ve headless Godot isi",
+     "output_tail": "7 jobs, all success",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35778962285  # Corpus is akisi, elle tetiklendi",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yeni kapi GitHub kosucusunda gercek klonlarla gecti",
+     "output_tail": "corpus success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T20:18:34Z",
    "schema": 1
   }
  ]

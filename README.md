@@ -169,6 +169,15 @@ open in that repository, and the first four are in
 - This repository corrected its own measurement again: `<name>-test.js` is a test
   file, and a test file nobody can count cases in is not zero cases.
 
+And then `godot-refcheck` was opened a second time in the same round, which is
+the point of keeping records rather than a checklist. Its round-2 entry rested
+on a measurement taken over five projects; run against the repository's own
+eleven-repository calibration corpus, the new check produced fifteen findings
+and five were wrong. A round may correct itself, so the log counts
+**repositories, not records** — counting records had it saying "5 repositories"
+in a round of four, which is exactly the class of error this engine exists to
+catch, in the engine.
+
 ## Working on this repository
 
 ```sh
