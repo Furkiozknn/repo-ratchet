@@ -34,6 +34,24 @@ def test_skipped_directories_are_not_the_repository(make_repo):
     assert set(s.value) == {"python"}
 
 
+def test_a_dotted_directory_is_not_part_of_the_repository(make_repo):
+    """Tooling and state live in dotted directories - including this tool's
+    own clone directory, which once made one repository measure as twenty-eight."""
+    root = make_repo("c2", {
+        "src/a.py": "x = 1\n",
+        ".ratchet-work/other-project/big.py": "y = 2\n" * 5000,
+        ".venv/lib/thing.py": "z = 3\n" * 5000,
+    })
+    s = signals.languages(root)
+    assert s.value["python"] < 100, s.value
+
+
+def test_a_dotfile_at_the_root_is_still_part_of_the_repository(make_repo):
+    """Only dotted *directories* are skipped; a dotted file is not a tree."""
+    root = make_repo("c3", {".hidden.py": "x = 1\n"})
+    assert signals.languages(root).value is not None
+
+
 def test_test_mass_counts_tests_separately(make_repo):
     root = make_repo("d", {
         "src/lib.py": "a = 1\n" * 200,
@@ -139,6 +157,45 @@ def test_undocumented_surface_python(make_repo):
     s = signals.undocumented_surface(root)
     assert s.value == 1
     assert any("bare" in e for e in s.evidence)
+
+
+def test_undocumented_surface_sees_a_docstring_after_a_long_signature(make_repo):
+    """A four-line signature used to push its docstring out of the window."""
+    root = make_repo("i2", {
+        "m.py": (
+            "def uzun(\n"
+            "    a: int,\n"
+            "    b: str = 'x',\n"
+            "    *, c: bool = False,\n"
+            ") -> dict:\n"
+            '    """Belgeli."""\n'
+            "    return {}\n"
+        ),
+    })
+    assert signals.undocumented_surface(root).value == 0
+
+
+def test_undocumented_surface_ignores_nested_definitions(make_repo):
+    """A helper inside a function is not public surface."""
+    root = make_repo("i3", {
+        "m.py": 'def dis():\n    """Doc."""\n    def ic():\n        pass\n    return ic\n',
+    })
+    assert signals.undocumented_surface(root).value == 0
+
+
+def test_undocumented_surface_counts_async_functions(make_repo):
+    root = make_repo("i4", {"m.py": "async def f():\n    return 1\n"})
+    assert signals.undocumented_surface(root).value == 1
+
+
+def test_a_python_file_that_does_not_parse_is_skipped_not_guessed(make_repo):
+    root = make_repo("i5", {
+        "bozuk.py": "def (((:\n",
+        "iyi.py": 'def f():\n    """Doc."""\n    return 1\n',
+    })
+    s = signals.undocumented_surface(root)
+    assert s.value == 0
+    assert "1 of 1" in s.detail or s.detail.startswith("0 of 1")
 
 
 def test_undocumented_surface_rust(make_repo):

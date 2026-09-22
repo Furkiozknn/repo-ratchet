@@ -13,6 +13,7 @@ test directory" are different facts.
 
 from __future__ import annotations
 
+import ast
 import json
 import re
 import subprocess
@@ -60,11 +61,24 @@ class Signal:
 
 
 def _walk(root: Path) -> Iterable[Path]:
-    """Every file in the repository that is part of the repository itself."""
+    """Every file in the repository that is part of the repository itself.
+
+    Any dotted directory is skipped wholesale. Those hold tooling and state,
+    not the repository's own source, and one of them is this tool's own clone
+    directory - measuring a repository from a working copy that contained
+    ``.ratchet-work/`` counted twenty-seven other projects as part of it.
+    """
+    root = Path(root)
     for p in root.rglob("*"):
         if not p.is_file():
             continue
-        if any(part in SKIP_DIRS for part in p.parts):
+        try:
+            parts = p.relative_to(root).parts
+        except ValueError:
+            parts = p.parts
+        if any(part in SKIP_DIRS for part in parts):
+            continue
+        if any(part.startswith(".") for part in parts[:-1]):
             continue
         yield p
 
@@ -256,18 +270,25 @@ def undocumented_surface(root: Path) -> Signal:
         text = _read(p)
         rel = p.relative_to(root).as_posix()
         if p.suffix == ".py":
-            lines = text.splitlines()
-            for m in PY_PUBLIC.finditer(text):
-                name = m.group(1)
-                if name.startswith("_"):
+            # Python's own parser, not a regex looking a couple of lines ahead.
+            # A signature spanning four lines put its docstring outside that
+            # window, so every such definition was reported as undocumented -
+            # which inflates the headroom of exactly the projects careful
+            # enough to write long, annotated signatures.
+            try:
+                tree = ast.parse(text)
+            except (SyntaxError, ValueError):
+                continue
+            for node in tree.body:
+                if not isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+                    continue
+                if node.name.startswith("_"):
                     continue
                 checked += 1
-                line_no = text[: m.start()].count("\n")
-                nxt = "".join(lines[line_no + 1 : line_no + 3])
-                if '"""' not in nxt and "'''" not in nxt:
+                if not ast.get_docstring(node):
                     missing += 1
                     if len(examples) < 8:
-                        examples.append("%s:%d %s" % (rel, line_no + 1, name))
+                        examples.append("%s:%d %s" % (rel, node.lineno, node.name))
         elif p.suffix == ".rs":
             lines = text.splitlines()
             for m in RS_PUBLIC.finditer(text):

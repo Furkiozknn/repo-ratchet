@@ -109,11 +109,12 @@ exactly this code, so there is nothing new to find in it.
 Records are append-only JSON Lines, one file per round under [`kayitlar/`](kayitlar/), so a
 diff shows a round's work and nothing rewrites history.
 
-## What round 1 found so far
+## What round 1 found
 
-The engine is not the point; what it finds is. A few of the first round's entries,
-each with the check that backs it in [`kayitlar/tur-01.jsonl`](kayitlar/) and the
-whole log in [`KAYITLAR.md`](KAYITLAR.md):
+Round 1 is closed: **27 repositories, 27 records, 98 checks recorded.** The engine
+is not the point; what it finds is. A few of the entries, each with the check that
+backs it in [`kayitlar/tur-01.jsonl`](kayitlar/) and the whole log in
+[`KAYITLAR.md`](KAYITLAR.md):
 
 - Wiring `godot-refcheck`'s own GitHub Action into four game repositories broke all
   four — and the wrong way round. The action read its counts out of prose that a
@@ -126,9 +127,19 @@ whole log in [`KAYITLAR.md`](KAYITLAR.md):
 - Nothing in a 70-agent roster stopped two agents claiming the same trigger phrase,
   so the user could say the right sentence and get the wrong agent with every file
   still valid. Two real collisions, both closed.
-- Running it on itself, twice: `test_count` read four shipped games as having no
-  tests at all, because they hand-roll GDScript assertions rather than use a
-  framework, and `todo_density` counted the pattern it searches with.
+- A vendoring script that began with `rm -rf vendor/` deleted the font the page
+  loads, and nothing noticed: the font is declared with a fallback stack and
+  `font-display: swap`, so the game kept loading, made no external request, logged
+  no error, and quietly stopped being itself.
+- A contract validator with a 106-check self-test that said "clean" — while eight
+  of its nineteen enforcement points could be removed entirely without a single
+  check failing. `type` was one of them.
+- Running it on itself, four times: `test_count` read four shipped games as having
+  no tests at all, because they hand-roll GDScript assertions rather than use a
+  framework; `todo_density` counted the pattern it searches with;
+  `undocumented_surface` missed every docstring that followed a multi-line
+  signature; and `_walk` counted 27 other repositories as part of this one,
+  because `.ratchet-work/` is where they get cloned.
 
 The last one is the pattern worth naming: a measurement that is wrong inflates the
 headroom of everything it touches, so the engine's own signals get corrected by the
@@ -140,7 +151,7 @@ rounds they misread.
 python3 -m pytest -q
 ```
 
-112 tests. The suite builds throwaway repositories on disk — including real git ones, for the
+118 tests. The suite builds throwaway repositories on disk — including real git ones, for the
 signals that need history — so every measurement is tested against a repository it has never
 seen. The record rules get the heaviest coverage, because a record that can lie is a record
 that will.
