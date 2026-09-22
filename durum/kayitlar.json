@@ -3,12 +3,21 @@
  "rounds": [
   {
    "round": 1,
-   "repositories": 9,
-   "advanced": 9,
+   "repositories": 27,
+   "advanced": 27,
    "no_change": 0,
    "blocked": 0,
-   "checks_run": 26,
-   "checks_passed": 25
+   "checks_run": 106,
+   "checks_passed": 83
+  },
+  {
+   "round": 2,
+   "repositories": 4,
+   "advanced": 4,
+   "no_change": 0,
+   "blocked": 0,
+   "checks_run": 23,
+   "checks_passed": 23
   }
  ],
  "records": [
@@ -26,21 +35,24 @@
      "exit_code": 0,
      "duration_s": 0.07,
      "note": "37 new tests over the generator, run locally before the push",
-     "output_tail": "37 passed"
+     "output_tail": "37 passed",
+     "expect": 0
     },
     {
      "command": "python3 uret.py --yerel --cikti /tmp/out.html",
      "exit_code": 0,
      "duration_s": 0.4,
      "note": "the real 27-project snapshot still renders: 27 cards, JSON-LD parses",
-     "output_tail": "27 projects rendered\n8 releases in feed.xml"
+     "output_tail": "27 projects rendered\n8 releases in feed.xml",
+     "expect": 0
     },
     {
      "command": "gh api repos/Furkiozknn/Furkiozknn.github.io/actions/runs/35753650812/jobs",
      "exit_code": 0,
      "duration_s": 2.0,
      "note": "CI on the pushed commit: py3.11, py3.12, py3.13 and the snapshot render job all succeeded",
-     "output_tail": "4 jobs, all success"
+     "output_tail": "4 jobs, all success",
+     "expect": 0
     }
    ],
    "headroom_before": 4.17,
@@ -62,28 +74,32 @@
      "exit_code": 0,
      "duration_s": 0.05,
      "note": "21 new behavioural tests over the jump simulation",
-     "output_tail": "21 passed"
+     "output_tail": "21 passed",
+     "expect": 0
     },
     {
      "command": "python3 arac/dogrula.py",
      "exit_code": 0,
      "duration_s": 0.1,
      "note": "the existing README guard still passes after the changes",
-     "output_tail": "ok"
+     "output_tail": "ok",
+     "expect": 0
     },
     {
      "command": "godot-refcheck --recursive .",
      "exit_code": 0,
      "duration_s": 0.2,
      "note": "both templates clean: 12 files/7 refs and 12 files/6 refs, no problems",
-     "output_tail": "no problems found"
+     "output_tail": "no problems found",
+     "expect": 0
     },
     {
      "command": "gh api repos/Furkiozknn/godot-2d-sablon/actions/runs/35753657775/jobs",
      "exit_code": 0,
      "duration_s": 2.0,
      "note": "CI on the pushed commit: all four jobs including the new refcheck one succeeded",
-     "output_tail": "4 jobs, all success"
+     "output_tail": "4 jobs, all success",
+     "expect": 0
     }
    ],
    "headroom_before": 3.83,
@@ -105,35 +121,40 @@
      "exit_code": 0,
      "duration_s": 0.3,
      "note": "new gate: 71 agents, 273 trigger phrases, 0 exact collisions after the two it found were fixed",
-     "output_tail": "0 tam cakisma"
+     "output_tail": "0 tam cakisma",
+     "expect": 0
     },
     {
      "command": "node arac/tetik-cakisma-test.js",
      "exit_code": 0,
      "duration_s": 0.3,
      "note": "the gate's own 19 checks, including that the real roster passes",
-     "output_tail": "19 gecti, 0 kaldi"
+     "output_tail": "19 gecti, 0 kaldi",
+     "expect": 0
     },
     {
      "command": "node arac/dogrula.js && node arac/sinir-denetle.js --kati",
      "exit_code": 0,
      "duration_s": 1.2,
      "note": "71/71 through field validation and the boundary contract, with the new agent",
-     "output_tail": "71/71 dosya gecti"
+     "output_tail": "71/71 dosya gecti",
+     "expect": 0
     },
     {
      "command": "node arac/disari-aktar.js",
      "exit_code": 0,
      "duration_s": 1.0,
      "note": "all four export targets in sync at 71 agents",
-     "output_tail": "71 ajan, 0 yazildi, 71 ayni"
+     "output_tail": "71 ajan, 0 yazildi, 71 ayni",
+     "expect": 0
     },
     {
      "command": "gh api repos/Furkiozknn/turkce-ajanlar/actions/runs/35754647583",
      "exit_code": 0,
      "duration_s": 2.0,
      "note": "the dogrula workflow succeeded on the pushed commit with the two new steps in it",
-     "output_tail": "completed success"
+     "output_tail": "completed success",
+     "expect": 0
     }
    ],
    "headroom_before": 3.54,
@@ -155,14 +176,16 @@
      "exit_code": 0,
      "duration_s": 0.03,
      "note": "10 new tests, no database needed; they read the schemas from source with ast",
-     "output_tail": "10 passed"
+     "output_tail": "10 passed",
+     "expect": 0
     },
     {
      "command": "gh api repos/Furkiozknn/buradane/actions/runs/35755193867",
      "exit_code": 0,
      "duration_s": 2.0,
      "note": "backend CI on the pushed commit, against the real PostGIS service, succeeded with the new tests alongside the existing suite",
-     "output_tail": "completed success"
+     "output_tail": "completed success",
+     "expect": 0
     }
    ],
    "headroom_before": 3.17,
@@ -184,14 +207,16 @@
      "exit_code": 0,
      "duration_s": 0.2,
      "note": "run locally before the change: 222 files, 215 references, no problems",
-     "output_tail": "no problems found."
+     "output_tail": "no problems found.",
+     "expect": 0
     },
     {
      "command": "gh api repos/Furkiozknn/tek-tus-kosu/actions/runs/35756493521",
      "exit_code": 0,
      "duration_s": 2.0,
      "note": "CI green on the pinned commit, with the game's own suite and the new reference job",
-     "output_tail": "completed success"
+     "output_tail": "completed success",
+     "expect": 0
     }
    ],
    "headroom_before": 2.11,
@@ -213,14 +238,16 @@
      "exit_code": 0,
      "duration_s": 0.2,
      "note": "run locally before the change: 252 files, 75 references, no problems",
-     "output_tail": "no problems found."
+     "output_tail": "no problems found.",
+     "expect": 0
     },
     {
      "command": "gh api repos/Furkiozknn/yercekimi-cevir/actions/runs/35756515112",
      "exit_code": 0,
      "duration_s": 2.0,
      "note": "CI green on the pinned commit, with the game's own suite and the new reference job",
-     "output_tail": "completed success"
+     "output_tail": "completed success",
+     "expect": 0
     }
    ],
    "headroom_before": 2.05,
@@ -242,14 +269,16 @@
      "exit_code": 0,
      "duration_s": 0.2,
      "note": "run locally before the change: 198 files, 57 references, no problems",
-     "output_tail": "no problems found."
+     "output_tail": "no problems found.",
+     "expect": 0
     },
     {
      "command": "gh api repos/Furkiozknn/kanca/actions/runs/35756474830",
      "exit_code": 0,
      "duration_s": 2.0,
      "note": "CI green on the pinned commit, with the game's own suite and the new reference job",
-     "output_tail": "completed success"
+     "output_tail": "completed success",
+     "expect": 0
     }
    ],
    "headroom_before": 2.01,
@@ -271,14 +300,16 @@
      "exit_code": 0,
      "duration_s": 0.2,
      "note": "run locally before the change: 177 files, 46 references, no problems",
-     "output_tail": "no problems found."
+     "output_tail": "no problems found.",
+     "expect": 0
     },
     {
      "command": "gh api repos/Furkiozknn/derin-kazi/actions/runs/35756451269",
      "exit_code": 0,
      "duration_s": 2.0,
      "note": "CI green on the pinned commit, with the game's own suite and the new reference job",
-     "output_tail": "completed success"
+     "output_tail": "completed success",
+     "expect": 0
     }
    ],
    "headroom_before": 1.87,
@@ -300,33 +331,1191 @@
      "exit_code": 0,
      "duration_s": 3.0,
      "note": "new gate: 6 cases across clean and broken fixtures at every fail-on level, running the action's own shell with the runner's flags",
-     "output_tail": "6 vaka, 0 sorun"
+     "output_tail": "6 vaka, 0 sorun",
+     "expect": 0
     },
     {
      "command": "git stash && python3 tools/action_smoke.py",
      "exit_code": 1,
      "duration_s": 3.0,
      "note": "the same gate against the old action.yml fails on the first three cases, which is the regression it exists to catch",
-     "output_tail": "HATA temiz proje, fail-on error: cikis kodu 1, beklenen 0"
+     "output_tail": "HATA temiz proje, fail-on error: cikis kodu 1, beklenen 0",
+     "expect": 0
     },
     {
      "command": "cargo test",
      "exit_code": 0,
      "duration_s": 1.0,
      "note": "107 Rust tests still pass; no binary behaviour changed",
-     "output_tail": "48 passed, 24 passed, 35 passed"
+     "output_tail": "48 passed, 24 passed, 35 passed",
+     "expect": 0
     },
     {
      "command": "gh api repos/Furkiozknn/godot-refcheck/actions/runs/35756306176",
      "exit_code": 0,
      "duration_s": 2.0,
      "note": "CI green on the pushed fix, including the new action-shapes job",
-     "output_tail": "completed success"
+     "output_tail": "completed success",
+     "expect": 0
     }
    ],
    "headroom_before": 1.73,
    "headroom_after": null,
    "at": "2026-09-22T16:50:37Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "repo-vet",
+   "outcome": "advanced",
+   "head_before": "182c118c79833899c688a3c49f24a557202f2f34",
+   "head_after": "452f0a579d8f65b707adf04121fc2d646d5f5aa0",
+   "summary": "The Action scanned the same repository three times - once for the JSON, once for the summary, once for the exit code - re-checking every outbound link each pass. Three passes over a flaky network can disagree, so the summary could say 'no findings' next to a failed job. --json-out makes one scan produce all three, and the self job now asserts the count and the exit code agree.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 -m pytest tests -q",
+     "exit_code": 0,
+     "duration_s": 0.1,
+     "note": "103 tests, 6 of them new over --json-out",
+     "output_tail": "103 passed",
+     "expect": 0
+    },
+    {
+     "command": "repo-vet o/r --json-out r.json --markdown --fail-on error",
+     "exit_code": 1,
+     "duration_s": 0.2,
+     "note": "one scan produced the file, the markdown and the exit code together",
+     "output_tail": "exit=1, markdown 165 bytes, json findings=1",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/repo-vet/actions/runs/35757494256/jobs",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green on the pushed commit: 6 Python versions, the package job, and the self job with its new agreement check",
+     "output_tail": "7 jobs, all success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 0.84,
+   "headroom_after": null,
+   "at": "2026-09-22T16:59:28Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "mcp-census",
+   "outcome": "advanced",
+   "head_before": "c5bb74fd8e098d6ca6b6426d5b0cc2e9d680afd7",
+   "head_after": "fba29ae43c0438dcdef6144bd4b7188479ea993f",
+   "summary": "A census of a moving registry measured once is a photograph. The counts now become a time series: a monthly workflow downloads, counts, diffs the previous count metric by metric into the step summary, and appends one row to veri/zaman-serisi.csv - committing nothing when the numbers have not moved. An unmeasured metric stays blank rather than becoming zero.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 -m pytest tests -q",
+     "exit_code": 0,
+     "duration_s": 0.09,
+     "note": "55 tests, 11 of them new over the time series",
+     "output_tail": "55 passed",
+     "expect": 0
+    },
+    {
+     "command": "python3 -c 'analyze.sayim_farki(...)'",
+     "exit_code": 0,
+     "duration_s": 0.1,
+     "note": "simulated a month's drift against the real snapshot: 2 metrics moved, deltas and percentages correct",
+     "output_tail": "aktif_sunucu 31972 -> 33472 (+1500, 4.69%)",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/mcp-census/actions/runs/35757487158",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green on the pushed commit",
+     "output_tail": "completed success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 1.71,
+   "headroom_after": null,
+   "at": "2026-09-22T16:59:28Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "repo-ratchet",
+   "outcome": "advanced",
+   "head_before": "f9875bcfaa2a0e96280d1833657418bcc8c43b30",
+   "head_after": "2a152108d7931e5fe64a78221967e0090539a0e9",
+   "summary": "The engine corrected two of its own measurements, both forced by repositories it misread: test_count reported four shipped games as having no tests because GDScript has no framework and they hand-roll assertions, and todo_density counted the pattern it searches with. Round 1's first nine records are committed with the checks that back them.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 -m pytest -q",
+     "exit_code": 0,
+     "duration_s": 2.1,
+     "note": "112 tests after the two signal corrections",
+     "output_tail": "112 passed",
+     "expect": 0
+    },
+    {
+     "command": "python3 -m ratchet survey --only tek-tus-kosu,yercekimi-cevir,kanca,derin-kazi",
+     "exit_code": 0,
+     "duration_s": 5.0,
+     "note": "the corrected test_count reads 21, 344, 46 and 452 cases where it used to read zero",
+     "output_tail": "derin-kazi 452 cases across 4 files",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/repo-ratchet/actions/runs/35756865124/jobs",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green across 9 os/python combinations plus the job that runs the engine on itself",
+     "output_tail": "10 jobs, all success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 1.97,
+   "headroom_after": null,
+   "at": "2026-09-22T16:59:28Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "mcp-vet",
+   "outcome": "advanced",
+   "head_before": "acb6a8a6d7ab6a36680604e08e1d8200dd5406f1",
+   "head_after": "28a19ae664459d0dd03fd1db031b89273b4599cf",
+   "summary": "Running it against the account's own MCP servers found the worst kind of false positive for a security tool: it punished the defensive pattern. A server whose only mention of .netrc is a denylist refusing to index it was rated HIGH with DO NOT INSTALL. Two narrow contexts - denylist literals, and comments or docstrings decided by Python's own tokenizer - now stop a line setting the verdict without suppressing anything.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 -m pytest tests -q",
+     "exit_code": 0,
+     "duration_s": 1.3,
+     "note": "319 tests; 30 new, half of them pointed at proving the tool did not go deaf",
+     "output_tail": "319 passed",
+     "expect": 0
+    },
+    {
+     "command": "mcp-vet audit --offline --path local-notes-search-mcp",
+     "exit_code": 0,
+     "duration_s": 6.0,
+     "note": "the server whose only mention of .netrc is a refusal now reads NOT_FLAGGED instead of HIGH / DO NOT INSTALL",
+     "output_tail": "NOT_FLAGGED local-notes-search-mcp",
+     "expect": 0
+    },
+    {
+     "command": "python3 -c 'neutralise finding_sets_headline and re-score the defensive fixture'",
+     "exit_code": 0,
+     "duration_s": 0.3,
+     "note": "with the new rule disabled the same fixture returns to HIGH, so the change is load-bearing rather than cosmetic",
+     "output_tail": "with the fix: NOT_FLAGGED | without: HIGH",
+     "expect": 0
+    },
+    {
+     "command": "mcp-vet audit --offline --path <fixture reading ~/.ssh/id_rsa and posting it>",
+     "exit_code": 3,
+     "duration_s": 2.0,
+     "note": "negative control: a server that genuinely exfiltrates is still CRITICAL and still closes a gate",
+     "output_tail": "OVERALL RISK CRITICAL, exit 3",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/mcp-vet/actions/runs/35758412088",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green on the pushed commit",
+     "output_tail": "completed success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 1.96,
+   "headroom_after": null,
+   "at": "2026-09-22T17:15:29Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "local-notes-search-mcp",
+   "outcome": "advanced",
+   "head_before": "092eb2a44c96ff34415426b723d12f2af1f885f6",
+   "head_after": "b2e7b5ee06db16052df0b3ace6ed45dfd1d1da58",
+   "summary": "A security gate the test suite could not be: the tests measure whether the functions are correct, not where the server's capability ends. mcp-vet now audits it from source on every push and writes the report into the job summary; today's verdict is NOT_FLAGGED. Getting the gate right took two commits - the first died under the runner's bash -e before its own exit-code logic could run.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "mcp-vet audit --offline --path local-notes-search-mcp",
+     "exit_code": 0,
+     "duration_s": 6.0,
+     "note": "local audit before wiring the gate: verdict NOT_FLAGGED",
+     "output_tail": "NOT_FLAGGED local-notes-search-mcp",
+     "expect": 0
+    },
+    {
+     "command": "bash -e -o pipefail <the gate step, verbatim>",
+     "exit_code": 0,
+     "duration_s": 6.0,
+     "note": "the step run under the runner's exact shell: NOT_FLAGGED, LOW and MEDIUM all pass",
+     "output_tail": "step-exit=0",
+     "expect": 0
+    },
+    {
+     "command": "bash -e -o pipefail <the gate step against a fixture that exfiltrates an SSH key>",
+     "exit_code": 1,
+     "duration_s": 3.0,
+     "note": "negative control: the gate closes on CRITICAL, so it is a gate and not decoration",
+     "output_tail": "mcp-vet cikis 3, step-exit=1",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/local-notes-search-mcp/actions/runs (push, default branch)",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green on the fixed gate",
+     "output_tail": "success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 1.83,
+   "headroom_after": null,
+   "at": "2026-09-22T17:15:29Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "mini-creative-toolkit",
+   "outcome": "advanced",
+   "head_before": "143e9ed59a770cc1dfc5462d924546d62b64bc49",
+   "head_after": "3fcc4fdb29fe5c1789b808003aecefdae0d62eb5",
+   "summary": "A security gate the test suite could not be: the tests measure whether the functions are correct, not where the server's capability ends. mcp-vet now audits it from source on every push and writes the report into the job summary; today's verdict is MEDIUM. Getting the gate right took two commits - the first died under the runner's bash -e before its own exit-code logic could run.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "mcp-vet audit --offline --path mini-creative-toolkit",
+     "exit_code": 1,
+     "duration_s": 6.0,
+     "note": "local audit before wiring the gate: verdict MEDIUM",
+     "output_tail": "MEDIUM mini-creative-toolkit",
+     "expect": 0
+    },
+    {
+     "command": "bash -e -o pipefail <the gate step, verbatim>",
+     "exit_code": 0,
+     "duration_s": 6.0,
+     "note": "the step run under the runner's exact shell: NOT_FLAGGED, LOW and MEDIUM all pass",
+     "output_tail": "step-exit=0",
+     "expect": 0
+    },
+    {
+     "command": "bash -e -o pipefail <the gate step against a fixture that exfiltrates an SSH key>",
+     "exit_code": 1,
+     "duration_s": 3.0,
+     "note": "negative control: the gate closes on CRITICAL, so it is a gate and not decoration",
+     "output_tail": "mcp-vet cikis 3, step-exit=1",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/mini-creative-toolkit/actions/runs (push, default branch)",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green on the fixed gate",
+     "output_tail": "success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 1.86,
+   "headroom_after": null,
+   "at": "2026-09-22T17:15:29Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "nvidia-nim-mcp",
+   "outcome": "advanced",
+   "head_before": "e877a626027e3f04274a5c923b010a185a0541ae",
+   "head_after": "da9618a339365c4a07e63faf668ad49e5a82664c",
+   "summary": "A security gate the test suite could not be: the tests measure whether the functions are correct, not where the server's capability ends. mcp-vet now audits it from source on every push and writes the report into the job summary; today's verdict is LOW. Getting the gate right took two commits - the first died under the runner's bash -e before its own exit-code logic could run.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "mcp-vet audit --offline --path nvidia-nim-mcp",
+     "exit_code": 1,
+     "duration_s": 6.0,
+     "note": "local audit before wiring the gate: verdict LOW",
+     "output_tail": "LOW nvidia-nim-mcp",
+     "expect": 0
+    },
+    {
+     "command": "bash -e -o pipefail <the gate step, verbatim>",
+     "exit_code": 0,
+     "duration_s": 6.0,
+     "note": "the step run under the runner's exact shell: NOT_FLAGGED, LOW and MEDIUM all pass",
+     "output_tail": "step-exit=0",
+     "expect": 0
+    },
+    {
+     "command": "bash -e -o pipefail <the gate step against a fixture that exfiltrates an SSH key>",
+     "exit_code": 1,
+     "duration_s": 3.0,
+     "note": "negative control: the gate closes on CRITICAL, so it is a gate and not decoration",
+     "output_tail": "mcp-vet cikis 3, step-exit=1",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/nvidia-nim-mcp/actions/runs (push, default branch)",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green on the fixed gate",
+     "output_tail": "success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 1.58,
+   "headroom_after": null,
+   "at": "2026-09-22T17:15:29Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "voice-io-mcp",
+   "outcome": "advanced",
+   "head_before": "de2636bb74b50b4b0f0ba8f2a4331b445bc10240",
+   "head_after": "9aedc162c01a699c843df18afd80a85452b4a7b9",
+   "summary": "A security gate the test suite could not be: the tests measure whether the functions are correct, not where the server's capability ends. mcp-vet now audits it from source on every push and writes the report into the job summary; today's verdict is NOT_FLAGGED. Getting the gate right took two commits - the first died under the runner's bash -e before its own exit-code logic could run.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "mcp-vet audit --offline --path voice-io-mcp",
+     "exit_code": 0,
+     "duration_s": 6.0,
+     "note": "local audit before wiring the gate: verdict NOT_FLAGGED",
+     "output_tail": "NOT_FLAGGED voice-io-mcp",
+     "expect": 0
+    },
+    {
+     "command": "bash -e -o pipefail <the gate step, verbatim>",
+     "exit_code": 0,
+     "duration_s": 6.0,
+     "note": "the step run under the runner's exact shell: NOT_FLAGGED, LOW and MEDIUM all pass",
+     "output_tail": "step-exit=0",
+     "expect": 0
+    },
+    {
+     "command": "bash -e -o pipefail <the gate step against a fixture that exfiltrates an SSH key>",
+     "exit_code": 1,
+     "duration_s": 3.0,
+     "note": "negative control: the gate closes on CRITICAL, so it is a gate and not decoration",
+     "output_tail": "mcp-vet cikis 3, step-exit=1",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/voice-io-mcp/actions/runs (push, default branch)",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green on the fixed gate",
+     "output_tail": "success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 1.19,
+   "headroom_after": null,
+   "at": "2026-09-22T17:15:29Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "masal",
+   "outcome": "advanced",
+   "head_before": "fc3dc87a6099f6a2c245b8a14a4a3698a3c44c29",
+   "head_after": "3472a3ba23da74eb54839e106bc1e16e85864585",
+   "summary": "The manifest advertised an installable standalone app with no service worker behind it: most browsers never offered the install, and offline showed a blank page - for a bedtime story app on a tablet, offline is the typical case. Adds a service worker, real square app icons (the only one was a 1200x630 social image no launcher can use), and a gate proving the worker originates no request of its own and that its cache list matches the real import graph.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "node arac/sw-dogrula.mjs",
+     "exit_code": 0,
+     "duration_s": 0.2,
+     "note": "new gate: cache list covers the whole import graph, and every fetch in sw.js passes the page's own request",
+     "output_tail": "sw.js temiz",
+     "expect": 0
+    },
+    {
+     "command": "node arac/sw-dogrula.mjs (after injecting fetch(\"https://tracker.example.net/...\") into sw.js)",
+     "exit_code": 1,
+     "duration_s": 0.2,
+     "note": "negative control: a constructed URL in the worker is caught and named",
+     "output_tail": "HATA sw.js sayfadan gelmeyen bir sey fetch ediyor",
+     "expect": 0
+    },
+    {
+     "command": "node --test",
+     "exit_code": 0,
+     "duration_s": 0.4,
+     "note": "92 existing tests still pass",
+     "output_tail": "# pass 92 / # fail 0",
+     "expect": 0
+    },
+    {
+     "command": "grep -nE 'fetch\\(|sendBeacon|...' index.html app.js ...",
+     "exit_code": 1,
+     "duration_s": 0.1,
+     "note": "the repository's existing privacy gate still finds no network call outside olcum.js",
+     "output_tail": "no matches",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/masal/actions/runs (push, main)",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green on the pushed commit",
+     "output_tail": "completed success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 2.91,
+   "headroom_after": null,
+   "at": "2026-09-22T17:30:45Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "ai-workflow-engine",
+   "outcome": "advanced",
+   "head_before": "9dd5c07fdc8b2cfe748359a098a723652d4a7374",
+   "head_after": "c375199c1dd69849c4905e9d18a28ee61fe6ab4c",
+   "summary": "Every test drove a handwritten fake of ai-job-gateway, so two projects that advertise compatibility each only proved it against their own belief. Eight tests now run the real gateway in-process over ASGI, and found drift straight away: the gateway emits status 'pending' before 'processing' and the fake never produced it, leaving that branch of the poll loop unexercised. Plus a check that the vendored gateway_poll.py has not diverged from its source.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 -m pytest tests/test_gercek_gateway.py -q",
+     "exit_code": 0,
+     "duration_s": 1.0,
+     "note": "8 contract tests against the real gateway, no network, no server",
+     "output_tail": "8 passed",
+     "expect": 0
+    },
+    {
+     "command": "python3 -m pytest -q",
+     "exit_code": 0,
+     "duration_s": 6.3,
+     "note": "the whole suite, 80 tests",
+     "output_tail": "80 passed",
+     "expect": 0
+    },
+    {
+     "command": "bash -e -o pipefail <the contract step> with ai-job-gateway uninstalled",
+     "exit_code": 5,
+     "duration_s": 0.5,
+     "note": "negative control: with the gateway missing the job fails rather than quietly measuring nothing",
+     "output_tail": "1 skipped, exit 5",
+     "expect": 0
+    },
+    {
+     "command": "python3 arac/vendor-dogrula.py --dosya <canonical>",
+     "exit_code": 0,
+     "duration_s": 0.2,
+     "note": "the vendored copy matches its source, fingerprint 13003e16132b67ca",
+     "output_tail": "ayni",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/ai-workflow-engine/actions/runs",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green on the fixed workflow, with the contract job actually running",
+     "output_tail": "completed success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 1.6,
+   "headroom_after": null,
+   "at": "2026-09-22T17:30:45Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "ai-job-gateway",
+   "outcome": "advanced",
+   "head_before": "1282526f2cf4e758bcb42088bc1baae7611eb65f",
+   "head_after": "7b60aa9ee5e4d471cadee664a870144b660149f1",
+   "summary": "gateway_poll.py is copied byte-identically into three other repositories and nothing measured whether they were still identical; an edge case fixed here would keep biting there while every repository stayed green against its own copy. The three consumers now compare against this one, and this one prints the fingerprint so a change is visible as a number.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 arac/vendor-dogrula.py --dosya <canonical>",
+     "exit_code": 0,
+     "duration_s": 0.2,
+     "note": "all four copies normalise to the same fingerprint, 13003e16132b67ca",
+     "output_tail": "ayni",
+     "expect": 0
+    },
+    {
+     "command": "python3 arac/vendor-dogrula.py (after changing one line in a copy)",
+     "exit_code": 1,
+     "duration_s": 0.2,
+     "note": "negative control: a one-line divergence is caught and shown as a diff",
+     "output_tail": "AYRISMIS, unified diff of the changed line",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/ai-job-gateway/actions/runs",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green on the pushed commit",
+     "output_tail": "completed success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 1.41,
+   "headroom_after": null,
+   "at": "2026-09-22T17:30:45Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "model-comparison-harness",
+   "outcome": "advanced",
+   "head_before": "f4464d26030f63798d231dc616f5b1ed854ef079",
+   "head_after": "546f0ef2d1571c95c74338abc6209cff130f79b0",
+   "summary": "gateway_poll.py is a verbatim copy from ai-job-gateway and nothing checked it was still current. Copies drift in silence: an edge case fixed upstream keeps biting here while this repository stays green against its own stale copy. A gate now fetches the canonical file, normalises the package-name difference and fails on anything else - and skips rather than passes when it cannot look.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 arac/vendor-dogrula.py --dosya <canonical>",
+     "exit_code": 0,
+     "duration_s": 0.2,
+     "note": "all four copies normalise to the same fingerprint, 13003e16132b67ca",
+     "output_tail": "ayni",
+     "expect": 0
+    },
+    {
+     "command": "python3 arac/vendor-dogrula.py (after changing one line in a copy)",
+     "exit_code": 1,
+     "duration_s": 0.2,
+     "note": "negative control: a one-line divergence is caught and shown as a diff",
+     "output_tail": "AYRISMIS, unified diff of the changed line",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/model-comparison-harness/actions/runs",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green on the pushed commit",
+     "output_tail": "completed success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 1.45,
+   "headroom_after": null,
+   "at": "2026-09-22T17:30:45Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "prompt-template-manager",
+   "outcome": "advanced",
+   "head_before": "b5f9bbc59d62b1eac9a22b3435e6930a7a9d13c3",
+   "head_after": "22da15ca53f7e46a32dff4c91f374a8d790a1a71",
+   "summary": "gateway_poll.py is a verbatim copy from ai-job-gateway and nothing checked it was still current. Copies drift in silence: an edge case fixed upstream keeps biting here while this repository stays green against its own stale copy. A gate now fetches the canonical file, normalises the package-name difference and fails on anything else - and skips rather than passes when it cannot look.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 arac/vendor-dogrula.py --dosya <canonical>",
+     "exit_code": 0,
+     "duration_s": 0.2,
+     "note": "all four copies normalise to the same fingerprint, 13003e16132b67ca",
+     "output_tail": "ayni",
+     "expect": 0
+    },
+    {
+     "command": "python3 arac/vendor-dogrula.py (after changing one line in a copy)",
+     "exit_code": 1,
+     "duration_s": 0.2,
+     "note": "negative control: a one-line divergence is caught and shown as a diff",
+     "output_tail": "AYRISMIS, unified diff of the changed line",
+     "expect": 0
+    },
+    {
+     "command": "gh api repos/Furkiozknn/prompt-template-manager/actions/runs",
+     "exit_code": 0,
+     "duration_s": 2.0,
+     "note": "CI green on the pushed commit",
+     "output_tail": "completed success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": 1.58,
+   "headroom_after": null,
+   "at": "2026-09-22T17:30:45Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "claude-code-intelligence",
+   "outcome": "advanced",
+   "head_before": "947ef0c56fba2a9e8354ed1b54d04ead015f2361",
+   "head_after": "f4c9b42e30a4d917113c1526ae83097547db9218",
+   "summary": "docs/PROVIDERS.md ucuncu taraflara kendi adaptorunu yazmayi teklif ediyor; o teklifin dayandigi cci/adapters/ yuzeyindeki 26 genel sembolun hicbirinin belgesi yoktu. Belgeler imzayi degil karari anlatiyor: Capabilities'i durust doldurma zorunlulugu, Health.status'un neden uc degerli oldugu, credentials_path'in neden var olup hic acilmadigi. arac/sozlesme-belgeli.py bunu AST uzerinden, yalnizca cci/adapters/ kapsaminda bir CI kapisina cevirdi.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 -m pytest -q",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yerel",
+     "output_tail": "261 passed in 11.54s",
+     "expect": 0
+    },
+    {
+     "command": "python3 arac/sozlesme-belgeli.py",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yerel",
+     "output_tail": "26/26 genel sembol belgeli",
+     "expect": 0
+    },
+    {
+     "command": "python3 arac/sozlesme-belgeli.py  # negatif kontrol: Health'in belge dizgesinin onune x = 1",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "kapi gercekten yakaliyor mu",
+     "output_tail": "Belgesiz genel sembol (1/26): cci/adapters/base.py:66 Health",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35762137176/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "CI, is 'test', adim 'Adaptor sozlesmesi belgeli mi'",
+     "output_tail": "run success; adim success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T17:40:48Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "asset-provenance-toolkit",
+   "outcome": "advanced",
+   "head_before": "b5efbb8a92d0f58a21a967b4e0d4d5a2439b3068",
+   "head_after": "8183a90852098bea60ae00a478cd3369eaf66667",
+   "summary": "README'nin 'dogal sonraki adim, sonraya birakildi' dedigi MP4/QuickTime arka ucu yazildi. Kayit bir uuid kutusuna, medya verisinin arkasina ekleniyor: moov icindeki stco/co64 mdat'a mutlak konum tuttugu icin oncesine sokusturulan bir kutu, ayristirilan ama cozulmeyen bir dosya birakiyor -- bu negatif kontrol olarak suitte duruyor. Korunan bolgedeki bir bayti oynatmasi gereken her duzenleme reddediliyor. 86 -> 125 test; ayrica gercek ffmpeg kliplerinde cozulmus ciktinin sha256'sini karsilastiran bir CI isi, ve pyproject'in iddia ettigi uc Python surumu icin matris.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 -m pytest -q",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yerel; 86 -> 125",
+     "output_tail": "125 passed",
+     "expect": 0
+    },
+    {
+     "command": "uv run --python 3.11/3.12/3.13 pytest -q",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "pyproject'in iddia ettigi uc surum",
+     "output_tail": "125 passed (her uc surumde)",
+     "expect": 0
+    },
+    {
+     "command": "python3 arac/gercek-video-dogrula.py",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "gercek ffmpeg kliplerinde cozulmus cikti bit bazinda ayni; negatif kontrol dahil",
+     "output_tail": "gercek medya uzerinde her sey tutuyor",
+     "expect": 0
+    },
+    {
+     "command": "python3 arac/gercek-video-dogrula.py  # arka uc sabote edilmis (kutu en basa)",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "betik gercekten isiriyor mu",
+     "output_tail": "12 sorun",
+     "expect": 0
+    },
+    {
+     "command": "aprov embed/extract/verify clip.mp4 (README komutlari)",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "README ciktisi birebir; ffmpeg cozumu sha256 ayni",
+     "output_tail": "embedded provenance into clip.mp4 (mp4 backend)",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35763332016/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "CI: test(3.11/3.12/3.13) + 'Real encoded media'",
+     "output_tail": "dort is de success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T18:38:40Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "nova-drift",
+   "outcome": "advanced",
+   "head_before": "5bfb17a47a8d4c27d46b249c67743b33577c348f",
+   "head_after": "41ddf6df765ff85e794b4277f2a6292b6e39178e",
+   "summary": "Uc kontrol de aslinda kontrol etmiyordu. (1) prng.spec.js Gunluk Meydan Okuma'nin RNG'sini script.js'ten KOPYALAYIP kopyayi sinliyordu; rng.js ayri bir modul olarak cikarildi ve test artik gonderilen dosyanin baytlarini kosuyor. (2) scripts/vendor-three.mjs  ile basliyordu ve vendor/README.md'nin tarif ettigi komut, styles.css'in yukledigi Orbitron woff2'sini siliyordu -- sessizce, cunku font-display: swap arkasinda sayfa yuklenmeye devam ediyor. (3) fixtures.js olmayan bir CDN'i cevapliyordu; yeniden eklenen bir CDN import'unu maskeleyebilirdi, artik sayfayi kendi kaynagina muhurluyor. 28 -> 38 test, ve CI matrisi iki Node surumu kosuyor.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "npx playwright test",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yerel, node 22; 28 -> 38",
+     "output_tail": "38 passed",
+     "expect": 0
+    },
+    {
+     "command": "npx playwright test  # node 20.19.0 indirilip",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "CI'in surumu; ilk denemede bu surum kirilmisti",
+     "output_tail": "38 passed",
+     "expect": 0
+    },
+    {
+     "command": "node arac/../scripts/vendor-three.mjs  # eski rm -rf vendor/ hali geri konularak",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "vendor regresyon testi gercekten isiriyor mu",
+     "output_tail": "the vendor script deleted the font styles.css loads",
+     "expect": 0
+    },
+    {
+     "command": "node test/capture-gif.js /tmp/cap 24",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "gercek oynanis; cikan kareye bakildi, HUD Orbitron ile ciziliyor",
+     "output_tail": "24 kare, skor 193",
+     "expect": 0
+    },
+    {
+     "command": "tarayicida document.fonts.check('700 1rem Orbitron')",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yazi tipi silindiginde 404 + false; yerindeyken 200 + true",
+     "output_tail": "Orbitron:loaded",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35769805516/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "CI: smoke-test (20) ve (22)",
+     "output_tail": "iki is de success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T18:55:40Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "ajans-os",
+   "outcome": "advanced",
+   "head_before": "8d3103ef8b6f5735f69ace2154aa2a776896d361",
+   "head_after": "4c398c6a8b7df1de21f4f44178a0d537997ac1d5",
+   "summary": "Sozlesme dogrulayicisinin 106 kontrolluk bir oz-testi vardi ve 'temiz' diyordu; bu kontrollerin gectigini soyler, hangi kurallarin korundugunu soylemez. arac/sema-mutasyon.js her zorlama noktasini tek tek etkisizlestirip oz-testin ve ornek dogrulamasinin bunu yakalamasini bekliyor: 19 noktanin 8'i hayatta kaliyordu -- type dahil. Dogrulayicinin kendi mekanigini sinayan bir blok eklendi, olcum 19/19. Ayrica sema-dogrula ve kanit-dogrula-test hic CI'da kosmuyordu (106 kontrolluk oz-test, sifir push); kapiya baglandi ve kapinin kostugunu kanitlayan bir adim eklendi. kanit-dogrula-test'in sessiz atlamasi artik ozette sayiliyor, kanit-dogrula.js'in sabit D:/Repolar yolu ortam degiskenine cikti.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "npm run kapi",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yerel; testler + yapi + sema + kanit",
+     "output_tail": "142 test, 5 gecti 0 kaldi 1 atlandi",
+     "expect": 0
+    },
+    {
+     "command": "node arac/sema-mutasyon.js  # oz-test eklenmeden once",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "ilk olcum",
+     "output_tail": "8/19 mutant hayatta: type, minLength, maxLength, minimum, uniqueItems, if/then, bilinmeyen anahtar, $ref",
+     "expect": 0
+    },
+    {
+     "command": "node arac/sema-mutasyon.js  # oz-test eklendikten sonra",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "kapanan bosluk",
+     "output_tail": "19/19 mutant oldu",
+     "expect": 0
+    },
+    {
+     "command": "node arac/sema-dogrula.js --test",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "106 -> 127 kontrol",
+     "output_tail": "Sonuc: temiz.",
+     "expect": 0
+    },
+    {
+     "command": "npm run kapi  # sema adimi package.json'dan dusurulmus",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yeni CI adimi bunu yakaliyor mu: ciktida mutasyon ozeti yok",
+     "output_tail": "guard would FAIL",
+     "expect": 0
+    },
+    {
+     "command": "node arac/kanit-dogrula-test.js --kati",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "klon yokken atlama artik basarisizlik",
+     "output_tail": "--kati verildi: atlanan bir bolum basarisizliktir.",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35769963799/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "CI: kapi(22) ve kapi(24), 'Sozlesme kapisi kostu mu' adimi dahil",
+     "output_tail": "butun adimlar success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T18:56:05Z",
+   "schema": 1
+  },
+  {
+   "round": 1,
+   "repo": "Furkiozknn",
+   "outcome": "advanced",
+   "head_before": "03ec74015369690f28d6d6016c514739c4e04703",
+   "head_after": "9cfa7d48da5a54de5cd06bbb16d4b79bae4ba702",
+   "summary": "Tek bir rakam yedi yuzeyde duruyordu ve hepsi elle tutuluyordu; gunluk denetim ayrismayi goruyor ama duzeltemiyor, ve TESTLER.md'nin kendi tablo satirlarina hic bakmiyordu. schema/testler.py o bosluga bakiyor: --kontrol agsiz bir CI kapisi, --tazele/--yaz duzeltir, --olc her sayinin geldigi kosu logunu yeniden okur. Yol boyunca uc gercek hata cikti: kalibin ILK eslesmesini almak coklu-isli bir logda yanlis sayiyi veriyordu (ai-workflow-engine 72 yerine 8), GitHub'in 403 hiz siniri 'ci.yml yok' gibi gorunuyordu, ve hero.svg'de commit sayisi etiketiyle ust uste biniyordu (iki render motorunda da dogrulandi). Yayimlanan toplam 4.700 -> 5.037, 23 -> 25 suit, 27 -> 28 depo, 1.019 -> 1.067 commit.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 schema/test_schema.py",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "58 -> 68",
+     "output_tail": "Ran 68 tests ... OK",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/testler.py --kontrol",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "agsiz tutarlilik kapisi",
+     "output_tail": "Yayimlanan her yer ayni sayiyi soyluyor (5,037 test, 25 suit).",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/testler.py --kontrol  # TESTLER tablosunda bir satir bozulmus",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "denetim.py'nin hic bakmadigi satirlar",
+     "output_tail": "TESTLER.md tablosunda nova-drift icin 28 yaziyor, metadata 38",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/testler.py --kontrol  # buradane kaynagi yanlis etiketlenmis",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "tek satirlik kaynak yayimlanan sayiyi yazmali",
+     "output_tail": "kaynak satiri 106 yaziyor ama sayi 334",
+     "expect": 0
+    },
+    {
+     "command": "DEPO_JETONU=... python3 schema/testler.py --olc",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "24 deponun kosu logu yeniden okundu",
+     "output_tail": "9 depoda sapma bulundu",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/dogrula.py <kok>",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "kendi metadata'si",
+     "output_tail": "TAMAM Furkiozknn / 1 depo, 0 hata.",
+     "expect": 0
+    },
+    {
+     "command": "cairosvg + chromium ile assets/hero.svg render edildi",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "1,019 ile commits ust uste biniyordu; iki motorda da duzeldi",
+     "output_tail": "goruntu incelendi",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35773057688/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "CI, 'Yayimlanan sayilar tutarli mi' adimi dahil",
+     "output_tail": "butun adimlar success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T19:20:46Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "repo-ratchet",
+   "outcome": "advanced",
+   "head_before": "0b1b094c0f5d0949ecbbe8ab6336a3a22fed0ba1",
+   "head_after": "4d0f12049b84232972b0d2b03822b49a9e934c01",
+   "summary": "Turun kendi verisi uc seyi gosterdi. (1) \"<ad>-test.js\" bir test dosyasidir: ayiricilardan ucuncusu bilinmiyordu ve sekiz hand-rolled kosucuyla korunan 70 ajanlik bir kadro \"0 test bytes in 0 files\" olarak olculup tur 2 kuyrugunda birinci siraya yerlesiyordu -- oraya koyan sey depo degil, olcumdu. (2) Sayilamayan bir test dosyasi sifir vaka degildir: artik ya None ya \"en az N vaka; M dosya sayilamadi\". Ayrim ince ve bilerek -- tests/ altinda yasamak bir dosyayi suitin parcasi yapar, vaka tasiyan bir test dosyasi yapmaz. (3) Tur 1'de 106 kontrolun 23'u basarisiz olmak icin kosulmustu ve kayit bunu soyleyemiyordu; Verification artik beklenen cikis kodunu tasiyor (expect), kural 2 ozunde ayni kaldi: bir advanced kaydi hala basarili olmasi gereken en az bir kontrola dayanmak zorunda.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 -m pytest -q",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "103 -> 130",
+     "output_tail": "130 passed",
+     "expect": 0
+    },
+    {
+     "command": "python3 -m ratchet survey --only turkce-ajanlar  # duzeltmeden once",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yanlis olcum",
+     "output_tail": "test_mass 0 test bytes in 0 files; test_count 'no test cases found' (headroom 1.0)",
+     "expect": 0
+    },
+    {
+     "command": "python3 -m ratchet survey --only turkce-ajanlar  # duzeltmeden sonra",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "ayni depo, ayni kod",
+     "output_tail": "test_mass 0.515 (8 dosya); test_count 'en az 92 vaka, 5 dosya sayilamadi'",
+     "expect": 0
+    },
+    {
+     "command": "python3 -m ratchet queue --round 2",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "kuyruk artik olcume dayaniyor: turkce-ajanlar 1. siradan dustu",
+     "output_tail": "1. buradane headroom 2.63",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35773956468/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "9 os/python kombinasyonu + motorun kendisine karsi is",
+     "output_tail": "10 is de success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T19:33:28Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "buradane",
+   "outcome": "advanced",
+   "head_before": "4cc348ac0ebf99751f80ac301897427ef5482b7f",
+   "head_after": "87f432530431061ba0fa81909c8fb07478e75abe",
+   "summary": "Tur 1 docs/api-sozlesme-farklari.md'yi calistirilabilir yapmis ve ilk kosusunda gercek bir eksik bulmustu; tur 2 o eksigi kapatiyor. Iki OSM etiketi -- access ve operator -- frontend ikisine de bagimliydi, backend hicbir semada uretmiyordu. Ikisi de artik modelde, c3f8a1d05b47 migration'inda ve PlaceListItem'da, yani listede: frontend karti cizmeden once access'e bakip eliyor ve isaretci basina bir detay istegi gerektiren bir filtre filtre degildir. Ice aktarim ikisini de OSM'in kendi etiketlerinden dolduruyor; access enum degil duz metin, cunku gorulmemis bir deger bir ilin alimini dusurmek yerine veritabanina ulasmali. Migration geri doldurma yapmiyor -- sutunlar var olmadan once alinmis 167.829 satir icin durust deger \"bilinmiyor\". Degisiklik yapildiginda belge testi kendiliginden kirmizi yandi ve belgeyi guncelletti; arkasindan ayristiricinin kendi testi kirildi, cunku icinde sabit bir ornek alan adi yaziyordu. Kapanmayan kisim belgede duruyor: access'e gore sorgu tarafi eleme hala yok.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "uv run pytest -q  (backend, yerel)",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "veritabani olmadan; 53 -> 66 kosan",
+     "output_tail": "66 passed, 53 skipped",
+     "expect": 0
+    },
+    {
+     "command": "uv run pytest -q  # belge guncellenmeden once",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "tur 1'de yazilan testin ikinci yonu: belge kotumserlestiginde de kiriliyor",
+     "output_tail": "Bu alanlar PlaceListItem'a eklenmis ama docs/api-sozlesme-farklari.md hala eksik diyor: access, operator",
+     "expect": 1
+    },
+    {
+     "command": "uv run pytest -q tests/test_sozlesme_dokumani.py  # migration dosyasi kaldirilmis",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "modele sutun ekleyip migration yazmamak yakalaniyor mu",
+     "output_tail": "places.access modelde var ama hicbir migration onu eklemiyor",
+     "expect": 1
+    },
+    {
+     "command": "uv run pytest -q tests/test_osm_etiketleri.py",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "8 test, veritabani gerekmiyor",
+     "output_tail": "11 passed",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35774493658/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "gercek PostGIS; migration dongusu ve 'Fail on skipped tests' dahil",
+     "output_tail": "119 passed",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T19:34:15Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "masal",
+   "outcome": "advanced",
+   "head_before": "3472a3ba23da74eb54839e106bc1e16e85864585",
+   "head_after": "a8aeef973a7847b51e4458c711ae81fc789560b1",
+   "summary": "README \"Lighthouse mobil: erisilebilirlik ... 100\" diyordu ve bu dogruydu -- Lighthouse'un olctugu ekranda. Lighthouse sayfayi acar ve acildigi haliyle denetler; burada acilan ekran formdur, cocugun masali okudugu ekran hic denetlenmemisti. Denetlenince iki WCAG 2.1 AA ihlali cikti, ikisi de okuma ekraninda: boyama ipucu (beyaz uzerinde 3,82:1) ve cocugun kendi adi (.metin b, kagit uzerinde 4,37:1, esik 4,5) -- sayfadaki en cok okunan kelime. index.html'in o satirindaki yorum zaten \"kagit uzerinde 4.37:1\" yaziyordu: olculmus, yazilmis, oyle birakilmis. Ikisi de duzeltildi ve asil mesele kapiya baglandi: arac/erisim-denetle.mjs uygulamayi gercekten aciyor, formu dolduruyor, sayfayi ceviriyor, boyuyor, secim yapiyor ve sona gidiyor; alti ekrani ayri ayri axe-core ile denetliyor. Betigin kendi ilk surumu de ayni hataya dustu (boyanabilir sayfada durup secim ekranini hic denetlemiyordu) ve o da duzeltildi.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "node arac/erisim-denetle.mjs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "alti ekran, WCAG 2.1 AA",
+     "output_tail": "butun ekranlar WCAG 2.1 AA gecti",
+     "expect": 0
+    },
+    {
+     "command": "node arac/erisim-denetle.mjs  # eski --vurgu rengi geri konarak",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "kapi gercekten isiriyor mu",
+     "output_tail": "4 ihlal (okuyucu, boyanmis sayfa, secim ekrani, son sayfa)",
+     "expect": 1
+    },
+    {
+     "command": "axe-core, okuma ekraninda, duzeltmeden once",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "bulgunun kendisi",
+     "output_tail": "color-contrast x2: .metin b 4.36 (kagit), figcaption 3.82 (beyaz)",
+     "expect": 1
+    },
+    {
+     "command": "node --test",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "92 test degismedi; bu bir birim testi degil kapi",
+     "output_tail": "# pass 92",
+     "expect": 0
+    },
+    {
+     "command": "tarayicida ekran goruntusu alinip bakildi",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "marka rengi ayni sicaklikta, cocugun adi okunur",
+     "output_tail": "gorsel incelendi",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35775535953/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "CI: 'erisim' isi dahil bes is",
+     "output_tail": "hepsi success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T19:52:59Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "godot-refcheck",
+   "outcome": "advanced",
+   "head_before": "b083e3d2998ca0d5101289b106c76794c6de866d",
+   "head_after": "f7217ed6ea51702d106f7322efe34ff6c015f95e",
+   "summary": "Baglanti cozucusu, cogu projenin hic yazmadigi bir dosya bolumune bakiyordu: bu hesaptaki dort oyunun hic [connection] blogu yok, onun yerine GDScript'te 145 .connect( cagri noktasi var. Yeni kontrol missing-node-path, ayni iddiayi yazildigi yerde yarguluyor -- betigin icindeki $Head/Body ve get_node(\"Head/Body\"). Yanlis oldugunda motor null donuyor ve bir sonraki satir calisma aninda, oraya varan dalda oluyor. Sessizlik olculerek kuruldu: aliciyi gormezden gelmek tek bir oyunda 132 bulgu uretiyordu (kendi kurdugu sahneye uzanan headless test kosucusu), calisma aninda adlandirilan bir dugumu eksik saymak da son yanlis pozitifi (alet.name = \"Aletler\" + add_child). Bes gercek projede (~850 dosya) artik hicbir sey bildirmiyor; isirdigi yer yeni fikstur. 107 -> 128 test, ve CI'in headless Godot ile karsilastirma isi de gecti.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "cargo test",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "107 -> 128",
+     "output_tail": "59 + 24 + 45 passed",
+     "expect": 0
+    },
+    {
+     "command": "cargo clippy --all-targets -- -D warnings; cargo fmt --check",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yerel",
+     "output_tail": "temiz",
+     "expect": 0
+    },
+    {
+     "command": "godot-refcheck <bes gercek Godot projesi> --recursive",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "tek-tus-kosu, kanca, derin-kazi, yercekimi-cevir, godot-2d-sablon (~850 dosya)",
+     "output_tail": "0 missing-node-path",
+     "expect": 0
+    },
+    {
+     "command": "godot-refcheck yercekimi-cevir  # alici kontrolu eklenmeden once",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "olculen yanlis pozitif: test kosucusunun baska bir sahneye uzanmasi",
+     "output_tail": "132 errors",
+     "expect": 1
+    },
+    {
+     "command": "godot-refcheck derin-kazi  # calisma-ani ad kurali eklenmeden once",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "son yanlis pozitif: alet.name = 'Aletler' + add_child",
+     "output_tail": "1 error: $Dokunmatik/Aletler",
+     "expect": 1
+    },
+    {
+     "command": "godot-refcheck tests/projects/nodepath",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "kapi gercekten isiriyor mu",
+     "output_tail": "2 errors: $Yok, $Panel/Gitti",
+     "expect": 1
+    },
+    {
+     "command": "gh api .../actions/runs/35776712648/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "CI: uc isletim sistemi, lint, action, SARIF ve headless Godot 'agree with the engine'",
+     "output_tail": "yedi is de success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T19:57:43Z",
    "schema": 1
   }
  ]

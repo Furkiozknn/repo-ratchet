@@ -117,7 +117,7 @@ diff shows a round's work and nothing rewrites history.
 
 ## What round 1 found
 
-Round 1 is closed: **27 repositories, 27 records, 98 checks recorded.** The engine
+Round 1 is closed: **27 repositories, 27 records, 106 checks recorded.** The engine
 is not the point; what it finds is. A few of the entries, each with the check that
 backs it in [`kayitlar/tur-01.jsonl`](kayitlar/) and the whole log in
 [`KAYITLAR.md`](KAYITLAR.md):
@@ -150,6 +150,24 @@ backs it in [`kayitlar/tur-01.jsonl`](kayitlar/) and the whole log in
 The last one is the pattern worth naming: a measurement that is wrong inflates the
 headroom of everything it touches, so the engine's own signals get corrected by the
 rounds they misread.
+
+## Round 2, in progress
+
+Round 2 does not repeat round 1. Each entry builds on what the first round left
+open in that repository, and the first four are in
+[`kayitlar/tur-02.jsonl`](kayitlar/):
+
+- `buradane` closes the gap round 1's executable migration document found on its
+  first run: two OSM tags the frontend depended on and no backend schema produced.
+- `masal` audits the screen the child actually reads. Lighthouse scored
+  accessibility 100 — on the form it happens to open on; the reading screen had
+  never been audited, and had two WCAG 2.1 AA contrast failures in it.
+- `godot-refcheck` learned to judge the claim where it is written. None of the four
+  games here has a `[connection]` block at all; they make 145 `.connect(` calls from
+  GDScript instead, so the resolver was reading a file section most projects never
+  write.
+- This repository corrected its own measurement again: `<name>-test.js` is a test
+  file, and a test file nobody can count cases in is not zero cases.
 
 ## Working on this repository
 
