@@ -1,0 +1,257 @@
+{
+ "owner": "Furkiozknn",
+ "targets": [
+  {
+   "name": "Furkiozknn",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/Furkiozknn.git",
+   "archived": false,
+   "size_kb": 391,
+   "description": "Source of the profile README - agent infrastructure, developer tooling and the MCP servers underneath. Every number on the page is traced to the suite run that printed it (see TESTLER.md). Hand-written SVG, no generated stat cards.",
+   "skip_reason": null
+  },
+  {
+   "name": "Furkiozknn.github.io",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/Furkiozknn.github.io.git",
+   "archived": false,
+   "size_kb": 136,
+   "description": "The searchable project directory for this account. Every card is rendered from the project-meta.json a repository carries, so the page cannot claim anything the repository does not; a scheduled workflow rebuilds it from the live metadata every week.",
+   "skip_reason": null
+  },
+  {
+   "name": "ai-job-gateway",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/ai-job-gateway.git",
+   "archived": false,
+   "size_kb": 307,
+   "description": "The async job contract fal.ai, Black Forest Labs and RunPod each arrived at independently, as one hardened reference server: submit, poll, webhook. Idempotency keys that survive a restart, SSRF-guarded signed webhooks, and expiry as a status you can read rather than a silent 404. 156 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "ai-workflow-engine",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/ai-workflow-engine.git",
+   "archived": false,
+   "size_kb": 143,
+   "description": "A pipeline is a plain YAML DAG in git, not a diagram in a visual editor - and it is validated before it runs. A step that reads another step's result without declaring the dependency is rejected at load time, typo and all. Layers run concurrently, capped and backed off so width never becomes a burst. 72 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "ajans-os",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/ajans-os.git",
+   "archived": false,
+   "size_kb": 930,
+   "description": "An AI agency OS built research-first: 40 agent projects read with file:line evidence, then 11 ADRs, 6 machine-readable contracts and 13 modules. Its strongest proof is an acceptance run killed mid-task, reloaded from disk and resumed - then checked that no side effect repeated. Zero dependencies, 142 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "asset-provenance-toolkit",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/asset-provenance-toolkit.git",
+   "archived": false,
+   "size_kb": 175,
+   "description": "Which model, provider, params and job made this file - written into the file itself, so the record outlives the database row. PNG gets a lossless text chunk, JPEG a private APP1 marker spliced into container bytes with no re-encoding, everything else a sidecar. Honest about what C2PA does that this does not. 86 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "buradane",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/buradane.git",
+   "archived": false,
+   "size_kb": 12197,
+   "description": "\"What do I need, and where is the nearest one?\" 167,829 real OpenStreetMap places across all 81 provinces of Türkiye - pulled from each province's true boundary, not a box around its capital, so all 973 district centres have data within 15 km. Bearing, distance and a one-tap \"still here?\" on every result. 324 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "claude-code-intelligence",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/claude-code-intelligence.git",
+   "archived": false,
+   "size_kb": 670,
+   "description": "Where the tokens went, what it cost, and when the limit resets. Every number carries an evidence class - observed, derived, estimated - and one that fails the reconciliation gate is not printed at all. No prompt, response or file content is defined in any type, so a privacy review is a grep. Local-first. 261 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "claude-quota-monitor",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/claude-quota-monitor.git",
+   "archived": true,
+   "size_kb": 179,
+   "description": "Superseded early prototype of Claude Code quota tracking. The maintained implementation lives in claude-code-intelligence.",
+   "skip_reason": "archived: the repository is read-only, so no round can change it"
+  },
+  {
+   "name": "derin-kazi",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/derin-kazi.git",
+   "archived": false,
+   "size_kb": 2835,
+   "description": "Side-view digging and upgrade loop in Godot 4: mine ore, watch the fuel, sell, upgrade the rig, reach the core at 250 m. Turkish UI.",
+   "skip_reason": null
+  },
+  {
+   "name": "godot-2d-sablon",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/godot-2d-sablon.git",
+   "archived": false,
+   "size_kb": 52,
+   "description": "Two Godot 4.7 starters that already feel right to play: top-down with 8-way accelerated movement, and side-view with coyote time, jump buffering and variable jump height. The feel is measured, not guessed - the jump curves come from running the real _physics_process at the project's 60 Hz fixed step.",
+   "skip_reason": null
+  },
+  {
+   "name": "godot-refcheck",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/godot-refcheck.git",
+   "archived": false,
+   "size_kb": 195,
+   "description": "Godot reports a broken resource reference only when that scene loads, and a dead signal connection never at all. godot-refcheck reads the project files instead: missing paths, case-only breakage, uid problems, connections to nodes that are gone. It repairs the ones with a single provable answer.",
+   "skip_reason": null
+  },
+  {
+   "name": "kanca",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/kanca.git",
+   "archived": false,
+   "size_kb": 952,
+   "description": "Hook the ceiling, swing, release at the right moment and carry the momentum - a speed-focused 2D swinging platformer in Godot 4; medal times measured on 13 of 14 levels by a scripted bot. Turkish UI.",
+   "skip_reason": null
+  },
+  {
+   "name": "local-notes-search-mcp",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/local-notes-search-mcp.git",
+   "archived": false,
+   "size_kb": 371,
+   "description": "Ask your own files a question in plain language instead of guessing the keyword you typed six months ago. Semantic search as an MCP server: sqlite-vec + a multilingual ONNX model, incremental re-indexing, answers returned as file:line. No server, no API key, no network at query time. Grounded LLM Q&A is opt-in. 50 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "masal",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/masal.git",
+   "archived": false,
+   "size_kb": 555,
+   "description": "A bedtime story written around one child's name, age and hometown, with the colouring page drawn into it as vectors that fill cleanly instead of raster art that smudges past the outline. Six themes and a branch on page three - twelve readings. Turkish suffix engine, no photo upload, no download, no API key.",
+   "skip_reason": null
+  },
+  {
+   "name": "mcp-census",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/mcp-census.git",
+   "archived": false,
+   "size_kb": 219,
+   "description": "Reproducible count of the official MCP Registry: the same question asked three ways gives three different numbers, and this measures why.",
+   "skip_reason": null
+  },
+  {
+   "name": "mcp-vet",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/mcp-vet.git",
+   "archived": false,
+   "size_kb": 630,
+   "description": "An MCP tool description is read by the model on every single call, and nobody scrolls past it. mcp-vet reads the source before you install: 31 rules covering tool poisoning, exfiltration paths, install hooks and registry provenance, every finding quoted with file:line. Never executes what it audits. Zero dependencies, 289 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "mini-creative-toolkit",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/mini-creative-toolkit.git",
+   "archived": false,
+   "size_kb": 519,
+   "description": "23 CPU-first media tools behind one MCP server: background removal, EXIF/GPS stripping, resize, thumbnails, GIFs, video trim. 22 of them report \"network\": \"none\" in their own response payload rather than in a README, and a test fails if any other module ever imports an HTTP client. No GPU, no paid API. 326 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "model-comparison-harness",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/model-comparison-harness.git",
+   "archived": false,
+   "size_kb": 255,
+   "description": "Fire one request at N model backends at once and read latency, success and output side by side. --rubric adds a judge model returning pass/fail, a 0-1 score and a reason, so you compare quality too, not just who answered first. Every failure carries an error_type a script can branch on. CLI: mch. 74 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "nova-drift",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/nova-drift.git",
+   "archived": false,
+   "size_kb": 32038,
+   "description": "Endless browser space-runner with real Three.js bloom, hand-written particles and an audio engine synthesized live in Web Audio - not one sound file in the repo. Skim an obstacle without touching it and take the near-miss bonus. A daily run seeded from the UTC date deals every player the same obstacles. 0.7 MB, no build step.",
+   "skip_reason": null
+  },
+  {
+   "name": "nvidia-nim-mcp",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/nvidia-nim-mcp.git",
+   "archived": false,
+   "size_kb": 439,
+   "description": "Seven MCP tools on NVIDIA NIM's free tier - image, vision, translation, chat, content safety, embeddings, plus a health probe that tells you which models are still alive. Two of them need no API key at all. Falls through to Groq, Mistral, Gemini or Cerebras when a model is rate-limited or quietly retired. 80 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "prompt-template-manager",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/prompt-template-manager.git",
+   "archived": false,
+   "size_kb": 162,
+   "description": "Your prompts deserve git diff, not a database row. Templates as plain YAML, rendered through Jinja's SandboxedEnvironment with StrictUndefined so a typo'd variable fails loudly instead of rendering blank - plus a ${var} form that keeps an integer an integer instead of stringifying it. CLI: ptm. 61 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "repo-ratchet",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/repo-ratchet.git",
+   "archived": false,
+   "size_kb": 200,
+   "description": "The engine that keeps every repository on this account moving forward: it measures what each one can currently do, ranks where the headroom is, and refuses to record work that no check actually verified.",
+   "skip_reason": null
+  },
+  {
+   "name": "repo-vet",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/repo-vet.git",
+   "archived": false,
+   "size_kb": 109,
+   "description": "Checks what a GitHub repository claims about itself - install commands, badges, links, releases, published sites - against what is actually there. Six checks over the GitHub API, no clone, zero dependencies.",
+   "skip_reason": null
+  },
+  {
+   "name": "tek-tus-kosu",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/tek-tus-kosu.git",
+   "archived": false,
+   "size_kb": 333,
+   "description": "One-button endless rooftop runner in Godot 4: a rhythm mode that lays every obstacle on the music beat grid, plus a post-run timing histogram. Turkish UI.",
+   "skip_reason": null
+  },
+  {
+   "name": "turkce-ajanlar",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/turkce-ajanlar.git",
+   "archived": false,
+   "size_kb": 5314,
+   "description": "70 Claude Code sub-agents that think in Turkish rather than translate into it - they know PowerShell 5.1 has no &&, that cp1254 kills a Python tool before its first line prints, and that a heredoc eats backslashes. Plus 3 commands, 2 skills and an eval suite. One source, exported to Cursor, OpenCode, Copilot and Codex.",
+   "skip_reason": null
+  },
+  {
+   "name": "voice-io-mcp",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/voice-io-mcp.git",
+   "archived": false,
+   "size_kb": 399,
+   "description": "Speech in and speech out, needing no API key at all: Groq's free hosted tier when a key is set, Kokoro-82M and faster-whisper locally when it is not. Transcription checks extension and size before it ever opens the file, so \"transcribe the audio at .env\" is refused locally instead of uploaded. 4 tools, 35 tests.",
+   "skip_reason": null
+  },
+  {
+   "name": "yercekimi-cevir",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/yercekimi-cevir.git",
+   "archived": false,
+   "size_kb": 640,
+   "description": "No jump button - one key flips gravity and you fall onto the ceiling. 20 hand-built precision platformer rooms in Godot 4. Turkish UI.",
+   "skip_reason": null
+  }
+ ]
+}

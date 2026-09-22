@@ -164,11 +164,52 @@ TEST_PATTERNS = {
     "javascript": re.compile(r"^\s*(?:it|test)\s*\(", re.M),
     "typescript": re.compile(r"^\s*(?:it|test)\s*\(", re.M),
     "go": re.compile(r"^\s*func\s+Test\w+\s*\(", re.M),
+    # GDScript has no test framework in the engine, so projects hand-roll a
+    # SceneTree script full of `func _test_something()`. Counting only
+    # `it(`/`test(` reported those repositories as having no tests at all,
+    # which is how four shipped games looked like untested ones.
+    "gdscript": re.compile(r"^\s*func\s+_?test_\w+\s*\(", re.M),
 }
+
+#: A hand-rolled runner: a file that is clearly a test but declares its cases
+#: as plain assertions rather than through a framework. Counting the file as
+#: one case is wrong in the other direction, so these are counted by the
+#: assertion helper they call.
+HANDROLLED = re.compile(r"^\s*(?:ol|assert|check|expect)\s*\(", re.M)
+
+#: `func dogru(kosul: bool, ad: String) -> void:` - a hand-written assertion
+#: helper. Its name is whatever the author chose, and in these repositories it
+#: is Turkish, so the name cannot be hardcoded. What is stable is the shape:
+#: the first parameter is a bool. Finding the helper by shape and then counting
+#: its call sites works whatever it is called.
+GD_ASSERT_DEF = re.compile(r"^\s*func\s+(\w+)\s*\(\s*\w+\s*:\s*bool\b", re.M)
+
+
+def _gdscript_assertions(text: str) -> int:
+    """Count calls to a test file's own assertion helper.
+
+    Returns 0 when the file declares no helper of that shape, so a GDScript
+    file that is not really a test contributes nothing.
+    """
+    names = set(GD_ASSERT_DEF.findall(text))
+    if not names:
+        return 0
+    total = 0
+    for name in names:
+        # The definition line itself is `func name(`, a call site is not.
+        total += len(re.findall(r"(?<!func )\b%s\s*\(" % re.escape(name), text))
+    return total
 
 
 def test_count(root: Path) -> Signal:
-    """How many test cases the repository declares, counted in the source."""
+    """How many test cases the repository declares, counted in the source.
+
+    The count is of *declarations*, not of a run: this has to work on a
+    repository in any language without executing anything in it. Where a
+    language has no test framework, the convention the project actually uses
+    is counted instead - a game with 853 hand-rolled cases is not a game
+    without tests.
+    """
     total = 0
     per_file: list[str] = []
     for p in _walk(root):
@@ -178,7 +219,13 @@ def test_count(root: Path) -> Signal:
             continue
         if not _is_test_path(p, root) and lang not in ("rust",):
             continue
-        n = len(pat.findall(_read(p)))
+        text = _read(p)
+        n = len(pat.findall(text))
+        if not n and _is_test_path(p, root):
+            if lang in ("javascript", "typescript"):
+                n = len(HANDROLLED.findall(text))
+            elif lang == "gdscript":
+                n = _gdscript_assertions(text)
         if n:
             total += n
             per_file.append("%s: %d" % (p.relative_to(root).as_posix(), n))

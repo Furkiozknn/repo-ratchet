@@ -7,7 +7,11 @@
   "releases": "https://github.com/Furkiozknn/repo-ratchet/releases",
   "status": "active",
   "category": "developer-tool",
-  "platform": ["linux", "macos", "windows"],
+  "platform": [
+    "linux",
+    "macos",
+    "windows"
+  ],
   "primary_language": "Python",
   "technologies": [
     "Python 3.11 standard library only",
@@ -38,13 +42,16 @@
     "videos": []
   },
   "tests": {
-    "count": 106,
+    "count": 112,
     "framework": "pytest",
     "command": "python3 -m pytest -q",
-    "evidence": "106 passed"
+    "evidence": "112 passed"
   },
   "ci": {
-    "workflows": ["ci.yml", "tur.yml"],
+    "workflows": [
+      "ci.yml",
+      "tur.yml"
+    ],
     "badge": "https://github.com/Furkiozknn/repo-ratchet/actions/workflows/ci.yml/badge.svg"
   },
   "docs": {
@@ -58,7 +65,11 @@
   },
   "social": {
     "headline": "A ratchet only turns one way: measure what a repository can do, rank the headroom, and refuse to record work nobody verified.",
-    "hashtags": ["opensource", "devtools", "python"],
+    "hashtags": [
+      "opensource",
+      "devtools",
+      "python"
+    ],
     "primary_link": "https://github.com/Furkiozknn/repo-ratchet"
   },
   "provenance": {

@@ -1,0 +1,5014 @@
+{
+ "schema": 1,
+ "generated": "2026-09-22T16:39:37Z",
+ "surveys": [
+  {
+   "schema": 1,
+   "repo": "Furkiozknn",
+   "head": "03ec74015369690f28d6d6016c514739c4e04703",
+   "taken_at": "2026-09-22T16:15:41Z",
+   "total_headroom": 2.329,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 82501
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 82501 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.364,
+     "unit": "test bytes per source byte",
+     "detail": "60491 source bytes, 22010 test bytes in 1 files",
+     "evidence": [
+      "schema/test_schema.py"
+     ],
+     "headroom": 0.27228843960258553
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 58,
+     "unit": "cases",
+     "detail": "58 cases across 1 files",
+     "evidence": [
+      "schema/test_schema.py: 58"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 10,
+     "unit": "symbols",
+     "detail": "10 of 17 public symbols carry no doc comment",
+     "evidence": [
+      "schema/derle.py:99 main",
+      "schema/uret.py:73 surum",
+      "schema/uret.py:140 ilk",
+      "schema/uret.py:147 uret",
+      "schema/uret.py:202 main",
+      "schema/dogrula.py:124 depo_dogrula",
+      "schema/dogrula.py:138 main",
+      "schema/koruma.py:67 main"
+     ],
+     "headroom": 0.588
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "5 workflow files, ~15 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "denetim.yml",
+      "haftalik.yml",
+      "projeler.yml",
+      "yenile.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 0,
+     "unit": "commands",
+     "detail": "0 runnable-looking commands in 0 shell blocks",
+     "evidence": [],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 15275,
+     "unit": "bytes",
+     "detail": "15275 bytes, 19 sections, 18 images",
+     "evidence": [
+      "▸ No install, no signup — just click",
+      "🚀 [nova-drift →](https://furkiozknn.github.io/nova-drift/)",
+      "📖 [masal →](https://furkiozknn.github.io/masal/)",
+      "🇹🇷 [turkce-ajanlar →](https://furkiozknn.github.io/turkce-ajanlar/)",
+      "▸ This is one system, not twenty-seven side projects",
+      "▸ Start here",
+      "▸ Everything, in one table",
+      "Agent infrastructure, MCP and developer tooling",
+      "Games — Godot 4, each one tested headlessly in CI",
+      "▸ Every repository carries its own metadata"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 763,
+     "unit": "lines",
+     "detail": "schema/denetim.py is the longest source file",
+     "evidence": [
+      "schema/denetim.py"
+     ],
+     "headroom": 0.3025
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (85 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 2 left null",
+     "evidence": [
+      "tests",
+      "version"
+     ],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "5 workflow files, ~15 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "denetim.yml",
+      "haftalik.yml",
+      "projeler.yml",
+      "yenile.yml"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.588,
+     "note": "10 of 17 public symbols carry no doc comment",
+     "evidence": [
+      "schema/derle.py:99 main",
+      "schema/uret.py:73 surum",
+      "schema/uret.py:140 ilk",
+      "schema/uret.py:147 uret",
+      "schema/uret.py:202 main",
+      "schema/dogrula.py:124 depo_dogrula"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (85 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.302,
+     "note": "schema/denetim.py is the longest source file",
+     "evidence": [
+      "schema/denetim.py"
+     ]
+    },
+    {
+     "signal": "test_mass",
+     "headroom": 0.272,
+     "note": "60491 source bytes, 22010 test bytes in 1 files",
+     "evidence": [
+      "schema/test_schema.py"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "Furkiozknn.github.io",
+   "head": "35d39083497f8ac379db741c89962d2168688e47",
+   "taken_at": "2026-09-22T16:15:42Z",
+   "total_headroom": 4.165,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 21593
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 21593 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.0,
+     "unit": "test bytes per source byte",
+     "detail": "21593 source bytes, 0 test bytes in 0 files",
+     "evidence": [],
+     "headroom": 1.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 0,
+     "unit": "cases",
+     "detail": "no test cases found",
+     "evidence": [],
+     "headroom": 1.0
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 10,
+     "unit": "symbols",
+     "detail": "10 of 13 public symbols carry no doc comment",
+     "evidence": [
+      "uret.py:46 fetch",
+      "uret.py:54 repo_names",
+      "uret.py:70 collect",
+      "uret.py:140 sitemap",
+      "uret.py:148 robots",
+      "uret.py:191 e",
+      "uret.py:195 chip",
+      "uret.py:199 card"
+     ],
+     "headroom": 0.769
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "1 workflow files, ~4 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "yenile.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 2,
+     "unit": "commands",
+     "detail": "2 runnable-looking commands in 1 shell blocks",
+     "evidence": [
+      "python3 uret.py            # fetch every repository's metadata, then render",
+      "python3 uret.py --yerel    # render from the snapshot already in veri/"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 2130,
+     "unit": "bytes",
+     "detail": "2130 bytes, 2 sections, 0 images",
+     "evidence": [
+      "Following it without opening it",
+      "Licence"
+     ],
+     "headroom": 0.148
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 497,
+     "unit": "lines",
+     "detail": "uret.py is the longest source file",
+     "evidence": [
+      "uret.py"
+     ],
+     "headroom": 0.08083333333333333
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (4 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 2 left null",
+     "evidence": [
+      "tests",
+      "version"
+     ],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "test_mass",
+     "headroom": 1.0,
+     "note": "21593 source bytes, 0 test bytes in 0 files",
+     "evidence": []
+    },
+    {
+     "signal": "test_count",
+     "headroom": 1.0,
+     "note": "no test cases found",
+     "evidence": []
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.769,
+     "note": "10 of 13 public symbols carry no doc comment",
+     "evidence": [
+      "uret.py:46 fetch",
+      "uret.py:54 repo_names",
+      "uret.py:70 collect",
+      "uret.py:140 sitemap",
+      "uret.py:148 robots",
+      "uret.py:191 e"
+     ]
+    },
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "1 workflow files, ~4 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "yenile.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (4 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "readme_depth",
+     "headroom": 0.148,
+     "note": "2130 bytes, 2 sections, 0 images",
+     "evidence": [
+      "Following it without opening it",
+      "Licence"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.081,
+     "note": "uret.py is the longest source file",
+     "evidence": [
+      "uret.py"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "ai-job-gateway",
+   "head": "1282526f2cf4e758bcb42088bc1baae7611eb65f",
+   "taken_at": "2026-09-22T16:15:43Z",
+   "total_headroom": 1.41,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 183229
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 183229 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.778,
+     "unit": "test bytes per source byte",
+     "detail": "103042 source bytes, 80187 test bytes in 10 files",
+     "evidence": [
+      "tests/conftest.py",
+      "tests/test_client.py",
+      "tests/test_default_registry.py",
+      "tests/test_manager.py",
+      "tests/test_providers.py",
+      "tests/test_providers_local.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 117,
+     "unit": "cases",
+     "detail": "117 cases across 9 files",
+     "evidence": [
+      "tests/test_client.py: 9",
+      "tests/test_default_registry.py: 2",
+      "tests/test_manager.py: 24",
+      "tests/test_providers.py: 7",
+      "tests/test_providers_local.py: 9",
+      "tests/test_providers_pollinations.py: 14",
+      "tests/test_scale_and_atomicity.py: 11",
+      "tests/test_server.py: 33"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 3,
+     "unit": "symbols",
+     "detail": "3 of 35 public symbols carry no doc comment",
+     "evidence": [
+      "src/ai_job_gateway/cli.py:69 main",
+      "src/ai_job_gateway/providers_local.py:48 toolkit_available",
+      "src/ai_job_gateway/server.py:147 create_app"
+     ],
+     "headroom": 0.086
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 19,
+     "unit": "commands",
+     "detail": "19 runnable-looking commands in 8 shell blocks",
+     "evidence": [
+      "uv sync --extra media      # opt in to the local media capabilities",
+      "uv run ai-job-gateway serve",
+      "curl -s http://127.0.0.1:8000/v1/capabilities",
+      "uv run ai-job-gateway submit generate-image '{\"prompt\": \"a lighthouse at dusk\", \"width\": 768, \"height\": 512}'",
+      "uv run ai-job-gateway submit media-upscale '{\"image_path\": \"output/<job-id>.jpg\", \"scale\": 2}'",
+      "uv sync",
+      "uv run ai-job-gateway serve",
+      "uv run ai-job-gateway serve --db jobs.db"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 23394,
+     "unit": "bytes",
+     "detail": "23394 bytes, 16 sections, 4 images",
+     "evidence": [
+      "Why this contract",
+      "Architecture",
+      "Writing a new Provider",
+      "Providers that ship",
+      "What the real providers guarantee",
+      "Running the reference server",
+      "Webhooks",
+      "Idempotent submission",
+      "Restart recovery",
+      "Operability"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 588,
+     "unit": "lines",
+     "detail": "src/ai_job_gateway/store.py is the longest source file",
+     "evidence": [
+      "src/ai_job_gateway/store.py"
+     ],
+     "headroom": 0.15666666666666668
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 1,
+     "unit": "runtime dependencies",
+     "detail": "python: 1",
+     "evidence": [
+      "fastapi>=0.115.0"
+     ],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (36 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (36 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.157,
+     "note": "src/ai_job_gateway/store.py is the longest source file",
+     "evidence": [
+      "src/ai_job_gateway/store.py"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.086,
+     "note": "3 of 35 public symbols carry no doc comment",
+     "evidence": [
+      "src/ai_job_gateway/cli.py:69 main",
+      "src/ai_job_gateway/providers_local.py:48 toolkit_available",
+      "src/ai_job_gateway/server.py:147 create_app"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "ai-workflow-engine",
+   "head": "9dd5c07fdc8b2cfe748359a098a723652d4a7374",
+   "taken_at": "2026-09-22T16:15:43Z",
+   "total_headroom": 1.602,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 68336
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 68336 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.916,
+     "unit": "test bytes per source byte",
+     "detail": "35662 source bytes, 32674 test bytes in 4 files",
+     "evidence": [
+      "tests/test_cli.py",
+      "tests/test_pipeline.py",
+      "tests/test_runner.py",
+      "tests/test_templating.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 63,
+     "unit": "cases",
+     "detail": "63 cases across 4 files",
+     "evidence": [
+      "tests/test_cli.py: 11",
+      "tests/test_pipeline.py: 22",
+      "tests/test_runner.py: 17",
+      "tests/test_templating.py: 13"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 10,
+     "unit": "symbols",
+     "detail": "10 of 23 public symbols carry no doc comment",
+     "evidence": [
+      "src/ai_workflow_engine/cli.py:93 main",
+      "src/ai_workflow_engine/templating.py:34 TemplateRenderError",
+      "src/ai_workflow_engine/templating.py:38 render_params",
+      "src/ai_workflow_engine/runner.py:83 PipelineRunError",
+      "src/ai_workflow_engine/runner.py:91 StepResult",
+      "src/ai_workflow_engine/pipeline.py:32 PipelineError",
+      "src/ai_workflow_engine/pipeline.py:67 Step",
+      "src/ai_workflow_engine/pipeline.py:75 Pipeline"
+     ],
+     "headroom": 0.435
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 6,
+     "unit": "commands",
+     "detail": "6 runnable-looking commands in 3 shell blocks",
+     "evidence": [
+      "uv sync --group dev",
+      "awe validate examples/generate-and-upscale.yaml",
+      "awe run examples/generate-and-upscale.yaml \\",
+      "--gateway-url http://localhost:8000 \\",
+      "--var prompt=\"a red sneaker on a white background\"",
+      "uv run pytest -v"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 16625,
+     "unit": "bytes",
+     "detail": "16625 bytes, 12 sections, 5 images",
+     "evidence": [
+      "Why",
+      "What it does",
+      "Install",
+      "Pipeline file format",
+      "CLI usage",
+      "Pacing: what a layer costs the gateway",
+      "Library usage",
+      "Testing",
+      "Security",
+      "Roadmap / known v1 limitations"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 264,
+     "unit": "lines",
+     "detail": "src/ai_workflow_engine/pipeline.py is the longest source file",
+     "evidence": [
+      "src/ai_workflow_engine/pipeline.py"
+     ],
+     "headroom": 0.0
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 3,
+     "unit": "runtime dependencies",
+     "detail": "python: 3",
+     "evidence": [
+      "httpx>=0.27.0",
+      "pyyaml>=6.0",
+      "jinja2>=3.1.0"
+     ],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (27 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (27 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.435,
+     "note": "10 of 23 public symbols carry no doc comment",
+     "evidence": [
+      "src/ai_workflow_engine/cli.py:93 main",
+      "src/ai_workflow_engine/templating.py:34 TemplateRenderError",
+      "src/ai_workflow_engine/templating.py:38 render_params",
+      "src/ai_workflow_engine/runner.py:83 PipelineRunError",
+      "src/ai_workflow_engine/runner.py:91 StepResult",
+      "src/ai_workflow_engine/pipeline.py:32 PipelineError"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "ajans-os",
+   "head": "8d3103ef8b6f5735f69ace2154aa2a776896d361",
+   "taken_at": "2026-09-22T16:15:44Z",
+   "total_headroom": 1.404,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "javascript": 316120,
+      "typescript": 34057
+     },
+     "unit": "bytes",
+     "detail": "primary: javascript",
+     "evidence": [
+      "javascript 316120 bytes",
+      "typescript 34057 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.519,
+     "unit": "test bytes per source byte",
+     "detail": "230563 source bytes, 119614 test bytes in 15 files",
+     "evidence": [
+      "src/agent-registry/index.test.js",
+      "src/context-manager/index.test.js",
+      "src/cost-manager/index.test.js",
+      "src/critic/index.test.js",
+      "src/evaluator/index.test.js",
+      "src/iskelet.test.js"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 142,
+     "unit": "cases",
+     "detail": "142 cases across 15 files",
+     "evidence": [
+      "src/agent-registry/index.test.js: 7",
+      "src/context-manager/index.test.js: 11",
+      "src/cost-manager/index.test.js: 15",
+      "src/critic/index.test.js: 7",
+      "src/evaluator/index.test.js: 20",
+      "src/iskelet.test.js: 2",
+      "src/kabul-kosusu.test.js: 3",
+      "src/memory-manager/index.test.js: 9"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": null,
+     "unit": "",
+     "detail": "no Python or Rust public surface",
+     "evidence": [],
+     "headroom": null
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 3,
+     "unit": "commands",
+     "detail": "3 runnable-looking commands in 1 shell blocks",
+     "evidence": [
+      "npm test        # 142 test (uçtan uca kabul koşusu dahil)",
+      "npm run yapi    # yapı doğrulama: 13 modül, blueprint §2 ile eşli, import yönü tek",
+      "npm run kapi    # ikisi birden — kapı kontrolü"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 5738,
+     "unit": "bytes",
+     "detail": "5738 bytes, 8 sections, 8 images",
+     "evidence": [
+      "Çalıştır",
+      "Neden var",
+      "Altı sütun",
+      "Program",
+      "Klasörler",
+      "Dil",
+      "Lisans",
+      "Bu ekosistemden başka projeler"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 685,
+     "unit": "lines",
+     "detail": "arac/sema-dogrula.js is the longest source file",
+     "evidence": [
+      "arac/sema-dogrula.js"
+     ],
+     "headroom": 0.2375
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "node: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (131 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 1 left null",
+     "evidence": [
+      "version"
+     ],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (131 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.237,
+     "note": "arac/sema-dogrula.js is the longest source file",
+     "evidence": [
+      "arac/sema-dogrula.js"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "asset-provenance-toolkit",
+   "head": "b5efbb8a92d0f58a21a967b4e0d4d5a2439b3068",
+   "taken_at": "2026-09-22T16:15:46Z",
+   "total_headroom": 1.643,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 67694,
+      "shell": 1233
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 67694 bytes",
+      "shell 1233 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.983,
+     "unit": "test bytes per source byte",
+     "detail": "34751 source bytes, 34176 test bytes in 8 files",
+     "evidence": [
+      "tests/conftest.py",
+      "tests/test_cli.py",
+      "tests/test_core.py",
+      "tests/test_gateway_client.py",
+      "tests/test_jpeg_backend.py",
+      "tests/test_png_backend.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 86,
+     "unit": "cases",
+     "detail": "86 cases across 7 files",
+     "evidence": [
+      "tests/test_cli.py: 16",
+      "tests/test_core.py: 16",
+      "tests/test_gateway_client.py: 5",
+      "tests/test_jpeg_backend.py: 12",
+      "tests/test_png_backend.py: 17",
+      "tests/test_schema.py: 13",
+      "tests/test_sidecar_backend.py: 7"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 10,
+     "unit": "symbols",
+     "detail": "10 of 21 public symbols carry no doc comment",
+     "evidence": [
+      "src/asset_provenance_toolkit/cli.py:131 main",
+      "src/asset_provenance_toolkit/jpeg_backend.py:144 extract_jpeg",
+      "src/asset_provenance_toolkit/gateway_client.py:16 JobFetchError",
+      "src/asset_provenance_toolkit/gateway_client.py:20 fetch_job_record",
+      "src/asset_provenance_toolkit/schema.py:25 Provenance",
+      "src/asset_provenance_toolkit/png_backend.py:208 extract_png",
+      "src/asset_provenance_toolkit/sidecar_backend.py:20 sidecar_path",
+      "src/asset_provenance_toolkit/sidecar_backend.py:24 embed_sidecar"
+     ],
+     "headroom": 0.476
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 16,
+     "unit": "commands",
+     "detail": "16 runnable-looking commands in 3 shell blocks",
+     "evidence": [
+      "uv sync --group dev",
+      "uv run aprov embed cat.png --capability image-generate --provider flux-2 \\",
+      "--params '{\"prompt\": \"a red sneaker on a white background\", \"seed\": 42}'",
+      "uv run aprov extract cat.png --compact",
+      "uv run aprov verify cat.png",
+      "aprov embed output.png --capability image-generate --provider flux-2 \\",
+      "--params '{\"prompt\": \"a red sneaker on a white background\", \"seed\": 42}' \\",
+      "--extra '{\"steps\": 30, \"cfg_scale\": 7.5}'"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 11085,
+     "unit": "bytes",
+     "detail": "11085 bytes, 12 sections, 4 images",
+     "evidence": [
+      "Why",
+      "What it does",
+      "Quickstart",
+      "Backends",
+      "Relationship to C2PA / Content Credentials",
+      "CLI usage",
+      "Library usage",
+      "The provenance schema",
+      "Testing",
+      "What this tool does NOT do"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 224,
+     "unit": "lines",
+     "detail": "src/asset_provenance_toolkit/png_backend.py is the longest source file",
+     "evidence": [
+      "src/asset_provenance_toolkit/png_backend.py"
+     ],
+     "headroom": 0.0
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 2,
+     "unit": "runtime dependencies",
+     "detail": "python: 2",
+     "evidence": [
+      "pillow>=11.0.0",
+      "httpx>=0.27.0"
+     ],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (24 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (24 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.476,
+     "note": "10 of 21 public symbols carry no doc comment",
+     "evidence": [
+      "src/asset_provenance_toolkit/cli.py:131 main",
+      "src/asset_provenance_toolkit/jpeg_backend.py:144 extract_jpeg",
+      "src/asset_provenance_toolkit/gateway_client.py:16 JobFetchError",
+      "src/asset_provenance_toolkit/gateway_client.py:20 fetch_job_record",
+      "src/asset_provenance_toolkit/schema.py:25 Provenance",
+      "src/asset_provenance_toolkit/png_backend.py:208 extract_png"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "buradane",
+   "head": "08a9fffe81c3f09830dd3ca0d5279f029695592c",
+   "taken_at": "2026-09-22T16:15:49Z",
+   "total_headroom": 3.166,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "typescript": 568961,
+      "python": 297393,
+      "javascript": 11073
+     },
+     "unit": "bytes",
+     "detail": "primary: typescript",
+     "evidence": [
+      "typescript 568961 bytes",
+      "python 297393 bytes",
+      "javascript 11073 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.292,
+     "unit": "test bytes per source byte",
+     "detail": "679377 source bytes, 198050 test bytes in 34 files",
+     "evidence": [
+      "backend/tests/__init__.py",
+      "backend/tests/conftest.py",
+      "backend/tests/test_admin_moderation.py",
+      "backend/tests/test_dedup_integration.py",
+      "backend/tests/test_dedup_math.py",
+      "backend/tests/test_default_secret_warning.py"
+     ],
+     "headroom": 0.4169658378190607
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 322,
+     "unit": "cases",
+     "detail": "322 cases across 32 files",
+     "evidence": [
+      "backend/tests/test_admin_moderation.py: 14",
+      "backend/tests/test_dedup_integration.py: 4",
+      "backend/tests/test_dedup_math.py: 8",
+      "backend/tests/test_default_secret_warning.py: 3",
+      "backend/tests/test_migrations.py: 2",
+      "backend/tests/test_moderation.py: 10",
+      "backend/tests/test_pool_ceiling.py: 5",
+      "backend/tests/test_query_counts.py: 2"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 76,
+     "unit": "symbols",
+     "detail": "76 of 107 public symbols carry no doc comment",
+     "evidence": [
+      "backend/app/services/dedup.py:35 DedupCandidate",
+      "backend/app/services/bootstrap.py:28 ensure_bootstrap_admin",
+      "backend/app/services/search.py:46 PlaceSearchParams",
+      "backend/app/services/moderation.py:49 create_place_suggestion",
+      "backend/app/services/moderation.py:81 create_place_report",
+      "backend/app/services/moderation.py:168 create_place_verification",
+      "backend/app/services/reliability.py:21 ReliabilityInputs",
+      "backend/app/services/reliability.py:32 compute_reliability_score"
+     ],
+     "headroom": 0.71
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "frontend.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 22,
+     "unit": "commands",
+     "detail": "22 runnable-looking commands in 6 shell blocks",
+     "evidence": [
+      "cd backend",
+      "docker compose up -d --wait",
+      "uv sync",
+      "uv run alembic upgrade head",
+      "uv run python -m app.ingest.seed_categories",
+      "uv run python -m app.ingest.turkiye_api",
+      "uv run python -m app.ingest.osm_overpass",
+      "uv run uvicorn app.main:app --reload"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 41724,
+     "unit": "bytes",
+     "detail": "41724 bytes, 29 sections, 6 images",
+     "evidence": [
+      "v1 Kapsamı",
+      "Hızlı Başlangıç",
+      "Backend",
+      "Frontend (demo)",
+      "Mimari",
+      "Neden bu mimari? (backend)",
+      "Neden bir demo veri adaptörü var? (frontend)",
+      "Harita render yaklaşımı (frontend)",
+      "Proje Yapısı",
+      "Veri Pipeline"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 1446,
+     "unit": "lines",
+     "detail": "frontend/src/lib/places-repository.ts is the longest source file",
+     "evidence": [
+      "frontend/src/lib/places-repository.ts"
+     ],
+     "headroom": 0.8716666666666667
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (128 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 1 left null",
+     "evidence": [
+      "version"
+     ],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.872,
+     "note": "frontend/src/lib/places-repository.ts is the longest source file",
+     "evidence": [
+      "frontend/src/lib/places-repository.ts"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.71,
+     "note": "76 of 107 public symbols carry no doc comment",
+     "evidence": [
+      "backend/app/services/dedup.py:35 DedupCandidate",
+      "backend/app/services/bootstrap.py:28 ensure_bootstrap_admin",
+      "backend/app/services/search.py:46 PlaceSearchParams",
+      "backend/app/services/moderation.py:49 create_place_suggestion",
+      "backend/app/services/moderation.py:81 create_place_report",
+      "backend/app/services/moderation.py:168 create_place_verification"
+     ]
+    },
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "frontend.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (128 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "test_mass",
+     "headroom": 0.417,
+     "note": "679377 source bytes, 198050 test bytes in 34 files",
+     "evidence": [
+      "backend/tests/__init__.py",
+      "backend/tests/conftest.py",
+      "backend/tests/test_admin_moderation.py",
+      "backend/tests/test_dedup_integration.py",
+      "backend/tests/test_dedup_math.py",
+      "backend/tests/test_default_secret_warning.py"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "claude-code-intelligence",
+   "head": "947ef0c56fba2a9e8354ed1b54d04ead015f2361",
+   "taken_at": "2026-09-22T16:15:50Z",
+   "total_headroom": 2.39,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 509954
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 509954 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.449,
+     "unit": "test bytes per source byte",
+     "detail": "351935 source bytes, 158019 test bytes in 28 files",
+     "evidence": [
+      "research/tools/test_catalog.py",
+      "tests/test_adapter_contract.py",
+      "tests/test_advisor_act.py",
+      "tests/test_alerts.py",
+      "tests/test_anomaly.py",
+      "tests/test_api_http.py"
+     ],
+     "headroom": 0.10199894866949866
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 234,
+     "unit": "cases",
+     "detail": "234 cases across 28 files",
+     "evidence": [
+      "research/tools/test_catalog.py: 9",
+      "tests/test_adapter_contract.py: 8",
+      "tests/test_advisor_act.py: 3",
+      "tests/test_alerts.py: 6",
+      "tests/test_anomaly.py: 5",
+      "tests/test_api_http.py: 10",
+      "tests/test_claude_code_paths.py: 8",
+      "tests/test_cli.py: 18"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 181,
+     "unit": "symbols",
+     "detail": "181 of 230 public symbols carry no doc comment",
+     "evidence": [
+      "research/tools/catalog.py:67 norm_url",
+      "research/tools/catalog.py:74 name_from_url",
+      "research/tools/catalog.py:85 load",
+      "research/tools/catalog.py:98 save",
+      "research/tools/catalog.py:106 total",
+      "research/tools/catalog.py:122 merge",
+      "research/tools/catalog.py:160 cmd_ingest",
+      "research/tools/catalog.py:209 cmd_stats"
+     ],
+     "headroom": 0.787
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~8 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 0,
+     "unit": "commands",
+     "detail": "0 runnable-looking commands in 0 shell blocks",
+     "evidence": [],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 6401,
+     "unit": "bytes",
+     "detail": "6401 bytes, 6 sections, 3 images",
+     "evidence": [
+      "Hızlı başlangıç",
+      "Yöntem ve durum",
+      "Temel ilkeler (baştan sabit; araştırmayla somutlaştı)",
+      "Önceki çalışmayla ilişki",
+      "Güvenlik notu (araştırmadan)",
+      "Bu ekosistemden başka projeler"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 801,
+     "unit": "lines",
+     "detail": "cci/cli.py is the longest source file",
+     "evidence": [
+      "cci/cli.py"
+     ],
+     "headroom": 0.33416666666666667
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 2,
+     "unit": "runtime dependencies",
+     "detail": "python: 2",
+     "evidence": [
+      "pydantic>=2.7,<3",
+      "tzdata>=2026.3"
+     ],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (58 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.787,
+     "note": "181 of 230 public symbols carry no doc comment",
+     "evidence": [
+      "research/tools/catalog.py:67 norm_url",
+      "research/tools/catalog.py:74 name_from_url",
+      "research/tools/catalog.py:85 load",
+      "research/tools/catalog.py:98 save",
+      "research/tools/catalog.py:106 total",
+      "research/tools/catalog.py:122 merge"
+     ]
+    },
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~8 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (58 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.334,
+     "note": "cci/cli.py is the longest source file",
+     "evidence": [
+      "cci/cli.py"
+     ]
+    },
+    {
+     "signal": "test_mass",
+     "headroom": 0.102,
+     "note": "351935 source bytes, 158019 test bytes in 28 files",
+     "evidence": [
+      "research/tools/test_catalog.py",
+      "tests/test_adapter_contract.py",
+      "tests/test_advisor_act.py",
+      "tests/test_alerts.py",
+      "tests/test_anomaly.py",
+      "tests/test_api_http.py"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "derin-kazi",
+   "head": "35fb0a981dfbd3457b646260d8f35fe643965af8",
+   "taken_at": "2026-09-22T16:39:37Z",
+   "total_headroom": 1.872,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "gdscript": 337528
+     },
+     "unit": "bytes",
+     "detail": "primary: gdscript",
+     "evidence": [
+      "gdscript 337528 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.711,
+     "unit": "test bytes per source byte",
+     "detail": "197254 source bytes, 140274 test bytes in 6 files",
+     "evidence": [
+      "tests/bot.gd",
+      "tests/test_calistir.gd",
+      "tests/test_denge.gd",
+      "tests/test_fay_olcum.gd",
+      "tests/test_insan.gd",
+      "tests/test_oynanis.gd"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 452,
+     "unit": "cases",
+     "detail": "452 cases across 4 files",
+     "evidence": [
+      "tests/test_calistir.gd: 279",
+      "tests/test_denge.gd: 7",
+      "tests/test_insan.gd: 10",
+      "tests/test_oynanis.gd: 156"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": null,
+     "unit": "",
+     "detail": "no Python or Rust public surface",
+     "evidence": [],
+     "headroom": null
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yapi.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 0,
+     "unit": "commands",
+     "detail": "0 runnable-looking commands in 0 shell blocks",
+     "evidence": [],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 27144,
+     "unit": "bytes",
+     "detail": "27144 bytes, 16 sections, 3 images",
+     "evidence": [
+      "Kontroller",
+      "Oyun döngüsü",
+      "Beş katman",
+      "Geliştirmeler ve aletler",
+      "Keşif sisi (v0.5)",
+      "Derinlik ambiyansı (v0.6)",
+      "Sunum turu ve ışınlama işareti (v0.7)",
+      "Canlı yeraltı (v0.3) ve depremin kararı (v0.4, pano v0.5)",
+      "Tohum kodu, günlük dünya, Derin Mod (v0.3)",
+      "Verilen kararlar"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 1222,
+     "unit": "lines",
+     "detail": "scripts/oyun.gd is the longest source file",
+     "evidence": [
+      "scripts/oyun.gd"
+     ],
+     "headroom": 0.685
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": 13,
+     "unit": "commits since last tag",
+     "detail": "last tag v0.7.2, 13 commits since",
+     "evidence": [
+      "v0.7.2"
+     ],
+     "headroom": 0.52
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.685,
+     "note": "scripts/oyun.gd is the longest source file",
+     "evidence": [
+      "scripts/oyun.gd"
+     ]
+    },
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yapi.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.52,
+     "note": "last tag v0.7.2, 13 commits since",
+     "evidence": [
+      "v0.7.2"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "godot-2d-sablon",
+   "head": "dd8973c2f5a4e9e87782fcfc8a6f0927b336e454",
+   "taken_at": "2026-09-22T16:15:51Z",
+   "total_headroom": 3.834,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 9088,
+      "gdscript": 2434
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 9088 bytes",
+      "gdscript 2434 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.0,
+     "unit": "test bytes per source byte",
+     "detail": "11522 source bytes, 0 test bytes in 0 files",
+     "evidence": [],
+     "headroom": 1.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 0,
+     "unit": "cases",
+     "detail": "no test cases found",
+     "evidence": [],
+     "headroom": 1.0
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 2,
+     "unit": "symbols",
+     "detail": "2 of 3 public symbols carry no doc comment",
+     "evidence": [
+      "arac/dogrula.py:61 main",
+      "arac/zipla-egrisi.py:115 main"
+     ],
+     "headroom": 0.667
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "1 workflow files, ~4 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 10,
+     "unit": "commands",
+     "detail": "10 runnable-looking commands in 4 shell blocks",
+     "evidence": [
+      "git clone https://github.com/Furkiozknn/godot-2d-sablon.git",
+      "cd godot-2d-sablon",
+      "godot --path ustten-gorunum",
+      "godot --path yandan-gorunum",
+      "godot --headless --path ustten-gorunum --export-release \"Windows Masaustu\"",
+      "godot --headless --path ustten-gorunum --export-release \"Web (HTML5)\"",
+      "python3 arac/zipla-egrisi.py    # eğrileri yazdırır",
+      "python3 arac/dogrula.py         # README ile karşılaştırır (8 kontrol)"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 8024,
+     "unit": "bytes",
+     "detail": "8024 bytes, 11 sections, 6 images",
+     "evidence": [
+      "Ne var içinde",
+      "Hemen çalıştır",
+      "Yandan görünümdeki üç önemli detay",
+      "Neden GL Compatibility",
+      "Proje yapısı",
+      "Dışa aktarma",
+      "Nasıl devam edilir",
+      "Sayılar nasıl korunuyor",
+      "Katkı",
+      "Lisans"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 143,
+     "unit": "lines",
+     "detail": "arac/zipla-egrisi.py is the longest source file",
+     "evidence": [
+      "arac/zipla-egrisi.py"
+     ],
+     "headroom": 0.0
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (20 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 2 left null",
+     "evidence": [
+      "tests",
+      "version"
+     ],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "test_mass",
+     "headroom": 1.0,
+     "note": "11522 source bytes, 0 test bytes in 0 files",
+     "evidence": []
+    },
+    {
+     "signal": "test_count",
+     "headroom": 1.0,
+     "note": "no test cases found",
+     "evidence": []
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.667,
+     "note": "2 of 3 public symbols carry no doc comment",
+     "evidence": [
+      "arac/dogrula.py:61 main",
+      "arac/zipla-egrisi.py:115 main"
+     ]
+    },
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "1 workflow files, ~4 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (20 commits on HEAD)",
+     "evidence": []
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "godot-refcheck",
+   "head": "8bcbecdef5b62eec2833551d10b0244d6aa613c8",
+   "taken_at": "2026-09-22T16:15:52Z",
+   "total_headroom": 1.732,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "rust": 127450,
+      "python": 14318,
+      "gdscript": 1176
+     },
+     "unit": "bytes",
+     "detail": "primary: rust",
+     "evidence": [
+      "rust 127450 bytes",
+      "python 14318 bytes",
+      "gdscript 1176 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.212,
+     "unit": "test bytes per source byte",
+     "detail": "117916 source bytes, 25028 test bytes in 14 files",
+     "evidence": [
+      "tests/cli.rs",
+      "tests/fixtures.rs",
+      "tests/projects/broken/main.gd",
+      "tests/projects/clean/addons/demo/plugin.gd",
+      "tests/projects/clean/main.gd",
+      "tests/projects/conn/level.gd"
+     ],
+     "headroom": 0.5754944197564368
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 107,
+     "unit": "cases",
+     "detail": "107 cases across 7 files",
+     "evidence": [
+      "src/baseline.rs: 5",
+      "src/fix.rs: 5",
+      "src/parse/cfgfile.rs: 9",
+      "src/parse/gdscript.rs: 18",
+      "src/project.rs: 11",
+      "tests/cli.rs: 24",
+      "tests/fixtures.rs: 35"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 59,
+     "unit": "symbols",
+     "detail": "59 of 82 public symbols carry no doc comment",
+     "evidence": [
+      "src/fix.rs:14 Fix",
+      "src/fix.rs:25 Applied",
+      "src/fix.rs:61 apply",
+      "src/checks.rs:9 Options",
+      "src/checks.rs:26 run",
+      "src/checks.rs:412 ref_count",
+      "src/checks.rs:416 kind_counts",
+      "src/baseline.rs:11 fingerprint"
+     ],
+     "headroom": 0.72
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 3,
+     "unit": "distinct runners",
+     "detail": "3 workflow files, ~17 jobs, runners: macos-latest, ubuntu-latest, windows-latest",
+     "evidence": [
+      "ci.yml",
+      "corpus.yml",
+      "release.yml"
+     ],
+     "headroom": 0.0
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 23,
+     "unit": "commands",
+     "detail": "23 runnable-looking commands in 5 shell blocks",
+     "evidence": [
+      "cargo install --git https://github.com/Furkiozknn/godot-refcheck",
+      "git clone https://github.com/Furkiozknn/godot-refcheck",
+      "cd godot-refcheck",
+      "cargo build --release      # target/release/godot-refcheck",
+      "godot-refcheck                     # the project in the current directory",
+      "godot-refcheck path/to/project     # a directory, or the project.godot itself",
+      "godot-refcheck . --unused          # also list assets nothing references",
+      "godot-refcheck repos --recursive   # every project.godot under a directory"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 14530,
+     "unit": "bytes",
+     "detail": "14530 bytes, 11 sections, 6 images",
+     "evidence": [
+      "What it checks",
+      "Install",
+      "Use",
+      "Repairing what can be proved",
+      "Adopting it on a project that already has findings",
+      "In CI",
+      "Why the results can be trusted",
+      "Limitations",
+      "Development",
+      "License"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 780,
+     "unit": "lines",
+     "detail": "src/project.rs is the longest source file",
+     "evidence": [
+      "src/project.rs"
+     ],
+     "headroom": 0.31666666666666665
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "rust: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": 3,
+     "unit": "commits since last tag",
+     "detail": "last tag v0.2.0, 3 commits since",
+     "evidence": [
+      "v0.2.0"
+     ],
+     "headroom": 0.12
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.72,
+     "note": "59 of 82 public symbols carry no doc comment",
+     "evidence": [
+      "src/fix.rs:14 Fix",
+      "src/fix.rs:25 Applied",
+      "src/fix.rs:61 apply",
+      "src/checks.rs:9 Options",
+      "src/checks.rs:26 run",
+      "src/checks.rs:412 ref_count"
+     ]
+    },
+    {
+     "signal": "test_mass",
+     "headroom": 0.575,
+     "note": "117916 source bytes, 25028 test bytes in 14 files",
+     "evidence": [
+      "tests/cli.rs",
+      "tests/fixtures.rs",
+      "tests/projects/broken/main.gd",
+      "tests/projects/clean/addons/demo/plugin.gd",
+      "tests/projects/clean/main.gd",
+      "tests/projects/conn/level.gd"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.317,
+     "note": "src/project.rs is the longest source file",
+     "evidence": [
+      "src/project.rs"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.12,
+     "note": "last tag v0.2.0, 3 commits since",
+     "evidence": [
+      "v0.2.0"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "kanca",
+   "head": "aaa7e04b751041ae11977a4c218ea1d084d14004",
+   "taken_at": "2026-09-22T16:39:37Z",
+   "total_headroom": 2.006,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "gdscript": 269914
+     },
+     "unit": "bytes",
+     "detail": "primary: gdscript",
+     "evidence": [
+      "gdscript 269914 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.289,
+     "unit": "test bytes per source byte",
+     "detail": "209343 source bytes, 60571 test bytes in 2 files",
+     "evidence": [
+      "tests/ekran.gd",
+      "tests/test_kanca.gd"
+     ],
+     "headroom": 0.4213229006940762
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 46,
+     "unit": "cases",
+     "detail": "46 cases across 2 files",
+     "evidence": [
+      "tests/ekran.gd: 5",
+      "tests/test_kanca.gd: 41"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": null,
+     "unit": "",
+     "detail": "no Python or Rust public surface",
+     "evidence": [],
+     "headroom": null
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yapi.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 2,
+     "unit": "commands",
+     "detail": "2 runnable-looking commands in 1 shell blocks",
+     "evidence": [
+      "godot --headless --path . --import                          # bir kez",
+      "godot --headless --path . --scene res://tests/test_kanca.tscn   # 0 = gecti"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 26396,
+     "unit": "bytes",
+     "detail": "26396 bytes, 23 sections, 5 images",
+     "evidence": [
+      "Kontroller",
+      "Tek parmak şeması (mobil)",
+      "Oynanış",
+      "Akış zinciri",
+      "Bölüm öğeleri",
+      "Bölümler",
+      "Nasıl çalıştırılır",
+      "Godot kurmadan bir paket indir",
+      "Kod düzeni",
+      "Varlıklar kodla üretilir"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 878,
+     "unit": "lines",
+     "detail": "scripts/bolum.gd is the longest source file",
+     "evidence": [
+      "scripts/bolum.gd"
+     ],
+     "headroom": 0.3983333333333333
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": 13,
+     "unit": "commits since last tag",
+     "detail": "last tag v0.5.2, 13 commits since",
+     "evidence": [
+      "v0.5.2"
+     ],
+     "headroom": 0.52
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yapi.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.52,
+     "note": "last tag v0.5.2, 13 commits since",
+     "evidence": [
+      "v0.5.2"
+     ]
+    },
+    {
+     "signal": "test_mass",
+     "headroom": 0.421,
+     "note": "209343 source bytes, 60571 test bytes in 2 files",
+     "evidence": [
+      "tests/ekran.gd",
+      "tests/test_kanca.gd"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.398,
+     "note": "scripts/bolum.gd is the longest source file",
+     "evidence": [
+      "scripts/bolum.gd"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "local-notes-search-mcp",
+   "head": "092eb2a44c96ff34415426b723d12f2af1f885f6",
+   "taken_at": "2026-09-22T16:15:54Z",
+   "total_headroom": 1.829,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 53290
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 53290 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.842,
+     "unit": "test bytes per source byte",
+     "detail": "28933 source bytes, 24357 test bytes in 5 files",
+     "evidence": [
+      "tests/__init__.py",
+      "tests/conftest.py",
+      "tests/test_ask_notes.py",
+      "tests/test_chunking.py",
+      "tests/test_indexing_and_search.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 52,
+     "unit": "cases",
+     "detail": "52 cases across 3 files",
+     "evidence": [
+      "tests/test_ask_notes.py: 15",
+      "tests/test_chunking.py: 12",
+      "tests/test_indexing_and_search.py: 25"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 5,
+     "unit": "symbols",
+     "detail": "5 of 12 public symbols carry no doc comment",
+     "evidence": [
+      "local_notes_search.py:118 Chunk",
+      "local_notes_search.py:162 content_hash",
+      "local_notes_search.py:199 should_index_file",
+      "local_notes_search.py:214 walk_indexable_files",
+      "local_notes_search.py:284 get_connection"
+     ],
+     "headroom": 0.417
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 5,
+     "unit": "commands",
+     "detail": "5 runnable-looking commands in 3 shell blocks",
+     "evidence": [
+      "git clone https://github.com/Furkiozknn/local-notes-search-mcp.git",
+      "cd local-notes-search-mcp",
+      "uv sync",
+      "export LOCAL_NOTES_SEARCH_ALLOWED_ROOTS=\"$HOME/notes:$HOME/projects\"",
+      "uv run pytest -v"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 15237,
+     "unit": "bytes",
+     "detail": "15237 bytes, 12 sections, 13 images",
+     "evidence": [
+      "**Semantic search over your own files — as an MCP server.**",
+      "✨ What it does",
+      "🧭 The 30-second pitch",
+      "🏗️ How it works",
+      "🧰 MCP tools",
+      "🚀 Quickstart",
+      "🔒 What can be indexed",
+      "🧠 Why this architecture",
+      "🧪 Tests",
+      "⚠️ Known limitations"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 694,
+     "unit": "lines",
+     "detail": "local_notes_search.py is the longest source file",
+     "evidence": [
+      "local_notes_search.py"
+     ],
+     "headroom": 0.245
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "python: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (32 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (32 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.417,
+     "note": "5 of 12 public symbols carry no doc comment",
+     "evidence": [
+      "local_notes_search.py:118 Chunk",
+      "local_notes_search.py:162 content_hash",
+      "local_notes_search.py:199 should_index_file",
+      "local_notes_search.py:214 walk_indexable_files",
+      "local_notes_search.py:284 get_connection"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.245,
+     "note": "local_notes_search.py is the longest source file",
+     "evidence": [
+      "local_notes_search.py"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "masal",
+   "head": "fc3dc87a6099f6a2c245b8a14a4a3698a3c44c29",
+   "taken_at": "2026-09-22T16:38:59Z",
+   "total_headroom": 2.914,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "javascript": 79600,
+      "python": 1126
+     },
+     "unit": "bytes",
+     "detail": "primary: javascript",
+     "evidence": [
+      "javascript 79600 bytes",
+      "python 1126 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.205,
+     "unit": "test bytes per source byte",
+     "detail": "66987 source bytes, 13739 test bytes in 4 files",
+     "evidence": [
+      "depo.test.js",
+      "hikayeler.test.js",
+      "olcum.test.js",
+      "turkce.test.js"
+     ],
+     "headroom": 0.5898010061653753
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 31,
+     "unit": "cases",
+     "detail": "31 cases across 4 files",
+     "evidence": [
+      "depo.test.js: 12",
+      "hikayeler.test.js: 12",
+      "olcum.test.js: 5",
+      "turkce.test.js: 2"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 1,
+     "unit": "symbols",
+     "detail": "1 of 1 public symbols carry no doc comment",
+     "evidence": [
+      "sunucu.py:13 OnbelleksizIsleyici"
+     ],
+     "headroom": 1.0
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "1 workflow files, ~5 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 0,
+     "unit": "commands",
+     "detail": "0 runnable-looking commands in 0 shell blocks",
+     "evidence": [],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 5720,
+     "unit": "bytes",
+     "detail": "5720 bytes, 8 sections, 2 images",
+     "evidence": [
+      "Ne çalışıyor (8 Eylül 2026)",
+      "Çalıştırma",
+      "Neden vektör (SVG) boyama",
+      "Dosyalar",
+      "Şablonlarda Türkçe ek",
+      "Sonraki adımlar",
+      "Bilinen sınırlar",
+      "Bu ekosistemden başka projeler"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 588,
+     "unit": "lines",
+     "detail": "app.js is the longest source file",
+     "evidence": [
+      "app.js"
+     ],
+     "headroom": 0.15666666666666668
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "node: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (41 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "undocumented_surface",
+     "headroom": 1.0,
+     "note": "1 of 1 public symbols carry no doc comment",
+     "evidence": [
+      "sunucu.py:13 OnbelleksizIsleyici"
+     ]
+    },
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "1 workflow files, ~5 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ]
+    },
+    {
+     "signal": "test_mass",
+     "headroom": 0.59,
+     "note": "66987 source bytes, 13739 test bytes in 4 files",
+     "evidence": [
+      "depo.test.js",
+      "hikayeler.test.js",
+      "olcum.test.js",
+      "turkce.test.js"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (41 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.157,
+     "note": "app.js is the longest source file",
+     "evidence": [
+      "app.js"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "mcp-census",
+   "head": "c5bb74fd8e098d6ca6b6426d5b0cc2e9d680afd7",
+   "taken_at": "2026-09-22T16:15:55Z",
+   "total_headroom": 1.71,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 43090
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 43090 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.695,
+     "unit": "test bytes per source byte",
+     "detail": "25417 source bytes, 17673 test bytes in 4 files",
+     "evidence": [
+      "tests/__init__.py",
+      "tests/test_analyze.py",
+      "tests/test_cli.py",
+      "tests/test_fetch.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 44,
+     "unit": "cases",
+     "detail": "44 cases across 3 files",
+     "evidence": [
+      "tests/test_analyze.py: 19",
+      "tests/test_cli.py: 12",
+      "tests/test_fetch.py: 13"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 18,
+     "unit": "symbols",
+     "detail": "18 of 28 public symbols carry no doc comment",
+     "evidence": [
+      "mcp_census/cli.py:37 komut_indir",
+      "mcp_census/cli.py:70 komut_say",
+      "mcp_census/cli.py:95 komut_rapor",
+      "mcp_census/cli.py:151 komut_karsilastir",
+      "mcp_census/cli.py:177 main",
+      "mcp_census/analyze.py:54 ad",
+      "mcp_census/analyze.py:58 surum",
+      "mcp_census/analyze.py:62 durum"
+     ],
+     "headroom": 0.643
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 21,
+     "unit": "commands",
+     "detail": "21 runnable-looking commands in 5 shell blocks",
+     "evidence": [
+      "mcp-census karsilastir veri/kayitlar.jsonl veri/kayitlar-latest.jsonl",
+      "eski     32318 sunucu",
+      "yeni     32321 sunucu",
+      "eklenen      3   kaybolan 0",
+      "Fark yalnızca eklemeden ibaret; iki indirme arasında registry büyümüş. Sayım tutarlı.",
+      "eklenenler (ilk 50):",
+      "+ com.byjg/docs",
+      "+ com.docketnexus/docketnexus"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 8971,
+     "unit": "bytes",
+     "detail": "8971 bytes, 12 sections, 9 images",
+     "evidence": [
+      "**Resmî MCP Registry'nin yeniden üretilebilir sayımı.**",
+      "Neden",
+      "İlk bulgu: \"kaç sunucu var\" sorusunun cevabı üçe katlanabiliyor",
+      "İkinci bulgu: registry'nin dörtte birinin okunacak kodu yok",
+      "Taşıma ve paketleme dağılımı",
+      "Sayının kendisi hareket ediyor — ve bunu ölçüyoruz",
+      "Kullanım",
+      "Tasarım",
+      "Testler",
+      "Bilinen sınırlar"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 254,
+     "unit": "lines",
+     "detail": "mcp_census/fetch.py is the longest source file",
+     "evidence": [
+      "mcp_census/fetch.py"
+     ],
+     "headroom": 0.0
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "python: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": 10,
+     "unit": "commits since last tag",
+     "detail": "last tag v0.1.0, 10 commits since",
+     "evidence": [
+      "v0.1.0"
+     ],
+     "headroom": 0.4
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.643,
+     "note": "18 of 28 public symbols carry no doc comment",
+     "evidence": [
+      "mcp_census/cli.py:37 komut_indir",
+      "mcp_census/cli.py:70 komut_say",
+      "mcp_census/cli.py:95 komut_rapor",
+      "mcp_census/cli.py:151 komut_karsilastir",
+      "mcp_census/cli.py:177 main",
+      "mcp_census/analyze.py:54 ad"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.4,
+     "note": "last tag v0.1.0, 10 commits since",
+     "evidence": [
+      "v0.1.0"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "mcp-vet",
+   "head": "acb6a8a6d7ab6a36680604e08e1d8200dd5406f1",
+   "taken_at": "2026-09-22T16:15:56Z",
+   "total_headroom": 1.964,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 322061,
+      "shell": 118
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 322061 bytes",
+      "shell 118 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.425,
+     "unit": "test bytes per source byte",
+     "detail": "226062 source bytes, 96117 test bytes in 18 files",
+     "evidence": [
+      "tests/conftest.py",
+      "tests/fixtures/clean_server/server.py",
+      "tests/fixtures/exfil_server/server.py",
+      "tests/fixtures/obfuscated/server.py",
+      "tests/fixtures/poisoned_server/server.py",
+      "tests/fixtures/remote_pipe/install.sh"
+     ],
+     "headroom": 0.14964036414788862
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 232,
+     "unit": "cases",
+     "detail": "232 cases across 11 files",
+     "evidence": [
+      "tests/test_cli_and_risk.py: 43",
+      "tests/test_diff.py: 19",
+      "tests/test_github_and_trust.py: 24",
+      "tests/test_hostile_input.py: 20",
+      "tests/test_http_cache.py: 29",
+      "tests/test_injection.py: 14",
+      "tests/test_network_endpoints.py: 12",
+      "tests/test_popularity.py: 20"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 57,
+     "unit": "symbols",
+     "detail": "57 of 111 public symbols carry no doc comment",
+     "evidence": [
+      "scripts/tarama-ozet.py:23 yukle",
+      "scripts/tarama-ozet.py:44 main",
+      "scripts/ekosistem-tara.py:34 kabuk",
+      "scripts/ekosistem-tara.py:93 main",
+      "mcp_vet/cli.py:55 valid_owner_repo",
+      "mcp_vet/cli.py:70 cmd_search",
+      "mcp_vet/cli.py:77 cmd_registry",
+      "mcp_vet/cli.py:138 cmd_audit"
+     ],
+     "headroom": 0.514
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 21,
+     "unit": "commands",
+     "detail": "21 runnable-looking commands in 7 shell blocks",
+     "evidence": [
+      "mcp-vet search \"discord mcp\" --limit 10",
+      "mcp-vet registry \"discord\"              # official MCP Registry",
+      "mcp-vet check owner/repo",
+      "mcp-vet audit owner/repo --path ./checkout --verbose",
+      "mcp-vet audit --offline --path ./checkout",
+      "mcp-vet diff owner/repo v1.2.0 v1.3.0",
+      "mcp-vet diff --before-path ./v1.2.0 --after-path ./v1.3.0",
+      "mcp-vet audit owner/repo --path ./checkout --no-cache"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 24792,
+     "unit": "bytes",
+     "detail": "24792 bytes, 20 sections, 12 images",
+     "evidence": [
+      "What is this",
+      "📚 Table of contents",
+      "🤔 Why MCP security is different",
+      "🎯 Threat model",
+      "🔬 What it detects",
+      "📋 Example report",
+      "🏗️ Architecture",
+      "⚖️ The risk model",
+      "🖥️ CLI usage",
+      "🔩 Zero dependencies"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 560,
+     "unit": "lines",
+     "detail": "mcp_vet/patterns.py is the longest source file",
+     "evidence": [
+      "mcp_vet/patterns.py"
+     ],
+     "headroom": 0.13333333333333333
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "python: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (42 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.514,
+     "note": "57 of 111 public symbols carry no doc comment",
+     "evidence": [
+      "scripts/tarama-ozet.py:23 yukle",
+      "scripts/tarama-ozet.py:44 main",
+      "scripts/ekosistem-tara.py:34 kabuk",
+      "scripts/ekosistem-tara.py:93 main",
+      "mcp_vet/cli.py:55 valid_owner_repo",
+      "mcp_vet/cli.py:70 cmd_search"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (42 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "test_mass",
+     "headroom": 0.15,
+     "note": "226062 source bytes, 96117 test bytes in 18 files",
+     "evidence": [
+      "tests/conftest.py",
+      "tests/fixtures/clean_server/server.py",
+      "tests/fixtures/exfil_server/server.py",
+      "tests/fixtures/obfuscated/server.py",
+      "tests/fixtures/poisoned_server/server.py",
+      "tests/fixtures/remote_pipe/install.sh"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.133,
+     "note": "mcp_vet/patterns.py is the longest source file",
+     "evidence": [
+      "mcp_vet/patterns.py"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "mini-creative-toolkit",
+   "head": "143e9ed59a770cc1dfc5462d924546d62b64bc49",
+   "taken_at": "2026-09-22T16:15:57Z",
+   "total_headroom": 1.861,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 277959
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 277959 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.5,
+     "unit": "test bytes per source byte",
+     "detail": "185253 source bytes, 92706 test bytes in 13 files",
+     "evidence": [
+      "tests/conftest.py",
+      "tests/helpers.py",
+      "tests/test_batch.py",
+      "tests/test_capabilities_and_config.py",
+      "tests/test_cli_and_server.py",
+      "tests/test_hosted_generation.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 213,
+     "unit": "cases",
+     "detail": "213 cases across 11 files",
+     "evidence": [
+      "tests/test_batch.py: 14",
+      "tests/test_capabilities_and_config.py: 26",
+      "tests/test_cli_and_server.py: 29",
+      "tests/test_hosted_generation.py: 18",
+      "tests/test_image_tools.py: 27",
+      "tests/test_inspect_optimize_upscale.py: 23",
+      "tests/test_model_caching.py: 6",
+      "tests/test_paths_security.py: 21"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 79,
+     "unit": "symbols",
+     "detail": "79 of 128 public symbols carry no doc comment",
+     "evidence": [
+      "src/mini_creative_toolkit/cli.py:100 build_parser",
+      "src/mini_creative_toolkit/cli.py:316 main",
+      "src/mini_creative_toolkit/paths.py:58 is_within",
+      "src/mini_creative_toolkit/paths.py:125 resolve_input_list",
+      "src/mini_creative_toolkit/paths.py:152 normalize_extension",
+      "src/mini_creative_toolkit/config.py:252 reset_config",
+      "src/mini_creative_toolkit/log.py:22 get_logger",
+      "src/mini_creative_toolkit/media_info.py:25 aspect_ratio"
+     ],
+     "headroom": 0.617
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~11 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 30,
+     "unit": "commands",
+     "detail": "30 runnable-looking commands in 8 shell blocks",
+     "evidence": [
+      "uv sync",
+      "sudo apt-get install ffmpeg     # Debian/Ubuntu",
+      "brew install ffmpeg             # macOS",
+      "export UPSCAYL_BIN_PATH=/path/to/upscayl/resources/linux/bin/upscayl-bin",
+      "export UPSCAYL_MODELS_PATH=/path/to/upscayl/resources/models",
+      "claude mcp add --transport stdio mini-creative-toolkit -- uv run --project /path/to/this/repo toolkit.py",
+      "mct serve",
+      "python -m mini_creative_toolkit"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 21435,
+     "unit": "bytes",
+     "detail": "21435 bytes, 24 sections, 12 images",
+     "evidence": [
+      "Contents",
+      "Why this exists",
+      "What it does",
+      "Discovery",
+      "Images",
+      "Upscaling",
+      "Video and audio",
+      "Higher-level",
+      "Hosted — the one that leaves your machine",
+      "Capability matrix"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 492,
+     "unit": "lines",
+     "detail": "src/mini_creative_toolkit/server.py is the longest source file",
+     "evidence": [
+      "src/mini_creative_toolkit/server.py"
+     ],
+     "headroom": 0.07666666666666666
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "python: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (37 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~11 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.617,
+     "note": "79 of 128 public symbols carry no doc comment",
+     "evidence": [
+      "src/mini_creative_toolkit/cli.py:100 build_parser",
+      "src/mini_creative_toolkit/cli.py:316 main",
+      "src/mini_creative_toolkit/paths.py:58 is_within",
+      "src/mini_creative_toolkit/paths.py:125 resolve_input_list",
+      "src/mini_creative_toolkit/paths.py:152 normalize_extension",
+      "src/mini_creative_toolkit/config.py:252 reset_config"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (37 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.077,
+     "note": "src/mini_creative_toolkit/server.py is the longest source file",
+     "evidence": [
+      "src/mini_creative_toolkit/server.py"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "model-comparison-harness",
+   "head": "f4464d26030f63798d231dc616f5b1ed854ef079",
+   "taken_at": "2026-09-22T16:15:58Z",
+   "total_headroom": 1.453,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 66004
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 66004 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.863,
+     "unit": "test bytes per source byte",
+     "detail": "35425 source bytes, 30579 test bytes in 5 files",
+     "evidence": [
+      "tests/test_backends.py",
+      "tests/test_cli.py",
+      "tests/test_config.py",
+      "tests/test_grading.py",
+      "tests/test_runner.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 64,
+     "unit": "cases",
+     "detail": "64 cases across 5 files",
+     "evidence": [
+      "tests/test_backends.py: 12",
+      "tests/test_cli.py: 14",
+      "tests/test_config.py: 16",
+      "tests/test_grading.py: 8",
+      "tests/test_runner.py: 14"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 6,
+     "unit": "symbols",
+     "detail": "6 of 21 public symbols carry no doc comment",
+     "evidence": [
+      "src/model_comparison_harness/cli.py:137 main",
+      "src/model_comparison_harness/config.py:79 load_backends_from_dict",
+      "src/model_comparison_harness/config.py:107 load_backends_from_file",
+      "src/model_comparison_harness/runner.py:16 ComparisonResult",
+      "src/model_comparison_harness/grading.py:35 GradeResult",
+      "src/model_comparison_harness/backends.py:39 Backend"
+     ],
+     "headroom": 0.286
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 13,
+     "unit": "commands",
+     "detail": "13 runnable-looking commands in 4 shell blocks",
+     "evidence": [
+      "uv sync",
+      "uv run mch run examples/compare-mocks.yaml --input '{\"prompt\": \"a cat riding a bike\"}'",
+      "uv run mch validate config.yaml",
+      "uv run mch run config.yaml --input '{\"prompt\": \"...\"}'                  # table output",
+      "uv run mch run config.yaml --input '{\"prompt\": \"...\"}' --json           # machine-readable, one object per backend",
+      "uv run mch run config.yaml --input '{\"prompt\": \"...\"}' --csv            # CSV, e.g. `--csv > results.csv` for a spreadsheet",
+      "uv run mch run config.yaml --input '{\"prompt\": \"...\"}' --fail-on-error  # exit 1 if any backend errored (useful in CI)",
+      "uv run mch run config.yaml --input '{\"prompt\": \"...\"}' --timeout 10     # hard per-backend ceiling enforced by the harness"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 11483,
+     "unit": "bytes",
+     "detail": "11483 bytes, 10 sections, 3 images",
+     "evidence": [
+      "A comparison config",
+      "Backend types",
+      "The CLI",
+      "Model-graded scoring (`--rubric`)",
+      "Using it as a library",
+      "Writing a new backend type",
+      "Development",
+      "Limitations",
+      "License",
+      "More from this ecosystem"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 185,
+     "unit": "lines",
+     "detail": "src/model_comparison_harness/cli.py is the longest source file",
+     "evidence": [
+      "src/model_comparison_harness/cli.py"
+     ],
+     "headroom": 0.0
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 2,
+     "unit": "runtime dependencies",
+     "detail": "python: 2",
+     "evidence": [
+      "pyyaml>=6.0",
+      "httpx>=0.27.0"
+     ],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (27 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (27 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.286,
+     "note": "6 of 21 public symbols carry no doc comment",
+     "evidence": [
+      "src/model_comparison_harness/cli.py:137 main",
+      "src/model_comparison_harness/config.py:79 load_backends_from_dict",
+      "src/model_comparison_harness/config.py:107 load_backends_from_file",
+      "src/model_comparison_harness/runner.py:16 ComparisonResult",
+      "src/model_comparison_harness/grading.py:35 GradeResult",
+      "src/model_comparison_harness/backends.py:39 Backend"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "nova-drift",
+   "head": "5bfb17a47a8d4c27d46b249c67743b33577c348f",
+   "taken_at": "2026-09-22T16:15:59Z",
+   "total_headroom": 1.807,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "javascript": 69754
+     },
+     "unit": "bytes",
+     "detail": "primary: javascript",
+     "evidence": [
+      "javascript 69754 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.619,
+     "unit": "test bytes per source byte",
+     "detail": "43080 source bytes, 26674 test bytes in 10 files",
+     "evidence": [
+      "test/adaptive.spec.js",
+      "test/capture-gif.js",
+      "test/capture-shot.js",
+      "test/fixtures.js",
+      "test/language.spec.js",
+      "test/no-external-requests.spec.js"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 24,
+     "unit": "cases",
+     "detail": "24 cases across 7 files",
+     "evidence": [
+      "test/adaptive.spec.js: 4",
+      "test/language.spec.js: 4",
+      "test/no-external-requests.spec.js: 3",
+      "test/portal-sizes.spec.js: 2",
+      "test/prng.spec.js: 4",
+      "test/smoke.spec.js: 4",
+      "test/storage.spec.js: 3"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": null,
+     "unit": "",
+     "detail": "no Python or Rust public surface",
+     "evidence": [],
+     "headroom": null
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 4,
+     "unit": "commands",
+     "detail": "4 runnable-looking commands in 2 shell blocks",
+     "evidence": [
+      "npx serve .",
+      "npm install",
+      "npx playwright install --with-deps chromium   # first run only",
+      "npm test"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 14351,
+     "unit": "bytes",
+     "detail": "14351 bytes, 20 sections, 11 images",
+     "evidence": [
+      "Table of Contents",
+      "Gameplay",
+      "Controls",
+      "Power-Ups",
+      "Scoring",
+      "Leaderboard",
+      "Daily Challenge",
+      "How It Works",
+      "Scene, Camera & Tunnel",
+      "Bloom Pipeline"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 1168,
+     "unit": "lines",
+     "detail": "script.js is the longest source file",
+     "evidence": [
+      "script.js"
+     ],
+     "headroom": 0.64
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "node: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (38 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 1 left null",
+     "evidence": [
+      "version"
+     ],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.64,
+     "note": "script.js is the longest source file",
+     "evidence": [
+      "script.js"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (38 commits on HEAD)",
+     "evidence": []
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "nvidia-nim-mcp",
+   "head": "e877a626027e3f04274a5c923b010a185a0541ae",
+   "taken_at": "2026-09-22T16:16:00Z",
+   "total_headroom": 1.584,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 93036
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 93036 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 1.34,
+     "unit": "test bytes per source byte",
+     "detail": "39760 source bytes, 53276 test bytes in 10 files",
+     "evidence": [
+      "tests/conftest.py",
+      "tests/test_api_key_guard.py",
+      "tests/test_build_chat_chain.py",
+      "tests/test_check_content_safety_fallback.py",
+      "tests/test_check_provider_health.py",
+      "tests/test_create_embedding_fallback.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 73,
+     "unit": "cases",
+     "detail": "73 cases across 9 files",
+     "evidence": [
+      "tests/test_api_key_guard.py: 10",
+      "tests/test_build_chat_chain.py: 7",
+      "tests/test_check_content_safety_fallback.py: 3",
+      "tests/test_check_provider_health.py: 15",
+      "tests/test_create_embedding_fallback.py: 6",
+      "tests/test_describe_image_fallback.py: 5",
+      "tests/test_fallback.py: 9",
+      "tests/test_generate_image.py: 15"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 0,
+     "unit": "symbols",
+     "detail": "0 of 1 public symbols carry no doc comment",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 11,
+     "unit": "commands",
+     "detail": "11 runnable-looking commands in 5 shell blocks",
+     "evidence": [
+      "uv sync",
+      "NVIDIA_API_KEY=your-key-here",
+      "GROQ_API_KEY=",
+      "MISTRAL_API_KEY=",
+      "GEMINI_API_KEY=",
+      "CEREBRAS_API_KEY=",
+      "claude mcp add --transport stdio nvidia-nim -- uv run --project /path/to/this/repo nvidia_image.py",
+      "uv sync --group dev"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 13918,
+     "unit": "bytes",
+     "detail": "13918 bytes, 11 sections, 7 images",
+     "evidence": [
+      "Table of Contents",
+      "🧰 Tools",
+      "🔄 The fallback chain",
+      "⚙️ Setup",
+      "▶️ Example usage",
+      "📁 Output files",
+      "🛠 Development",
+      "🧪 Testing",
+      "🗂 Project layout",
+      "📄 License"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 900,
+     "unit": "lines",
+     "detail": "nvidia_image.py is the longest source file",
+     "evidence": [
+      "nvidia_image.py"
+     ],
+     "headroom": 0.4166666666666667
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 2,
+     "unit": "runtime dependencies",
+     "detail": "python: 2",
+     "evidence": [
+      "httpx2>=2.12.0",
+      "litellm>=1.97.0"
+     ],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (35 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (35 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.417,
+     "note": "nvidia_image.py is the longest source file",
+     "evidence": [
+      "nvidia_image.py"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "prompt-template-manager",
+   "head": "b5f9bbc59d62b1eac9a22b3435e6930a7a9d13c3",
+   "taken_at": "2026-09-22T16:16:01Z",
+   "total_headroom": 1.584,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 51762
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 51762 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.763,
+     "unit": "test bytes per source byte",
+     "detail": "29360 source bytes, 22402 test bytes in 5 files",
+     "evidence": [
+      "tests/test_cli.py",
+      "tests/test_gateway_client.py",
+      "tests/test_loader.py",
+      "tests/test_models.py",
+      "tests/test_renderer.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 61,
+     "unit": "cases",
+     "detail": "61 cases across 5 files",
+     "evidence": [
+      "tests/test_cli.py: 12",
+      "tests/test_gateway_client.py: 6",
+      "tests/test_loader.py: 11",
+      "tests/test_models.py: 7",
+      "tests/test_renderer.py: 25"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 10,
+     "unit": "symbols",
+     "detail": "10 of 24 public symbols carry no doc comment",
+     "evidence": [
+      "src/prompt_template_manager/cli.py:122 main",
+      "src/prompt_template_manager/gateway_client.py:28 GatewaySubmissionError",
+      "src/prompt_template_manager/gateway_client.py:35 GatewayJobFailedError",
+      "src/prompt_template_manager/gateway_client.py:39 GatewayJobTimeoutError",
+      "src/prompt_template_manager/gateway_client.py:43 submit_and_wait",
+      "src/prompt_template_manager/loader.py:13 load_template_str",
+      "src/prompt_template_manager/loader.py:25 load_template_file",
+      "src/prompt_template_manager/renderer.py:136 render_value"
+     ],
+     "headroom": 0.417
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 14,
+     "unit": "commands",
+     "detail": "14 runnable-looking commands in 7 shell blocks",
+     "evidence": [
+      "uvx --from git+https://github.com/Furkiozknn/prompt-template-manager ptm --help",
+      "uv tool install git+https://github.com/Furkiozknn/prompt-template-manager",
+      "ptm --help",
+      "uv sync",
+      "uv run ptm validate examples/product-photo.yaml",
+      "uv run ptm render examples/product-photo.yaml --var product_name=\"a red sneaker\" --pretty",
+      "uv run ptm info examples/product-photo.yaml",
+      "uv run ptm submit examples/product-photo.yaml --gateway-url http://127.0.0.1:8000 --var product_name=\"a red sneaker\""
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 13900,
+     "unit": "bytes",
+     "detail": "13900 bytes, 16 sections, 4 images",
+     "evidence": [
+      "The problem this solves",
+      "Install",
+      "Quickstart",
+      "A template",
+      "The CLI",
+      "`validate`",
+      "`render`",
+      "`info`",
+      "`submit`",
+      "Using it as a library"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 218,
+     "unit": "lines",
+     "detail": "src/prompt_template_manager/renderer.py is the longest source file",
+     "evidence": [
+      "src/prompt_template_manager/renderer.py"
+     ],
+     "headroom": 0.0
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 3,
+     "unit": "runtime dependencies",
+     "detail": "python: 3",
+     "evidence": [
+      "pyyaml>=6.0.3",
+      "jinja2>=3.1",
+      "httpx>=0.28.1"
+     ],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (33 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (33 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.417,
+     "note": "10 of 24 public symbols carry no doc comment",
+     "evidence": [
+      "src/prompt_template_manager/cli.py:122 main",
+      "src/prompt_template_manager/gateway_client.py:28 GatewaySubmissionError",
+      "src/prompt_template_manager/gateway_client.py:35 GatewayJobFailedError",
+      "src/prompt_template_manager/gateway_client.py:39 GatewayJobTimeoutError",
+      "src/prompt_template_manager/gateway_client.py:43 submit_and_wait",
+      "src/prompt_template_manager/loader.py:13 load_template_str"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "repo-ratchet",
+   "head": "f9875bcfaa2a0e96280d1833657418bcc8c43b30",
+   "taken_at": "2026-09-22T16:16:02Z",
+   "total_headroom": 0.601,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 88797
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 88797 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.523,
+     "unit": "test bytes per source byte",
+     "detail": "58298 source bytes, 30499 test bytes in 6 files",
+     "evidence": [
+      "tests/conftest.py",
+      "tests/test_plan.py",
+      "tests/test_records.py",
+      "tests/test_signals.py",
+      "tests/test_survey_cli.py",
+      "tests/test_verify.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 106,
+     "unit": "cases",
+     "detail": "106 cases across 5 files",
+     "evidence": [
+      "tests/test_plan.py: 10",
+      "tests/test_records.py: 19",
+      "tests/test_signals.py: 33",
+      "tests/test_survey_cli.py: 25",
+      "tests/test_verify.py: 19"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 2,
+     "unit": "symbols",
+     "detail": "2 of 45 public symbols carry no doc comment",
+     "evidence": [
+      "ratchet/verify.py:80 run",
+      "ratchet/plan.py:46 build"
+     ],
+     "headroom": 0.044
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 3,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~8 jobs, runners: macos-latest, ubuntu-latest, windows-latest",
+     "evidence": [
+      "ci.yml",
+      "tur.yml"
+     ],
+     "headroom": 0.0
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 8,
+     "unit": "commands",
+     "detail": "8 runnable-looking commands in 2 shell blocks",
+     "evidence": [
+      "ratchet discover Furkiozknn          # ask GitHub what exists",
+      "ratchet survey                       # clone each one and measure it",
+      "ratchet queue                        # which repository to open next, and why",
+      "ratchet check ./some-repo            # run that repository's own checks, inside a fence",
+      "ratchet record some-repo --round 1 --outcome advanced \\",
+      "--summary \"...\" --before <sha> --after <sha> --verifications v.json",
+      "ratchet report --out KAYITLAR.md     # the work log",
+      "python3 -m pytest -q"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 6510,
+     "unit": "bytes",
+     "detail": "6510 bytes, 8 sections, 0 images",
+     "evidence": [
+      "What it is not",
+      "The three rules it enforces in code",
+      "What it measures",
+      "The fence around running other people's code",
+      "Rounds",
+      "Working on this repository",
+      "Where it fits",
+      "Licence"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 468,
+     "unit": "lines",
+     "detail": "ratchet/signals.py is the longest source file",
+     "evidence": [
+      "ratchet/signals.py"
+     ],
+     "headroom": 0.056666666666666664
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "python: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (1 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (1 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.057,
+     "note": "ratchet/signals.py is the longest source file",
+     "evidence": [
+      "ratchet/signals.py"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.044,
+     "note": "2 of 45 public symbols carry no doc comment",
+     "evidence": [
+      "ratchet/verify.py:80 run",
+      "ratchet/plan.py:46 build"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "repo-vet",
+   "head": "182c118c79833899c688a3c49f24a557202f2f34",
+   "taken_at": "2026-09-22T16:16:03Z",
+   "total_headroom": 0.842,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 67466
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 67466 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.827,
+     "unit": "test bytes per source byte",
+     "detail": "36928 source bytes, 30538 test bytes in 5 files",
+     "evidence": [
+      "tests/fakes.py",
+      "tests/test_checks.py",
+      "tests/test_cli.py",
+      "tests/test_readme.py",
+      "tests/test_runner_report.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 97,
+     "unit": "cases",
+     "detail": "97 cases across 4 files",
+     "evidence": [
+      "tests/test_checks.py: 40",
+      "tests/test_cli.py: 13",
+      "tests/test_readme.py: 31",
+      "tests/test_runner_report.py: 13"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 2,
+     "unit": "symbols",
+     "detail": "2 of 21 public symbols carry no doc comment",
+     "evidence": [
+      "repo_vet/cli.py:48 main",
+      "repo_vet/report.py:23 as_text"
+     ],
+     "headroom": 0.095
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~10 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 18,
+     "unit": "commands",
+     "detail": "18 runnable-looking commands in 5 shell blocks",
+     "evidence": [
+      "repo-vet Furkiozknn/prompt-template-manager Furkiozknn/Furkiozknn",
+      "Furkiozknn/prompt-template-manager  1 finding, 0 of them errors",
+      "Release chain",
+      "! `pyproject.toml` declares version 0.1.0, but the repository has no tags.",
+      "pyproject.toml -> 0.1.0, tags -> none",
+      "Furkiozknn/Furkiozknn  clean (6 checks)",
+      "repo-vet --from-file corpus.txt --skip web",
+      "uvx --from git+https://github.com/Furkiozknn/repo-vet repo-vet --help"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 9417,
+     "unit": "bytes",
+     "detail": "9417 bytes, 11 sections, 7 images",
+     "evidence": [
+      "Status",
+      "What it checks",
+      "Checked against repositories that disagree with each other",
+      "Install",
+      "Use it",
+      "Use it in CI",
+      "What it will not do",
+      "What a finding costs you",
+      "Development",
+      "Licence"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 268,
+     "unit": "lines",
+     "detail": "repo_vet/checks.py is the longest source file",
+     "evidence": [
+      "repo_vet/checks.py"
+     ],
+     "headroom": 0.0
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "python: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": 2,
+     "unit": "commits since last tag",
+     "detail": "last tag v0.1.0, 2 commits since",
+     "evidence": [
+      "v0.1.0"
+     ],
+     "headroom": 0.08
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~10 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.095,
+     "note": "2 of 21 public symbols carry no doc comment",
+     "evidence": [
+      "repo_vet/cli.py:48 main",
+      "repo_vet/report.py:23 as_text"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.08,
+     "note": "last tag v0.1.0, 2 commits since",
+     "evidence": [
+      "v0.1.0"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "tek-tus-kosu",
+   "head": "cfc62d026ca5c24ab4f251061de558a0fad5246b",
+   "taken_at": "2026-09-22T16:39:37Z",
+   "total_headroom": 2.113,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "gdscript": 306917,
+      "python": 2109
+     },
+     "unit": "bytes",
+     "detail": "primary: gdscript",
+     "evidence": [
+      "gdscript 306917 bytes",
+      "python 2109 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.345,
+     "unit": "test bytes per source byte",
+     "detail": "229723 source bytes, 79303 test bytes in 1 files",
+     "evidence": [
+      "tests/testler.gd"
+     ],
+     "headroom": 0.30957718643757914
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 21,
+     "unit": "cases",
+     "detail": "21 cases across 1 files",
+     "evidence": [
+      "tests/testler.gd: 21"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": null,
+     "unit": "",
+     "detail": "no Python or Rust public surface",
+     "evidence": [],
+     "headroom": null
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yapi.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 0,
+     "unit": "commands",
+     "detail": "0 runnable-looking commands in 0 shell blocks",
+     "evidence": [],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 21833,
+     "unit": "bytes",
+     "detail": "21833 bytes, 10 sections, 3 images",
+     "evidence": [
+      "Kontroller",
+      "Oyun içeriği",
+      "Çalıştırma",
+      "Godot kurmadan bir paket indir",
+      "Yapı",
+      "Varlıkları ve sahneleri yeniden üretmek",
+      "Tasarım kararları",
+      "Doğrulama",
+      "Lisans",
+      "Bu ekosistemden başka projeler"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 1140,
+     "unit": "lines",
+     "detail": "scripts/oyun.gd is the longest source file",
+     "evidence": [
+      "scripts/oyun.gd"
+     ],
+     "headroom": 0.6166666666666667
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": 13,
+     "unit": "commits since last tag",
+     "detail": "last tag v1.7.3, 13 commits since",
+     "evidence": [
+      "v1.7.3"
+     ],
+     "headroom": 0.52
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yapi.yml"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.617,
+     "note": "scripts/oyun.gd is the longest source file",
+     "evidence": [
+      "scripts/oyun.gd"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.52,
+     "note": "last tag v1.7.3, 13 commits since",
+     "evidence": [
+      "v1.7.3"
+     ]
+    },
+    {
+     "signal": "test_mass",
+     "headroom": 0.31,
+     "note": "229723 source bytes, 79303 test bytes in 1 files",
+     "evidence": [
+      "tests/testler.gd"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "turkce-ajanlar",
+   "head": "008540c66f6f4f4eafef5f797b73831ffc72adad",
+   "taken_at": "2026-09-22T16:39:00Z",
+   "total_headroom": 3.535,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "javascript": 163813
+     },
+     "unit": "bytes",
+     "detail": "primary: javascript",
+     "evidence": [
+      "javascript 163813 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.0,
+     "unit": "test bytes per source byte",
+     "detail": "163813 source bytes, 0 test bytes in 0 files",
+     "evidence": [],
+     "headroom": 1.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 0,
+     "unit": "cases",
+     "detail": "no test cases found",
+     "evidence": [],
+     "headroom": 1.0
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": null,
+     "unit": "",
+     "detail": "no Python or Rust public surface",
+     "evidence": [],
+     "headroom": null
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "dogrula.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 11,
+     "unit": "commands",
+     "detail": "11 runnable-looking commands in 3 shell blocks",
+     "evidence": [
+      "node arac/ekip-kos.js --proje ../ajans-os --dalga kod-haritacisi,test-doktoru",
+      "node arac/ekip-kos.js --proje . \\",
+      "--dalga kod-haritacisi,bagimlilik-envanteri \\",
+      "--dalga kod-gozden-gecirici,guvenlik-denetci \\",
+      "--cikti rapor/ --butce 5",
+      "node arac/ekip-kos.js --proje . --dalga repo-denetci --kuru",
+      "node arac/sinir-denetle.js          # 71/71",
+      "node arac/sinir-denetle.js --kati   # uyarılar da hata"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 39149,
+     "unit": "bytes",
+     "detail": "39149 bytes, 30 sections, 10 images",
+     "evidence": [
+      "Neden bu var",
+      "Ajanlar",
+      "Koordinasyon",
+      "Keşif — projeyi tanı",
+      "Doğruluk",
+      "Güvenlik ve gizlilik",
+      "Başarım",
+      "Arayüz ve ürün",
+      "Veri",
+      "API ve dayanıklılık"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 842,
+     "unit": "lines",
+     "detail": "arac/web-uret.js is the longest source file",
+     "evidence": [
+      "arac/web-uret.js"
+     ],
+     "headroom": 0.36833333333333335
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "node: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (52 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "test_mass",
+     "headroom": 1.0,
+     "note": "163813 source bytes, 0 test bytes in 0 files",
+     "evidence": []
+    },
+    {
+     "signal": "test_count",
+     "headroom": 1.0,
+     "note": "no test cases found",
+     "evidence": []
+    },
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "dogrula.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (52 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.368,
+     "note": "arac/web-uret.js is the longest source file",
+     "evidence": [
+      "arac/web-uret.js"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "voice-io-mcp",
+   "head": "de2636bb74b50b4b0f0ba8f2a4331b445bc10240",
+   "taken_at": "2026-09-22T16:16:07Z",
+   "total_headroom": 1.189,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 38303
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 38303 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 1.099,
+     "unit": "test bytes per source byte",
+     "detail": "18244 source bytes, 20059 test bytes in 6 files",
+     "evidence": [
+      "tests/conftest.py",
+      "tests/test_check_provider_health.py",
+      "tests/test_local_integration.py",
+      "tests/test_misc.py",
+      "tests/test_speech_to_text.py",
+      "tests/test_text_to_speech.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 37,
+     "unit": "cases",
+     "detail": "37 cases across 5 files",
+     "evidence": [
+      "tests/test_check_provider_health.py: 6",
+      "tests/test_local_integration.py: 2",
+      "tests/test_misc.py: 7",
+      "tests/test_speech_to_text.py: 10",
+      "tests/test_text_to_speech.py: 12"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 0,
+     "unit": "symbols",
+     "detail": "0 of 1 public symbols carry no doc comment",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 9,
+     "unit": "commands",
+     "detail": "9 runnable-looking commands in 6 shell blocks",
+     "evidence": [
+      "uv sync",
+      "cp .env.example .env",
+      "uv sync --extra local-tts   # Kokoro-82M — also needs the `espeak-ng` system package",
+      "uv sync --extra local-stt   # faster-whisper",
+      "claude mcp add --transport stdio voice-io -- uv run --project /path/to/this/repo voice_io.py",
+      "uv sync --group dev",
+      "uv run pytest                              # the whole suite",
+      "uv run pytest tests/test_speech_to_text.py # one module"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 11812,
+     "unit": "bytes",
+     "detail": "11812 bytes, 11 sections, 7 images",
+     "evidence": [
+      "📖 Table of Contents",
+      "🧰 Tools",
+      "🔄 The fallback chain",
+      "⚙️ Setup",
+      "▶️ Example usage",
+      "🏗 Architecture",
+      "🛠 Development",
+      "🧪 Testing",
+      "🚧 Known limitations / roadmap",
+      "📄 License"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 427,
+     "unit": "lines",
+     "detail": "voice_io.py is the longest source file",
+     "evidence": [
+      "voice_io.py"
+     ],
+     "headroom": 0.0225
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 1,
+     "unit": "runtime dependencies",
+     "detail": "python: 1",
+     "evidence": [
+      "litellm>=1.97.0"
+     ],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (25 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (25 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.022,
+     "note": "voice_io.py is the longest source file",
+     "evidence": [
+      "voice_io.py"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "yercekimi-cevir",
+   "head": "e4e56e2f7e32d698781cac5de53db763b17c45b6",
+   "taken_at": "2026-09-22T16:39:37Z",
+   "total_headroom": 2.048,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "gdscript": 297654,
+      "python": 56105
+     },
+     "unit": "bytes",
+     "detail": "primary: gdscript",
+     "evidence": [
+      "gdscript 297654 bytes",
+      "python 56105 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.448,
+     "unit": "test bytes per source byte",
+     "detail": "244318 source bytes, 109441 test bytes in 2 files",
+     "evidence": [
+      "tests/ekran.gd",
+      "tests/testler.gd"
+     ],
+     "headroom": 0.10411021701225454
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 344,
+     "unit": "cases",
+     "detail": "344 cases across 1 files",
+     "evidence": [
+      "tests/testler.gd: 344"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 19,
+     "unit": "symbols",
+     "detail": "19 of 50 public symbols carry no doc comment",
+     "evidence": [
+      "arac/uret_bolumler.py:93 yasak_listesi",
+      "arac/uret_bolumler.py:97 tek_listesi",
+      "arac/uret_bolumler.py:101 bos_izgara",
+      "arac/uret_bolumler.py:230 karsi",
+      "arac/uret_bolumler.py:273 kur",
+      "arac/uret_bolumler.py:421 main",
+      "tools/gif_yap.py:174 gif_yaz",
+      "tools/gif_yap.py:211 main"
+     ],
+     "headroom": 0.38
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yapi.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 16,
+     "unit": "commands",
+     "detail": "16 runnable-looking commands in 3 shell blocks",
+     "evidence": [
+      "godot --path .                                        # oyunu aç",
+      "godot --headless --path . res://tests/testler.tscn    # otomatik testler (çıkış kodu 0 = geçti)",
+      "godot --path . res://tests/ekran.tscn -- 2 <klasör>   # 3. bölümü sürüp ekran görüntüsü al",
+      "godot --path . res://tests/ekran.tscn -- -1 <klasör>  # menü / bölüm seç / ayarlar",
+      "godot --path . res://tests/ekran.tscn -- -2 <klasör>  # yayın paketi görselleri + kapak",
+      "godot --path . res://tests/ekran.tscn -- -3 <klasör>  # tur 2 özelliklerinin denetim kareleri",
+      "godot --path . res://tests/ekran.tscn -- -7 <klasör>  # tur 5 (v0.6): HUD solması, hayalet yarışı, paylaşım, parıltı",
+      "godot --path . res://tests/ekran.tscn -- -8 <klasör>  # tur 6 (v0.7): yasak bölge, tek yönlü platform, tabela, süre listesi"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 31219,
+     "unit": "bytes",
+     "detail": "31219 bytes, 19 sections, 6 images",
+     "evidence": [
+      "Kontroller",
+      "Bölümde ne var",
+      "Okunurluk ve yardım",
+      "Lisanslar",
+      "Ekranlar",
+      "Nasıl çalıştırılır",
+      "Godot kurmadan bir paket indir",
+      "Kod düzeni",
+      "1. turda verilen kararlar (v0.2 — ilk yayına hazır sürüm)",
+      "2. turda verilen kararlar (v0.3 — rakip analizinden)"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 853,
+     "unit": "lines",
+     "detail": "scripts/oyun.gd is the longest source file",
+     "evidence": [
+      "scripts/oyun.gd"
+     ],
+     "headroom": 0.3775
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": 13,
+     "unit": "commits since last tag",
+     "detail": "last tag v0.7.2, 13 commits since",
+     "evidence": [
+      "v0.7.2"
+     ],
+     "headroom": 0.52
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yapi.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.52,
+     "note": "last tag v0.7.2, 13 commits since",
+     "evidence": [
+      "v0.7.2"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.38,
+     "note": "19 of 50 public symbols carry no doc comment",
+     "evidence": [
+      "arac/uret_bolumler.py:93 yasak_listesi",
+      "arac/uret_bolumler.py:97 tek_listesi",
+      "arac/uret_bolumler.py:101 bos_izgara",
+      "arac/uret_bolumler.py:230 karsi",
+      "arac/uret_bolumler.py:273 kur",
+      "arac/uret_bolumler.py:421 main"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.378,
+     "note": "scripts/oyun.gd is the longest source file",
+     "evidence": [
+      "scripts/oyun.gd"
+     ]
+    },
+    {
+     "signal": "test_mass",
+     "headroom": 0.104,
+     "note": "244318 source bytes, 109441 test bytes in 2 files",
+     "evidence": [
+      "tests/ekran.gd",
+      "tests/testler.gd"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -63,6 +63,65 @@ def test_test_count_rust_counts_inline_test_attributes(make_repo):
     assert signals.test_count(root).value == 2
 
 
+def test_test_count_gdscript_hand_rolled_cases(make_repo):
+    """GDScript has no test framework, so projects write `func _test_x()`."""
+    root = make_repo("f2", {
+        "tests/testler.gd": (
+            "extends SceneTree\n"
+            "func _calistir() -> void:\n\tawait _test_a()\n\n"
+            "func _test_a() -> void:\n\tpass\n\n"
+            "func _test_b() -> void:\n\tpass\n\n"
+            "func yardimci() -> void:\n\tpass\n"
+        ),
+    })
+    assert signals.test_count(root).value == 2
+
+
+def test_test_count_gdscript_outside_a_test_path_is_not_counted(make_repo):
+    root = make_repo("f3", {"scripts/oyun.gd": "func test_mode() -> void:\n\tpass\n"})
+    assert signals.test_count(root).value == 0
+
+
+def test_test_count_gdscript_assertion_helper_found_by_shape(make_repo):
+    """The helper's name is the author's choice; its first bool parameter is not."""
+    root = make_repo("f3b", {
+        "tests/test_denge.gd": (
+            "extends SceneTree\n"
+            "func dogru(kosul: bool, ad: String) -> void:\n\tpass\n\n"
+            "func _initialize() -> void:\n"
+            "\tdogru(1 == 1, 'bir')\n"
+            "\tdogru(2 == 2, 'iki')\n"
+            "\tdogru(3 == 3, 'uc')\n"
+        ),
+    })
+    assert signals.test_count(root).value == 3
+
+
+def test_a_gdscript_file_with_no_assertion_helper_counts_nothing(make_repo):
+    root = make_repo("f3c", {"tests/yardimci.gd": "func kur() -> void:\n\tpass\n"})
+    assert signals.test_count(root).value == 0
+
+
+def test_test_count_hand_rolled_javascript_runner(make_repo):
+    """A `*-test.js` script with its own assert helper still has cases."""
+    root = make_repo("f4", {
+        "tests/kontrol-test.js": (
+            'ol("bir", true);\n'
+            'ol("iki", 1 === 1);\n'
+            'console.log("bitti");\n'
+        ),
+    })
+    assert signals.test_count(root).value == 2
+
+
+def test_a_framework_beats_the_hand_rolled_fallback(make_repo):
+    """When `it(` is present the fallback must not double-count."""
+    root = make_repo("f5", {
+        "tests/a.test.js": 'it("x", () => { assert(true); assert(1); });\nit("y", () => {});\n',
+    })
+    assert signals.test_count(root).value == 2
+
+
 def test_test_count_zero_has_full_headroom(make_repo):
     root = make_repo("h", {"src/a.py": "x = 1\n"})
     s = signals.test_count(root)

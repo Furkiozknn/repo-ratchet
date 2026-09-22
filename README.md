@@ -109,13 +109,38 @@ exactly this code, so there is nothing new to find in it.
 Records are append-only JSON Lines, one file per round under [`kayitlar/`](kayitlar/), so a
 diff shows a round's work and nothing rewrites history.
 
+## What round 1 found so far
+
+The engine is not the point; what it finds is. A few of the first round's entries,
+each with the check that backs it in [`kayitlar/tur-01.jsonl`](kayitlar/) and the
+whole log in [`KAYITLAR.md`](KAYITLAR.md):
+
+- Wiring `godot-refcheck`'s own GitHub Action into four game repositories broke all
+  four — and the wrong way round. The action read its counts out of prose that a
+  project with **no findings** never prints, so under the runner's `bash -e` it
+  failed on exactly the repositories that were clean. Fixed, with a gate that runs
+  the action's own shell across clean and broken fixtures at every `fail-on` level.
+- The project directory's generator crashed on any repository whose `summary` was
+  `null`: `.get("summary", "")` returns `None` when the key is present and null.
+  Every repository happened to have one, so it had never fired.
+- Nothing in a 70-agent roster stopped two agents claiming the same trigger phrase,
+  so the user could say the right sentence and get the wrong agent with every file
+  still valid. Two real collisions, both closed.
+- Running it on itself, twice: `test_count` read four shipped games as having no
+  tests at all, because they hand-roll GDScript assertions rather than use a
+  framework, and `todo_density` counted the pattern it searches with.
+
+The last one is the pattern worth naming: a measurement that is wrong inflates the
+headroom of everything it touches, so the engine's own signals get corrected by the
+rounds they misread.
+
 ## Working on this repository
 
 ```sh
 python3 -m pytest -q
 ```
 
-103 tests. The suite builds throwaway repositories on disk — including real git ones, for the
+112 tests. The suite builds throwaway repositories on disk — including real git ones, for the
 signals that need history — so every measurement is tested against a repository it has never
 seen. The record rules get the heaviest coverage, because a record that can lie is a record
 that will.
