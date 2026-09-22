@@ -13,13 +13,13 @@
   },
   {
    "round": 2,
-   "repositories": 7,
-   "records": 8,
-   "advanced": 8,
+   "repositories": 8,
+   "records": 9,
+   "advanced": 9,
    "no_change": 0,
    "blocked": 0,
-   "checks_run": 56,
-   "checks_passed": 56
+   "checks_run": 62,
+   "checks_passed": 62
   }
  ],
  "records": [
@@ -1842,6 +1842,69 @@
    "headroom_before": null,
    "headroom_after": null,
    "at": "2026-09-22T20:58:22Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "yercekimi-cevir",
+   "outcome": "advanced",
+   "head_before": "9aceadbf374c37355ffb32e99e209b1059acb833",
+   "head_after": "be01c2e655eac6096ac7a0c7ae7d03ef56291063",
+   "summary": "Madalya esikleri tools/bot.gd'nin gercekten oynayarak olctugu sureler ve scripts/rota_verisi.gd icinde duruyor; 841 dogrulamanin ilgili kismi onlari o dosyaya karsi siniyor -- yani dosyayi kendisine karsi. \"biten >= 1\" bile bir olcum degil, dosyaya yazilmis bir kayit. Bir bolumun haritasi degisirse dosya eski kalir, suit yesil yanar, ve bolum cozulemez ya da altin ulasilamaz hale gelmis olabilir. Olculdu: 13. bolumde zemin dikeninin tam ustune tavan dikeni konarak bolum cozulemez yapildi; 841 dogrulama cikis 0 ile gecti ve hicbir sey soylemedi. Bot zaten depoda duruyordu, yalnizca CI'da hic kosmuyordu -- eksik olan arac degil, araci kapiya baglayan satirdi. Yeni \"denetle\" kipi dosya YAZMAZ, yazilmis olani siniyor: her bolum hala bitiyor mu, ve yayimlanan altin esigi botun bugunku ortancasindan buyuk mu. 20 bolum x 3 kosu yaklasik 6 saniye, yani her push'ta kosabiliyor; sabotajli halde cikis 1 verip satirini yazdi. Ayri bir CI adimi da calisma agacinin temiz kaldigini dogruluyor: denetim dosya yazsaydi CI'da uretilen bir esik sessizce dogru sayilirdi.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "godot --headless --path . res://tools/bot.tscn --fixed-fps 60 -- 3 -1 - denetle",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "20 bolum x 3 kosu, ~6 sn: hepsi bitiyor, her altin esigi botun bugunku ortancasini kaldiriyor",
+     "output_tail": "denetim temiz: 20 bolumun hepsi bitiyor",
+     "expect": 0
+    },
+    {
+     "command": "godot ... denetle  # 13. bolumde zemin dikeninin ustune tavan dikeni konmus",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "negatif kontrol: kapi isiriyor ve satirini yaziyor",
+     "output_tail": "13 -- Uzun Yol  BITIREMEDI (3 kosu); DENETIM BASARISIZ: 1 bulgu",
+     "expect": 1
+    },
+    {
+     "command": "godot --headless --path . res://tests/testler.tscn  # ayni sabotajli hali",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "bulgunun kendisi: 841 dogrulama cozulemez bir bolumu hic gormedi",
+     "output_tail": "841 dogrulama, 0 hata / TESTLER GECTI",
+     "expect": 0
+    },
+    {
+     "command": "godot --headless --path . res://tests/testler.tscn",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "saglam halde mevcut suit",
+     "output_tail": "841 dogrulama, 0 hata",
+     "expect": 0
+    },
+    {
+     "command": "git status --porcelain  # denetimden sonra",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "denetim hicbir depo dosyasini yazmiyor",
+     "output_tail": "temiz",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35784465270/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "be01c2e6'da CI: testler (denetim adimi dahil) ve godot-refcheck",
+     "output_tail": "2 jobs, all success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T21:07:11Z",
    "schema": 1
   }
  ]
