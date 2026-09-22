@@ -13,13 +13,13 @@
   },
   {
    "round": 2,
-   "repositories": 5,
-   "records": 6,
-   "advanced": 6,
+   "repositories": 6,
+   "records": 7,
+   "advanced": 7,
    "no_change": 0,
    "blocked": 0,
-   "checks_run": 41,
-   "checks_passed": 41
+   "checks_run": 49,
+   "checks_passed": 49
   }
  ],
  "records": [
@@ -1692,6 +1692,85 @@
    "headroom_before": null,
    "headroom_after": null,
    "at": "2026-09-22T20:29:12Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "Furkiozknn",
+   "outcome": "advanced",
+   "head_before": "eb8363fd9711acb591c626475428edb8687775e2",
+   "head_after": "881fcf12b7c7221aa4b0145bbdf3a7fed2218120",
+   "summary": "--kontrol ile --olc ayni soruyu sormuyor ve fark bu deponun butun meselesi. --kontrol manset gorseli, rozet, tablo ve toplamlarin birbiriyle tutarli olup olmadigina bakiyor; hepsi tutarli ve hepsi bayat olabilir -- yanlis bir sayinin dort kopyasi hala yanlis bir sayidir. Yalnizca --olc kosuya geri gidiyor, ve --olc'yi hicbir sey kosmuyordu: CI yalnizca --kontrol'u kosuyor, gunluk denetim ise o kontrolu yapabilecek jetonu (DEPO_JETONU) hic almiyordu ve jeton yokken kontrolu SESSIZCE atliyordu. Yani rapor, sistemin kendisi hakkinda soyledigi en yuklu sayiya hic bakilmamis gunlerde de \"temiz\" yaziyordu. Artik denetim raporu kac deponun sayisinin gercekten kosuya karsi dogrulandigini ve kacina bakilamadigini nedeniyle birlikte en basta yaziyor -- bakilamayan bir sayi temiz degildir -- ve denetim.yml jetonu geciyor. Elle kosulan olcum ucunu birden buldu: godot-refcheck 107 -> 133, claude-code-intelligence 261 -> 273, ve repo-ratchet'in yayimlanan kaynagi `130 passed` kendi CI logunda hic gecmiyordu, cunku is akisi pytest'i -q ile kosuyor ve -q altinda pytest yalnizca ilerleme noktalarini basiyor. Sayi dogruydu, kaynagi orada degildi: kimse geri gidip dogrulayamazdi, ve cevrimdisi kontrol o sirada yesildi. Ucu de duzeltildi ve duzeltmeden sonra dordu birden kendi kosusuna karsi dogrulandi. 5.062 -> 5.101 test, 1.067 -> 1.081 commit; bu deponun kendi suiti 68 -> 75.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 schema/test_schema.py",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "68 -> 75 test",
+     "output_tail": "Ran 75 tests ... OK",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/testler.py --olc --bekleme 2",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "negatif kontrol / bulgunun kendisi: cevrimici olcum bayatligi buldu",
+     "output_tail": "! claude-code-intelligence 261 -> 273 ; ! godot-refcheck 107 -> 133 ; ? repo-ratchet 130 (kalip '130 passed' logda bulunamadi)",
+     "expect": 1
+    },
+    {
+     "command": "python3 schema/testler.py --kontrol  # ayni anda, olcumden once",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "ayni dakikada cevrimdisi kontrol yesildi: tutarlilik dogruluk degildir",
+     "output_tail": "Yayimlanan her yer ayni sayiyi soyluyor (5,062 test, 25 suit).",
+     "expect": 0
+    },
+    {
+     "command": "gh run view <repo-ratchet ci.yml> --log | grep -c 'passed'",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "negatif kontrol: yayimlanan kaynak satiri kosu logunda gercekten yoktu",
+     "output_tail": "passed-hits: []",
+     "expect": 1
+    },
+    {
+     "command": "python3 schema/testler.py --tazele --depo-sayisi 28 --commit-sayisi 1081",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yedi yuzeyin hepsi olculene esitlendi",
+     "output_tail": "Tazelendi: 5,101 test, 25 suit.",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/testler.py --olc --depo repo-ratchet --depo godot-refcheck --depo claude-code-intelligence --depo masal",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "duzeltmeden sonra dordu de kendi kosusuna karsi dogrulaniyor",
+     "output_tail": "ok repo-ratchet 131 / ok godot-refcheck 133 / ok claude-code-intelligence 273 / ok masal 92",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/dogrula.py <kok>",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "kendi metadata kapisi",
+     "output_tail": "1 depo, 0 hata.",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35781758981/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "881fcf12'de CI kapilari",
+     "output_tail": "kapilar: success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T20:41:37Z",
    "schema": 1
   }
  ]
