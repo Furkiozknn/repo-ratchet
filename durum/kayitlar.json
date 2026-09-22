@@ -14,12 +14,12 @@
   {
    "round": 2,
    "repositories": 10,
-   "records": 12,
-   "advanced": 12,
+   "records": 13,
+   "advanced": 13,
    "no_change": 0,
    "blocked": 0,
-   "checks_run": 84,
-   "checks_passed": 84
+   "checks_run": 90,
+   "checks_passed": 90
   }
  ],
  "records": [
@@ -2126,6 +2126,69 @@
    "headroom_before": null,
    "headroom_after": null,
    "at": "2026-09-22T21:41:28Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "Furkiozknn",
+   "outcome": "advanced",
+   "head_before": "ba4b3fbe141f2d088920fed25aaf0bad76d63e53",
+   "head_after": "b845ed0cff3ce5c7a5bbcd56c6cb01aed6cf9ab9",
+   "summary": "Ucuncu tur-2 girdisi, ve ikisi de bir onceki girdinin actigi kapinin gosterdigi seyler. (1) Gunluk denetim artik kosu loglarini gercekten okudugu icin ilk tam kosusunda \"mini-creative-toolkit: tests.count 327 diyor, en yeni CI kosusu 135 yazdi\" diye bir bulgu yazdi -- ama o logda hem 135 hem 327 var, cunku kosuda iki is var. sayiyi_bul ILKINI aliyordu, yani bilinmeyeni bilinen gibi sunuyordu. testler.py bu ayrimi bir tur once ogrenmis ve docstring'ine \"olculen sayiyi YAZAN bir arac icin bu kabul edilemez\" diye yazmisti; duzeltme yazan araca yapilmis, gunluk konuya yazan araca yapilmamisti. Mantik artik denetim.py'de tek yerde ve testler.py oraya delege ediyor; belirsizlik bulgu degil, nedeniyle birlikte \"bakilamadi\". (2) Hiz siniri depo LISTESI alinirken vurursa denetim hala yigin izi basiyordu; olumcul olmasi yigin izi basmasi anlamina gelmiyor, ve nedeni soylenmeli: derle._get GITHUB_TOKEN/GH_TOKEN okuyor, kosu loglarini okuyan taraf DEPO_JETONU, yalniz ikincisi tanimliyken istekler kimliksiz gidiyor -- bugun core kotasinin 4852'si duruyorken tam bu oldu. 75 -> 84 test.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 schema/denetim.py  # kapi acildiktan sonraki ilk tam kosu",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "bulgunun kendisi: belirsiz bir logu kesin bir bulgu gibi yazdi",
+     "output_tail": "mini-creative-toolkit -- tests.count 327 diyor, en yeni CI kosusu 135 yazdi",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/denetim.py  # duzeltmeden sonra",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "ayni depo artik bulgu degil, nedeniyle birlikte bakilamadi",
+     "output_tail": "13 depoda dogrulandi, 13 depoda bakilamadi (1: belirsiz: kalip 135, 327 sayilarini esliyor ...)",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/test_schema.py",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "81 -> 84 test",
+     "output_tail": "Ran 84 tests ... OK",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/test_schema.py  # testin kendi varsayimi yanlisken",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "negatif kontrol testi duzeltti: rakamlar genellestiriliyor, rakam disi metin aynen araniyor",
+     "output_tail": "AssertionError: Lists differ: [135, 327] != []",
+     "expect": 1
+    },
+    {
+     "command": "python3 -c 'main(), _repos() HizSiniri atiyor, jeton yok'",
+     "exit_code": 2,
+     "duration_s": 0.0,
+     "note": "negatif kontrol: olumcul ama yigin izi degil, ve nedenini soyluyor",
+     "output_tail": "GitHub hiz siniri: depo listesi alinamadi ... istekler KIMLIKSIZ gidiyor",
+     "expect": 2
+    },
+    {
+     "command": "python3 schema/testler.py --kontrol",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yayimlanan sayilar tutarli",
+     "output_tail": "Yayimlanan her yer ayni sayiyi soyluyor (5,226 test, 25 suit).",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T21:57:59Z",
    "schema": 1
   }
  ]
