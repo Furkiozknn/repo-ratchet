@@ -13,13 +13,13 @@
   },
   {
    "round": 2,
-   "repositories": 9,
-   "records": 10,
-   "advanced": 10,
+   "repositories": 10,
+   "records": 11,
+   "advanced": 11,
    "no_change": 0,
    "blocked": 0,
-   "checks_run": 70,
-   "checks_passed": 70
+   "checks_run": 78,
+   "checks_passed": 78
   }
  ],
  "records": [
@@ -1984,6 +1984,85 @@
    "headroom_before": null,
    "headroom_after": null,
    "at": "2026-09-22T21:17:28Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "derin-kazi",
+   "outcome": "advanced",
+   "head_before": "098577330ce0efaf391bca3f830c84e59502f26f",
+   "head_after": "923377f63d7b8cc37d0acb048f3033eea8c5b9e4",
+   "summary": "ci.yml'nin kendi yorumu soyluyordu: test_denge.gd, test_insan.gd ve test_fay_olcum.gd CI'da kosmuyor, cunku \"dakikalarca suren denge simulasyonlari\" ve gelistirme turu basina bir kez yerelde kosuluyorlar. O gerekce olculdu ve iki buyukluk mertebesi yanlisti: sirasiyla 0 sn, 1 sn ve 6 sn; kapinin tamami 67'den 75 saniyeye cikiyor. Bu arada disarida kalan sey kucuk degildi -- deponun en yuklu iddialari, yani \"cekirdege 25 dakikada varilir\", \"fay acikken 12 tohumun 12'sinde bot cekirdege variyor\", \"2-4 dakikalik turda bir gelistirme\" ve \"katman basina gelir x1,2-2,2\", hicbir otomatik kapinin arkasinda degildi; scripts/ayarlar.gd'de ya da dunya ureticisinde bir degisiklik bunlari sessizce bozabilirdi. Olculdu: MADEN_DEGER egrisi diklestirildiginde (agirlik sabit) katman basina gelir x2,36'ya cikiyor; CI'da zaten kosan 304 birim ve 156 oynanis testi yesil kaldi, test_denge cikis 1 verip satirini yazdi. Uc paket de artik her push'ta kosuyor ve yorum olculen sureleri yaziyor. Yayimlanan sayi 460 -> 477 (304 + 156 + 7 + 10); fay olcumu bir sayi degil bir kapi oldugu icin sayiya girmiyor.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "godot --headless --script res://tests/test_denge.gd",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "\"dakikalarca suruyor\" denen paket: olculen sure 1 sn",
+     "output_tail": "== 7 sinama, 0 hata ==",
+     "expect": 0
+    },
+    {
+     "command": "godot --headless --script res://tests/test_insan.gd",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "olculen sure 2 sn",
+     "output_tail": "== 10 sinama, 0 hata ==",
+     "expect": 0
+    },
+    {
+     "command": "godot --headless --script res://tests/test_fay_olcum.gd",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "olculen sure 6 sn",
+     "output_tail": "fay acikken kusursuz bot 12/12, sisli insan botu 12/12 -- TAMAM",
+     "expect": 0
+    },
+    {
+     "command": "godot --headless --script res://tests/test_denge.gd  # MADEN_DEGER egrisi diklestirilmis",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "negatif kontrol: yeni kapi gercekten isiriyor",
+     "output_tail": "[HATA] katman basina gelir carpani 1,2-2,2 (olculen x2.36)",
+     "expect": 1
+    },
+    {
+     "command": "godot --headless --script res://tests/test_calistir.gd  # ayni sabotajli hali",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "bulgunun kendisi: CI'da zaten kosan paket denge kaymasini gormuyor",
+     "output_tail": "== 304 sinama, 0 hata ==",
+     "expect": 0
+    },
+    {
+     "command": "godot --headless --script res://tests/test_oynanis.gd  # ayni sabotajli hali",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "digeri de gormuyor",
+     "output_tail": "== 156 sinama, 0 hata ==",
+     "expect": 0
+    },
+    {
+     "command": "bes paketin tamami, saglam halde",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "kapi 67 sn'den 75 sn'ye cikiyor",
+     "output_tail": "toplam 75s",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35786637146/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "923377f6'da CI: bes paket ve godot-refcheck",
+     "output_tail": "2 jobs, all success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T21:31:46Z",
    "schema": 1
   }
  ]
