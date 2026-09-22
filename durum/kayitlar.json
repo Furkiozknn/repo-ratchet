@@ -14,12 +14,12 @@
   {
    "round": 2,
    "repositories": 10,
-   "records": 13,
-   "advanced": 13,
+   "records": 14,
+   "advanced": 14,
    "no_change": 0,
    "blocked": 0,
-   "checks_run": 90,
-   "checks_passed": 90
+   "checks_run": 98,
+   "checks_passed": 98
   }
  ],
  "records": [
@@ -2189,6 +2189,85 @@
    "headroom_before": null,
    "headroom_after": null,
    "at": "2026-09-22T21:57:59Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "Furkiozknn",
+   "outcome": "advanced",
+   "head_before": "b845ed0cff3ce5c7a5bbcd56c6cb01aed6cf9ab9",
+   "head_after": "ca5189240446f97b062c3409ae3d6195c9b618ba",
+   "summary": "Dorduncu tur-2 girdisi ve yine acilan kapinin gosterdigi sey. Iki yayimlanan kaynak vardi ve birbirine hic bakmiyorlardi: hub sayfasi (veri/projeler.json) her arsivlenmemis deponun KENDI project-meta.json'undan toplaniyor, profil sayfasi meta-source.json'dan. Her iki taraftaki tutarlilik kontrolu de yalniz kendi tarafina bakiyordu, yani ikisi sessizce ayrisabilirdi ve ayrismisti: buradane depoda 334 profilde 347, turkce-ajanlar depoda 111 profilde 160. Hangisinin dogru oldugu kosudan okundu (buradane'nin backend'i `119 passed`, turkce-ajanlar'in dokumu 14/19/20/43 satirlariyla uyusuyor) ve iki deponun kendi dosyasi duzeltildi. denetim.py artik ikisini karsilastirip ayrismayi bulgu yaziyor. Ayni karsilastirma ucuncu bir seyi de ortaya cikardi: TESTLER.md godot-2d-sablon'u \"iki baslangic sablonu, suit yok\" diye disarida birakiyordu, ama tur 1 o sablonlara 21 davranissal test eklemisti ve liste guncellenmemisti -- suiti olan ve CI'da kosan bir depo, dogrulanabilir olsun diye var olan bir toplamin disinda kaliyordu. Artik sayiliyor, ve bunun yan etkisi iki sayfanin ayni sayiyi soylemesi: 5.247. 84 -> 88 test.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 hub-fark.py  # duzeltmeden once",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "bulgunun kendisi: iki yayimlanan kaynak iki depoda ayrismis",
+     "output_tail": "buradane hub=334 profil=347 ; turkce-ajanlar hub=111 profil=160",
+     "expect": 0
+    },
+    {
+     "command": "gh run view <buradane ci.yml> --log | grep passed",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "hangisinin dogru oldugu kosudan okundu",
+     "output_tail": "119 passed",
+     "expect": 0
+    },
+    {
+     "command": "gh run view <turkce-ajanlar dogrula.yml> --log",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "dokum kosu satirlariyla uyusuyor",
+     "output_tail": "14 gecti / 19 gecti / 20 gecti / 43 gecti",
+     "expect": 0
+    },
+    {
+     "command": "gh run view <godot-2d-sablon ci.yml> --log | grep passed",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "\"suit yok\" denen depoda 21 test CI'da kosuyor",
+     "output_tail": "21 passed",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/test_schema.py",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "84 -> 88 test",
+     "output_tail": "Ran 88 tests ... OK",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/testler.py --tazele --depo-sayisi 28 --commit-sayisi 1096",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "26 suit, 5.247 test",
+     "output_tail": "Yayimlanan her yer ayni sayiyi soyluyor (5,247 test, 26 suit).",
+     "expect": 0
+    },
+    {
+     "command": "python3 hub-fark.py  # duzeltmeden sonra",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "geriye yalnizca belgelenmis kapsam farki kaliyor (arsivli depo)",
+     "output_tail": "farklar: claude-quota-monitor hub=43 profil=None",
+     "expect": 0
+    },
+    {
+     "command": "hub mansetini oku (yenile is akisi kosturulduktan sonra)",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "iki yayimlanan toplam artik ayni sayi",
+     "output_tail": "hub sayilari: ['5,247', ...]",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T22:19:34Z",
    "schema": 1
   }
  ]
