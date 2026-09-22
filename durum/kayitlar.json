@@ -13,13 +13,13 @@
   },
   {
    "round": 2,
-   "repositories": 6,
-   "records": 7,
-   "advanced": 7,
+   "repositories": 7,
+   "records": 8,
+   "advanced": 8,
    "no_change": 0,
    "blocked": 0,
-   "checks_run": 49,
-   "checks_passed": 49
+   "checks_run": 56,
+   "checks_passed": 56
   }
  ],
  "records": [
@@ -1771,6 +1771,77 @@
    "headroom_before": null,
    "headroom_after": null,
    "at": "2026-09-22T20:41:37Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "tek-tus-kosu",
+   "outcome": "advanced",
+   "head_before": "7922bab133f279a4de569583ee22781782ebf50f",
+   "head_after": "d0afe604778ec82329818f89459b1fa89c04ee97",
+   "summary": "Sonsuz kosuda her parca, en dusuk ve en yuksek hizinda bot ile geciliyordu; ritim kosusunun karsiligi yoktu. Bot yalnizca rastgele uretilmis bir akista kosuyordu, ve rastgele secim her deseni her sarkida uretmiyor -- sarki agirliklari bazilarini bilerek seyreklestiriyor (Firtina Hatti'nda alcak tavan x0,6, Cati Nesesi'nde cukur x0,7). Onemli olan da bu: engel geometrisi mutlak piksel (diken vurustan +99, cukur +40..+160, alcak tavan -60'tan 260 px) ama vurus araligi sarkiya gore degisiyor -- 120 / 140,6 / 128,6 px. Ayni desen dar aralikli bir sarkida gecilemez olabilir ve o olcu seyrek cikiyorsa 853 testlik suit yesil kalir. Bir ritim oyununun en kotu hatasi gecilemeyen bir olcudur ve tam olarak olculmeyen sey oydu. Ritim ureticisinde secmek ile kurmak ayrildi (desenleri_sec / parca_kur; ikincisi rastgelelik icermiyor, yani tek tek sinanabilir) ve Oyun'a sonsuz kosudaki parca_sirasi / sira_bitince_duz ikilisinin ritim karsiligi eklendi. Artik on iki olayli desenin her biri, uc sarkinin her birinin vurus araliginda, vurusta ziplayan bir botla ayri ayri kosuluyor; hepsi geciliyor ve her ziplama tam vurus sayiliyor -- yani bulgu \"kapali\" degil, \"artik olculuyor\". Testin kendisi negatif kontrolle iki kez duzeltildi: once sira bitince rastgele uretime donuyordu, sonra sira oyun agaca girdikten SONRA atandigi icin kosunun ilk olculeri rastgele kaliyordu; ikisinde de sinanan desenle ilgisi olmayan bir olum sinanan desene yaziliyordu. 853 -> 961 test.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "godot --headless --fixed-fps 60 -s res://tests/testler.gd",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "853 -> 961 test, gercek Godot 4.7.2 ile",
+     "output_tail": "=== SONUC: 961 gecti, 0 hata ===",
+     "expect": 0
+    },
+    {
+     "command": "godot ... -s res://tests/testler.gd  # cukur 120 -> 260 px genisletilmis",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "negatif kontrol: kapi isiriyor ve dogru yeri gosteriyor -- yalnizca cukur iceren dort desen uc sarkida birden kirmizi, diken ve alcak tavan desenleri yesil",
+     "output_tail": "925 gecti, 36 hata; cukur0/cukur2/karma/cift_cukur x 3 sarki",
+     "expect": 1
+    },
+    {
+     "command": "godot ... # test ilk surumu: sira bitince rastgele uretime donuyordu",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "negatif kontrol testin kendisini duzeltti: sinanan desenle ilgisi olmayan bir olumde hata sinanan desene yaziliyordu (53 hata, hepsi)",
+     "output_tail": "908 gecti, 53 hata -- diken0 dahil her desen",
+     "expect": 1
+    },
+    {
+     "command": "godot ... # test ikinci surumu: sira agaca girdikten SONRA atandi",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "ayni yanlis etiketleme, bu kez kosunun ilk olculeri rastgele kaldigi icin",
+     "output_tail": "908 gecti, 53 hata",
+     "expect": 1
+    },
+    {
+     "command": "godot --headless --path . --import",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "taze klonda LFS ile ice aktarma",
+     "output_tail": "0 hata",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35783523776/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "d0afe604'te CI: testler ve godot-refcheck isleri",
+     "output_tail": "2 jobs, all success",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/testler.py --olc --depo tek-tus-kosu  (profil deposunda)",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yayimlanan 961 sayisi kosunun yazdigi satirdan geri okundu",
+     "output_tail": "ok tek-tus-kosu 961",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T20:58:22Z",
    "schema": 1
   }
  ]
