@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / py${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install pytest
+      # The signals that read git history need a real git identity on the
+      # runner, because the suite builds real repositories to measure.
+      - name: git identity for the fixture repositories
+        run: |
+          git config --global user.email "ci@example.com"
+          git config --global user.name "ci"
+          git config --global init.defaultBranch main
+      - run: python -m pytest -q
+
+  self:
+    name: the engine on itself
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0     # release_lag counts commits since the last tag
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Survey this repository with its own surveyor
+        run: python -m ratchet survey --path . --repo repo-ratchet
+      # If the fence ever stops refusing this, the check runner has regressed
+      # in the one way that matters.
+      - name: The fence still refuses what it should
+        run: |
+          set -eu
+          if python -m ratchet check . --command "rm -rf /"; then
+            echo "the fence let a destructive command through" >&2
+            exit 1
+          fi
+          echo "refused, as it should be"

@@ -1,0 +1,4 @@
+# How this repository wants to be checked. `ratchet check` reads this first,
+# before guessing from the manifest, because a project saying how to verify it
+# is always better than a filename heuristic.
+check = ["python3 -m pytest -q"]

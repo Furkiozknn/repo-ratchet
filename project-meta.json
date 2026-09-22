@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "id": "repo-ratchet",
+  "owner": "Furkiozknn",
+  "repository": "https://github.com/Furkiozknn/repo-ratchet",
+  "homepage": "https://furkiozknn.github.io/#repo-ratchet",
+  "releases": "https://github.com/Furkiozknn/repo-ratchet/releases",
+  "status": "active",
+  "category": "developer-tool",
+  "platform": ["linux", "macos", "windows"],
+  "primary_language": "Python",
+  "technologies": [
+    "Python 3.11 standard library only",
+    "no runtime dependencies",
+    "append-only JSON Lines work records",
+    "GitHub REST API"
+  ],
+  "version": "0.1.0",
+  "license": "MIT",
+  "topics": [
+    "continuous-improvement",
+    "developer-tools",
+    "github",
+    "repository-maintenance",
+    "zero-dependency"
+  ],
+  "summary": "The engine that keeps every repository on this account moving forward: it measures what each one can currently do, ranks where the headroom is, and refuses to record work that no check actually verified.",
+  "key_features": [
+    "Twelve signals that measure a repository without executing anything inside it, each returning the evidence behind its number and null rather than a guess",
+    "Work records with three rules enforced in code: advanced needs the commit to have moved, advanced needs a check that ran and exited zero, no-change needs a stated reason",
+    "A fenced check runner with allowlisted verbs, no shell, a scrubbed environment and a timeout, so a command cannot grow a second half it did not declare",
+    "Rounds that cover every repository once before anything is revisited, with unchanged repositories sinking to the back of the queue"
+  ],
+  "media": {
+    "hero": null,
+    "screenshots": [],
+    "gifs": [],
+    "videos": []
+  },
+  "tests": {
+    "count": 106,
+    "framework": "pytest",
+    "command": "python3 -m pytest -q",
+    "evidence": "106 passed"
+  },
+  "ci": {
+    "workflows": ["ci.yml", "tur.yml"],
+    "badge": "https://github.com/Furkiozknn/repo-ratchet/actions/workflows/ci.yml/badge.svg"
+  },
+  "docs": {
+    "readme": "README.md",
+    "changelog": "CHANGELOG.md",
+    "version_history": null,
+    "roadmap": null,
+    "security": null,
+    "contributing": null,
+    "license_file": "LICENSE"
+  },
+  "social": {
+    "headline": "A ratchet only turns one way: measure what a repository can do, rank the headroom, and refuse to record work nobody verified.",
+    "hashtags": ["opensource", "devtools", "python"],
+    "primary_link": "https://github.com/Furkiozknn/repo-ratchet"
+  },
+  "provenance": {
+    "generated_at": "2026-09-22",
+    "generator": "hand-written",
+    "rule": "mechanical fields read from the repository; the test count is the number the runner printed"
+  }
+}

@@ -1,0 +1,42 @@
+[project]
+name = "repo-ratchet"
+version = "0.1.0"
+description = "Keep raising what each repository can do: measure its current capacity, rank where the headroom is, and record only work that was actually verified."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Furki Özkan" }]
+keywords = ["repository", "maintenance", "continuous-improvement", "github", "measurement"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+# No dependencies, deliberately. This tool runs against other people's
+# repositories and records what it found; every library it pulled in would be
+# another thing the record depends on being true. Standard library only.
+dependencies = []
+
+[project.scripts]
+ratchet = "ratchet.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Furkiozknn/repo-ratchet"
+Directory = "https://furkiozknn.github.io/"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ratchet"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

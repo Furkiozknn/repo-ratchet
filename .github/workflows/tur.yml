@@ -1,0 +1,78 @@
+# The round keeps itself current.
+#
+# Repositories change without this engine being told: a commit lands, a
+# dependency moves, a release goes out. A survey taken last month is a survey
+# of a repository that no longer exists, so the measurements are retaken on a
+# schedule and committed only when they actually moved.
+#
+# This workflow never changes another repository. It reads, measures, and
+# writes the numbers back here.
+
+name: Tur
+
+on:
+  schedule:
+    - cron: "40 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "comma separated repository names, empty for all"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tur
+  cancel-in-progress: false
+
+jobs:
+  olc:
+    name: Retake the measurements
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Which repositories exist right now
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python -m ratchet discover Furkiozknn
+
+      # Full clones, not shallow: release_lag is the difference between the
+      # last tag and HEAD, and a shallow clone has neither.
+      - name: Measure each one
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python -m ratchet survey --refresh ${{ github.event.inputs.only && format('--only {0}', github.event.inputs.only) || '' }}
+
+      - name: Rebuild the work log
+        run: |
+          python -m ratchet report --out KAYITLAR.md
+          python -m ratchet report --json --out durum/kayitlar.json
+
+      - name: Commit only if the numbers actually moved
+        run: |
+          set -eu
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "no change"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: retake the measurements"
+          git push
+
+      - name: What the queue says now
+        run: |
+          {
+            echo '### Queue'
+            echo ''
+            echo '```'
+            python -m ratchet queue || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
