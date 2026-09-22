@@ -13,13 +13,13 @@
   },
   {
    "round": 2,
-   "repositories": 8,
-   "records": 9,
-   "advanced": 9,
+   "repositories": 9,
+   "records": 10,
+   "advanced": 10,
    "no_change": 0,
    "blocked": 0,
-   "checks_run": 62,
-   "checks_passed": 62
+   "checks_run": 70,
+   "checks_passed": 70
   }
  ],
  "records": [
@@ -1905,6 +1905,85 @@
    "headroom_before": null,
    "headroom_after": null,
    "at": "2026-09-22T21:07:11Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "kanca",
+   "outcome": "advanced",
+   "head_before": "fcb4993f38c7a1bee41b17ad0171ae88951cf083",
+   "head_after": "1b2aa2ab0ec6d313a36f1d34e7541623478fc849",
+   "summary": "ci.yml'nin kendi yorumu boslugu zaten yaziyordu: \"CI onu yeniden uretmiyor, depodaki veriyi dogruluyor\". Esikler uretilmis bir dosyada duruyor ve 115 dogrulamanin ilgili kismi onlari o dosyaya karsi siniyor; gecilebilirlik testi de geometrik -- kanca zincirinin menzil ve gorus hattiyla var oldugunu gosteriyor, fizikte kosuldugunu degil. Bot depodaydi, yalnizca CI'da hic kosmuyordu; eksik olan arac degil, araci kapiya baglayan satirdi. Yeni --denetle kipi dosya yazmadan botu yeniden kosturuyor ve iki sey soruyor: her bolum hala bitiyor mu, yayimlanan altin esigi botun bugunku ortancasindan buyuk mu. 14 bolum x 5 kosu ~8 sn. Ilk kosusunda gercek bir kusur buldu: 5. bolumun altin esigi 7,55 sn, botun o bolumdeki ortancasi 11,10 sn -- bolumu oynayan tek seyin 3,5 saniye onunde bir altin. Nedeni tahmin yolunda: olcegin iki katindan yavas kalan bolum tahmine devredilirken OLCULEN ortanca tamamen atiliyor ve tahmin yalniz rota uzunlugu x olcek oldugu icin gozlenen sureden cok hizli cikabiliyordu. Devretme gerekcesi dogru -- bot orada kotu oynamisti, o sureyi altin yapmak bolumu bedava altin yapardi -- ama sonucu tek yonlu degildi. Artik gozlenen ortanca saklaniyor: tahmin ondan hizli olabilir, altin esigi olamaz. rota_verisi.gd yeniden uretildi, tek satir degisti (5. bolumun altini 7,549 -> 11,100).",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "godot --headless --fixed-fps 60 --scene res://tools/rota.tscn -- --denetle  # duzeltmeden ONCE",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "bulgunun kendisi: kapinin ilk kosusu gercek bir kusur buldu",
+     "output_tail": "5  Yukari  altin 7.55  bugun 11.10  pay -3.55  ALTIN ULASILAMAZ",
+     "expect": 1
+    },
+    {
+     "command": "godot --headless --scene res://tests/test_kanca.tscn  # ayni anda",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "115 dogrulama ayni dakikada yesildi: esikleri uretilmis dosyaya karsi siniyorlar, kosuya degil",
+     "output_tail": "=== 115/115 gecti ===",
+     "expect": 0
+    },
+    {
+     "command": "godot --headless --fixed-fps 60 --scene res://tools/rota.tscn  # yeniden uretim",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "tahmin tabani devreye girdi",
+     "output_tail": "bolum 5 tahmin 5.206 -> 7.655 (altin 11.100)",
+     "expect": 0
+    },
+    {
+     "command": "godot --headless --fixed-fps 60 --scene res://tools/rota.tscn -- --denetle  # duzeltmeden SONRA",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "14 bolumun hepsi bitiyor, her altin esigi botun bugunku ortancasini kaldiriyor",
+     "output_tail": "denetim temiz: 14 bolumun hepsi bitiyor",
+     "expect": 0
+    },
+    {
+     "command": "godot --headless --scene res://tests/test_kanca.tscn",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "mevcut suit hala yesil",
+     "output_tail": "=== 115/115 gecti ===",
+     "expect": 0
+    },
+    {
+     "command": "git status --porcelain -- scripts/rota_verisi.gd  # denetimden sonra",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "denetim uretilmis dosyaya dokunmuyor",
+     "output_tail": "degismedi",
+     "expect": 0
+    },
+    {
+     "command": "git diff --stat -- scripts/rota_verisi.gd  # yeniden uretimden sonra",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yalnizca 5. bolum satiri degisti",
+     "output_tail": "1 file changed, 1 insertion(+), 1 deletion(-)",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35785595289/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "1b2aa2ab'de CI: testler (denetim adimi dahil) ve godot-refcheck",
+     "output_tail": "2 jobs, all success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T21:17:28Z",
    "schema": 1
   }
  ]
