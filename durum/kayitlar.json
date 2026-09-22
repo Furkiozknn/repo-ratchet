@@ -13,13 +13,13 @@
   },
   {
    "round": 2,
-   "repositories": 4,
-   "records": 5,
-   "advanced": 5,
+   "repositories": 5,
+   "records": 6,
+   "advanced": 6,
    "no_change": 0,
    "blocked": 0,
-   "checks_run": 32,
-   "checks_passed": 32
+   "checks_run": 41,
+   "checks_passed": 41
   }
  ],
  "records": [
@@ -1605,6 +1605,93 @@
    "headroom_before": null,
    "headroom_after": null,
    "at": "2026-09-22T20:18:34Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "claude-code-intelligence",
+   "outcome": "advanced",
+   "head_before": "f4c9b42e30a4d917113c1526ae83097547db9218",
+   "head_after": "03fde8fb075a2c1a8e6d4fd51039e28962b9380b",
+   "summary": "Uzatma noktasi belgeliydi, sozlesme testi vardi, kayit defteri de vardi -- ve Registry.register() deponun tamaminda yalnizca bir testten cagriliyordu. Urunun hicbir yeri kayit defterini okumuyor, cci scan dahil her cagri yeri somut sinifi adiyla ice aktariyordu. Yani docs/EXTENDING.md'yi harfiyen izleyip bir adaptor yazan kisi, hicbir zaman cagrilmayacak bir nesne elde ediyordu; \"cci saglayiciya bagli degil\" cumlesinin karsiligi kodda yoktu. Sozlesme testi bunu gosteremezdi cunku gordugu adaptorler ayni dosyada, ayni elden yazilmistir -- kendi kopyasini test eden bir kontrol. Artik bir cci.adapters giris noktasi grubu var: kurulu paket build(env, home) duyuruyor, kesif aninda assert_contract kosuyor, gecmeyen yuklenmiyor ve nedeni cci providers ciktisinda yaziyor; patlayan eklenti kendini devre disi birakiyor, cekirdegi degil; birinci taraf iki adaptor de artik ayni yoldan geciyor. Ispat paket sinirinin disindan geliyor: testler adaptoru gecici bir dizine kendi .dist-info meta verisiyle yaziyor (pip install'in urettiginin aynisi) ve kaydinin olay deposuna girdigini gosteriyor, meta veri kaldirilinca hicbir sey bulunmuyor; CI ise ornekler/cci-adapter-ornek paketini gercekten kurup cci gormezse kirmizi yaniyor, sonra kaldirip listede olmadigini da dogruluyor. Ayrica Stage 15'in kendi kabul olcutu \"kapsam dislama gerekcesi\" istiyordu ve hicbir yerde yazili degildi: dort adaptorden ikisi var, eksik olan kod degil dogrulanmis fixture, ve schema_verified=false ile yazilan bir adaptorun urettigi her sayi bu aracin kendi olcut sisteminde inferred'a duser. 261 -> 273 test.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "uv run pytest",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "261 -> 273 test, yerelde",
+     "output_tail": "273 passed",
+     "expect": 0
+    },
+    {
+     "command": "uv pip install ./ornekler/cci-adapter-ornek && cci --json providers",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "gercek pip install: adaptor listede, builtin=false, schema_verified=false",
+     "output_tail": "ornek  ornekprov  0 kaynak  down  DOGRULANMADI -> inferred  [kurulu paket]",
+     "expect": 0
+    },
+    {
+     "command": "uv pip uninstall cci-adapter-ornek && cci --json providers",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "negatif kontrol degil, tamamlayici: kaldirilinca listede yok",
+     "output_tail": "['claude_code', 'codex']",
+     "expect": 0
+    },
+    {
+     "command": "uv run pytest tests/test_adapter_plugins.py  # .dist-info kaldirilmis hali",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "negatif kontrol: testi geciren sey sys.path degil giris noktasi",
+     "output_tail": "'demo' not in names",
+     "expect": 1
+    },
+    {
+     "command": "uv run pytest tests/test_adapter_plugins.py::test_scan_ingests_from_an_externally_installed_adapter",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "ucundan uca: disaridan kurulan adaptorun kaydi olay deposunda, ikinci taramada tekrar yazilmiyor",
+     "output_tail": "written 1, sonra 0",
+     "expect": 0
+    },
+    {
+     "command": "uv run python arac/sozlesme-belgeli.py",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yeni genel semboller de belgeli",
+     "output_tail": "28 genel sembolun 28'si belgeli",
+     "expect": 0
+    },
+    {
+     "command": "cci <her alt komut> --help",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yeni providers komutu dahil her yardim dizgisi bicimleniyor",
+     "output_tail": "all subcommand help strings format",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35780415530/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "03fde8fb'de CI: test ve cli-contract, ikincisi paketi gercekten kurup kaldiriyor",
+     "output_tail": "2 jobs, all success",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35780415001/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "CodeQL: actions ve python",
+     "output_tail": "2 jobs, all success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T20:29:12Z",
    "schema": 1
   }
  ]

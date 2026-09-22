@@ -35,7 +35,14 @@ jobs:
           git config --global user.email "ci@example.com"
           git config --global user.name "ci"
           git config --global init.defaultBranch main
-      - run: python -m pytest -q
+      # Not `-q`. Under it pytest printed the progress dots and stopped:
+      # the run log carried no "N passed" line at all. The profile page
+      # publishes this repository's test count and names `130 passed` as the
+      # line it came from - a line this workflow never wrote. The count was
+      # right and its source was not there, so nothing could re-read it, and
+      # the offline consistency check stayed green because four copies of one
+      # unverifiable number still agree with each other.
+      - run: python -m pytest
 
   self:
     name: the engine on itself

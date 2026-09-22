@@ -184,7 +184,7 @@ catch, in the engine.
 python3 -m pytest -q
 ```
 
-130 tests. The suite builds throwaway repositories on disk — including real git ones, for the
+131 tests. The suite builds throwaway repositories on disk — including real git ones, for the
 signals that need history — so every measurement is tested against a repository it has never
 seen. The record rules get the heaviest coverage, because a record that can lie is a record
 that will.
