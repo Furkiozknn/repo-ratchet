@@ -42,10 +42,10 @@
     "videos": []
   },
   "tests": {
-    "count": 118,
+    "count": 130,
     "framework": "pytest",
     "command": "python3 -m pytest -q",
-    "evidence": "118 passed"
+    "evidence": "130 passed"
   },
   "ci": {
     "workflows": [

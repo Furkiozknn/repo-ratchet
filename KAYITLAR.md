@@ -1,6 +1,6 @@
 ### Round 1
 
-27 repositories, 27 advanced, 106 checks run of which 83 passed.
+27 repositories, 27 advanced, 106 checks recorded, 83 returned what they were run to return.
 
 | Repository | Outcome | What changed / why not | Verified by |
 | --- | --- | --- | --- |

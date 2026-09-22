@@ -8,7 +8,7 @@ import json
 
 import pytest
 
-from ratchet.records import Ledger, Record, RecordError, Verification
+from ratchet.records import ADVANCED, Ledger, Record, RecordError, Verification
 
 PASS = Verification("pytest -q", 0, 1.2)
 FAIL = Verification("pytest -q", 1, 1.2)
@@ -30,12 +30,12 @@ def test_an_advanced_record_needs_the_commit_to_have_moved():
 
 
 def test_an_advanced_record_needs_a_passing_check():
-    with pytest.raises(RecordError, match="no verification ran and passed"):
+    with pytest.raises(RecordError, match="no verification that had to"):
         advanced(verifications=[FAIL])
 
 
 def test_an_advanced_record_needs_any_check_at_all():
-    with pytest.raises(RecordError, match="no verification ran and passed"):
+    with pytest.raises(RecordError, match="no verification that had to"):
         advanced(verifications=[])
 
 
@@ -131,3 +131,56 @@ def test_last_for_is_none_when_the_repository_is_new(tmp_path):
 
 def test_reading_an_empty_directory_is_not_an_error(tmp_path):
     assert Ledger(tmp_path / "missing").read() == []
+
+
+# ---------------------------------------------------------------------------
+# A check that was run to fail
+# ---------------------------------------------------------------------------
+
+
+def test_a_negative_control_passes_when_it_fails():
+    v = Verification(command="the gate against a broken fixture", exit_code=1, expect=1)
+    assert v.passed is True
+    assert v.negative_control is True
+
+
+def test_a_negative_control_that_succeeds_has_not_passed():
+    """The gate did not close. That is the finding."""
+    v = Verification(command="the gate against a broken fixture", exit_code=0, expect=1)
+    assert v.passed is False
+
+
+def test_an_ordinary_check_is_unchanged():
+    assert Verification(command="pytest", exit_code=0).passed is True
+    assert Verification(command="pytest", exit_code=1).passed is False
+    assert Verification(command="pytest", exit_code=0).negative_control is False
+
+
+def test_negative_controls_alone_cannot_back_an_advanced_record():
+    """Proving the gates bite is not proving the change works."""
+    with pytest.raises(RecordError, match="no verification that had to"):
+        Record(
+            round=1, repo="x", outcome=ADVANCED, summary="tightened a gate",
+            head_before="a" * 40, head_after="b" * 40,
+            verifications=[Verification(command="old fixture", exit_code=1, expect=1)],
+        )
+
+
+def test_one_ordinary_passing_check_alongside_them_is_enough():
+    r = Record(
+        round=1, repo="x", outcome=ADVANCED, summary="tightened a gate",
+        head_before="a" * 40, head_after="b" * 40,
+        verifications=[
+            Verification(command="old fixture", exit_code=1, expect=1),
+            Verification(command="pytest -q", exit_code=0),
+        ],
+    )
+    assert r.outcome == ADVANCED
+
+
+def test_records_written_before_expect_existed_still_load():
+    """Round 1's 98 checks carry no `expect`; they must keep their meaning."""
+    v = Verification(**{"command": "pytest", "exit_code": 0, "duration_s": 0.0,
+                        "note": "", "output_tail": ""})
+    assert v.expect == 0
+    assert v.passed is True

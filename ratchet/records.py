@@ -38,17 +38,43 @@ class RecordError(ValueError):
 
 @dataclass
 class Verification:
-    """A command that was actually run, and what it returned."""
+    """A command that was actually run, and what it returned.
+
+    `expect` exists because round 1 ran 98 checks and 20 of them were
+    *supposed* to fail. A gate is not a gate until you have watched it close:
+    every one of those twenty is a negative control - the old action.yml on
+    the fixture it used to break on, the audit against a server that really
+    does exfiltrate a key, the vendor script with its deletion put back. With
+    only an exit code to go on, the log could not tell those apart from a
+    check that simply failed, and the report was reduced to saying how many
+    exited zero.
+
+    So a check declares what it was run to prove. `expect=0` is the ordinary
+    case and stays the default; `expect=1` says "this had to fail, and it
+    did". Rule 2 is unchanged in substance: an `advanced` record still needs
+    at least one check that was required to succeed and did - a record made
+    entirely of negative controls proves the gates bite, not that the change
+    works.
+    """
 
     command: str
     exit_code: int
     duration_s: float = 0.0
     note: str = ""
     output_tail: str = ""
+    #: The exit code this check was run to see. 0 unless it is a negative
+    #: control, in which case it is the non-zero code that means "the gate
+    #: closed".
+    expect: int = 0
 
     @property
     def passed(self) -> bool:
-        return self.exit_code == 0
+        """Did the check return what it was run to return?"""
+        return self.exit_code == self.expect
+
+    @property
+    def negative_control(self) -> bool:
+        return self.expect != 0
 
     def as_dict(self) -> dict:
         return asdict(self)
@@ -94,9 +120,10 @@ class Record:
                     "%s: outcome is 'advanced' but the commit did not move (%s)"
                     % (self.repo, self.head_before[:12])
                 )
-            if not any(v.passed for v in self.verifications):
+            if not any(v.passed and not v.negative_control for v in self.verifications):
                 raise RecordError(
-                    "%s: outcome is 'advanced' but no verification ran and passed" % self.repo
+                    "%s: outcome is 'advanced' but no verification that had to "
+                    "succeed ran and succeeded" % self.repo
                 )
         if self.outcome in (NO_CHANGE, BLOCKED) and not self.reason.strip():
             raise RecordError("a %r record has to say why" % self.outcome)

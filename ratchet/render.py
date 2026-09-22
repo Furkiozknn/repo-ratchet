@@ -62,19 +62,31 @@ def records_markdown(records: list[Record]) -> str:
     for n in sorted(rounds):
         rs = sorted(rounds[n], key=lambda r: r.at)
         advanced = [r for r in rs if r.outcome == "advanced"]
-        checks = sum(len(r.verifications) for r in rs)
-        passed = sum(1 for r in rs for v in r.verifications if v.passed)
+        hepsi = [v for r in rs for v in r.verifications]
+        checks = len(hepsi)
+        negatif = [v for v in hepsi if v.negative_control]
+        gecen = sum(1 for v in hepsi if v.passed)
         out.append("### Round %d" % n)
         out.append("")
-        out.append("%d repositories, %d advanced, %d checks run of which %d passed."
-                   % (len(rs), len(advanced), checks, passed))
+        # "N checks, M passed" read as "N - M failed", which was never true:
+        # a fifth of round 1's checks were run precisely to fail. Records
+        # written before `expect` existed cannot say which, so the line only
+        # claims what it can prove and names the negative controls it knows.
+        cumle = "%d repositories, %d advanced, %d checks recorded, %d returned what they were run to return." % (
+            len(rs), len(advanced), checks, gecen)
+        if negatif:
+            cumle += (" %d of them are negative controls - checks recorded because "
+                      "they had to fail." % len(negatif))
+        out.append(cumle)
         out.append("")
         out.append("| Repository | Outcome | What changed / why not | Verified by |")
         out.append("| --- | --- | --- | --- |")
         for r in rs:
             what = r.summary if r.outcome == "advanced" else r.reason
             checks_cell = "<br>".join(
-                "`%s` → %d" % (v.command, v.exit_code) for v in r.verifications
+                "`%s` → %d%s" % (v.command, v.exit_code,
+                                 " (had to)" if v.negative_control else "")
+                for v in r.verifications
             ) or "—"
             out.append("| [%s](https://github.com/Furkiozknn/%s) | %s | %s | %s |"
                        % (r.repo, r.repo, r.outcome, what.replace("|", "\\|"), checks_cell))

@@ -38,9 +38,15 @@ convention somebody has to remember.
 **1. `advanced` requires the commit to have actually moved.** A record whose `head_before`
 equals its `head_after` is rejected. You cannot write down an improvement that left no trace.
 
-**2. `advanced` requires a check that ran and exited zero.** A `Verification` has no
-constructor that omits the exit code, so a check that never happened cannot be recorded as
-though it had. No passing check, no `advanced` record.
+**2. `advanced` requires a check that ran and returned what it was run to return.** A
+`Verification` has no constructor that omits the exit code, so a check that never happened
+cannot be recorded as though it had. A check also declares what it was run to prove:
+`expect=0` is the ordinary case, and a non-zero `expect` marks a **negative control** — the
+gate run against the thing it is supposed to catch, which passes by failing. Round 1 recorded
+106 checks and 23 of them exited non-zero on purpose; those records predate `expect`, so the
+log counts them without being able to say which they were, and "106 checks, 83 passed" read
+as 23 failures. An `advanced` record still needs at least one check that had to succeed and
+did: proving the gates bite is not proving the change works.
 
 **3. `no-change` requires a stated reason.** "Nothing worth doing here" is a legitimate and
 useful outcome — but it has to say what was looked at. A silent skip and a considered pass
@@ -63,7 +69,7 @@ both as `0` has destroyed the more useful one.
 | --- | --- |
 | `languages` | what the repository is actually written in, by source bytes |
 | `test_mass` | test bytes per source byte — works without running anything |
-| `test_count` | declared test cases, counted per language |
+| `test_count` | declared test cases, counted per language — `None` rather than `0` when a repository's test files declare their cases in a form this cannot count |
 | `undocumented_surface` | public Python/Rust symbols with no doc comment |
 | `ci_breadth` | how many distinct runners the CI really exercises |
 | `readme_commands` | the commands a first-time visitor will paste |
@@ -151,7 +157,7 @@ rounds they misread.
 python3 -m pytest -q
 ```
 
-118 tests. The suite builds throwaway repositories on disk — including real git ones, for the
+130 tests. The suite builds throwaway repositories on disk — including real git ones, for the
 signals that need history — so every measurement is tested against a repository it has never
 seen. The record rules get the heaviest coverage, because a record that can lie is a record
 that will.

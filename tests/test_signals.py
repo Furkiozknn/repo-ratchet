@@ -356,3 +356,92 @@ def test_every_signal_runs_on_an_empty_directory(tmp_path):
     for fn in signals.ALL:
         s = fn(empty)
         assert s.name, fn.__name__
+
+
+# ---------------------------------------------------------------------------
+# What counts as a test file, and what to say when the cases cannot be counted
+# ---------------------------------------------------------------------------
+
+
+def test_a_hyphenated_test_file_outside_tests_counts_as_test_mass(make_repo):
+    """`arac/dogrula-test.js` is a test file.
+
+    Three separators are in real use and this knew two of them. A roster of
+    70 agents guarded by eight `<name>-test.js` scripts measured as "0 test
+    bytes in 0 files" and was ranked first in a round on the strength of a
+    measurement that was simply wrong.
+    """
+    root = make_repo("g1", {
+        "arac/kod.js": "export function f() { return 1; }\n" * 40,
+        "arac/kod-test.js": 'ol("bir", true);\n' * 20,
+    })
+    s = signals.test_mass(root)
+    assert s.value and s.value > 0
+    assert "arac/kod-test.js" in (s.evidence or [])
+
+
+def test_the_other_separators_still_count(make_repo):
+    root = make_repo("g2", {
+        "src/a.ts": "export const a = 1;\n" * 30,
+        "src/a.spec.ts": 'it("x", () => {});\n' * 5,
+        "src/b_test.py": "def test_x():\n    pass\n" * 5,
+    })
+    files = signals.test_mass(root).evidence or []
+    assert "src/a.spec.ts" in files
+    assert "src/b_test.py" in files
+
+
+def test_a_helper_inside_tests_is_not_an_uncounted_test_file(make_repo):
+    """`tests/yardimci.gd` carries no cases and is not pretending to.
+
+    Treating it as "a test file we could not count" would put a lower-bound
+    caveat on a count that is complete.
+    """
+    root = make_repo("g3", {
+        "tests/yardimci.gd": "func kur() -> void:\n\tpass\n",
+        "tests/test_a.gd": (
+            "func dogru(kosul: bool, ad: String) -> void:\n\tpass\n"
+            "func _initialize() -> void:\n\tdogru(1 == 1, 'bir')\n"
+        ),
+    })
+    s = signals.test_count(root)
+    assert s.value == 1
+    assert s.unit == "cases"
+    assert "cannot count" not in s.detail
+
+
+def test_an_uncountable_test_file_makes_the_number_a_lower_bound(make_repo):
+    root = make_repo("g4", {
+        "tests/a.test.js": 'it("x", () => {});\nit("y", () => {});\n',
+        "tests/b-test.js": 'senaryo("bir", 1);\nsenaryo("iki", 2);\n',
+    })
+    s = signals.test_count(root)
+    assert s.value == 2
+    assert s.unit == "cases (lower bound)"
+    assert "cannot count" in s.detail
+    assert any(e.startswith("uncounted: ") for e in (s.evidence or []))
+
+
+def test_only_uncountable_test_files_report_nothing_not_zero(make_repo):
+    """The distinction the whole engine is built on.
+
+    "There are no tests" and "there are tests I cannot count" are different
+    facts. Reporting the second as `0` hands the repository maximum headroom
+    on the one signal it least deserves it on - and it looks measured.
+    """
+    root = make_repo("g5", {
+        "arac/a-test.js": 'senaryo("bir", 1);\nsenaryo("iki", 2);\n',
+    })
+    s = signals.test_count(root)
+    assert s.value is None
+    assert s.headroom is None
+    assert "none declaring cases this can count" in s.detail
+    assert "arac/a-test.js" in (s.evidence or [])
+
+
+def test_a_repository_with_no_tests_at_all_still_reports_zero(make_repo):
+    """The other side of the same distinction: zero is still a real answer."""
+    root = make_repo("g6", {"src/a.py": "def f():\n    return 1\n"})
+    s = signals.test_count(root)
+    assert s.value == 0
+    assert s.headroom == 1.0

@@ -83,19 +83,48 @@ def _walk(root: Path) -> Iterable[Path]:
         yield p
 
 
+def _test_named(name: str) -> bool:
+    """Does the FILENAME say this is a test?
+
+    Separate from `_is_test_path` on purpose. Living under `tests/` makes a
+    file part of the suite; it does not make it a case-bearing test file.
+    `tests/conftest.py`, `tests/fixtures.js` and `tests/yardimci.gd` are
+    helpers, and treating a helper as a test file that could not be counted
+    would put a caveat on a count that is perfectly complete.
+    """
+    name = name.lower()
+    if name.startswith("test_") or name.startswith("test-"):
+        return True
+    stems = ("test", "tests", "spec", "specs")
+    for sep in ("_", ".", "-"):
+        for stem in stems:
+            for suffix in (".py", ".js", ".mjs", ".cjs", ".ts", ".tsx",
+                           ".jsx", ".go", ".rs", ".gd"):
+                if name.endswith(sep + stem + suffix):
+                    return True
+    return False
+
+
 def _is_test_path(p: Path, root: Path) -> bool:
     rel = p.relative_to(root).as_posix().lower()
     name = p.name.lower()
     if rel.startswith("tests/") or "/tests/" in rel or rel.startswith("test/"):
         return True
-    return (
-        name.startswith("test_")
-        or name.endswith("_test.py")
-        or name.endswith(".test.ts")
-        or name.endswith(".test.js")
-        or name.endswith("_test.go")
-        or name.endswith("_test.rs")
-    )
+    if name.startswith("test_") or name.startswith("test-"):
+        return True
+    # Three separators, because projects genuinely use all three and a
+    # detector that knows two of them reports the third as untested. A
+    # roster of 70 agents guarded by eight `arac/<name>-test.js` files was
+    # measured as "0 test bytes in 0 files" and consequently ranked first
+    # in a round - the measurement, not the repository, put it there.
+    stems = ("test", "tests", "spec", "specs")
+    for sep in ("_", ".", "-"):
+        for stem in stems:
+            for suffix in (".py", ".js", ".mjs", ".cjs", ".ts", ".tsx",
+                           ".jsx", ".go", ".rs", ".gd"):
+                if name.endswith(sep + stem + suffix):
+                    return True
+    return False
 
 
 def _read(p: Path) -> str:
@@ -226,6 +255,7 @@ def test_count(root: Path) -> Signal:
     """
     total = 0
     per_file: list[str] = []
+    sayilamayan: list[str] = []
     for p in _walk(root):
         lang = SOURCE_SUFFIXES.get(p.suffix.lower())
         pat = TEST_PATTERNS.get(lang or "")
@@ -243,8 +273,32 @@ def test_count(root: Path) -> Signal:
         if n:
             total += n
             per_file.append("%s: %d" % (p.relative_to(root).as_posix(), n))
+        elif _test_named(p.name):
+            sayilamayan.append(p.relative_to(root).as_posix())
+
+    # A file that is plainly a test but whose cases this cannot count is not
+    # a file with zero cases. Reporting 0 there is the worst kind of wrong:
+    # it is a number, it looks measured, and it gives the repository maximum
+    # headroom on the one signal it least deserves it on. A roster guarded by
+    # eight hand-rolled runners was ranked first in a round that way.
     if not per_file:
+        if sayilamayan:
+            return Signal(
+                "test_count", None, unit="cases",
+                detail="%d test files, none declaring cases this can count"
+                       % len(sayilamayan),
+                evidence=sorted(sayilamayan)[:8],
+            )
         return Signal("test_count", 0, unit="cases", detail="no test cases found", headroom=1.0)
+
+    if sayilamayan:
+        return Signal(
+            "test_count", total, unit="cases (lower bound)",
+            detail="at least %d cases across %d files; %d further test file(s) "
+                   "declare their cases in a form this cannot count"
+                   % (total, len(per_file), len(sayilamayan)),
+            evidence=sorted(per_file)[:6] + ["uncounted: " + f for f in sorted(sayilamayan)[:3]],
+        )
     return Signal(
         "test_count", total, unit="cases",
         detail="%d cases across %d files" % (total, len(per_file)),

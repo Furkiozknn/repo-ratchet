@@ -181,7 +181,7 @@ def test_cli_record_refuses_an_unbacked_claim(tmp_path, capsys):
         "--before", "a" * 40, "--after", "b" * 40,
     ])
     assert code == 2
-    assert "no verification ran and passed" in capsys.readouterr().err
+    assert "no verification that had to" in capsys.readouterr().err
 
 
 def test_cli_record_writes_a_backed_claim(tmp_path, capsys):
