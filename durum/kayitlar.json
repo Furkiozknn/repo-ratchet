@@ -14,12 +14,12 @@
   {
    "round": 2,
    "repositories": 10,
-   "records": 11,
-   "advanced": 11,
+   "records": 12,
+   "advanced": 12,
    "no_change": 0,
    "blocked": 0,
-   "checks_run": 78,
-   "checks_passed": 78
+   "checks_run": 84,
+   "checks_passed": 84
   }
  ],
  "records": [
@@ -2063,6 +2063,69 @@
    "headroom_before": null,
    "headroom_after": null,
    "at": "2026-09-22T21:31:46Z",
+   "schema": 1
+  },
+  {
+   "round": 2,
+   "repo": "Furkiozknn",
+   "outcome": "advanced",
+   "head_before": "881fcf12b7c7221aa4b0145bbdf3a7fed2218120",
+   "head_after": "ba4b3fbe141f2d088920fed25aaf0bad76d63e53",
+   "summary": "Ayni turda ikinci kayit. Turun sonunda gunluk denetim elle kosuldugunda GitHub hiz sinirina takildi ve bir Python yigin iziyle oldu: \"bakilamadi\" ile \"temiz\" arasindaki farki yazmak icin var olan arac, hicbir sey yazamadan dusuyordu -- o kosudan ne bulgu, ne kapsam satiri, ne de hangi depolara bakilamadigi kaldi. derle._get artik 403+kota-sifir ve 429'u ayri bir turle bildiriyor; her 403 degil, cunku yetkisiz bir uc de 403 doner ve onu \"sonra bakariz\" diye gecistirmek gercek bir yetki sorununu gizlerdi. denetim.py bunu depo basina yakaliyor, digerlerini olcmeye devam ediyor, okunamayanlari raporun basinda ve denetim.json icinde yaziyor, ve \"temiz: N depo\" cumlesinde yalnizca gercekten olculenleri sayiyor. 75 -> 81 test. Ayni kayitta turun sayilari da tazelendi: tek-tus-kosu 853 -> 961, derin-kazi 460 -> 477, toplam 5.209 -> 5.226.",
+   "reason": "",
+   "verifications": [
+    {
+     "command": "python3 schema/denetim.py  # duzeltmeden once, gercek hiz sinirinda",
+     "exit_code": 1,
+     "duration_s": 0.0,
+     "note": "bulgunun kendisi: \"bakilamadi\" demek icin var olan arac hicbir sey yazamadan oldu",
+     "output_tail": "urllib.error.HTTPError: HTTP Error 403: rate limit exceeded",
+     "expect": 1
+    },
+    {
+     "command": "python3 schema/test_schema.py",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "75 -> 81 test",
+     "output_tail": "Ran 81 tests ... OK",
+     "expect": 0
+    },
+    {
+     "command": "python3 -c 'main(), a deposu HizSiniri atiyor'",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "denetim devam ediyor, okunamayan depo raporda ve OKUNAMADI listesinde",
+     "output_tail": "main() cikis: 0 ; OKUNAMADI: ['a']",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/testler.py --olc --depo <bu turda degisen 8 depo>",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "yayimlanan sekiz sayi kendi kosularina karsi dogrulandi",
+     "output_tail": "ok tek-tus-kosu 961 / ok yercekimi-cevir 841 / ok kanca 115 / ok godot-refcheck 133 ...",
+     "expect": 0
+    },
+    {
+     "command": "python3 schema/testler.py --tazele --depo-sayisi 28 --commit-sayisi 1089",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "5.209 -> 5.226 test",
+     "output_tail": "Yayimlanan her yer ayni sayiyi soyluyor (5,226 test, 25 suit).",
+     "expect": 0
+    },
+    {
+     "command": "gh api .../actions/runs/35788068441/jobs",
+     "exit_code": 0,
+     "duration_s": 0.0,
+     "note": "ba4b3fbe'de CI kapilari",
+     "output_tail": "kapilar: success",
+     "expect": 0
+    }
+   ],
+   "headroom_before": null,
+   "headroom_after": null,
+   "at": "2026-09-22T21:41:28Z",
    "schema": 1
   }
  ]
