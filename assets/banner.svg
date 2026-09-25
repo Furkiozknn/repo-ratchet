@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 250" width="1200" height="250" role="img" aria-label="repo-ratchet - ranks which repository to open next from measured signals, and refuses to record work nobody verified">
+<defs>
+  <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#17161d"/><stop offset="58%" stop-color="#0e0d12"/><stop offset="100%" stop-color="#0b0b0f"/>
+  </linearGradient>
+  <linearGradient id="name" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#f2efe6"/><stop offset="62%" stop-color="#e7dcc0"/><stop offset="100%" stop-color="#c9a961"/>
+  </linearGradient>
+  <linearGradient id="hair" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#c9a961" stop-opacity="0.5"/><stop offset="100%" stop-color="#c9a961" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<rect width="1200" height="250" fill="url(#bg)"/>
+
+<text x="54" y="96" font-family="'Cascadia Code','JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-weight="700" font-size="52" fill="url(#name)" letter-spacing="-1">repo-ratchet</text>
+<text x="56" y="132" font-family="'Segoe UI',Verdana,Helvetica,sans-serif" font-size="17" fill="#c7c2b6" opacity="0.92">A ratchet only turns one way: no record of progress without a commit and a check.</text>
+<line x1="56" y1="152" x2="330" y2="152" stroke="url(#hair)" stroke-width="1.5"/>
+<rect x="56" y="176" width="150" height="26" rx="13" fill="#141419" stroke="#c9a961" stroke-opacity="0.45"/>
+<text x="131" y="193" text-anchor="middle" font-family="'Cascadia Code','JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="12" fill="#c9a961">zero dependencies</text>
+<rect x="216" y="176" width="190" height="26" rx="13" fill="#141419" stroke="#4ade9e" stroke-opacity="0.45"/>
+<text x="311" y="193" text-anchor="middle" font-family="'Cascadia Code','JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="12" fill="#4ade9e">3 rules enforced in code</text>
+<rect x="416" y="176" width="216" height="26" rx="13" fill="#141419" stroke="#6cb6ff" stroke-opacity="0.45"/>
+<text x="524" y="193" text-anchor="middle" font-family="'Cascadia Code','JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="12" fill="#6cb6ff">measures, never prescribes</text>
+<g transform="translate(1000,125)" stroke="#c9a961" fill="none" stroke-width="2">
+  <circle r="62" stroke-opacity="0.35"/>
+  <path d="M0,-62 L10,-48 L0,-44 M31,-54 L36,-37 L27,-35 M54,-31 L46,-16 L40,-22 M62,0 L48,10 L44,0 M54,31 L37,36 L35,27 M31,54 L16,46 L22,40 M0,62 L-10,48 L0,44 M-31,54 L-36,37 L-27,35 M-54,31 L-46,16 L-40,22 M-62,0 L-48,-10 L-44,0 M-54,-31 L-37,-36 L-35,-27 M-31,-54 L-16,-46 L-22,-40" stroke-opacity="0.8"/>
+  <circle r="10" fill="#c9a961" fill-opacity="0.9" stroke="none"/>
+  <path d="M70,-70 L30,-44" stroke="#4ade9e" stroke-width="3" stroke-linecap="round"/>
+</g>
+</svg>
