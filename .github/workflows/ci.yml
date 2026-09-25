@@ -17,6 +17,7 @@ jobs:
   test:
     name: ${{ matrix.os }} / py${{ matrix.python }}
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 10  # olculen en uzun kosu 31 sn
     strategy:
       fail-fast: false
       matrix:
@@ -48,6 +49,7 @@ jobs:
     name: the engine on itself
     needs: test
     runs-on: ubuntu-latest
+    timeout-minutes: 10  # olculen en uzun kosu 10 sn
     steps:
       - uses: actions/checkout@v7
         with:
