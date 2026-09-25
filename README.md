@@ -1,22 +1,62 @@
+![repo-ratchet - ranks which repository to open next from measured signals, and refuses to record work nobody verified](assets/banner.svg)
+
 # repo-ratchet
 
-A ratchet only turns one way.
+**A ratchet only turns one way.**
+
+[![CI](https://github.com/Furkiozknn/repo-ratchet/actions/workflows/ci.yml/badge.svg)](https://github.com/Furkiozknn/repo-ratchet/actions/workflows/ci.yml)
+[![No dependencies](https://img.shields.io/badge/dependencies-none-lightgrey)](pyproject.toml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 This is the engine that keeps every repository on the account moving forward instead of
 merely being maintained. It measures what a repository can currently do, ranks where the
 room is, and — the part that matters — **refuses to write down work that nobody verified**.
 
+It exists because "maintain 27 repositories" drifts into two failure modes: the same
+easy repositories get polished again and again, and progress gets claimed that nothing
+checked. `ratchet` answers the first with rounds and a measured queue, and the second
+with records that cannot be written without a moved commit and a check that ran.
+
+No dependencies. Python 3.11+ standard library only; Linux, macOS and Windows.
+
+![ratchet queue: the three repositories with the most measured headroom, each with the signals that rank it](assets/queue.svg)
+
+<sub>Real output of <code>ratchet queue</code> against the state committed in <code>durum/</code>, 25 September 2026. Every entry is a candidate, not an instruction.</sub>
+
+## Quick start
+
 ```sh
-ratchet discover Furkiozknn          # ask GitHub what exists
-ratchet survey                       # clone each one and measure it
+git clone https://github.com/Furkiozknn/repo-ratchet
+cd repo-ratchet
+python3 -m venv .venv && . .venv/bin/activate     # Windows: .venv\Scripts\activate
+python -m pip install .        # puts `ratchet` on PATH; nothing else gets installed
+
+ratchet queue                  # rank the repositories already surveyed in durum/ - no network
+ratchet survey --path .        # measure any checkout on disk; nothing inside it is executed
+ratchet check .                # run this repository's own check (ratchet.toml), inside the fence
+```
+
+`ratchet check .` runs `python3 -m pytest -q`, so it needs pytest wherever `python3`
+resolves — in the venv above, `python -m pip install pytest`. Without it the check still
+runs and reports `exit 1` with the `No module named pytest` line, which is the fence
+working, not the tool breaking. Without installing anything, `python3 -m ratchet`
+works from the checkout in place of `ratchet`. Straight from GitHub:
+`python3 -m pip install git+https://github.com/Furkiozknn/repo-ratchet`.
+
+### A whole round
+
+```sh
+ratchet discover Furkiozknn          # ask GitHub what exists  -> durum/depolar.json
+ratchet survey                       # clone each one and measure it -> durum/olcumler.json
 ratchet queue                        # which repository to open next, and why
-ratchet check ./some-repo            # run that repository's own checks, inside a fence
-ratchet record some-repo --round 1 --outcome advanced \
+ratchet check ./some-repo --out v.json   # run its own checks inside the fence, keep the exit codes
+ratchet record some-repo --round 2 --outcome advanced \
     --summary "..." --before <sha> --after <sha> --verifications v.json
 ratchet report --out KAYITLAR.md     # the work log
 ```
 
-No dependencies. Python 3.11 standard library only.
+`discover` is the only command that talks to the GitHub API; `survey` clones over HTTPS.
+Everything else works offline on the files in `durum/` and `kayitlar/`.
 
 ## What it is not
 
@@ -27,7 +67,8 @@ It is also not a checklist. A linter, a game and an MCP server do not have the s
 step, and a tool that pretends they do produces the same three suggestions for all of them.
 So `ratchet` measures and ranks, and stops there. Deciding *what* to do with a repository is
 a judgement made by whoever opens it, with the measurements as evidence rather than as
-instructions. The queue says so in as many words: every entry is labelled `candidates`.
+instructions. The queue says so in as many words: in `ratchet queue --json` every entry's
+signals are listed under `candidates`.
 
 ## The three rules it enforces in code
 
@@ -50,12 +91,19 @@ did: proving the gates bite is not proving the change works.
 
 **3. `no-change` requires a stated reason.** "Nothing worth doing here" is a legitimate and
 useful outcome — but it has to say what was looked at. A silent skip and a considered pass
-look identical a month later, so the engine does not allow the silent one.
+look identical a month later, so the engine does not allow the silent one. The same goes
+for `blocked`.
 
 ```python
+>>> from ratchet.records import Record
 >>> Record(round=1, repo="x", outcome="advanced",
 ...        head_before="a"*40, head_after="a"*40, summary="tidied up")
-RecordError: x: outcome is 'advanced' but the commit did not move (aaaaaaaaaaaa)
+ratchet.records.RecordError: x: outcome is 'advanced' but the commit did not move (aaaaaaaaaaaa)
+```
+
+```console
+$ ratchet record demo --round 1 --outcome no-change
+refused: a 'no-change' record has to say why
 ```
 
 ## What it measures
@@ -88,15 +136,28 @@ ranking input, never a verdict, and a signal is free to leave it unset.
 `ratchet check` has to run a repository's own test command to be able to say it passed. That
 is the most dangerous thing here, so the fence is narrow and explicit:
 
-- the verb must be in an allowlist of build and test entry points, or be declared by the
-  target repository's own `ratchet.toml`;
+- the verb must be in an allowlist of build and test entry points (`pytest`, `python3`,
+  `cargo`, `npm`, `make`, `bash`, … — `ratchet check . --command x` prints the full list).
+  A repository's `ratchet.toml` chooses *which* commands run; it cannot add verbs, because
+  the file comes from the checkout being fenced;
 - arguments that look like publishing or fetching (`publish`, `--token`, `push`, `curl`) are
   refused before anything starts;
 - **nothing runs through a shell**, so a command cannot grow a `&&`, a pipe or a redirect it
   did not declare — the tail arrives as ordinary arguments to the first command, and there is
-  a test that proves it;
-- the environment is scrubbed to a handful of variables, the working directory is the
-  checkout, and there is a timeout.
+  a test that proves it. An allowed shell cannot be asked for one either: `bash -c "..."` and
+  `sh -c "..."` are refused; `bash check.sh` is a check;
+- the environment is scrubbed to a handful of variables (`PATH`, `HOME`, locale, `TMPDIR`,
+  Rust homes — no tokens), stdin is closed, the working directory is the checkout, and there
+  is a timeout (900 s, `--timeout` to change).
+
+```console
+$ ratchet check . --command 'bash -c "rm -rf /"'
+refused: bash -c runs a command string through a shell; put the check in a script file and run that instead
+```
+
+Surveys never execute anything in the repository they measure: they read files, and they
+only read files that are inside the checkout — a symlink that leads out of it is not
+followed, so a survey cannot copy lines from elsewhere on the machine into its evidence.
 
 This is a fence, not a sandbox. It stops a typo and an obviously wrong command; it does not
 contain a hostile repository. Keeping hostile repositories out of range is what the denylist
@@ -178,16 +239,50 @@ and five were wrong. A round may correct itself, so the log counts
 in a round of four, which is exactly the class of error this engine exists to
 catch, in the engine.
 
+## Configuration
+
+| What | How |
+| --- | --- |
+| where surveys and the repository list live | `--state DIR` or `RATCHET_STATE` (default `durum/`) |
+| where the work records live | `--records DIR` or `RATCHET_RECORDS` (default `kayitlar/`) |
+| how a repository wants to be checked | `ratchet.toml` in that repository: `check = ["python3 -m pytest -q", "ruff check ."]`; without it, `Cargo.toml` → `cargo test`, `pyproject.toml` → `python3 -m pytest -q`, `package.json` → `npm test`, `Makefile` → `make test` |
+| GitHub authentication for `discover` | `GITHUB_TOKEN` or `GH_TOKEN`; optional, but without one GitHub allows 60 requests an hour |
+| repositories that must never be touched | `DENYLIST` in `ratchet/targets.py` |
+
+Exit codes: `0` success; `1` a check failed, or `queue --next` has nothing left; `2` refused
+(a fenced command, an unbacked record) or could not run (no surveys yet, GitHub refused).
+
+The weekly [`Tur`](.github/workflows/tur.yml) workflow retakes every survey on Monday and
+commits `durum/` and `KAYITLAR.md` back only when the numbers moved. It never writes to
+another repository.
+
+## Limitations
+
+- The fence is not a sandbox (see above). Only point `ratchet check` at code you would run
+  yourself.
+- Discovery lists one account's public, non-fork repositories, and the work log links
+  repositories under `github.com/Furkiozknn`: it is built for this account.
+- Signals are heuristics over files, not builds. They are wrong sometimes — the round notes
+  below are mostly about exactly that — which is why they rank and never decide.
+- `release_lag` and the "unchanged since its last record" rule need a real git checkout.
+  The surveys committed in `durum/` today were taken from copies without `.git`, so those
+  two are empty there until the weekly round retakes them.
+
 ## Working on this repository
 
 ```sh
-python3 -m pytest -q
+python3 -m pip install pytest
+python3 -m pytest
 ```
 
-131 tests. The suite builds throwaway repositories on disk — including real git ones, for the
-signals that need history — so every measurement is tested against a repository it has never
-seen. The record rules get the heaviest coverage, because a record that can lie is a record
-that will.
+163 tests, on Linux, macOS and Windows with Python 3.11–3.14 in CI. The suite builds
+throwaway repositories on disk — including real git ones, for the signals that need
+history — so every measurement is tested against a repository it has never seen. The record rules and the
+fence get the heaviest coverage, because a record that can lie is a record that will, and
+a fence that lets one command through is not a fence.
+
+See [SECURITY.md](SECURITY.md) for how to report a hole in the fence, and
+[CHANGELOG.md](CHANGELOG.md) for what changed.
 
 ## Where it fits
 

@@ -60,6 +60,21 @@ class Signal:
         return asdict(self)
 
 
+def _own(root: Path, p: Path) -> bool:
+    """Is ``p`` a regular file that really lives inside ``root``?
+
+    A symlink is followed only while it stays inside the checkout. A link to
+    ``~/.git-credentials`` or ``/etc/hosts`` is not part of the repository, and
+    measuring it would copy lines from outside the checkout into a survey
+    that the round commits publicly - ``readme_commands`` and
+    ``todo_density`` both keep the lines they found as evidence.
+    """
+    try:
+        return p.is_file() and p.resolve().is_relative_to(Path(root).resolve())
+    except (OSError, RuntimeError):  # a symlink loop, or a path we may not stat
+        return False
+
+
 def _walk(root: Path) -> Iterable[Path]:
     """Every file in the repository that is part of the repository itself.
 
@@ -69,8 +84,9 @@ def _walk(root: Path) -> Iterable[Path]:
     ``.ratchet-work/`` counted twenty-seven other projects as part of it.
     """
     root = Path(root)
+    real_root = root.resolve()
     for p in root.rglob("*"):
-        if not p.is_file():
+        if not _own(real_root, p):
             continue
         try:
             parts = p.relative_to(root).parts
@@ -368,7 +384,7 @@ def ci_breadth(root: Path) -> Signal:
     wf_dir = root / ".github" / "workflows"
     if not wf_dir.is_dir():
         return Signal("ci_breadth", None, detail="no .github/workflows")
-    files = sorted(p for p in wf_dir.glob("*.y*ml") if p.is_file())
+    files = sorted(p for p in wf_dir.glob("*.y*ml") if _own(root, p))
     if not files:
         return Signal("ci_breadth", None, detail=".github/workflows is empty")
     runners: set[str] = set()
@@ -401,7 +417,7 @@ def readme_commands(root: Path) -> Signal:
     """
     readme = None
     for name in ("README.md", "readme.md", "README.rst"):
-        if (root / name).is_file():
+        if _own(root, root / name):
             readme = root / name
             break
     if readme is None:
@@ -425,7 +441,7 @@ def readme_depth(root: Path) -> Signal:
     """How much a first time visitor is actually told."""
     for name in ("README.md", "readme.md"):
         p = root / name
-        if p.is_file():
+        if _own(root, p):
             text = _read(p)
             heads = re.findall(r"^##+\s+(.+)$", text, re.M)
             imgs = re.findall(r"!\[[^\]]*\]\(([^)\s]+)\)", text) + re.findall(r"<img[^>]+src=\"([^\"]+)\"", text)
@@ -490,21 +506,21 @@ def declared_dependencies(root: Path) -> Signal:
     counts: dict[str, int] = {}
     ev: list[str] = []
     py = root / "pyproject.toml"
-    if py.is_file():
+    if _own(root, py):
         text = _read(py)
         m = re.search(r"^dependencies\s*=\s*\[(.*?)\]", text, re.S | re.M)
         items = [x for x in re.findall(r'"([^"]+)"', m.group(1))] if m else []
         counts["python"] = len(items)
         ev += items[:6]
     cargo = root / "Cargo.toml"
-    if cargo.is_file():
+    if _own(root, cargo):
         text = _read(cargo)
         m = re.search(r"^\[dependencies\](.*?)(?:^\[|\Z)", text, re.S | re.M)
         items = re.findall(r"^\s*([A-Za-z0-9_-]+)\s*=", m.group(1), re.M) if m else []
         counts["rust"] = len(items)
         ev += items[:6]
     pkg = root / "package.json"
-    if pkg.is_file():
+    if _own(root, pkg):
         try:
             d = json.loads(_read(pkg))
             items = sorted((d.get("dependencies") or {}).keys())
@@ -560,7 +576,7 @@ def release_lag(root: Path) -> Signal:
 def metadata_present(root: Path) -> Signal:
     """Whether the repository carries the ecosystem's own metadata file."""
     p = root / "project-meta.json"
-    if not p.is_file():
+    if not _own(root, p):
         return Signal("metadata_present", False, detail="no project-meta.json", headroom=1.0)
     try:
         d = json.loads(_read(p))

@@ -235,3 +235,113 @@ def test_cli_report_writes_a_file(tmp_path):
     out = tmp_path / "log.md"
     assert main(["--records", str(tmp_path / "k"), "report", "--out", str(out)]) == 0
     assert "nothing open" in out.read_text()
+
+
+# --- names that must not become paths ----------------------------------------
+
+
+@pytest.mark.parametrize("name", ["../outside", "..", ".", "a/b", "a\\b", "", "-x y"])
+def test_a_name_that_is_not_a_repository_name_is_out_of_range(name):
+    t = targets.Target(name, "main", "https://example.invalid/x.git", False, 10)
+    assert t.in_range is False and "invalid name" in t.skip_reason
+
+
+def test_survey_never_clones_or_deletes_outside_the_work_dir(tmp_path, capsys):
+    # `survey --refresh` removes <workdir>/<name> before cloning. The name comes
+    # back from durum/depolar.json; a hand-edited or corrupted entry must not
+    # be able to aim that removal at a sibling directory.
+    keep = tmp_path / "keep"
+    keep.mkdir()
+    (keep / "precious.txt").write_text("still here", encoding="utf-8")
+    state = tmp_path / "state"
+    state.mkdir()
+    (state / "depolar.json").write_text(json.dumps({"targets": [{
+        "name": "../keep", "default_branch": "main",
+        "clone_url": "https://example.invalid/x.git", "size_kb": 10,
+    }]}), encoding="utf-8")
+    code = main(["--state", str(state), "survey", "--refresh",
+                 "--workdir", str(tmp_path / "work")])
+    assert code == 0
+    assert (keep / "precious.txt").read_text(encoding="utf-8") == "still here"
+
+
+def test_clone_refuses_an_unsafe_name_directly(tmp_path, capsys):
+    from ratchet.cli import _clone
+
+    (tmp_path / "keep").mkdir()
+    t = targets.Target("../keep", "main", "https://example.invalid/x.git", False, 10)
+    assert _clone(t, tmp_path / "work", 1) is None
+    assert (tmp_path / "keep").is_dir()
+    assert "refusing to clone" in capsys.readouterr().err
+
+
+def test_clone_url_cannot_become_a_git_option(tmp_path, capsys):
+    from ratchet.cli import _clone
+
+    marker = tmp_path / "ran"
+    t = targets.Target("x", "main", "--upload-pack=touch %s" % marker, False, 10)
+    assert _clone(t, tmp_path / "work", 1) is None
+    assert not marker.exists()
+
+
+def test_cli_survey_of_dot_is_named_after_the_directory(make_repo, capsys, monkeypatch):
+    root = make_repo("named-by-dir", {"a.py": "x = 1\n"})
+    monkeypatch.chdir(root)
+    assert main(["survey", "--path", "."]) == 0
+    assert capsys.readouterr().out.startswith("named-by-dir")
+
+
+def test_cli_check_refuses_a_shell_command_string(make_repo, capsys):
+    root = make_repo("shell", {"a.py": "x = 1\n"})
+    assert main(["check", str(root), "--command", 'bash -c "echo hi"']) == 2
+    assert "through a shell" in capsys.readouterr().err
+
+
+def test_a_closed_pipe_is_not_an_error(make_repo, monkeypatch):
+    import io
+    import sys
+
+    class Closed(io.StringIO):
+        def write(self, s):
+            raise BrokenPipeError(32, "Broken pipe")
+
+    root = make_repo("pipe", {"a.py": "x = 1\n"})
+    monkeypatch.setattr(sys, "stdout", Closed())
+    monkeypatch.setattr("os.dup2", lambda *a: None)
+    assert main(["survey", "--path", str(root)]) == 0
+
+
+def _refuse(code, body):
+    import io
+    import urllib.error
+
+    def fetch(url, token):
+        raise urllib.error.HTTPError(url, code, "refused", {}, io.BytesIO(body))
+    return fetch
+
+
+def test_discover_passes_on_githubs_reason_and_the_fix(monkeypatch):
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    monkeypatch.delenv("GH_TOKEN", raising=False)
+    monkeypatch.setattr(targets, "_fetch", _refuse(403, b'{"message": "API rate limit exceeded"}'))
+    with pytest.raises(RuntimeError) as ei:
+        targets.discover("someone")
+    assert "403" in str(ei.value)
+    assert "API rate limit exceeded" in str(ei.value)
+    assert "GITHUB_TOKEN" in str(ei.value)
+
+
+def test_discover_does_not_suggest_a_token_it_already_has(monkeypatch):
+    monkeypatch.setattr(targets, "_fetch", _refuse(404, b"not json"))
+    with pytest.raises(RuntimeError) as ei:
+        targets.discover("nobody", token="t")
+    assert "404" in str(ei.value) and "GITHUB_TOKEN" not in str(ei.value)
+
+
+def test_cli_discover_reports_a_refusal_instead_of_a_traceback(monkeypatch, tmp_path, capsys):
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    monkeypatch.delenv("GH_TOKEN", raising=False)
+    monkeypatch.setattr(targets, "_fetch", _refuse(403, b'{"message": "API rate limit exceeded"}'))
+    assert main(["--state", str(tmp_path), "discover", "someone"]) == 2
+    err = capsys.readouterr().err
+    assert err.startswith("ratchet: GitHub said 403") and "rate limit" in err

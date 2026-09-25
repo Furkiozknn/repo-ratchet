@@ -6,6 +6,8 @@ repository to be testable is a signal that is doing too much.
 
 from pathlib import Path
 
+import pytest
+
 from ratchet import signals
 
 
@@ -445,3 +447,53 @@ def test_a_repository_with_no_tests_at_all_still_reports_zero(make_repo):
     s = signals.test_count(root)
     assert s.value == 0
     assert s.headroom == 1.0
+
+
+# --- nothing outside the checkout -----------------------------------------
+
+
+def _link(link, target):
+    import os
+
+    try:
+        os.symlink(target, link)
+    except (OSError, NotImplementedError) as ex:  # Windows without the privilege
+        pytest.skip("cannot create a symlink here: %s" % ex)
+
+
+def test_a_symlink_out_of_the_checkout_is_not_measured(tmp_path):
+    # A survey is committed publicly by the weekly round, and two signals keep
+    # the lines they found as evidence. A link to a file elsewhere on the
+    # machine must not carry that file's lines into the survey.
+    outside = tmp_path / "outside"
+    outside.mkdir()
+    (outside / "secret.py").write_text("# TODO token-from-outside\n", encoding="utf-8")
+    (outside / "README").write_text("```sh\nexport SECRET=from-outside\n```\n", encoding="utf-8")
+    root = tmp_path / "repo"
+    root.mkdir()
+    (root / "own.py").write_text("# TODO our own\n", encoding="utf-8")
+    _link(root / "linked.py", outside / "secret.py")
+    _link(root / "README.md", outside / "README")
+
+    todo = signals.todo_density(root)
+    assert todo.value == 1
+    assert not any("outside" in e for e in todo.evidence)
+    cmds = signals.readme_commands(root)
+    assert cmds.value is None and "no README" in cmds.detail
+    assert signals.languages(root).value == {"python": (root / "own.py").stat().st_size}
+
+
+def test_a_symlink_that_stays_inside_the_checkout_is_still_followed(tmp_path):
+    root = tmp_path / "repo"
+    (root / "docs").mkdir(parents=True)
+    (root / "docs" / "README.md").write_text("```sh\nmake test\n```\n", encoding="utf-8")
+    _link(root / "README.md", root / "docs" / "README.md")
+    assert signals.readme_commands(root).evidence == ["make test"]
+
+
+def test_a_symlink_loop_does_not_stop_the_survey(tmp_path):
+    root = tmp_path / "repo"
+    root.mkdir()
+    (root / "a.py").write_text("x = 1\n", encoding="utf-8")
+    _link(root / "loop.py", root / "loop.py")
+    assert signals.languages(root).value == {"python": (root / "a.py").stat().st_size}

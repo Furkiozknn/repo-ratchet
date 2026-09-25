@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -25,6 +26,17 @@ DENYLIST = {"kor"}
 SKIP_ARCHIVED = "archived: the repository is read-only, so no round can change it"
 SKIP_FORK = "fork: upstream owns the direction of this code"
 SKIP_EMPTY = "empty: nothing has been pushed to it yet"
+SKIP_BAD_NAME = "invalid name: not a GitHub repository name, so it is not used as a directory"
+
+#: What GitHub allows in a repository name. The name becomes a directory under
+#: the work dir that ``survey --refresh`` deletes and re-clones, so a name read
+#: back from ``depolar.json`` must never be able to point anywhere else.
+_NAME = re.compile(r"^[A-Za-z0-9._-]{1,100}$")
+
+
+def valid_name(name: str) -> bool:
+    """Is this safe to use as a single directory name under the work dir?"""
+    return bool(_NAME.match(name)) and name not in (".", "..")
 
 
 @dataclass(frozen=True)
@@ -40,10 +52,12 @@ class Target:
 
     @property
     def in_range(self) -> bool:
-        return not self.archived and self.name not in DENYLIST and self.size_kb > 0
+        return self.skip_reason is None
 
     @property
     def skip_reason(self) -> str | None:
+        if not valid_name(self.name):
+            return SKIP_BAD_NAME
         if self.name in DENYLIST:
             return "denylisted: this repository is out of the engine's reach by rule"
         if self.archived:
@@ -64,6 +78,23 @@ def _fetch(url: str, token: str | None) -> list[dict]:
         return json.loads(r.read().decode("utf-8"))
 
 
+def _why(ex: urllib.error.HTTPError, token: str | None) -> str:
+    """GitHub's own explanation, and the usual fix, for a refused listing.
+
+    A bare "403" is what an unauthenticated run gets once it has used its
+    sixty requests for the hour; the body says so, and the fix is a token.
+    """
+    msg = ""
+    try:
+        msg = str(json.loads(ex.read().decode("utf-8", "replace")).get("message") or "")
+    except (ValueError, AttributeError, OSError, TypeError):
+        pass
+    out = (": " + msg[:200]) if msg else ""
+    if ex.code in (401, 403, 429) and not token:
+        out += " (set GITHUB_TOKEN or GH_TOKEN to authenticate)"
+    return out
+
+
 def discover(owner: str, token: str | None = None) -> list[Target]:
     """Every public, non-fork repository on the account, straight from GitHub."""
     token = token or os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
@@ -73,7 +104,12 @@ def discover(owner: str, token: str | None = None) -> list[Target]:
         try:
             data = _fetch(API.format(owner=owner, page=page), token)
         except urllib.error.HTTPError as ex:
-            raise RuntimeError("GitHub said %s while listing %s's repositories" % (ex.code, owner)) from ex
+            raise RuntimeError(
+                "GitHub said %s while listing %s's repositories%s"
+                % (ex.code, owner, _why(ex, token))
+            ) from ex
+        except urllib.error.URLError as ex:
+            raise RuntimeError("could not reach GitHub: %s" % ex.reason) from ex
         if not data:
             break
         for r in data:
