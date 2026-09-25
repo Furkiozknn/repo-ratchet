@@ -1,6 +1,12 @@
+![repo-ratchet - ranks which repository to open next from measured signals, and refuses to record work nobody verified](assets/banner.svg)
+
 # repo-ratchet
 
-A ratchet only turns one way.
+**A ratchet only turns one way.**
+
+[![CI](https://github.com/Furkiozknn/repo-ratchet/actions/workflows/ci.yml/badge.svg)](https://github.com/Furkiozknn/repo-ratchet/actions/workflows/ci.yml)
+[![No dependencies](https://img.shields.io/badge/dependencies-none-lightgrey)](pyproject.toml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 This is the engine that keeps every repository on the account moving forward instead of
 merely being maintained. It measures what a repository can currently do, ranks where the
@@ -17,6 +23,10 @@ ratchet report --out KAYITLAR.md     # the work log
 ```
 
 No dependencies. Python 3.11 standard library only.
+
+![ratchet queue: the three repositories with the most measured headroom, each with the signals that rank it](assets/queue.svg)
+
+<sub>Real output of <code>ratchet queue</code> against the state committed in <code>durum/</code>, 25 September 2026. Every entry is a candidate, not an instruction.</sub>
 
 ## What it is not
 
