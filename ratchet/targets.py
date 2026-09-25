@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -25,6 +26,17 @@ DENYLIST = {"kor"}
 SKIP_ARCHIVED = "archived: the repository is read-only, so no round can change it"
 SKIP_FORK = "fork: upstream owns the direction of this code"
 SKIP_EMPTY = "empty: nothing has been pushed to it yet"
+SKIP_BAD_NAME = "invalid name: not a GitHub repository name, so it is not used as a directory"
+
+#: What GitHub allows in a repository name. The name becomes a directory under
+#: the work dir that ``survey --refresh`` deletes and re-clones, so a name read
+#: back from ``depolar.json`` must never be able to point anywhere else.
+_NAME = re.compile(r"^[A-Za-z0-9._-]{1,100}$")
+
+
+def valid_name(name: str) -> bool:
+    """Is this safe to use as a single directory name under the work dir?"""
+    return bool(_NAME.match(name)) and name not in (".", "..")
 
 
 @dataclass(frozen=True)
@@ -40,10 +52,12 @@ class Target:
 
     @property
     def in_range(self) -> bool:
-        return not self.archived and self.name not in DENYLIST and self.size_kb > 0
+        return self.skip_reason is None
 
     @property
     def skip_reason(self) -> str | None:
+        if not valid_name(self.name):
+            return SKIP_BAD_NAME
         if self.name in DENYLIST:
             return "denylisted: this repository is out of the engine's reach by rule"
         if self.archived:

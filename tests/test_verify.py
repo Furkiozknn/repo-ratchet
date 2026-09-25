@@ -122,3 +122,67 @@ def test_suggest_is_empty_when_nothing_says_how(make_repo):
 def test_a_verification_serialises_for_the_record(tmp_path):
     v = verify.run("python3 -c pass", tmp_path)
     assert json.loads(json.dumps(v.as_dict()))["exit_code"] == 0
+
+
+# --- an allowed shell is still not a shell for hire -------------------------
+
+
+@pytest.mark.parametrize("command", [
+    'bash -c "pytest && touch smuggled"',
+    "sh -c true",
+    "sh -ec true",
+    "bash -lc true",
+    "bash -o pipefail -c true",
+    "bash --norc -c true",
+])
+def test_a_shell_asked_for_a_command_string_is_refused(command):
+    # `bash -c "..."` passes the verb check (bash is allowed) and the argument
+    # check (the string is one argument), and then the shell parses it: the
+    # `&&`, the pipe and a spelled-apart `cu''rl` all come back. It is the
+    # shell the fence says nothing runs through.
+    with pytest.raises(VerifyError, match="through a shell"):
+        verify.check_command(command)
+
+
+@pytest.mark.parametrize("command", [
+    "bash run.sh",
+    "bash -e run.sh",
+    "sh -x run.sh",
+    "bash run.sh -c passed-to-the-script",
+    "bash -- -c",
+])
+def test_a_shell_running_a_script_file_is_still_a_check(command):
+    assert verify.check_command(command)[0] in ("bash", "sh")
+
+
+def test_a_refused_shell_command_never_runs(tmp_path):
+    with pytest.raises(VerifyError):
+        verify.run('bash -c "touch smuggled"', tmp_path)
+    assert not (tmp_path / "smuggled").exists()
+
+
+def test_a_check_gets_no_stdin(tmp_path):
+    # A verb that reads its script from stdin (plain `bash`, `python3 -`)
+    # must see end-of-file, not whatever terminal or pipe ratchet was given.
+    (tmp_path / "stdin.py").write_text(
+        "import sys\n"
+        "sys.exit(0 if sys.stdin.read() == '' else 5)\n",
+        encoding="utf-8",
+    )
+    # Drive it from a separate process whose own stdin is a live pipe: under
+    # pytest fd 0 is often /dev/null already, which would hide the leak.
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    driver = (
+        "import sys; from ratchet import verify; "
+        "v = verify.run('python3 stdin.py', sys.argv[1]); "
+        "sys.exit(v.exit_code)"
+    )
+    proc = subprocess.run(
+        [sys.executable, "-c", driver, str(tmp_path)],
+        input="bash would read this as a script\n", text=True, capture_output=True,
+        cwd=str(Path(verify.__file__).resolve().parent.parent),
+    )
+    assert proc.returncode == 0, proc.stderr
