@@ -57,6 +57,7 @@ security pass over the parts that touch other people's code.
 - The self-check installs the package with `pip install .` and uses the installed `ratchet`,
   and checks that the fence refuses both `rm -rf /` and `bash -c "rm -rf /"`.
 - The weekly round passes its `only` input through the environment instead of into the script.
+- `actions/checkout` and `actions/setup-python` moved off the deprecated Node 20 versions (v7).
 
 163 tests.
 
