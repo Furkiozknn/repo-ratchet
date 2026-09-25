@@ -309,3 +309,39 @@ def test_a_closed_pipe_is_not_an_error(make_repo, monkeypatch):
     monkeypatch.setattr(sys, "stdout", Closed())
     monkeypatch.setattr("os.dup2", lambda *a: None)
     assert main(["survey", "--path", str(root)]) == 0
+
+
+def _refuse(code, body):
+    import io
+    import urllib.error
+
+    def fetch(url, token):
+        raise urllib.error.HTTPError(url, code, "refused", {}, io.BytesIO(body))
+    return fetch
+
+
+def test_discover_passes_on_githubs_reason_and_the_fix(monkeypatch):
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    monkeypatch.delenv("GH_TOKEN", raising=False)
+    monkeypatch.setattr(targets, "_fetch", _refuse(403, b'{"message": "API rate limit exceeded"}'))
+    with pytest.raises(RuntimeError) as ei:
+        targets.discover("someone")
+    assert "403" in str(ei.value)
+    assert "API rate limit exceeded" in str(ei.value)
+    assert "GITHUB_TOKEN" in str(ei.value)
+
+
+def test_discover_does_not_suggest_a_token_it_already_has(monkeypatch):
+    monkeypatch.setattr(targets, "_fetch", _refuse(404, b"not json"))
+    with pytest.raises(RuntimeError) as ei:
+        targets.discover("nobody", token="t")
+    assert "404" in str(ei.value) and "GITHUB_TOKEN" not in str(ei.value)
+
+
+def test_cli_discover_reports_a_refusal_instead_of_a_traceback(monkeypatch, tmp_path, capsys):
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    monkeypatch.delenv("GH_TOKEN", raising=False)
+    monkeypatch.setattr(targets, "_fetch", _refuse(403, b'{"message": "API rate limit exceeded"}'))
+    assert main(["--state", str(tmp_path), "discover", "someone"]) == 2
+    err = capsys.readouterr().err
+    assert err.startswith("ratchet: GitHub said 403") and "rate limit" in err
