@@ -61,13 +61,17 @@ def cmd_discover(args: argparse.Namespace) -> int:
 
 def _clone(t: targets.Target, into: Path, depth: int) -> Path | None:
     """Make a fresh checkout. A clone that fails is reported, not raised."""
+    if not targets.valid_name(t.name):
+        print("  refusing to clone %r: %s" % (t.name, targets.SKIP_BAD_NAME), file=sys.stderr)
+        return None
     dest = into / t.name
     if dest.exists():
         shutil.rmtree(dest, ignore_errors=True)
     cmd = ["git", "clone", "--quiet", "--branch", t.default_branch]
     if depth:
         cmd += ["--depth", str(depth)]
-    cmd += [t.clone_url, str(dest)]
+    # `--` so a clone_url read back from a file cannot become a git option.
+    cmd += ["--", t.clone_url, str(dest)]
     r = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
     if r.returncode != 0:
         print("  could not clone %s: %s" % (t.name, (r.stderr or "").strip()[:160]), file=sys.stderr)
@@ -79,7 +83,8 @@ def cmd_survey(args: argparse.Namespace) -> int:
     """Measure every repository in range, or one checkout already on disk."""
     state = Path(args.state)
     if args.path:
-        s = take(Path(args.path), repo=args.repo)
+        # `--path .` has no name of its own; the directory it resolves to does.
+        s = take(Path(args.path), repo=args.repo or Path(args.path).resolve().name)
         print(render.survey_text(s), end="")
         if args.save:
             existing = {x.repo: x for x in load_all(_surveys_path(state))}
@@ -286,6 +291,15 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         return args.fn(args)
+    except BrokenPipeError:
+        # `ratchet queue | head` closed the pipe; that is the reader being
+        # done, not an error. Point stdout at devnull so the interpreter's
+        # final flush does not raise a second time.
+        try:
+            os.dup2(os.open(os.devnull, os.O_WRONLY), sys.stdout.fileno())
+        except (OSError, ValueError):
+            pass
+        return 0
     except (RuntimeError, OSError) as ex:
         print("ratchet: %s" % ex, file=sys.stderr)
         return 2

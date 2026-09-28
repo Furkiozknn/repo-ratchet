@@ -32,8 +32,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -44,10 +44,19 @@ jobs:
 
       # Full clones, not shallow: release_lag is the difference between the
       # last tag and HEAD, and a shallow clone has neither.
+      # The input goes through the environment, not into the script text: an
+      # expression expanded inside `run:` becomes shell source.
       - name: Measure each one
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python -m ratchet survey --refresh ${{ github.event.inputs.only && format('--only {0}', github.event.inputs.only) || '' }}
+          ONLY: ${{ github.event.inputs.only }}
+        run: |
+          set -eu
+          if [ -n "${ONLY:-}" ]; then
+            python -m ratchet survey --refresh --only "$ONLY"
+          else
+            python -m ratchet survey --refresh
+          fi
 
       - name: Rebuild the work log
         run: |
@@ -73,6 +82,6 @@ jobs:
             echo '### Queue'
             echo ''
             echo '```'
-            python -m ratchet queue || true
+            python -m ratchet queue
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"

@@ -1,6 +1,6 @@
 [project]
 name = "repo-ratchet"
-version = "0.1.0"
+version = "0.2.0"
 description = "Keep raising what each repository can do: measure its current capacity, rank where the headroom is, and record only work that was actually verified."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -12,6 +12,9 @@ classifiers = [
   "Intended Audience :: Developers",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
   "Topic :: Software Development :: Quality Assurance",
 ]
 
@@ -26,6 +29,7 @@ ratchet = "ratchet.cli:main"
 [project.urls]
 Homepage = "https://github.com/Furkiozknn/repo-ratchet"
 Directory = "https://furkiozknn.github.io/"
+Changelog = "https://github.com/Furkiozknn/repo-ratchet/blob/main/CHANGELOG.md"
 
 [dependency-groups]
 dev = ["pytest>=8"]
