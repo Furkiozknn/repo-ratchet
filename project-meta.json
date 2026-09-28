@@ -45,9 +45,8 @@
   },
   "tests": {
     "count": 163,
-    "framework": "pytest",
-    "command": "python3 -m pytest",
-    "evidence": "163 passed"
+    "source": "CI log: `163 passed`",
+    "measured": "2026-09-28"
   },
   "ci": {
     "workflows": [
