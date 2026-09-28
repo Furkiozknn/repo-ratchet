@@ -8,6 +8,9 @@
 [![No dependencies](https://img.shields.io/badge/dependencies-none-lightgrey)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+<p align="center"><img src="docs/reel/reel.gif" alt="repo-ratchet - 15-second motion reel" width="720"></p>
+<p align="center"><sub><a href="docs/reel/reel.mp4">MP4 version with sound</a></sub></p>
+
 This is the engine that keeps every repository on the account moving forward instead of
 merely being maintained. It measures what a repository can currently do, ranks where the
 room is, and — the part that matters — **refuses to write down work that nobody verified**.
