@@ -83,6 +83,9 @@ def cmd_survey(args: argparse.Namespace) -> int:
     """Measure every repository in range, or one checkout already on disk."""
     state = Path(args.state)
     if args.path:
+        if not Path(args.path).is_dir():
+            print("ratchet: --path %s is not a directory" % args.path, file=sys.stderr)
+            return 2
         # `--path .` has no name of its own; the directory it resolves to does.
         s = take(Path(args.path), repo=args.repo or Path(args.path).resolve().name)
         print(render.survey_text(s), end="")
@@ -154,6 +157,9 @@ def cmd_queue(args: argparse.Namespace) -> int:
 def cmd_check(args: argparse.Namespace) -> int:
     """Run a repository's own checks inside the fence and keep the exit codes."""
     root = Path(args.path)
+    if not root.is_dir():
+        print("ratchet: %s is not a directory - give `check` a checkout to run in" % root, file=sys.stderr)
+        return 2
     cmds = [args.command] if args.command else verify.suggest(root)
     if not cmds:
         print("nothing to run: no ratchet.toml and no recognised manifest in %s" % root, file=sys.stderr)
@@ -182,9 +188,15 @@ def cmd_record(args: argparse.Namespace) -> int:
     """Write down what this round did, or refuse if the claim is not backed."""
     verifications = []
     if args.verifications:
-        raw = json.loads(Path(args.verifications).read_text(encoding="utf-8"))
         from .records import Verification
-        verifications = [Verification(**v) for v in raw]
+        try:
+            raw = json.loads(Path(args.verifications).read_text(encoding="utf-8"))
+            verifications = [Verification(**v) for v in raw]
+        except (ValueError, TypeError) as ex:
+            # exit 2, not 1: 1 means "a check failed", and this is a file that is not one
+            print("refused: %s is not a file from `ratchet check --out` (%s)" % (args.verifications, ex),
+                  file=sys.stderr)
+            return 2
     try:
         rec = Record(
             round=args.round,
@@ -231,6 +243,9 @@ def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="ratchet",
         description="Keep raising what each repository can do, one round at a time.",
+        epilog="A round: discover -> survey -> queue -> check -> record -> report. "
+               "Exit codes: 0 ok, 1 a check failed (or queue --next is empty), "
+               "2 refused or could not run. Try: ratchet queue",
     )
     p.add_argument("-V", "--version", action="version", version="repo-ratchet %s" % __version__)
     p.add_argument("--state", default=str(DEFAULT_STATE), help="where surveys and the repository list live")
