@@ -1,0 +1,37 @@
+[
+ [
+  "ratchet --version",
+  "repo-ratchet 0.2.0",
+  0
+ ],
+ [
+  "ratchet record demo --round 1 --outcome advanced --summary \"tidied up\" --before $BEFORE --after $BEFORE",
+  "refused: demo: outcome is 'advanced' but the commit did not move (fea0d13cb96d)",
+  2
+ ],
+ [
+  "ratchet record demo --round 1 --outcome no-change",
+  "refused: a 'no-change' record has to say why",
+  2
+ ],
+ [
+  "ratchet check . --out v.json",
+  "python3 check.py                         exit 0 in 0.9s",
+  0
+ ],
+ [
+  "ratchet --records rec record demo --round 1 --outcome advanced --summary \"documented add()\" --before $BEFORE --after $AFTER --verifications v.json",
+  "recorded demo/advanced in rec\\tur-01.jsonl",
+  0
+ ],
+ [
+  "ratchet --records rec report",
+  "### Round 1\n\n1 repository, 1 advanced, 1 check recorded, 1 returned what they were run to return.\n\n| Repository | Outcome | What changed / why not | Verified by |\n| --- | --- | --- | --- |\n| [demo](https://github.com/Furkiozknn/demo) | advanced | documented add() | `python3 check.py` → 0 |",
+  0
+ ],
+ [
+  "ratchet check . --command \"bash -c 'rm -rf /'\"",
+  "refused: bash -c runs a command string through a shell; put the check in a script file and run that instead",
+  2
+ ]
+]
