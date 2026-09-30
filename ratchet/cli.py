@@ -128,7 +128,7 @@ def cmd_queue(args: argparse.Namespace) -> int:
     surveys = load_all(_surveys_path(state))
     if not surveys:
         print("no surveys yet in %s - measure a checkout with `ratchet survey --path .`, "
-              "or start a round with `ratchet discover <owner>` then `ratchet survey` "
+              "or start a round with `ratchet discover <owner>`, then run `ratchet survey` "
               "(--state DIR points at another folder)" % _surveys_path(state), file=sys.stderr)
         return 2
     skipped = {}

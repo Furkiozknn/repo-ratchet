@@ -370,3 +370,9 @@ def test_the_help_states_the_exit_codes(capsys):
     with pytest.raises(SystemExit):
         main(["--help"])
     assert "Exit codes" in capsys.readouterr().out
+
+
+def test_a_round_of_one_repository_says_repository(tmp_path):
+    rec = Record(round=1, repo="only", outcome="no-change", reason="looked, nothing to do")
+    text = render.records_markdown([rec])
+    assert "1 repository," in text and "1 repositories" not in text
