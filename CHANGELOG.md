@@ -3,6 +3,15 @@
 The version is the one in `pyproject.toml` and `ratchet/__init__.py`. Nothing has been tagged
 yet; the first tag will be `v0.2.0`.
 
+## Unreleased
+
+- A path that is not a directory (`survey --path`, `check`) is refused in words, exit 2.
+- `record --verifications` with a file that is not JSON / not a `check --out` file is refused (exit 2) instead of a traceback with exit 1.
+- `queue` with no surveys says which file it looked at and how to make one; `--help` states the flow and the exit codes.
+- The work log says "1 repository" / "1 check recorded" when it is one.
+- README: one-sentence definition, one `uvx` command, a demo recorded from real output (`docs/demo/`); the old reel, which had no generator in the repository, is gone.
+- 167 tests.
+
 ## v0.2.0 — 2026-09-25
 
 What two rounds of running the engine against 27 real repositories changed in it, plus a

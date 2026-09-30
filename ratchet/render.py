@@ -81,6 +81,9 @@ def records_markdown(records: list[Record]) -> str:
         depolar = {r.repo for r in rs}
         cumle = "%d repositories, %d advanced, %d checks recorded, %d returned what they were run to return." % (
             len(depolar), len(advanced), checks, gecen)
+        if len(depolar) == 1:
+            cumle = cumle.replace("1 repositories,", "1 repository,", 1)
+        cumle = cumle.replace(", 1 checks recorded,", ", 1 check recorded,", 1)
         if len(rs) != len(depolar):
             cumle = cumle.replace(
                 "%d repositories," % len(depolar),

@@ -345,3 +345,34 @@ def test_cli_discover_reports_a_refusal_instead_of_a_traceback(monkeypatch, tmp_
     assert main(["--state", str(tmp_path), "discover", "someone"]) == 2
     err = capsys.readouterr().err
     assert err.startswith("ratchet: GitHub said 403") and "rate limit" in err
+
+
+# --- errors a person can hit --------------------------------------------------
+
+
+def test_a_path_that_is_not_a_directory_is_refused_in_words(tmp_path, capsys):
+    missing = str(tmp_path / "nope")
+    for argv in (["survey", "--path", missing], ["check", missing]):
+        assert main(argv) == 2
+        assert "is not a directory" in capsys.readouterr().err
+
+
+def test_a_verifications_file_that_is_not_json_is_refused_not_a_traceback(tmp_path, capsys):
+    bad = tmp_path / "v.json"
+    bad.write_text("{bad", encoding="utf-8")
+    rc = main(["--records", str(tmp_path / "k"), "record", "x", "--round", "1", "--outcome", "advanced",
+               "--before", "a", "--after", "b", "--summary", "s", "--verifications", str(bad)])
+    assert rc == 2
+    assert "not a file from `ratchet check --out`" in capsys.readouterr().err
+
+
+def test_the_help_states_the_exit_codes(capsys):
+    with pytest.raises(SystemExit):
+        main(["--help"])
+    assert "Exit codes" in capsys.readouterr().out
+
+
+def test_a_round_of_one_repository_says_repository(tmp_path):
+    rec = Record(round=1, repo="only", outcome="no-change", reason="looked, nothing to do")
+    text = render.records_markdown([rec])
+    assert "1 repository," in text and "1 repositories" not in text

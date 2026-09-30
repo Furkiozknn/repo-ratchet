@@ -8,8 +8,25 @@
 [![No dependencies](https://img.shields.io/badge/dependencies-none-lightgrey)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-<p align="center"><img src="docs/reel/reel.gif" alt="repo-ratchet - 15-second motion reel" width="720"></p>
-<p align="center"><sub><a href="docs/reel/reel.mp4">MP4 version with sound</a></sub></p>
+**Measures which repository to work on next, and refuses to write down work that no check verified.**
+Standard library only, no network for most commands.
+
+```sh
+uvx --from git+https://github.com/Furkiozknn/repo-ratchet ratchet survey --path .
+```
+
+That measures the checkout you are standing in (twelve signals, nothing inside it is executed) and prints the
+evidence behind each number. Measured cold on Windows 11 / Python 3.12: **15 s** from an empty cache to the
+first result. No `uv`? `python -m pip install git+https://github.com/Furkiozknn/repo-ratchet`, then the same
+`ratchet survey --path .`.
+
+<p align="center"><img src="docs/demo/demo.gif" alt="A terminal: ratchet refuses an advanced record whose commit did not move, refuses a no-change record with no reason, runs a check, accepts the backed record, and refuses bash -c" width="720"></p>
+<p align="center"><sub>Real output, recorded by <a href="docs/demo/kaydet.py">docs/demo/kaydet.py</a> in a throwaway git repository and drawn by <a href="docs/demo/uret.py">uret.py</a>; nothing on screen is typed by hand.</sub></p>
+
+**Use it when** you look after many repositories and need an ordering that is not "whichever I remember", or you keep a log of
+what each pass did and want that log to be unable to claim more than a moved commit and a check that ran.
+**Do not use it as** a linter, a code-quality score or a sandbox: signals are heuristics that rank, the fence stops a typo,
+not a hostile repository, and discovery is built for one GitHub account.
 
 This is the engine that keeps every repository on the account moving forward instead of
 merely being maintained. It measures what a repository can currently do, ranks where the
@@ -278,7 +295,7 @@ python3 -m pip install pytest
 python3 -m pytest
 ```
 
-163 tests, on Linux, macOS and Windows with Python 3.11–3.14 in CI. The suite builds
+167 tests, on Linux, macOS and Windows with Python 3.11–3.14 in CI. The suite builds
 throwaway repositories on disk — including real git ones, for the signals that need
 history — so every measurement is tested against a repository it has never seen. The record rules and the
 fence get the heaviest coverage, because a record that can lie is a record that will, and
