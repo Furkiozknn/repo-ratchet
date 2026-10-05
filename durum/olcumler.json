@@ -1,43 +1,43 @@
 {
  "schema": 1,
- "generated": "2026-09-28T11:59:33Z",
+ "generated": "2026-10-05T12:36:52Z",
  "surveys": [
   {
    "schema": 1,
    "repo": "Furkiozknn",
-   "head": "952718c4f9b630ebb6eb565a09e87b7fb831e727",
-   "taken_at": "2026-09-28T11:58:41Z",
-   "total_headroom": 2.278,
+   "head": "cdef25d7b5a3d516e56f0b045fe84f7f1be224a1",
+   "taken_at": "2026-10-05T12:36:26Z",
+   "total_headroom": 1.945,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 138822
+      "python": 140950
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 138822 bytes"
+      "python 140950 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.382,
+     "value": 0.391,
      "unit": "test bytes per source byte",
-     "detail": "100465 source bytes, 38357 test bytes in 1 files",
+     "detail": "101327 source bytes, 39623 test bytes in 1 files",
      "evidence": [
       "schema/test_schema.py"
      ],
-     "headroom": 0.23641069029015083
+     "headroom": 0.21791822515222992
     },
     "test_count": {
      "name": "test_count",
-     "value": 96,
+     "value": 98,
      "unit": "cases",
-     "detail": "96 cases across 1 files",
+     "detail": "98 cases across 1 files",
      "evidence": [
-      "schema/test_schema.py: 96"
+      "schema/test_schema.py: 98"
      ],
      "headroom": null
     },
@@ -47,7 +47,7 @@
      "unit": "symbols",
      "detail": "17 of 36 public symbols carry no doc comment",
      "evidence": [
-      "schema/denetim.py:806 main",
+      "schema/denetim.py:829 main",
       "schema/koruma.py:67 main",
       "schema/dogrula.py:124 depo_dogrula",
       "schema/dogrula.py:138 main",
@@ -60,17 +60,19 @@
     },
     "ci_breadth": {
      "name": "ci_breadth",
-     "value": 1,
+     "value": 2,
      "unit": "distinct runners",
-     "detail": "5 workflow files, ~15 jobs, runners: ubuntu-latest",
+     "detail": "7 workflow files, ~24 jobs, runners: ubuntu-24.04, ubuntu-latest",
      "evidence": [
+      "baglanti.yml",
       "ci.yml",
       "denetim.yml",
+      "guvenlik.yml",
       "haftalik.yml",
       "projeler.yml",
       "yenile.yml"
      ],
-     "headroom": 0.6666666666666666
+     "headroom": 0.3333333333333333
     },
     "readme_commands": {
      "name": "readme_commands",
@@ -82,9 +84,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 17326,
+     "value": 17639,
      "unit": "bytes",
-     "detail": "17326 bytes, 20 sections, 19 images",
+     "detail": "17639 bytes, 20 sections, 19 images",
      "evidence": [
       "▸ No install, no signup — just click",
       "🚀 [nova-drift →](https://furkiozknn.github.io/nova-drift/)",
@@ -109,13 +111,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 883,
+     "value": 906,
      "unit": "lines",
      "detail": "schema/denetim.py is the longest source file",
      "evidence": [
       "schema/denetim.py"
      ],
-     "headroom": 0.4025
+     "headroom": 0.4216666666666667
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -129,7 +131,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (98 commits on HEAD)",
+     "detail": "never tagged (114 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -147,21 +149,9 @@
    },
    "opportunities": [
     {
-     "signal": "ci_breadth",
-     "headroom": 0.667,
-     "note": "5 workflow files, ~15 jobs, runners: ubuntu-latest",
-     "evidence": [
-      "ci.yml",
-      "denetim.yml",
-      "haftalik.yml",
-      "projeler.yml",
-      "yenile.yml"
-     ]
-    },
-    {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (98 commits on HEAD)",
+     "note": "never tagged (114 commits on HEAD)",
      "evidence": []
     },
     {
@@ -169,7 +159,7 @@
      "headroom": 0.472,
      "note": "17 of 36 public symbols carry no doc comment",
      "evidence": [
-      "schema/denetim.py:806 main",
+      "schema/denetim.py:829 main",
       "schema/koruma.py:67 main",
       "schema/dogrula.py:124 depo_dogrula",
       "schema/dogrula.py:138 main",
@@ -179,16 +169,29 @@
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.403,
+     "headroom": 0.422,
      "note": "schema/denetim.py is the longest source file",
      "evidence": [
       "schema/denetim.py"
      ]
     },
     {
+     "signal": "ci_breadth",
+     "headroom": 0.333,
+     "note": "7 workflow files, ~24 jobs, runners: ubuntu-24.04, ubuntu-latest",
+     "evidence": [
+      "baglanti.yml",
+      "ci.yml",
+      "denetim.yml",
+      "guvenlik.yml",
+      "haftalik.yml",
+      "projeler.yml"
+     ]
+    },
+    {
      "signal": "test_mass",
-     "headroom": 0.236,
-     "note": "100465 source bytes, 38357 test bytes in 1 files",
+     "headroom": 0.218,
+     "note": "101327 source bytes, 39623 test bytes in 1 files",
      "evidence": [
       "schema/test_schema.py"
      ]
@@ -198,27 +201,27 @@
   {
    "schema": 1,
    "repo": "Furkiozknn.github.io",
-   "head": "8f3b5e570f3158ef0bba1c5062ea0e366b69bcb7",
-   "taken_at": "2026-09-28T11:58:43Z",
-   "total_headroom": 1.267,
+   "head": "9e7872c4d6bb23801489537a47f3f058f12e2aa5",
+   "taken_at": "2026-10-05T12:36:26Z",
+   "total_headroom": 1.193,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 35778
+      "python": 41415
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 35778 bytes"
+      "python 41415 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.565,
+     "value": 1.418,
      "unit": "test bytes per source byte",
-     "detail": "22856 source bytes, 12922 test bytes in 1 files",
+     "detail": "17128 source bytes, 24287 test bytes in 1 files",
      "evidence": [
       "tests/test_uret.py"
      ],
@@ -226,11 +229,11 @@
     },
     "test_count": {
      "name": "test_count",
-     "value": 33,
+     "value": 59,
      "unit": "cases",
-     "detail": "33 cases across 1 files",
+     "detail": "59 cases across 1 files",
      "evidence": [
-      "tests/test_uret.py: 33"
+      "tests/test_uret.py: 59"
      ],
      "headroom": null
     },
@@ -238,7 +241,7 @@
      "name": "undocumented_surface",
      "value": 0,
      "unit": "symbols",
-     "detail": "0 of 13 public symbols carry no doc comment",
+     "detail": "0 of 18 public symbols carry no doc comment",
      "evidence": [],
      "headroom": 0.0
     },
@@ -261,16 +264,18 @@
      "evidence": [
       "python3 uret.py            # fetch every repository's metadata, then render",
       "python3 uret.py --yerel    # render from the snapshot already in veri/",
-      "python3 -m pytest tests -q # 37 tests over the generator"
+      "python3 -m pytest tests -q # 63 tests over the generator"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 3583,
+     "value": 6934,
      "unit": "bytes",
-     "detail": "3583 bytes, 3 sections, 1 images",
+     "detail": "6934 bytes, 5 sections, 2 images",
      "evidence": [
+      "Linking to a project",
+      "When a repository's prose disagrees with its own count",
       "What the tests are for",
       "Following it without opening it",
       "Licence"
@@ -287,13 +292,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 520,
+     "value": 432,
      "unit": "lines",
      "detail": "uret.py is the longest source file",
      "evidence": [
       "uret.py"
      ],
-     "headroom": 0.1
+     "headroom": 0.02666666666666667
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -307,7 +312,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (11 commits on HEAD)",
+     "detail": "never tagged (16 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -335,12 +340,12 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (11 commits on HEAD)",
+     "note": "never tagged (16 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.1,
+     "headroom": 0.027,
      "note": "uret.py is the longest source file",
      "evidence": [
       "uret.py"
@@ -351,51 +356,51 @@
   {
    "schema": 1,
    "repo": "ai-job-gateway",
-   "head": "9c0d82808cbac47cd68cf20a5b126af449f33c76",
-   "taken_at": "2026-09-28T11:58:44Z",
-   "total_headroom": 1.473,
+   "head": "b7abf24dee0d638d24e47a06fcc2d2ad7c5ae44d",
+   "taken_at": "2026-10-05T12:36:27Z",
+   "total_headroom": 1.448,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 188084
+      "python": 229761
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 188084 bytes"
+      "python 229761 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.743,
+     "value": 0.802,
      "unit": "test bytes per source byte",
-     "detail": "107897 source bytes, 80187 test bytes in 10 files",
+     "detail": "127509 source bytes, 102252 test bytes in 13 files",
      "evidence": [
       "tests/conftest.py",
+      "tests/test_cli.py",
       "tests/test_client.py",
       "tests/test_default_registry.py",
       "tests/test_manager.py",
-      "tests/test_providers.py",
-      "tests/test_providers_local.py"
+      "tests/test_netguard.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 117,
+     "value": 142,
      "unit": "cases",
-     "detail": "117 cases across 9 files",
+     "detail": "142 cases across 12 files",
      "evidence": [
+      "tests/test_cli.py: 10",
       "tests/test_client.py: 9",
       "tests/test_default_registry.py: 2",
-      "tests/test_manager.py: 24",
+      "tests/test_manager.py: 25",
+      "tests/test_netguard.py: 6",
       "tests/test_providers.py: 7",
       "tests/test_providers_local.py: 9",
-      "tests/test_providers_pollinations.py: 14",
-      "tests/test_scale_and_atomicity.py: 11",
-      "tests/test_server.py: 33"
+      "tests/test_providers_pollinations.py: 14"
      ],
      "headroom": null
     },
@@ -403,22 +408,22 @@
      "name": "undocumented_surface",
      "value": 6,
      "unit": "symbols",
-     "detail": "6 of 40 public symbols carry no doc comment",
+     "detail": "6 of 48 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
       "arac/vendor-dogrula.py:70 kanonik_getir",
       "arac/vendor-dogrula.py:76 main",
-      "src/ai_job_gateway/cli.py:69 main",
+      "src/ai_job_gateway/cli.py:117 main",
       "src/ai_job_gateway/providers_local.py:48 toolkit_available"
      ],
-     "headroom": 0.15
+     "headroom": 0.125
     },
     "ci_breadth": {
      "name": "ci_breadth",
      "value": 1,
      "unit": "distinct runners",
-     "detail": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "detail": "2 workflow files, ~8 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "yayinla.yml"
@@ -427,37 +432,37 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 19,
+     "value": 42,
      "unit": "commands",
-     "detail": "19 runnable-looking commands in 8 shell blocks",
+     "detail": "42 runnable-looking commands in 11 shell blocks",
      "evidence": [
-      "uv sync --extra media      # opt in to the local media capabilities",
-      "uv run ai-job-gateway serve",
-      "curl -s http://127.0.0.1:8000/v1/capabilities",
-      "uv run ai-job-gateway submit generate-image '{\"prompt\": \"a lighthouse at dusk\", \"width\": 768, \"height\": 512}'",
-      "uv run ai-job-gateway submit media-upscale '{\"image_path\": \"output/<job-id>.jpg\", \"scale\": 2}'",
-      "uv sync",
-      "uv run ai-job-gateway serve",
-      "uv run ai-job-gateway serve --db jobs.db"
+      "uvx --from git+https://github.com/Furkiozknn/ai-job-gateway ai-job-gateway serve   # http://127.0.0.1:8000, docs at /docs",
+      "ai-job-gateway submit echo '{\"prompt\": \"hello\"}'",
+      "submitted job fe738f30cbb44c88ac429382e40c4498 -> polling /v1/jobs/fe738f30cbb44c88ac429382e40c4498",
+      "{",
+      "\"echoed\": {",
+      "\"prompt\": \"hello\"",
+      "}",
+      "}"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 24586,
+     "value": 29528,
      "unit": "bytes",
-     "detail": "24586 bytes, 17 sections, 5 images",
+     "detail": "29528 bytes, 20 sections, 3 images",
      "evidence": [
+      "When to use it, when not",
+      "The contract",
+      "Install from a clone",
       "Why this contract",
       "Architecture",
       "Writing a new Provider",
       "Providers that ship",
       "What the real providers guarantee",
       "Running the reference server",
-      "Webhooks",
-      "Idempotent submission",
-      "Restart recovery",
-      "Operability"
+      "Webhooks"
      ],
      "headroom": 0.0
     },
@@ -493,568 +498,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (38 commits on HEAD)",
-     "evidence": [],
-     "headroom": 0.5
-    },
-    "metadata_present": {
-     "name": "metadata_present",
-     "value": true,
-     "unit": "",
-     "detail": "present; 22 top-level fields, 0 left null",
-     "evidence": [],
-     "headroom": null
-    }
-   },
-   "opportunities": [
-    {
-     "signal": "ci_breadth",
-     "headroom": 0.667,
-     "note": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
-     "evidence": [
-      "ci.yml",
-      "yayinla.yml"
-     ]
-    },
-    {
-     "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (38 commits on HEAD)",
-     "evidence": []
-    },
-    {
-     "signal": "largest_source_file",
-     "headroom": 0.157,
-     "note": "src/ai_job_gateway/store.py is the longest source file",
-     "evidence": [
-      "src/ai_job_gateway/store.py"
-     ]
-    },
-    {
-     "signal": "undocumented_surface",
-     "headroom": 0.15,
-     "note": "6 of 40 public symbols carry no doc comment",
-     "evidence": [
-      "arac/vendor-dogrula.py:50 yerel_kopya",
-      "arac/vendor-dogrula.py:66 parmak",
-      "arac/vendor-dogrula.py:70 kanonik_getir",
-      "arac/vendor-dogrula.py:76 main",
-      "src/ai_job_gateway/cli.py:69 main",
-      "src/ai_job_gateway/providers_local.py:48 toolkit_available"
-     ]
-    }
-   ]
-  },
-  {
-   "schema": 1,
-   "repo": "ai-workflow-engine",
-   "head": "86634a14d0598e1d4e2429e65d1692e37fa6a923",
-   "taken_at": "2026-09-28T11:58:45Z",
-   "total_headroom": 1.65,
-   "signals": {
-    "languages": {
-     "name": "languages",
-     "value": {
-      "python": 80777
-     },
-     "unit": "bytes",
-     "detail": "primary: python",
-     "evidence": [
-      "python 80777 bytes"
-     ],
-     "headroom": null
-    },
-    "test_mass": {
-     "name": "test_mass",
-     "value": 0.994,
-     "unit": "test bytes per source byte",
-     "detail": "40517 source bytes, 40260 test bytes in 5 files",
-     "evidence": [
-      "tests/test_cli.py",
-      "tests/test_gercek_gateway.py",
-      "tests/test_pipeline.py",
-      "tests/test_runner.py",
-      "tests/test_templating.py"
-     ],
-     "headroom": 0.0
-    },
-    "test_count": {
-     "name": "test_count",
-     "value": 71,
-     "unit": "cases",
-     "detail": "71 cases across 5 files",
-     "evidence": [
-      "tests/test_cli.py: 11",
-      "tests/test_gercek_gateway.py: 8",
-      "tests/test_pipeline.py: 22",
-      "tests/test_runner.py: 17",
-      "tests/test_templating.py: 13"
-     ],
-     "headroom": null
-    },
-    "undocumented_surface": {
-     "name": "undocumented_surface",
-     "value": 14,
-     "unit": "symbols",
-     "detail": "14 of 29 public symbols carry no doc comment",
-     "evidence": [
-      "arac/vendor-dogrula.py:50 yerel_kopya",
-      "arac/vendor-dogrula.py:66 parmak",
-      "arac/vendor-dogrula.py:70 kanonik_getir",
-      "arac/vendor-dogrula.py:76 main",
-      "src/ai_workflow_engine/cli.py:93 main",
-      "src/ai_workflow_engine/pipeline.py:32 PipelineError",
-      "src/ai_workflow_engine/pipeline.py:67 Step",
-      "src/ai_workflow_engine/pipeline.py:75 Pipeline"
-     ],
-     "headroom": 0.483
-    },
-    "ci_breadth": {
-     "name": "ci_breadth",
-     "value": 1,
-     "unit": "distinct runners",
-     "detail": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
-     "evidence": [
-      "ci.yml",
-      "yayinla.yml"
-     ],
-     "headroom": 0.6666666666666666
-    },
-    "readme_commands": {
-     "name": "readme_commands",
-     "value": 9,
-     "unit": "commands",
-     "detail": "9 runnable-looking commands in 5 shell blocks",
-     "evidence": [
-      "uv sync --group dev",
-      "awe validate examples/generate-and-upscale.yaml",
-      "awe run examples/generate-and-upscale.yaml \\",
-      "--gateway-url http://localhost:8000 \\",
-      "--var prompt=\"a red sneaker on a white background\"",
-      "uv run pytest -v",
-      "uv pip install \"git+https://github.com/Furkiozknn/ai-job-gateway@main\"",
-      "uv run pytest tests/test_gercek_gateway.py -v"
-     ],
-     "headroom": null
-    },
-    "readme_depth": {
-     "name": "readme_depth",
-     "value": 19332,
-     "unit": "bytes",
-     "detail": "19332 bytes, 14 sections, 6 images",
-     "evidence": [
-      "Why",
-      "What it does",
-      "Install",
-      "Pipeline file format",
-      "CLI usage",
-      "Pacing: what a layer costs the gateway",
-      "Library usage",
-      "Testing",
-      "Against the real gateway, not against our idea of it",
-      "Security"
-     ],
-     "headroom": 0.0
-    },
-    "todo_density": {
-     "name": "todo_density",
-     "value": 0,
-     "unit": "markers",
-     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
-     "evidence": [],
-     "headroom": 0.0
-    },
-    "largest_source_file": {
-     "name": "largest_source_file",
-     "value": 264,
-     "unit": "lines",
-     "detail": "src/ai_workflow_engine/pipeline.py is the longest source file",
-     "evidence": [
-      "src/ai_workflow_engine/pipeline.py"
-     ],
-     "headroom": 0.0
-    },
-    "declared_dependencies": {
-     "name": "declared_dependencies",
-     "value": 3,
-     "unit": "runtime dependencies",
-     "detail": "python: 3",
-     "evidence": [
-      "httpx>=0.27.0",
-      "pyyaml>=6.0",
-      "jinja2>=3.1.0"
-     ],
-     "headroom": null
-    },
-    "release_lag": {
-     "name": "release_lag",
-     "value": null,
-     "unit": "commits since last tag",
-     "detail": "never tagged (31 commits on HEAD)",
-     "evidence": [],
-     "headroom": 0.5
-    },
-    "metadata_present": {
-     "name": "metadata_present",
-     "value": true,
-     "unit": "",
-     "detail": "present; 22 top-level fields, 0 left null",
-     "evidence": [],
-     "headroom": null
-    }
-   },
-   "opportunities": [
-    {
-     "signal": "ci_breadth",
-     "headroom": 0.667,
-     "note": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
-     "evidence": [
-      "ci.yml",
-      "yayinla.yml"
-     ]
-    },
-    {
-     "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (31 commits on HEAD)",
-     "evidence": []
-    },
-    {
-     "signal": "undocumented_surface",
-     "headroom": 0.483,
-     "note": "14 of 29 public symbols carry no doc comment",
-     "evidence": [
-      "arac/vendor-dogrula.py:50 yerel_kopya",
-      "arac/vendor-dogrula.py:66 parmak",
-      "arac/vendor-dogrula.py:70 kanonik_getir",
-      "arac/vendor-dogrula.py:76 main",
-      "src/ai_workflow_engine/cli.py:93 main",
-      "src/ai_workflow_engine/pipeline.py:32 PipelineError"
-     ]
-    }
-   ]
-  },
-  {
-   "schema": 1,
-   "repo": "ajans-os",
-   "head": "3b506fb01285334f0f843c112bbf06cb4507d757",
-   "taken_at": "2026-09-28T11:58:47Z",
-   "total_headroom": 1.462,
-   "signals": {
-    "languages": {
-     "name": "languages",
-     "value": {
-      "javascript": 327147,
-      "typescript": 34057
-     },
-     "unit": "bytes",
-     "detail": "primary: javascript",
-     "evidence": [
-      "javascript 327147 bytes",
-      "typescript 34057 bytes"
-     ],
-     "headroom": null
-    },
-    "test_mass": {
-     "name": "test_mass",
-     "value": 0.541,
-     "unit": "test bytes per source byte",
-     "detail": "234434 source bytes, 126770 test bytes in 17 files",
-     "evidence": [
-      "arac/kanit-dogrula-test.js",
-      "arac/yapi-dogrula-test.js",
-      "src/agent-registry/index.test.js",
-      "src/context-manager/index.test.js",
-      "src/cost-manager/index.test.js",
-      "src/critic/index.test.js"
-     ],
-     "headroom": 0.0
-    },
-    "test_count": {
-     "name": "test_count",
-     "value": 149,
-     "unit": "cases (lower bound)",
-     "detail": "at least 149 cases across 16 files; 1 further test file(s) declare their cases in a form this cannot count",
-     "evidence": [
-      "arac/kanit-dogrula-test.js: 7",
-      "src/agent-registry/index.test.js: 7",
-      "src/context-manager/index.test.js: 11",
-      "src/cost-manager/index.test.js: 15",
-      "src/critic/index.test.js: 7",
-      "src/evaluator/index.test.js: 20",
-      "uncounted: arac/yapi-dogrula-test.js"
-     ],
-     "headroom": null
-    },
-    "undocumented_surface": {
-     "name": "undocumented_surface",
-     "value": null,
-     "unit": "",
-     "detail": "no Python or Rust public surface",
-     "evidence": [],
-     "headroom": null
-    },
-    "ci_breadth": {
-     "name": "ci_breadth",
-     "value": 1,
-     "unit": "distinct runners",
-     "detail": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
-     "evidence": [
-      "ci.yml"
-     ],
-     "headroom": 0.6666666666666666
-    },
-    "readme_commands": {
-     "name": "readme_commands",
-     "value": 4,
-     "unit": "commands",
-     "detail": "4 runnable-looking commands in 1 shell blocks",
-     "evidence": [
-      "npm test        # 142 test (uçtan uca kabul koşusu dahil)",
-      "npm run yapi    # yapı doğrulama: 13 modül, blueprint §2 ile eşli, import yönü tek",
-      "npm run sema    # sözleşmeler: örnekler + doğrulayıcının öz-testi + mutasyon ölçümü",
-      "npm run kapi    # hepsi birden — kapı kontrolü (CI'ın koştuğu komutun aynısı)"
-     ],
-     "headroom": null
-    },
-    "readme_depth": {
-     "name": "readme_depth",
-     "value": 7167,
-     "unit": "bytes",
-     "detail": "7167 bytes, 8 sections, 9 images",
-     "evidence": [
-      "Çalıştır",
-      "Neden var",
-      "Altı sütun",
-      "Program",
-      "Klasörler",
-      "Dil",
-      "Lisans",
-      "Bu ekosistemden başka projeler"
-     ],
-     "headroom": 0.0
-    },
-    "todo_density": {
-     "name": "todo_density",
-     "value": 0,
-     "unit": "markers",
-     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
-     "evidence": [],
-     "headroom": 0.0
-    },
-    "largest_source_file": {
-     "name": "largest_source_file",
-     "value": 755,
-     "unit": "lines",
-     "detail": "arac/sema-dogrula.js is the longest source file",
-     "evidence": [
-      "arac/sema-dogrula.js"
-     ],
-     "headroom": 0.29583333333333334
-    },
-    "declared_dependencies": {
-     "name": "declared_dependencies",
-     "value": 0,
-     "unit": "runtime dependencies",
-     "detail": "node: 0",
-     "evidence": [],
-     "headroom": null
-    },
-    "release_lag": {
-     "name": "release_lag",
-     "value": null,
-     "unit": "commits since last tag",
-     "detail": "never tagged (133 commits on HEAD)",
-     "evidence": [],
-     "headroom": 0.5
-    },
-    "metadata_present": {
-     "name": "metadata_present",
-     "value": true,
-     "unit": "",
-     "detail": "present; 22 top-level fields, 1 left null",
-     "evidence": [
-      "version"
-     ],
-     "headroom": null
-    }
-   },
-   "opportunities": [
-    {
-     "signal": "ci_breadth",
-     "headroom": 0.667,
-     "note": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
-     "evidence": [
-      "ci.yml"
-     ]
-    },
-    {
-     "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (133 commits on HEAD)",
-     "evidence": []
-    },
-    {
-     "signal": "largest_source_file",
-     "headroom": 0.296,
-     "note": "arac/sema-dogrula.js is the longest source file",
-     "evidence": [
-      "arac/sema-dogrula.js"
-     ]
-    }
-   ]
-  },
-  {
-   "schema": 1,
-   "repo": "asset-provenance-toolkit",
-   "head": "1fb14081da55b5fc2137f4e5f3d4f896217f7e3f",
-   "taken_at": "2026-09-28T11:58:49Z",
-   "total_headroom": 1.667,
-   "signals": {
-    "languages": {
-     "name": "languages",
-     "value": {
-      "python": 104068,
-      "shell": 1233
-     },
-     "unit": "bytes",
-     "detail": "primary: python",
-     "evidence": [
-      "python 104068 bytes",
-      "shell 1233 bytes"
-     ],
-     "headroom": null
-    },
-    "test_mass": {
-     "name": "test_mass",
-     "value": 1.004,
-     "unit": "test bytes per source byte",
-     "detail": "52543 source bytes, 52758 test bytes in 9 files",
-     "evidence": [
-      "tests/conftest.py",
-      "tests/test_cli.py",
-      "tests/test_core.py",
-      "tests/test_gateway_client.py",
-      "tests/test_jpeg_backend.py",
-      "tests/test_mp4_backend.py"
-     ],
-     "headroom": 0.0
-    },
-    "test_count": {
-     "name": "test_count",
-     "value": 117,
-     "unit": "cases",
-     "detail": "117 cases across 8 files",
-     "evidence": [
-      "tests/test_cli.py: 19",
-      "tests/test_core.py: 21",
-      "tests/test_gateway_client.py: 5",
-      "tests/test_jpeg_backend.py: 12",
-      "tests/test_mp4_backend.py: 23",
-      "tests/test_png_backend.py: 17",
-      "tests/test_schema.py: 13",
-      "tests/test_sidecar_backend.py: 7"
-     ],
-     "headroom": null
-    },
-    "undocumented_surface": {
-     "name": "undocumented_surface",
-     "value": 16,
-     "unit": "symbols",
-     "detail": "16 of 32 public symbols carry no doc comment",
-     "evidence": [
-      "arac/gercek-video-dogrula.py:68 sorun",
-      "arac/gercek-video-dogrula.py:74 tamam",
-      "arac/gercek-video-dogrula.py:87 akislar",
-      "arac/gercek-video-dogrula.py:102 bir_klip",
-      "arac/gercek-video-dogrula.py:139 main",
-      "src/asset_provenance_toolkit/mp4_backend.py:229 extract_mp4",
-      "src/asset_provenance_toolkit/cli.py:131 main",
-      "src/asset_provenance_toolkit/sidecar_backend.py:20 sidecar_path"
-     ],
-     "headroom": 0.5
-    },
-    "ci_breadth": {
-     "name": "ci_breadth",
-     "value": 1,
-     "unit": "distinct runners",
-     "detail": "2 workflow files, ~8 jobs, runners: ubuntu-latest",
-     "evidence": [
-      "ci.yml",
-      "yayinla.yml"
-     ],
-     "headroom": 0.6666666666666666
-    },
-    "readme_commands": {
-     "name": "readme_commands",
-     "value": 19,
-     "unit": "commands",
-     "detail": "19 runnable-looking commands in 4 shell blocks",
-     "evidence": [
-      "uv sync --group dev",
-      "uv run aprov embed cat.png --capability image-generate --provider flux-2 \\",
-      "--params '{\"prompt\": \"a red sneaker on a white background\", \"seed\": 42}'",
-      "uv run aprov extract cat.png --compact",
-      "uv run aprov verify cat.png",
-      "aprov embed output.png --capability image-generate --provider flux-2 \\",
-      "--params '{\"prompt\": \"a red sneaker on a white background\", \"seed\": 42}' \\",
-      "--extra '{\"steps\": 30, \"cfg_scale\": 7.5}'"
-     ],
-     "headroom": null
-    },
-    "readme_depth": {
-     "name": "readme_depth",
-     "value": 14351,
-     "unit": "bytes",
-     "detail": "14351 bytes, 12 sections, 5 images",
-     "evidence": [
-      "Why",
-      "What it does",
-      "Quickstart",
-      "Backends",
-      "Relationship to C2PA / Content Credentials",
-      "CLI usage",
-      "Library usage",
-      "The provenance schema",
-      "Testing",
-      "What this tool does NOT do"
-     ],
-     "headroom": 0.0
-    },
-    "todo_density": {
-     "name": "todo_density",
-     "value": 0,
-     "unit": "markers",
-     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
-     "evidence": [],
-     "headroom": 0.0
-    },
-    "largest_source_file": {
-     "name": "largest_source_file",
-     "value": 247,
-     "unit": "lines",
-     "detail": "src/asset_provenance_toolkit/mp4_backend.py is the longest source file",
-     "evidence": [
-      "src/asset_provenance_toolkit/mp4_backend.py"
-     ],
-     "headroom": 0.0
-    },
-    "declared_dependencies": {
-     "name": "declared_dependencies",
-     "value": 2,
-     "unit": "runtime dependencies",
-     "detail": "python: 2",
-     "evidence": [
-      "pillow>=11.0.0",
-      "httpx>=0.27.0"
-     ],
-     "headroom": null
-    },
-    "release_lag": {
-     "name": "release_lag",
-     "value": null,
-     "unit": "commits since last tag",
-     "detail": "never tagged (26 commits on HEAD)",
+     "detail": "never tagged (45 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -1078,22 +522,619 @@
      ]
     },
     {
-     "signal": "undocumented_surface",
+     "signal": "release_lag",
      "headroom": 0.5,
-     "note": "16 of 32 public symbols carry no doc comment",
+     "note": "never tagged (45 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.157,
+     "note": "src/ai_job_gateway/store.py is the longest source file",
+     "evidence": [
+      "src/ai_job_gateway/store.py"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.125,
+     "note": "6 of 48 public symbols carry no doc comment",
+     "evidence": [
+      "arac/vendor-dogrula.py:50 yerel_kopya",
+      "arac/vendor-dogrula.py:66 parmak",
+      "arac/vendor-dogrula.py:70 kanonik_getir",
+      "arac/vendor-dogrula.py:76 main",
+      "src/ai_job_gateway/cli.py:117 main",
+      "src/ai_job_gateway/providers_local.py:48 toolkit_available"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "ai-workflow-engine",
+   "head": "3a9286f1d6e2852aaef78d137c10c953fc9b598c",
+   "taken_at": "2026-10-05T12:36:27Z",
+   "total_headroom": 1.409,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 103341
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 103341 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 1.066,
+     "unit": "test bytes per source byte",
+     "detail": "50023 source bytes, 53318 test bytes in 7 files",
+     "evidence": [
+      "tests/test_cli.py",
+      "tests/test_gercek_gateway.py",
+      "tests/test_on_kontrol.py",
+      "tests/test_pipeline.py",
+      "tests/test_runner.py",
+      "tests/test_templating.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 95,
+     "unit": "cases",
+     "detail": "95 cases across 7 files",
+     "evidence": [
+      "tests/test_cli.py: 14",
+      "tests/test_gercek_gateway.py: 9",
+      "tests/test_on_kontrol.py: 11",
+      "tests/test_pipeline.py: 29",
+      "tests/test_runner.py: 17",
+      "tests/test_templating.py: 14",
+      "tests/test_version.py: 1"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 8,
+     "unit": "symbols",
+     "detail": "8 of 33 public symbols carry no doc comment",
+     "evidence": [
+      "arac/vendor-dogrula.py:50 yerel_kopya",
+      "arac/vendor-dogrula.py:66 parmak",
+      "arac/vendor-dogrula.py:70 kanonik_getir",
+      "arac/vendor-dogrula.py:76 main",
+      "src/ai_workflow_engine/cli.py:114 main",
+      "src/ai_workflow_engine/pipeline.py:135 parse_pipeline",
+      "src/ai_workflow_engine/templating.py:34 TemplateRenderError",
+      "src/ai_workflow_engine/templating.py:38 render_params"
+     ],
+     "headroom": 0.242
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~10 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 59,
+     "unit": "commands",
+     "detail": "59 runnable-looking commands in 7 shell blocks",
+     "evidence": [
+      "uvx --from git+https://github.com/Furkiozknn/ai-workflow-engine awe --help",
+      "uvx --from git+https://github.com/Furkiozknn/ai-job-gateway ai-job-gateway serve   # other terminal",
+      "awe validate examples/mock-chain.yaml",
+      "OK: 'mock-chain' - 3 step(s) in 2 layer(s)",
+      "layer 0: draft, note",
+      "layer 1: publish",
+      "variables referenced: prompt",
+      "awe run examples/mock-chain.yaml --gateway-url http://127.0.0.1:8000 --var prompt='a cat'"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 23448,
+     "unit": "bytes",
+     "detail": "23448 bytes, 15 sections, 4 images",
+     "evidence": [
+      "When to use it, when not",
+      "Why",
+      "What it does",
+      "Install",
+      "Pipeline file format",
+      "CLI usage",
+      "Pacing: what a layer costs the gateway",
+      "Library usage",
+      "Testing",
+      "Against the real gateway, not against our idea of it"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 314,
+     "unit": "lines",
+     "detail": "src/ai_workflow_engine/pipeline.py is the longest source file",
+     "evidence": [
+      "src/ai_workflow_engine/pipeline.py"
+     ],
+     "headroom": 0.0
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 3,
+     "unit": "runtime dependencies",
+     "detail": "python: 3",
+     "evidence": [
+      "httpx>=0.27.0",
+      "pyyaml>=6.0",
+      "jinja2>=3.1.0"
+     ],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (39 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~10 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (39 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.242,
+     "note": "8 of 33 public symbols carry no doc comment",
+     "evidence": [
+      "arac/vendor-dogrula.py:50 yerel_kopya",
+      "arac/vendor-dogrula.py:66 parmak",
+      "arac/vendor-dogrula.py:70 kanonik_getir",
+      "arac/vendor-dogrula.py:76 main",
+      "src/ai_workflow_engine/cli.py:114 main",
+      "src/ai_workflow_engine/pipeline.py:135 parse_pipeline"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "ajans-os",
+   "head": "073b20bc6357c3525a10d2f96fae3db08e5b0ded",
+   "taken_at": "2026-10-05T12:36:28Z",
+   "total_headroom": 1.686,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "javascript": 361718,
+      "typescript": 34317,
+      "python": 10159
+     },
+     "unit": "bytes",
+     "detail": "primary: javascript",
+     "evidence": [
+      "javascript 361718 bytes",
+      "typescript 34317 bytes",
+      "python 10159 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.555,
+     "unit": "test bytes per source byte",
+     "detail": "261254 source bytes, 144940 test bytes in 19 files",
+     "evidence": [
+      "arac/kanit-dogrula-test.js",
+      "arac/yapi-dogrula-test.js",
+      "src/agent-registry/index.test.js",
+      "src/arac-cli.test.js",
+      "src/belge-sayilari.test.js",
+      "src/context-manager/index.test.js"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 172,
+     "unit": "cases (lower bound)",
+     "detail": "at least 172 cases across 18 files; 1 further test file(s) declare their cases in a form this cannot count",
+     "evidence": [
+      "arac/kanit-dogrula-test.js: 7",
+      "src/agent-registry/index.test.js: 7",
+      "src/arac-cli.test.js: 18",
+      "src/belge-sayilari.test.js: 2",
+      "src/context-manager/index.test.js: 11",
+      "src/cost-manager/index.test.js: 15",
+      "uncounted: arac/yapi-dogrula-test.js"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 7,
+     "unit": "symbols",
+     "detail": "7 of 11 public symbols carry no doc comment",
+     "evidence": [
+      "docs/demo/uret.py:37 luminance",
+      "docs/demo/uret.py:43 kontrast",
+      "docs/demo/uret.py:48 adimlar",
+      "docs/demo/uret.py:128 yazi_tipi",
+      "docs/demo/uret.py:132 cizim",
+      "docs/demo/uret.py:185 kontrast_raporu",
+      "docs/demo/uret.py:190 main"
+     ],
+     "headroom": 0.636
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 6,
+     "unit": "commands",
+     "detail": "6 runnable-looking commands in 2 shell blocks",
+     "evidence": [
+      "git clone https://github.com/Furkiozknn/ajans-os && cd ajans-os && npm run kapi",
+      "git clone https://github.com/Furkiozknn/ajans-os && cd ajans-os",
+      "npm test        # 179 test (uçtan uca kabul koşusu dahil)",
+      "npm run yapi    # yapı doğrulama: 13 modül, blueprint §2 ile eşli, import yönü tek",
+      "npm run sema    # sözleşmeler: örnekler + doğrulayıcının öz-testi + mutasyon ölçümü",
+      "npm run kapi    # hepsi birden — kapı kontrolü (CI'ın koştuğu komutun aynısı)"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 12880,
+     "unit": "bytes",
+     "detail": "12880 bytes, 11 sections, 9 images",
+     "evidence": [
+      "Çalıştır",
+      "İlk koşuda göreceğiniz iki atlama bilinçli, hata değil",
+      "Nereden başlamalı",
+      "Neden var",
+      "Altı sütun",
+      "Program",
+      "Klasörler",
+      "Sınırlar",
+      "Dil",
+      "Lisans"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 812,
+     "unit": "lines",
+     "detail": "arac/sema-dogrula.js is the longest source file",
+     "evidence": [
+      "arac/sema-dogrula.js"
+     ],
+     "headroom": 0.3433333333333333
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "node: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": 1,
+     "unit": "commits since last tag",
+     "detail": "last tag v0.1.0, 1 commits since",
+     "evidence": [
+      "v0.1.0"
+     ],
+     "headroom": 0.04
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 1 left null",
+     "evidence": [
+      "version"
+     ],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.636,
+     "note": "7 of 11 public symbols carry no doc comment",
+     "evidence": [
+      "docs/demo/uret.py:37 luminance",
+      "docs/demo/uret.py:43 kontrast",
+      "docs/demo/uret.py:48 adimlar",
+      "docs/demo/uret.py:128 yazi_tipi",
+      "docs/demo/uret.py:132 cizim",
+      "docs/demo/uret.py:185 kontrast_raporu"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.343,
+     "note": "arac/sema-dogrula.js is the longest source file",
+     "evidence": [
+      "arac/sema-dogrula.js"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.04,
+     "note": "last tag v0.1.0, 1 commits since",
+     "evidence": [
+      "v0.1.0"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "asset-provenance-toolkit",
+   "head": "457f2280a4acb9557ce2995a217753526fe041d9",
+   "taken_at": "2026-10-05T12:36:29Z",
+   "total_headroom": 1.738,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "python": 150148,
+      "javascript": 2383,
+      "shell": 1233
+     },
+     "unit": "bytes",
+     "detail": "primary: python",
+     "evidence": [
+      "python 150148 bytes",
+      "javascript 2383 bytes",
+      "shell 1233 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.896,
+     "unit": "test bytes per source byte",
+     "detail": "81088 source bytes, 72676 test bytes in 11 files",
+     "evidence": [
+      "tests/conftest.py",
+      "tests/test_cli.py",
+      "tests/test_core.py",
+      "tests/test_gateway_client.py",
+      "tests/test_ilk_kullanim.py",
+      "tests/test_jpeg_backend.py"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 153,
+     "unit": "cases",
+     "detail": "153 cases across 10 files",
+     "evidence": [
+      "tests/test_cli.py: 19",
+      "tests/test_core.py: 21",
+      "tests/test_gateway_client.py: 5",
+      "tests/test_ilk_kullanim.py: 14",
+      "tests/test_jpeg_backend.py: 12",
+      "tests/test_mp4_backend.py: 23",
+      "tests/test_png_backend.py: 17",
+      "tests/test_robustness.py: 22"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 24,
+     "unit": "symbols",
+     "detail": "24 of 42 public symbols carry no doc comment",
      "evidence": [
       "arac/gercek-video-dogrula.py:68 sorun",
       "arac/gercek-video-dogrula.py:74 tamam",
       "arac/gercek-video-dogrula.py:87 akislar",
       "arac/gercek-video-dogrula.py:102 bir_klip",
       "arac/gercek-video-dogrula.py:139 main",
-      "src/asset_provenance_toolkit/mp4_backend.py:229 extract_mp4"
+      "scripts/demo-uret.py:65 bash",
+      "scripts/demo-uret.py:72 prepare",
+      "scripts/demo-uret.py:80 run_all"
+     ],
+     "headroom": 0.571
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 25,
+     "unit": "commands",
+     "detail": "25 runnable-looking commands in 5 shell blocks",
+     "evidence": [
+      "uv tool install git+https://github.com/Furkiozknn/asset-provenance-toolkit",
+      "aprov embed cover.png --capability image-generate --provider flux-2 --params '{\"prompt\": \"a red sneaker\"}'",
+      "aprov extract cover.png",
+      "git clone https://github.com/Furkiozknn/asset-provenance-toolkit.git",
+      "cd asset-provenance-toolkit",
+      "uv sync",
+      "uv run python -c \"from PIL import Image; Image.new('RGB', (64, 64), 'red').save('cat.png')\"",
+      "uv run aprov embed cat.png --capability image-generate --provider flux-2 \\"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 17924,
+     "unit": "bytes",
+     "detail": "17924 bytes, 14 sections, 4 images",
+     "evidence": [
+      "When to use it, when not",
+      "Why",
+      "What it does",
+      "When something is wrong",
+      "Working from a clone",
+      "Backends",
+      "Relationship to C2PA / Content Credentials",
+      "CLI usage",
+      "Library usage",
+      "The provenance schema"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 325,
+     "unit": "lines",
+     "detail": "src/asset_provenance_toolkit/mp4_backend.py is the longest source file",
+     "evidence": [
+      "src/asset_provenance_toolkit/mp4_backend.py"
+     ],
+     "headroom": 0.0
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 2,
+     "unit": "runtime dependencies",
+     "detail": "python: 2",
+     "evidence": [
+      "pillow>=11.0.0",
+      "httpx>=0.27.0"
+     ],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (33 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 0 left null",
+     "evidence": [],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml",
+      "yayinla.yml"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.571,
+     "note": "24 of 42 public symbols carry no doc comment",
+     "evidence": [
+      "arac/gercek-video-dogrula.py:68 sorun",
+      "arac/gercek-video-dogrula.py:74 tamam",
+      "arac/gercek-video-dogrula.py:87 akislar",
+      "arac/gercek-video-dogrula.py:102 bir_klip",
+      "arac/gercek-video-dogrula.py:139 main",
+      "scripts/demo-uret.py:65 bash"
      ]
     },
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (26 commits on HEAD)",
+     "note": "never tagged (33 commits on HEAD)",
      "evidence": []
     }
    ]
@@ -1101,21 +1142,21 @@
   {
    "schema": 1,
    "repo": "buradane",
-   "head": "40132d07bb9e980613b6db5ab84644f18783c2c8",
-   "taken_at": "2026-09-28T11:58:52Z",
-   "total_headroom": 3.125,
+   "head": "35d70025cfd3d7c3b4cbe53ebec7ee413bde3c30",
+   "taken_at": "2026-10-05T12:36:31Z",
+   "total_headroom": 2.664,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "typescript": 568961,
+      "typescript": 623813,
       "python": 316255,
       "javascript": 11073
      },
      "unit": "bytes",
      "detail": "primary: typescript",
      "evidence": [
-      "typescript 568961 bytes",
+      "typescript 623813 bytes",
       "python 316255 bytes",
       "javascript 11073 bytes"
      ],
@@ -1123,9 +1164,9 @@
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.311,
+     "value": 0.316,
      "unit": "test bytes per source byte",
-     "detail": "683465 source bytes, 212824 test bytes in 36 files",
+     "detail": "722930 source bytes, 228211 test bytes in 40 files",
      "evidence": [
       "backend/tests/__init__.py",
       "backend/tests/conftest.py",
@@ -1134,13 +1175,13 @@
       "backend/tests/test_dedup_math.py",
       "backend/tests/test_default_secret_warning.py"
      ],
-     "headroom": 0.3772204867842538
+     "headroom": 0.3686498001189603
     },
     "test_count": {
      "name": "test_count",
-     "value": 341,
+     "value": 366,
      "unit": "cases",
-     "detail": "341 cases across 34 files",
+     "detail": "366 cases across 38 files",
      "evidence": [
       "backend/tests/test_admin_moderation.py: 14",
       "backend/tests/test_dedup_integration.py: 4",
@@ -1183,26 +1224,26 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 22,
+     "value": 25,
      "unit": "commands",
-     "detail": "22 runnable-looking commands in 6 shell blocks",
+     "detail": "25 runnable-looking commands in 8 shell blocks",
      "evidence": [
+      "cd frontend && npm install && npm run dev    # http://localhost:3000, data ships with the repo",
       "cd backend",
       "docker compose up -d --wait",
       "uv sync",
       "uv run alembic upgrade head",
       "uv run python -m app.ingest.seed_categories",
       "uv run python -m app.ingest.turkiye_api",
-      "uv run python -m app.ingest.osm_overpass",
-      "uv run uvicorn app.main:app --reload"
+      "uv run python -m app.ingest.osm_overpass"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 41724,
+     "value": 45410,
      "unit": "bytes",
-     "detail": "41724 bytes, 29 sections, 6 images",
+     "detail": "45410 bytes, 29 sections, 7 images",
      "evidence": [
       "v1 Kapsamı",
       "Hızlı Başlangıç",
@@ -1227,13 +1268,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 1446,
+     "value": 1456,
      "unit": "lines",
-     "detail": "frontend/src/lib/places-repository.ts is the longest source file",
+     "detail": "frontend/src/components/AppShell.tsx is the longest source file",
      "evidence": [
-      "frontend/src/lib/places-repository.ts"
+      "frontend/src/components/AppShell.tsx"
      ],
-     "headroom": 0.8716666666666667
+     "headroom": 0.88
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -1245,11 +1286,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": null,
+     "value": 1,
      "unit": "commits since last tag",
-     "detail": "never tagged (131 commits on HEAD)",
-     "evidence": [],
-     "headroom": 0.5
+     "detail": "last tag v1.1.0, 1 commits since",
+     "evidence": [
+      "v1.1.0"
+     ],
+     "headroom": 0.04
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -1265,10 +1308,10 @@
    "opportunities": [
     {
      "signal": "largest_source_file",
-     "headroom": 0.872,
-     "note": "frontend/src/lib/places-repository.ts is the longest source file",
+     "headroom": 0.88,
+     "note": "frontend/src/components/AppShell.tsx is the longest source file",
      "evidence": [
-      "frontend/src/lib/places-repository.ts"
+      "frontend/src/components/AppShell.tsx"
      ]
     },
     {
@@ -1294,15 +1337,9 @@
      ]
     },
     {
-     "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (131 commits on HEAD)",
-     "evidence": []
-    },
-    {
      "signal": "test_mass",
-     "headroom": 0.377,
-     "note": "683465 source bytes, 212824 test bytes in 36 files",
+     "headroom": 0.369,
+     "note": "722930 source bytes, 228211 test bytes in 40 files",
      "evidence": [
       "backend/tests/__init__.py",
       "backend/tests/conftest.py",
@@ -1311,33 +1348,41 @@
       "backend/tests/test_dedup_math.py",
       "backend/tests/test_default_secret_warning.py"
      ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.04,
+     "note": "last tag v1.1.0, 1 commits since",
+     "evidence": [
+      "v1.1.0"
+     ]
     }
    ]
   },
   {
    "schema": 1,
    "repo": "claude-code-intelligence",
-   "head": "2f2804c7c9ad41f477e93fdb0d1e74e03ccf776b",
-   "taken_at": "2026-09-28T11:58:53Z",
-   "total_headroom": 2.35,
+   "head": "5d2f6c4052dfba53028157f399ac6adfa5f72732",
+   "taken_at": "2026-10-05T12:36:32Z",
+   "total_headroom": 2.364,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 536128
+      "python": 555130
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 536128 bytes"
+      "python 555130 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.459,
+     "value": 0.46,
      "unit": "test bytes per source byte",
-     "detail": "367407 source bytes, 168721 test bytes in 29 files",
+     "detail": "380110 source bytes, 175020 test bytes in 29 files",
      "evidence": [
       "research/tools/test_catalog.py",
       "tests/test_adapter_contract.py",
@@ -1346,13 +1391,13 @@
       "tests/test_alerts.py",
       "tests/test_anomaly.py"
      ],
-     "headroom": 0.08155805414703587
+     "headroom": 0.07910867906658603
     },
     "test_count": {
      "name": "test_count",
-     "value": 245,
+     "value": 257,
      "unit": "cases",
-     "detail": "245 cases across 29 files",
+     "detail": "257 cases across 29 files",
      "evidence": [
       "research/tools/test_catalog.py: 9",
       "tests/test_adapter_contract.py: 8",
@@ -1360,16 +1405,16 @@
       "tests/test_advisor_act.py: 3",
       "tests/test_alerts.py: 6",
       "tests/test_anomaly.py: 5",
-      "tests/test_api_http.py: 10",
+      "tests/test_api_http.py: 12",
       "tests/test_claude_code_paths.py: 8"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 169,
+     "value": 174,
      "unit": "symbols",
-     "detail": "169 of 237 public symbols carry no doc comment",
+     "detail": "174 of 246 public symbols carry no doc comment",
      "evidence": [
       "cci/cli.py:45 default_data_dir",
       "cci/cli.py:52 local_tz",
@@ -1378,9 +1423,9 @@
       "cci/cli.py:153 store_quota",
       "cci/cli.py:165 quota_lines",
       "cci/cli.py:186 cmd_scan",
-      "cci/cli.py:253 cmd_daily"
+      "cci/cli.py:256 cmd_daily"
      ],
-     "headroom": 0.713
+     "headroom": 0.707
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -1395,17 +1440,24 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 0,
+     "value": 6,
      "unit": "commands",
-     "detail": "0 runnable-looking commands in 0 shell blocks",
-     "evidence": [],
+     "detail": "6 runnable-looking commands in 2 shell blocks",
+     "evidence": [
+      "uv tool install git+https://github.com/Furkiozknn/claude-code-intelligence",
+      "cci scan && cci daily          # read Claude Code transcripts; requests, tokens, estimated cost per day",
+      "cci quota --forecast           # when the limit is hit at this pace (needs 5+ polled cycles)",
+      "cci snapshot && cci serve      # local dashboard",
+      "uv tool install git+https://github.com/Furkiozknn/claude-code-intelligence   # ya da tek seferlik: uvx --from git+https://github.com/Furkiozknn/claude-code-intelligence cci daily",
+      "cci scan && cci daily"
+     ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 9432,
+     "value": 12463,
      "unit": "bytes",
-     "detail": "9432 bytes, 7 sections, 4 images",
+     "detail": "12463 bytes, 7 sections, 4 images",
      "evidence": [
       "Hızlı başlangıç",
       "Yöntem ve durum",
@@ -1427,13 +1479,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 866,
+     "value": 894,
      "unit": "lines",
      "detail": "cci/cli.py is the longest source file",
      "evidence": [
       "cci/cli.py"
      ],
-     "headroom": 0.3883333333333333
+     "headroom": 0.4116666666666667
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -1450,7 +1502,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (61 commits on HEAD)",
+     "detail": "never tagged (69 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -1466,8 +1518,8 @@
    "opportunities": [
     {
      "signal": "undocumented_surface",
-     "headroom": 0.713,
-     "note": "169 of 237 public symbols carry no doc comment",
+     "headroom": 0.707,
+     "note": "174 of 246 public symbols carry no doc comment",
      "evidence": [
       "cci/cli.py:45 default_data_dir",
       "cci/cli.py:52 local_tz",
@@ -1489,12 +1541,12 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (61 commits on HEAD)",
+     "note": "never tagged (69 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.388,
+     "headroom": 0.412,
      "note": "cci/cli.py is the longest source file",
      "evidence": [
       "cci/cli.py"
@@ -1502,8 +1554,8 @@
     },
     {
      "signal": "test_mass",
-     "headroom": 0.082,
-     "note": "367407 source bytes, 168721 test bytes in 29 files",
+     "headroom": 0.079,
+     "note": "380110 source bytes, 175020 test bytes in 29 files",
      "evidence": [
       "research/tools/test_catalog.py",
       "tests/test_adapter_contract.py",
@@ -1518,64 +1570,72 @@
   {
    "schema": 1,
    "repo": "derin-kazi",
-   "head": "7012d200f174119d056180594b821cedccfe8dbc",
-   "taken_at": "2026-09-28T11:58:57Z",
-   "total_headroom": 2.032,
+   "head": "2b9c32d29e6a2726610717a16091c84414b1f5ef",
+   "taken_at": "2026-10-05T12:36:35Z",
+   "total_headroom": 3.393,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "gdscript": 337528
+      "gdscript": 446068,
+      "shell": 6982,
+      "python": 1758
      },
      "unit": "bytes",
      "detail": "primary: gdscript",
      "evidence": [
-      "gdscript 337528 bytes"
+      "gdscript 446068 bytes",
+      "shell 6982 bytes",
+      "python 1758 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.711,
+     "value": 0.638,
      "unit": "test bytes per source byte",
-     "detail": "197254 source bytes, 140274 test bytes in 6 files",
+     "detail": "277611 source bytes, 177197 test bytes in 8 files",
      "evidence": [
       "tests/bot.gd",
+      "tests/kapi.sh",
+      "tests/kapi_sinama.sh",
       "tests/test_calistir.gd",
       "tests/test_denge.gd",
-      "tests/test_fay_olcum.gd",
-      "tests/test_insan.gd",
-      "tests/test_oynanis.gd"
+      "tests/test_fay_olcum.gd"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 452,
+     "value": 559,
      "unit": "cases (lower bound)",
-     "detail": "at least 452 cases across 4 files; 1 further test file(s) declare their cases in a form this cannot count",
+     "detail": "at least 559 cases across 4 files; 1 further test file(s) declare their cases in a form this cannot count",
      "evidence": [
-      "tests/test_calistir.gd: 279",
+      "tests/test_calistir.gd: 319",
       "tests/test_denge.gd: 7",
       "tests/test_insan.gd: 10",
-      "tests/test_oynanis.gd: 156",
+      "tests/test_oynanis.gd: 223",
       "uncounted: tests/test_fay_olcum.gd"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": null,
-     "unit": "",
-     "detail": "no Python or Rust public surface",
-     "evidence": [],
-     "headroom": null
+     "value": 3,
+     "unit": "symbols",
+     "detail": "3 of 3 public symbols carry no doc comment",
+     "evidence": [
+      "tools/ceviri_tara.py:14 coz",
+      "tools/ceviri_tara.py:18 anahtarlar",
+      "tools/ceviri_tara.py:33 en_tablosu"
+     ],
+     "headroom": 1.0
     },
     "ci_breadth": {
      "name": "ci_breadth",
      "value": 1,
      "unit": "distinct runners",
-     "detail": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "detail": "2 workflow files, ~7 jobs, runners: ubuntu-24.04",
      "evidence": [
       "ci.yml",
       "yapi.yml"
@@ -1584,18 +1644,28 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 0,
+     "value": 8,
      "unit": "commands",
-     "detail": "0 runnable-looking commands in 0 shell blocks",
-     "evidence": [],
+     "detail": "8 runnable-looking commands in 2 shell blocks",
+     "evidence": [
+      "git lfs install",
+      "git clone https://github.com/Furkiozknn/derin-kazi",
+      "cd derin-kazi",
+      "godot --headless --path . --import   # ilk açılışta içe aktarma",
+      "godot --path .                       # oyna",
+      "godot --headless --path . --script res://tests/test_calistir.gd 2>&1 | tee birim.log",
+      "bash tests/kapi.sh birim.log 333                                  # CI'daki kapının aynısı",
+      "bash tests/kapi_sinama.sh                                         # kapının sınaması, Godot gerektirmez"
+     ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 27995,
+     "value": 34333,
      "unit": "bytes",
-     "detail": "27995 bytes, 17 sections, 4 images",
+     "detail": "34333 bytes, 18 sections, 6 images",
      "evidence": [
+      "Hızlı başlangıç",
       "Kontroller",
       "Oyun döngüsü",
       "Beş katman",
@@ -1604,8 +1674,7 @@
       "Derinlik ambiyansı (v0.6)",
       "Sunum turu ve ışınlama işareti (v0.7)",
       "Canlı yeraltı (v0.3) ve depremin kararı (v0.4, pano v0.5)",
-      "Tohum kodu, günlük dünya, Derin Mod (v0.3)",
-      "Verilen kararlar"
+      "Tohum kodu, günlük dünya, Derin Mod (v0.3)"
      ],
      "headroom": 0.0
     },
@@ -1619,13 +1688,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 1222,
+     "value": 1367,
      "unit": "lines",
      "detail": "scripts/oyun.gd is the longest source file",
      "evidence": [
       "scripts/oyun.gd"
      ],
-     "headroom": 0.685
+     "headroom": 0.8058333333333333
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -1637,13 +1706,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 17,
+     "value": 23,
      "unit": "commits since last tag",
-     "detail": "last tag v0.7.2, 17 commits since",
+     "detail": "last tag v0.7.2, 23 commits since",
      "evidence": [
       "v0.7.2"
      ],
-     "headroom": 0.68
+     "headroom": 0.92
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -1656,25 +1725,35 @@
    },
    "opportunities": [
     {
+     "signal": "undocumented_surface",
+     "headroom": 1.0,
+     "note": "3 of 3 public symbols carry no doc comment",
+     "evidence": [
+      "tools/ceviri_tara.py:14 coz",
+      "tools/ceviri_tara.py:18 anahtarlar",
+      "tools/ceviri_tara.py:33 en_tablosu"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.92,
+     "note": "last tag v0.7.2, 23 commits since",
+     "evidence": [
+      "v0.7.2"
+     ]
+    },
+    {
      "signal": "largest_source_file",
-     "headroom": 0.685,
+     "headroom": 0.806,
      "note": "scripts/oyun.gd is the longest source file",
      "evidence": [
       "scripts/oyun.gd"
      ]
     },
     {
-     "signal": "release_lag",
-     "headroom": 0.68,
-     "note": "last tag v0.7.2, 17 commits since",
-     "evidence": [
-      "v0.7.2"
-     ]
-    },
-    {
      "signal": "ci_breadth",
      "headroom": 0.667,
-     "note": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "note": "2 workflow files, ~7 jobs, runners: ubuntu-24.04",
      "evidence": [
       "ci.yml",
       "yapi.yml"
@@ -1685,54 +1764,59 @@
   {
    "schema": 1,
    "repo": "godot-2d-sablon",
-   "head": "b06e01094fdb97926b0640ebaea476cef5b35248",
-   "taken_at": "2026-09-28T11:58:59Z",
-   "total_headroom": 1.834,
+   "head": "af71a93ed3e310ae1071ac785c84fdce41d05c03",
+   "taken_at": "2026-10-05T12:36:35Z",
+   "total_headroom": 1.689,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 16328,
-      "gdscript": 2434
+      "python": 25718,
+      "gdscript": 14238
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 16328 bytes",
-      "gdscript 2434 bytes"
+      "python 25718 bytes",
+      "gdscript 14238 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.628,
+     "value": 0.453,
      "unit": "test bytes per source byte",
-     "detail": "11522 source bytes, 7240 test bytes in 1 files",
+     "detail": "27494 source bytes, 12462 test bytes in 3 files",
      "evidence": [
+      "testler/test_motor_karsilastir.py",
+      "testler/test_readme_ayarlar.py",
       "testler/test_zipla.py"
      ],
-     "headroom": 0.0
+     "headroom": 0.09347493998690626
     },
     "test_count": {
      "name": "test_count",
-     "value": 21,
+     "value": 33,
      "unit": "cases",
-     "detail": "21 cases across 1 files",
+     "detail": "33 cases across 3 files",
      "evidence": [
+      "testler/test_motor_karsilastir.py: 11",
+      "testler/test_readme_ayarlar.py: 1",
       "testler/test_zipla.py: 21"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 2,
+     "value": 3,
      "unit": "symbols",
-     "detail": "2 of 3 public symbols carry no doc comment",
+     "detail": "3 of 7 public symbols carry no doc comment",
      "evidence": [
+      "arac/motor-karsilastir.py:87 main",
       "arac/dogrula.py:61 main",
-      "arac/zipla-egrisi.py:115 main"
+      "arac/zipla-egrisi.py:112 main"
      ],
-     "headroom": 0.667
+     "headroom": 0.429
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -1746,37 +1830,37 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 11,
+     "value": 34,
      "unit": "commands",
-     "detail": "11 runnable-looking commands in 4 shell blocks",
+     "detail": "34 runnable-looking commands in 9 shell blocks",
      "evidence": [
       "git clone https://github.com/Furkiozknn/godot-2d-sablon.git",
       "cd godot-2d-sablon",
-      "godot --path ustten-gorunum",
-      "godot --path yandan-gorunum",
-      "godot --headless --path ustten-gorunum --export-release \"Windows Masaustu\"",
-      "godot --headless --path ustten-gorunum --export-release \"Web (HTML5)\"",
-      "python3 arac/zipla-egrisi.py    # eğrileri yazdırır",
-      "python3 arac/dogrula.py         # README ile karşılaştırır (8 kontrol)"
+      "godot -e --path yandan-gorunum                    # editörde açar; F5 ile oynatın",
+      "godot --headless --path yandan-gorunum --import   # ilk seferde, bir kez",
+      "godot --path yandan-gorunum                        # oyunu çalıştırır",
+      "git clone https://github.com/Furkiozknn/godot-2d-sablon.git",
+      "cp -r godot-2d-sablon/yandan-gorunum benim-oyunum",
+      "git -C godot-2d-sablon rev-parse HEAD > benim-oyunum/SABLON_SURUMU"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 9314,
+     "value": 17733,
      "unit": "bytes",
-     "detail": "9314 bytes, 11 sections, 7 images",
+     "detail": "17733 bytes, 13 sections, 9 images",
      "evidence": [
       "Ne var içinde",
-      "Hemen çalıştır",
+      "Hızlı başlangıç",
       "Yandan görünümdeki üç önemli detay",
+      "Ayarlar",
       "Neden GL Compatibility",
       "Proje yapısı",
       "Dışa aktarma",
       "Nasıl devam edilir",
-      "Sayılar nasıl korunuyor",
-      "Katkı",
-      "Lisans"
+      "Şablon güncellemelerini almak",
+      "Sayılar nasıl korunuyor"
      ],
      "headroom": 0.0
     },
@@ -1790,11 +1874,11 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 143,
+     "value": 233,
      "unit": "lines",
-     "detail": "arac/zipla-egrisi.py is the longest source file",
+     "detail": "arac/motor-olcumu.gd is the longest source file",
      "evidence": [
-      "arac/zipla-egrisi.py"
+      "arac/motor-olcumu.gd"
      ],
      "headroom": 0.0
     },
@@ -1810,7 +1894,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (23 commits on HEAD)",
+     "detail": "never tagged (26 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -1827,15 +1911,6 @@
    },
    "opportunities": [
     {
-     "signal": "undocumented_surface",
-     "headroom": 0.667,
-     "note": "2 of 3 public symbols carry no doc comment",
-     "evidence": [
-      "arac/dogrula.py:61 main",
-      "arac/zipla-egrisi.py:115 main"
-     ]
-    },
-    {
      "signal": "ci_breadth",
      "headroom": 0.667,
      "note": "1 workflow files, ~6 jobs, runners: ubuntu-latest",
@@ -1846,87 +1921,109 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (23 commits on HEAD)",
+     "note": "never tagged (26 commits on HEAD)",
      "evidence": []
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.429,
+     "note": "3 of 7 public symbols carry no doc comment",
+     "evidence": [
+      "arac/motor-karsilastir.py:87 main",
+      "arac/dogrula.py:61 main",
+      "arac/zipla-egrisi.py:112 main"
+     ]
+    },
+    {
+     "signal": "test_mass",
+     "headroom": 0.093,
+     "note": "27494 source bytes, 12462 test bytes in 3 files",
+     "evidence": [
+      "testler/test_motor_karsilastir.py",
+      "testler/test_readme_ayarlar.py",
+      "testler/test_zipla.py"
+     ]
     }
    ]
   },
   {
    "schema": 1,
    "repo": "godot-refcheck",
-   "head": "d205da873e0487587cb658ad71a01009c922d83d",
-   "taken_at": "2026-09-28T11:59:02Z",
-   "total_headroom": 2.059,
+   "head": "d999cd882bb3d023d73ac3882d23e6ba9ab24603",
+   "taken_at": "2026-10-05T12:36:36Z",
+   "total_headroom": 2.162,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "rust": 153667,
-      "python": 21739,
-      "gdscript": 2707
+      "rust": 178124,
+      "python": 39932,
+      "gdscript": 2980,
+      "javascript": 2381
      },
      "unit": "bytes",
      "detail": "primary: rust",
      "evidence": [
-      "rust 153667 bytes",
-      "python 21739 bytes",
-      "gdscript 2707 bytes"
+      "rust 178124 bytes",
+      "python 39932 bytes",
+      "gdscript 2980 bytes",
+      "javascript 2381 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.218,
+     "value": 0.252,
      "unit": "test bytes per source byte",
-     "detail": "146260 source bytes, 31853 test bytes in 16 files",
+     "detail": "178407 source bytes, 45010 test bytes in 18 files",
      "evidence": [
       "tests/cli.rs",
       "tests/fixtures.rs",
+      "tests/projects/bom/tools.gd",
       "tests/projects/broken/main.gd",
       "tests/projects/clean/addons/demo/plugin.gd",
-      "tests/projects/clean/main.gd",
-      "tests/projects/conn/level.gd"
+      "tests/projects/clean/main.gd"
      ],
-     "headroom": 0.5644332011486395
+     "headroom": 0.49542338585369405
     },
     "test_count": {
      "name": "test_count",
-     "value": 133,
+     "value": 152,
      "unit": "cases",
-     "detail": "133 cases across 7 files",
+     "detail": "152 cases across 7 files",
      "evidence": [
       "src/baseline.rs: 5",
       "src/fix.rs: 5",
       "src/parse/cfgfile.rs: 9",
       "src/parse/gdscript.rs: 31",
-      "src/project.rs: 11",
-      "tests/cli.rs: 24",
-      "tests/fixtures.rs: 48"
+      "src/project.rs: 12",
+      "tests/cli.rs: 35",
+      "tests/fixtures.rs: 55"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 61,
+     "value": 69,
      "unit": "symbols",
-     "detail": "61 of 89 public symbols carry no doc comment",
+     "detail": "69 of 103 public symbols carry no doc comment",
      "evidence": [
-      "tools/verify_with_godot.py:62 download_godot",
-      "tools/verify_with_godot.py:105 run_refcheck",
-      "tools/verify_with_godot.py:117 engine_errors",
-      "tools/verify_with_godot.py:140 real_project_round_trip",
-      "tools/verify_with_godot.py:171 main",
-      "tools/action_smoke.py:58 run_case",
-      "tools/action_smoke.py:100 main",
-      "tools/corpus.py:21 repos"
+      "tools/verify_with_godot.py:63 download_godot",
+      "tools/verify_with_godot.py:106 run_refcheck",
+      "tools/verify_with_godot.py:118 engine_errors",
+      "tools/verify_with_godot.py:141 real_project_round_trip",
+      "tools/verify_with_godot.py:172 main",
+      "tools/demo_uret.py:48 bash",
+      "tools/demo_uret.py:64 run_all",
+      "tools/demo_uret.py:82 write_record"
      ],
-     "headroom": 0.685
+     "headroom": 0.67
     },
     "ci_breadth": {
      "name": "ci_breadth",
      "value": 3,
      "unit": "distinct runners",
-     "detail": "3 workflow files, ~17 jobs, runners: macos-latest, ubuntu-latest, windows-latest",
+     "detail": "3 workflow files, ~18 jobs, runners: macos-latest, ubuntu-latest, windows-latest",
      "evidence": [
       "ci.yml",
       "corpus.yml",
@@ -1936,26 +2033,26 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 23,
+     "value": 26,
      "unit": "commands",
-     "detail": "23 runnable-looking commands in 5 shell blocks",
+     "detail": "26 runnable-looking commands in 6 shell blocks",
      "evidence": [
+      "cargo install --git https://github.com/Furkiozknn/godot-refcheck   # or unpack a release binary, see Install",
+      "godot-refcheck path/to/project        # 0 clean, 1 findings, 2 usage error or unreadable project",
       "cargo install --git https://github.com/Furkiozknn/godot-refcheck",
       "git clone https://github.com/Furkiozknn/godot-refcheck",
       "cd godot-refcheck",
       "cargo build --release      # target/release/godot-refcheck",
       "godot-refcheck                     # the project in the current directory",
-      "godot-refcheck path/to/project     # a directory, or the project.godot itself",
-      "godot-refcheck . --unused          # also list assets nothing references",
-      "godot-refcheck repos --recursive   # every project.godot under a directory"
+      "godot-refcheck path/to/project     # a directory, or the project.godot itself"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 18534,
+     "value": 20250,
      "unit": "bytes",
-     "detail": "18534 bytes, 11 sections, 7 images",
+     "detail": "20250 bytes, 11 sections, 6 images",
      "evidence": [
       "What it checks",
       "Install",
@@ -1980,13 +2077,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 844,
+     "value": 972,
      "unit": "lines",
      "detail": "src/project.rs is the longest source file",
      "evidence": [
       "src/project.rs"
      ],
-     "headroom": 0.37
+     "headroom": 0.4766666666666667
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -1998,13 +2095,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 11,
+     "value": 13,
      "unit": "commits since last tag",
-     "detail": "last tag v0.2.0, 11 commits since",
+     "detail": "last tag v0.2.0, 13 commits since",
      "evidence": [
       "v0.2.0"
      ],
-     "headroom": 0.44
+     "headroom": 0.52
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -2018,41 +2115,41 @@
    "opportunities": [
     {
      "signal": "undocumented_surface",
-     "headroom": 0.685,
-     "note": "61 of 89 public symbols carry no doc comment",
+     "headroom": 0.67,
+     "note": "69 of 103 public symbols carry no doc comment",
      "evidence": [
-      "tools/verify_with_godot.py:62 download_godot",
-      "tools/verify_with_godot.py:105 run_refcheck",
-      "tools/verify_with_godot.py:117 engine_errors",
-      "tools/verify_with_godot.py:140 real_project_round_trip",
-      "tools/verify_with_godot.py:171 main",
-      "tools/action_smoke.py:58 run_case"
-     ]
-    },
-    {
-     "signal": "test_mass",
-     "headroom": 0.564,
-     "note": "146260 source bytes, 31853 test bytes in 16 files",
-     "evidence": [
-      "tests/cli.rs",
-      "tests/fixtures.rs",
-      "tests/projects/broken/main.gd",
-      "tests/projects/clean/addons/demo/plugin.gd",
-      "tests/projects/clean/main.gd",
-      "tests/projects/conn/level.gd"
+      "tools/verify_with_godot.py:63 download_godot",
+      "tools/verify_with_godot.py:106 run_refcheck",
+      "tools/verify_with_godot.py:118 engine_errors",
+      "tools/verify_with_godot.py:141 real_project_round_trip",
+      "tools/verify_with_godot.py:172 main",
+      "tools/demo_uret.py:48 bash"
      ]
     },
     {
      "signal": "release_lag",
-     "headroom": 0.44,
-     "note": "last tag v0.2.0, 11 commits since",
+     "headroom": 0.52,
+     "note": "last tag v0.2.0, 13 commits since",
      "evidence": [
       "v0.2.0"
      ]
     },
     {
+     "signal": "test_mass",
+     "headroom": 0.495,
+     "note": "178407 source bytes, 45010 test bytes in 18 files",
+     "evidence": [
+      "tests/cli.rs",
+      "tests/fixtures.rs",
+      "tests/projects/bom/tools.gd",
+      "tests/projects/broken/main.gd",
+      "tests/projects/clean/addons/demo/plugin.gd",
+      "tests/projects/clean/main.gd"
+     ]
+    },
+    {
      "signal": "largest_source_file",
-     "headroom": 0.37,
+     "headroom": 0.477,
      "note": "src/project.rs is the longest source file",
      "evidence": [
       "src/project.rs"
@@ -2063,57 +2160,65 @@
   {
    "schema": 1,
    "repo": "kanca",
-   "head": "53941f2ffc0d4f0950d1e6403256c728d5950af3",
-   "taken_at": "2026-09-28T11:59:05Z",
-   "total_headroom": 2.196,
+   "head": "4991a3396323aa77c2687f7f5c68f2153fdd9797",
+   "taken_at": "2026-10-05T12:36:39Z",
+   "total_headroom": 3.367,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "gdscript": 272989
+      "gdscript": 369083,
+      "python": 6930,
+      "shell": 6883
      },
      "unit": "bytes",
      "detail": "primary: gdscript",
      "evidence": [
-      "gdscript 272989 bytes"
+      "gdscript 369083 bytes",
+      "python 6930 bytes",
+      "shell 6883 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.285,
+     "value": 0.358,
      "unit": "test bytes per source byte",
-     "detail": "212418 source bytes, 60571 test bytes in 2 files",
+     "detail": "281913 source bytes, 100983 test bytes in 4 files",
      "evidence": [
       "tests/ekran.gd",
+      "tests/kapi.sh",
+      "tests/kapi_sinama.sh",
       "tests/test_kanca.gd"
      ],
-     "headroom": 0.429699931267595
+     "headroom": 0.2835874897574784
     },
     "test_count": {
      "name": "test_count",
-     "value": 46,
+     "value": 56,
      "unit": "cases",
-     "detail": "46 cases across 2 files",
+     "detail": "56 cases across 2 files",
      "evidence": [
-      "tests/ekran.gd: 5",
-      "tests/test_kanca.gd: 41"
+      "tests/ekran.gd: 6",
+      "tests/test_kanca.gd: 50"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": null,
-     "unit": "",
-     "detail": "no Python or Rust public surface",
-     "evidence": [],
-     "headroom": null
+     "value": 1,
+     "unit": "symbols",
+     "detail": "1 of 1 public symbols carry no doc comment",
+     "evidence": [
+      "tools/web_duman.py:90 main"
+     ],
+     "headroom": 1.0
     },
     "ci_breadth": {
      "name": "ci_breadth",
      "value": 1,
      "unit": "distinct runners",
-     "detail": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "detail": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "yapi.yml"
@@ -2122,21 +2227,28 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 2,
+     "value": 16,
      "unit": "commands",
-     "detail": "2 runnable-looking commands in 1 shell blocks",
+     "detail": "16 runnable-looking commands in 6 shell blocks",
      "evidence": [
-      "godot --headless --path . --import                          # bir kez",
-      "godot --headless --path . --scene res://tests/test_kanca.tscn   # 0 = gecti"
+      "git lfs install",
+      "git clone https://github.com/Furkiozknn/kanca",
+      "cd kanca",
+      "godot --headless --path . --import   # ilk kez: varlıkları içe aktar",
+      "godot --path .                       # oyunu aç (ana sahne: menü)",
+      "git lfs install && git lfs pull",
+      "git checkout -- '*.import'        # Godot'nun bozduğu içe aktarma kayıtlarını geri al",
+      "rm -rf .godot                     # eski önbelleği sil"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 27821,
+     "value": 37279,
      "unit": "bytes",
-     "detail": "27821 bytes, 24 sections, 6 images",
+     "detail": "37279 bytes, 27 sections, 7 images",
      "evidence": [
+      "Hızlı başlangıç",
       "Kontroller",
       "Tek parmak şeması (mobil)",
       "Oynanış",
@@ -2145,8 +2257,7 @@
       "Bölümler",
       "Nasıl çalıştırılır",
       "Godot kurmadan bir paket indir",
-      "Kod düzeni",
-      "Varlıklar kodla üretilir"
+      "Sorun giderme"
      ],
      "headroom": 0.0
     },
@@ -2160,13 +2271,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 903,
+     "value": 1044,
      "unit": "lines",
-     "detail": "tools/rota.gd is the longest source file",
+     "detail": "scripts/bolum.gd is the longest source file",
      "evidence": [
-      "tools/rota.gd"
+      "scripts/bolum.gd"
      ],
-     "headroom": 0.4191666666666667
+     "headroom": 0.5366666666666666
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -2178,13 +2289,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 17,
+     "value": 22,
      "unit": "commits since last tag",
-     "detail": "last tag v0.5.2, 17 commits since",
+     "detail": "last tag v0.5.2, 22 commits since",
      "evidence": [
       "v0.5.2"
      ],
-     "headroom": 0.68
+     "headroom": 0.88
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -2197,9 +2308,17 @@
    },
    "opportunities": [
     {
+     "signal": "undocumented_surface",
+     "headroom": 1.0,
+     "note": "1 of 1 public symbols carry no doc comment",
+     "evidence": [
+      "tools/web_duman.py:90 main"
+     ]
+    },
+    {
      "signal": "release_lag",
-     "headroom": 0.68,
-     "note": "last tag v0.5.2, 17 commits since",
+     "headroom": 0.88,
+     "note": "last tag v0.5.2, 22 commits since",
      "evidence": [
       "v0.5.2"
      ]
@@ -2207,27 +2326,29 @@
     {
      "signal": "ci_breadth",
      "headroom": 0.667,
-     "note": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
+     "note": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "yapi.yml"
      ]
     },
     {
-     "signal": "test_mass",
-     "headroom": 0.43,
-     "note": "212418 source bytes, 60571 test bytes in 2 files",
+     "signal": "largest_source_file",
+     "headroom": 0.537,
+     "note": "scripts/bolum.gd is the longest source file",
      "evidence": [
-      "tests/ekran.gd",
-      "tests/test_kanca.gd"
+      "scripts/bolum.gd"
      ]
     },
     {
-     "signal": "largest_source_file",
-     "headroom": 0.419,
-     "note": "tools/rota.gd is the longest source file",
+     "signal": "test_mass",
+     "headroom": 0.284,
+     "note": "281913 source bytes, 100983 test bytes in 4 files",
      "evidence": [
-      "tools/rota.gd"
+      "tests/ekran.gd",
+      "tests/kapi.sh",
+      "tests/kapi_sinama.sh",
+      "tests/test_kanca.gd"
      ]
     }
    ]
@@ -2235,67 +2356,76 @@
   {
    "schema": 1,
    "repo": "local-notes-search-mcp",
-   "head": "298fe81b27e6d86f6cf3419332cc58a0637b6d3b",
-   "taken_at": "2026-09-28T11:59:06Z",
-   "total_headroom": 1.706,
+   "head": "d3323ba835c6e3b7fed7fd5f6c4cd587b02fc1d6",
+   "taken_at": "2026-10-05T12:36:39Z",
+   "total_headroom": 2.146,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 53290
+      "python": 101068,
+      "javascript": 2317
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 53290 bytes"
+      "python 101068 bytes",
+      "javascript 2317 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.842,
+     "value": 0.747,
      "unit": "test bytes per source byte",
-     "detail": "28933 source bytes, 24357 test bytes in 5 files",
+     "detail": "59178 source bytes, 44207 test bytes in 8 files",
      "evidence": [
       "tests/__init__.py",
       "tests/conftest.py",
       "tests/test_ask_notes.py",
       "tests/test_chunking.py",
-      "tests/test_indexing_and_search.py"
+      "tests/test_cli_and_messages.py",
+      "tests/test_embedder_identity.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 52,
+     "value": 87,
      "unit": "cases",
-     "detail": "52 cases across 3 files",
+     "detail": "87 cases across 6 files",
      "evidence": [
       "tests/test_ask_notes.py: 15",
       "tests/test_chunking.py: 12",
-      "tests/test_indexing_and_search.py: 25"
+      "tests/test_cli_and_messages.py: 8",
+      "tests/test_embedder_identity.py: 5",
+      "tests/test_indexing_and_search.py: 25",
+      "tests/test_path_safety.py: 22"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 5,
+     "value": 14,
      "unit": "symbols",
-     "detail": "5 of 17 public symbols carry no doc comment",
+     "detail": "14 of 30 public symbols carry no doc comment",
      "evidence": [
-      "local_notes_search.py:118 Chunk",
-      "local_notes_search.py:162 content_hash",
-      "local_notes_search.py:199 should_index_file",
-      "local_notes_search.py:214 walk_indexable_files",
-      "local_notes_search.py:284 get_connection"
+      "local_notes_search.py:176 Chunk",
+      "local_notes_search.py:220 content_hash",
+      "local_notes_search.py:321 walk_indexable_files",
+      "local_notes_search.py:356 offline_mode",
+      "local_notes_search.py:439 get_connection",
+      "examples/stdio_demo.py:27 show",
+      "examples/stdio_demo.py:31 main",
+      "scripts/demo-uret.py:46 bash"
      ],
-     "headroom": 0.294
+     "headroom": 0.467
     },
     "ci_breadth": {
      "name": "ci_breadth",
      "value": 1,
      "unit": "distinct runners",
-     "detail": "2 workflow files, ~10 jobs, runners: ubuntu-latest",
+     "detail": "2 workflow files, ~11 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "yayinla.yml"
@@ -2304,34 +2434,37 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 5,
+     "value": 10,
      "unit": "commands",
-     "detail": "5 runnable-looking commands in 3 shell blocks",
+     "detail": "10 runnable-looking commands in 5 shell blocks",
      "evidence": [
       "git clone https://github.com/Furkiozknn/local-notes-search-mcp.git",
       "cd local-notes-search-mcp",
+      "uv sync && uv run python examples/stdio_demo.py",
+      "git clone https://github.com/Furkiozknn/local-notes-search-mcp.git",
+      "cd local-notes-search-mcp",
       "uv sync",
-      "export LOCAL_NOTES_SEARCH_ALLOWED_ROOTS=\"$HOME/notes:$HOME/projects\"",
-      "uv run pytest -v"
+      "uv run local-notes-search-mcp --download-model   # once, with network",
+      "export LOCAL_NOTES_SEARCH_OFFLINE=1              # from now on: never download"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 16293,
+     "value": 23172,
      "unit": "bytes",
-     "detail": "16293 bytes, 13 sections, 14 images",
+     "detail": "23172 bytes, 17 sections, 14 images",
      "evidence": [
       "**Semantic search over your own files — as an MCP server.**",
-      "✨ What it does",
+      "Try it in a minute",
+      "Auth redesign",
+      "When to use it, and when not to",
       "🧭 The 30-second pitch",
       "🏗️ How it works",
       "🧰 MCP tools",
       "🚀 Quickstart",
       "🔒 What can be indexed",
-      "🧠 Why this architecture",
-      "🧪 Tests",
-      "What this server can actually do"
+      "🗄️ What the index stores"
      ],
      "headroom": 0.0
     },
@@ -2345,13 +2478,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 694,
+     "value": 1015,
      "unit": "lines",
      "detail": "local_notes_search.py is the longest source file",
      "evidence": [
       "local_notes_search.py"
      ],
-     "headroom": 0.245
+     "headroom": 0.5125
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -2365,7 +2498,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (35 commits on HEAD)",
+     "detail": "never tagged (42 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -2382,36 +2515,37 @@
     {
      "signal": "ci_breadth",
      "headroom": 0.667,
-     "note": "2 workflow files, ~10 jobs, runners: ubuntu-latest",
+     "note": "2 workflow files, ~11 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "yayinla.yml"
      ]
     },
     {
+     "signal": "largest_source_file",
+     "headroom": 0.512,
+     "note": "local_notes_search.py is the longest source file",
+     "evidence": [
+      "local_notes_search.py"
+     ]
+    },
+    {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (35 commits on HEAD)",
+     "note": "never tagged (42 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "undocumented_surface",
-     "headroom": 0.294,
-     "note": "5 of 17 public symbols carry no doc comment",
+     "headroom": 0.467,
+     "note": "14 of 30 public symbols carry no doc comment",
      "evidence": [
-      "local_notes_search.py:118 Chunk",
-      "local_notes_search.py:162 content_hash",
-      "local_notes_search.py:199 should_index_file",
-      "local_notes_search.py:214 walk_indexable_files",
-      "local_notes_search.py:284 get_connection"
-     ]
-    },
-    {
-     "signal": "largest_source_file",
-     "headroom": 0.245,
-     "note": "local_notes_search.py is the longest source file",
-     "evidence": [
-      "local_notes_search.py"
+      "local_notes_search.py:176 Chunk",
+      "local_notes_search.py:220 content_hash",
+      "local_notes_search.py:321 walk_indexable_files",
+      "local_notes_search.py:356 offline_mode",
+      "local_notes_search.py:439 get_connection",
+      "examples/stdio_demo.py:27 show"
      ]
     }
    ]
@@ -2419,46 +2553,51 @@
   {
    "schema": 1,
    "repo": "masal",
-   "head": "99611caff72d65f5d36aa6767d6462420913bf6d",
-   "taken_at": "2026-09-28T11:59:08Z",
-   "total_headroom": 2.935,
+   "head": "2b48b3276c54a3e39a07b80e07eb461b3e1d112f",
+   "taken_at": "2026-10-05T12:36:40Z",
+   "total_headroom": 2.177,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "javascript": 83442,
+      "javascript": 101914,
       "python": 1126
      },
      "unit": "bytes",
      "detail": "primary: javascript",
      "evidence": [
-      "javascript 83442 bytes",
+      "javascript 101914 bytes",
       "python 1126 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.194,
+     "value": 0.336,
      "unit": "test bytes per source byte",
-     "detail": "70829 source bytes, 13739 test bytes in 4 files",
+     "detail": "77140 source bytes, 25900 test bytes in 7 files",
      "evidence": [
+      "boyama.test.js",
       "depo.test.js",
       "hikayeler.test.js",
+      "kontrast.test.js",
       "olcum.test.js",
-      "turkce.test.js"
+      "sw.test.js"
      ],
-     "headroom": 0.6120515608013667
+     "headroom": 0.3284936479128857
     },
     "test_count": {
      "name": "test_count",
-     "value": 31,
+     "value": 51,
      "unit": "cases",
-     "detail": "31 cases across 4 files",
+     "detail": "51 cases across 7 files",
      "evidence": [
+      "boyama.test.js: 7",
       "depo.test.js: 12",
-      "hikayeler.test.js: 12",
+      "hikayeler.test.js: 15",
+      "kontrast.test.js: 1",
       "olcum.test.js: 5",
+      "sw.test.js: 9",
       "turkce.test.js: 2"
      ],
      "headroom": null
@@ -2477,7 +2616,7 @@
      "name": "ci_breadth",
      "value": 1,
      "unit": "distinct runners",
-     "detail": "1 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "detail": "1 workflow files, ~7 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml"
      ],
@@ -2493,20 +2632,20 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 8746,
+     "value": 12052,
      "unit": "bytes",
-     "detail": "8746 bytes, 10 sections, 3 images",
+     "detail": "12052 bytes, 14 sections, 4 images",
      "evidence": [
-      "Ne çalışıyor (8 Eylül 2026)",
-      "Çalıştırma",
+      "Nasıl kullanılır",
+      "Neler var",
+      "Gizlilik",
+      "Yerelde çalıştırma",
+      "Test",
+      "Nasıl çalışıyor",
       "Neden vektör (SVG) boyama",
-      "Dosyalar",
       "Şablonlarda Türkçe ek",
-      "Sonraki adımlar",
-      "Erişilebilirlik nerede ölçülüyor",
-      "Çevrimdışı",
-      "Bilinen sınırlar",
-      "Bu ekosistemden başka projeler"
+      "Çevrimdışı ve güncellemeler",
+      "Erişilebilirlik"
      ],
      "headroom": 0.0
     },
@@ -2520,13 +2659,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 588,
+     "value": 618,
      "unit": "lines",
      "detail": "app.js is the longest source file",
      "evidence": [
       "app.js"
      ],
-     "headroom": 0.15666666666666668
+     "headroom": 0.18166666666666667
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -2538,11 +2677,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": null,
+     "value": 0,
      "unit": "commits since last tag",
-     "detail": "never tagged (44 commits on HEAD)",
-     "evidence": [],
-     "headroom": 0.5
+     "detail": "last tag v1.0.0, 0 commits since",
+     "evidence": [
+      "v1.0.0"
+     ],
+     "headroom": 0.0
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -2565,31 +2706,27 @@
     {
      "signal": "ci_breadth",
      "headroom": 0.667,
-     "note": "1 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "note": "1 workflow files, ~7 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml"
      ]
     },
     {
      "signal": "test_mass",
-     "headroom": 0.612,
-     "note": "70829 source bytes, 13739 test bytes in 4 files",
+     "headroom": 0.328,
+     "note": "77140 source bytes, 25900 test bytes in 7 files",
      "evidence": [
+      "boyama.test.js",
       "depo.test.js",
       "hikayeler.test.js",
+      "kontrast.test.js",
       "olcum.test.js",
-      "turkce.test.js"
+      "sw.test.js"
      ]
     },
     {
-     "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (44 commits on HEAD)",
-     "evidence": []
-    },
-    {
      "signal": "largest_source_file",
-     "headroom": 0.157,
+     "headroom": 0.182,
      "note": "app.js is the longest source file",
      "evidence": [
       "app.js"
@@ -2600,69 +2737,75 @@
   {
    "schema": 1,
    "repo": "mcp-census",
-   "head": "b3e7730d915592f316e376fd639f5143f9c8b7c4",
-   "taken_at": "2026-09-28T11:59:09Z",
-   "total_headroom": 1.631,
+   "head": "115329c56d9aaf82aa5f2ec41637dd4e5fb43005",
+   "taken_at": "2026-10-05T12:36:40Z",
+   "total_headroom": 1.861,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 51601
+      "python": 100335,
+      "javascript": 2383
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 51601 bytes"
+      "python 100335 bytes",
+      "javascript 2383 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.734,
+     "value": 0.759,
      "unit": "test bytes per source byte",
-     "detail": "29755 source bytes, 21846 test bytes in 4 files",
+     "detail": "58407 source bytes, 44311 test bytes in 6 files",
      "evidence": [
       "tests/__init__.py",
       "tests/test_analyze.py",
       "tests/test_cli.py",
-      "tests/test_fetch.py"
+      "tests/test_fetch.py",
+      "tests/test_ilk_kullanim.py",
+      "tests/test_saglamlik.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 55,
+     "value": 100,
      "unit": "cases",
-     "detail": "55 cases across 3 files",
+     "detail": "100 cases across 5 files",
      "evidence": [
       "tests/test_analyze.py: 30",
       "tests/test_cli.py: 12",
-      "tests/test_fetch.py: 13"
+      "tests/test_fetch.py: 13",
+      "tests/test_ilk_kullanim.py: 18",
+      "tests/test_saglamlik.py: 27"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 15,
+     "value": 22,
      "unit": "symbols",
-     "detail": "15 of 31 public symbols carry no doc comment",
+     "detail": "22 of 46 public symbols carry no doc comment",
      "evidence": [
-      "mcp_census/cli.py:37 komut_indir",
-      "mcp_census/cli.py:70 komut_say",
-      "mcp_census/cli.py:95 komut_rapor",
-      "mcp_census/cli.py:151 komut_karsilastir",
-      "mcp_census/cli.py:177 main",
-      "mcp_census/fetch.py:228 jsonl_yaz",
-      "mcp_census/fetch.py:236 jsonl_oku",
-      "mcp_census/fetch.py:250 manifest_yaz"
+      "scripts/demo-uret.py:54 bash",
+      "scripts/demo-uret.py:61 run_all",
+      "scripts/demo-uret.py:84 write_record",
+      "scripts/demo-uret.py:164 write_pages",
+      "scripts/demo-uret.py:179 record_video",
+      "scripts/demo-uret.py:212 main",
+      "mcp_census/cli.py:90 komut_indir",
+      "mcp_census/cli.py:125 komut_say"
      ],
-     "headroom": 0.484
+     "headroom": 0.478
     },
     "ci_breadth": {
      "name": "ci_breadth",
      "value": 1,
      "unit": "distinct runners",
-     "detail": "3 workflow files, ~10 jobs, runners: ubuntu-latest",
+     "detail": "3 workflow files, ~11 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "sayim.yml",
@@ -2672,37 +2815,37 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 22,
+     "value": 34,
      "unit": "commands",
-     "detail": "22 runnable-looking commands in 6 shell blocks",
+     "detail": "34 runnable-looking commands in 9 shell blocks",
      "evidence": [
-      "mcp-census karsilastir veri/kayitlar.jsonl veri/kayitlar-latest.jsonl",
-      "eski     32318 sunucu",
-      "yeni     32321 sunucu",
-      "eklenen      3   kaybolan 0",
-      "Fark yalnızca eklemeden ibaret; iki indirme arasında registry büyümüş. Sayım tutarlı.",
-      "eklenenler (ilk 50):",
-      "+ com.byjg/docs",
-      "+ com.docketnexus/docketnexus"
+      "git clone https://github.com/Furkiozknn/mcp-census && cd mcp-census && uv run mcp-census rapor",
+      "git clone https://github.com/Furkiozknn/mcp-census && cd mcp-census",
+      "uv run mcp-census rapor                      # the 16 Sep 2026 count, from veri/sayim.json",
+      "uv run mcp-census --veri veri/ornek say      # a 500-record sample ships with the repo",
+      "uv run mcp-census --veri veri/ornek rapor",
+      "uv run mcp-census indir --surum latest       # the only command that uses the network (~5 min)",
+      "git clone https://github.com/Furkiozknn/mcp-census && cd mcp-census",
+      "uv run mcp-census rapor                     # yukarıdaki demodaki rapor, ağ yok"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 10274,
+     "value": 20016,
      "unit": "bytes",
-     "detail": "10274 bytes, 13 sections, 10 images",
+     "detail": "20016 bytes, 17 sections, 9 images",
      "evidence": [
-      "**Resmî MCP Registry'nin yeniden üretilebilir sayımı.**",
+      "30 saniyede dene",
       "Neden",
       "İlk bulgu: \"kaç sunucu var\" sorusunun cevabı üçe katlanabiliyor",
       "İkinci bulgu: registry'nin dörtte birinin okunacak kodu yok",
       "Taşıma ve paketleme dağılımı",
+      "Veri tazeliği",
       "Sayının kendisi hareket ediyor — ve bunu ölçüyoruz",
-      "Kullanım",
-      "Tasarım",
-      "Testler",
-      "Bilinen sınırlar"
+      "Aynı soru, aylar sonra",
+      "Kurulum",
+      "Komutlar"
      ],
      "headroom": 0.0
     },
@@ -2716,13 +2859,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 361,
+     "value": 443,
      "unit": "lines",
      "detail": "mcp_census/analyze.py is the longest source file",
      "evidence": [
       "mcp_census/analyze.py"
      ],
-     "headroom": 0.0
+     "headroom": 0.035833333333333335
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -2734,13 +2877,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 12,
+     "value": 17,
      "unit": "commits since last tag",
-     "detail": "last tag v0.1.0, 12 commits since",
+     "detail": "last tag v0.1.0, 17 commits since",
      "evidence": [
       "v0.1.0"
      ],
-     "headroom": 0.48
+     "headroom": 0.68
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -2753,9 +2896,17 @@
    },
    "opportunities": [
     {
+     "signal": "release_lag",
+     "headroom": 0.68,
+     "note": "last tag v0.1.0, 17 commits since",
+     "evidence": [
+      "v0.1.0"
+     ]
+    },
+    {
      "signal": "ci_breadth",
      "headroom": 0.667,
-     "note": "3 workflow files, ~10 jobs, runners: ubuntu-latest",
+     "note": "3 workflow files, ~11 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "sayim.yml",
@@ -2764,23 +2915,23 @@
     },
     {
      "signal": "undocumented_surface",
-     "headroom": 0.484,
-     "note": "15 of 31 public symbols carry no doc comment",
+     "headroom": 0.478,
+     "note": "22 of 46 public symbols carry no doc comment",
      "evidence": [
-      "mcp_census/cli.py:37 komut_indir",
-      "mcp_census/cli.py:70 komut_say",
-      "mcp_census/cli.py:95 komut_rapor",
-      "mcp_census/cli.py:151 komut_karsilastir",
-      "mcp_census/cli.py:177 main",
-      "mcp_census/fetch.py:228 jsonl_yaz"
+      "scripts/demo-uret.py:54 bash",
+      "scripts/demo-uret.py:61 run_all",
+      "scripts/demo-uret.py:84 write_record",
+      "scripts/demo-uret.py:164 write_pages",
+      "scripts/demo-uret.py:179 record_video",
+      "scripts/demo-uret.py:212 main"
      ]
     },
     {
-     "signal": "release_lag",
-     "headroom": 0.48,
-     "note": "last tag v0.1.0, 12 commits since",
+     "signal": "largest_source_file",
+     "headroom": 0.036,
+     "note": "mcp_census/analyze.py is the longest source file",
      "evidence": [
-      "v0.1.0"
+      "mcp_census/analyze.py"
      ]
     }
    ]
@@ -2788,29 +2939,31 @@
   {
    "schema": 1,
    "repo": "mcp-vet",
-   "head": "e326bafc49652bcf022c95b2e11b6d278dae929c",
-   "taken_at": "2026-09-28T11:59:11Z",
-   "total_headroom": 1.779,
+   "head": "836f7a2840a5449ba239fc51b2ba333fd532e2c9",
+   "taken_at": "2026-10-05T12:36:41Z",
+   "total_headroom": 1.721,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 340526,
+      "python": 440055,
+      "javascript": 2383,
       "shell": 118
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 340526 bytes",
+      "python 440055 bytes",
+      "javascript 2383 bytes",
       "shell 118 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.443,
+     "value": 0.506,
      "unit": "test bytes per source byte",
-     "detail": "236061 source bytes, 104583 test bytes in 19 files",
+     "detail": "293913 source bytes, 148643 test bytes in 25 files",
      "evidence": [
       "tests/conftest.py",
       "tests/fixtures/clean_server/server.py",
@@ -2819,41 +2972,41 @@
       "tests/fixtures/poisoned_server/server.py",
       "tests/fixtures/remote_pipe/install.sh"
      ],
-     "headroom": 0.1139324157738889
+     "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 254,
+     "value": 352,
      "unit": "cases",
-     "detail": "254 cases across 12 files",
+     "detail": "352 cases across 18 files",
      "evidence": [
+      "tests/test_blind_spots.py: 25",
       "tests/test_cli_and_risk.py: 43",
-      "tests/test_defensive_context.py: 22",
+      "tests/test_defensive_context.py: 23",
       "tests/test_diff.py: 19",
+      "tests/test_first_run_messages.py: 25",
       "tests/test_github_and_trust.py: 24",
       "tests/test_hostile_input.py: 20",
-      "tests/test_http_cache.py: 29",
-      "tests/test_injection.py: 14",
-      "tests/test_network_endpoints.py: 12"
+      "tests/test_http_cache.py: 29"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 42,
+     "value": 48,
      "unit": "symbols",
-     "detail": "42 of 115 public symbols carry no doc comment",
+     "detail": "48 of 130 public symbols carry no doc comment",
      "evidence": [
       "scripts/tarama-ozet.py:23 yukle",
       "scripts/tarama-ozet.py:44 main",
       "scripts/ekosistem-tara.py:34 kabuk",
       "scripts/ekosistem-tara.py:93 main",
-      "mcp_vet/cli.py:55 valid_owner_repo",
-      "mcp_vet/cli.py:70 cmd_search",
-      "mcp_vet/cli.py:77 cmd_registry",
-      "mcp_vet/cli.py:138 cmd_audit"
+      "scripts/demo-uret.py:54 bash",
+      "scripts/demo-uret.py:61 run_all",
+      "scripts/demo-uret.py:79 checkout_sha",
+      "scripts/demo-uret.py:87 write_record"
      ],
-     "headroom": 0.365
+     "headroom": 0.369
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -2868,26 +3021,26 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 21,
+     "value": 29,
      "unit": "commands",
-     "detail": "21 runnable-looking commands in 7 shell blocks",
+     "detail": "29 runnable-looking commands in 10 shell blocks",
      "evidence": [
+      "pipx install git+https://github.com/Furkiozknn/mcp-vet      # or, with nothing installed: uvx --from git+https://github.com/Furkiozknn/mcp-vet mcp-vet --help",
+      "git clone --depth 1 https://github.com/<owner>/<server> ./checkout",
+      "mcp-vet audit --offline --path ./checkout",
+      "mcp-vet audit owner/repo --path ./checkout",
       "mcp-vet search \"discord mcp\" --limit 10",
       "mcp-vet registry \"discord\"              # official MCP Registry",
       "mcp-vet check owner/repo",
-      "mcp-vet audit owner/repo --path ./checkout --verbose",
-      "mcp-vet audit --offline --path ./checkout",
-      "mcp-vet diff owner/repo v1.2.0 v1.3.0",
-      "mcp-vet diff --before-path ./v1.2.0 --after-path ./v1.3.0",
-      "mcp-vet audit owner/repo --path ./checkout --no-cache"
+      "mcp-vet audit owner/repo --path ./checkout --verbose"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 26258,
+     "value": 32112,
      "unit": "bytes",
-     "detail": "26258 bytes, 20 sections, 13 images",
+     "detail": "32112 bytes, 20 sections, 11 images",
      "evidence": [
       "What is this",
       "📚 Table of contents",
@@ -2912,13 +3065,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 560,
+     "value": 622,
      "unit": "lines",
      "detail": "mcp_vet/patterns.py is the longest source file",
      "evidence": [
       "mcp_vet/patterns.py"
      ],
-     "headroom": 0.13333333333333333
+     "headroom": 0.185
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -2932,7 +3085,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (44 commits on HEAD)",
+     "detail": "never tagged (52 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -2958,41 +3111,28 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (44 commits on HEAD)",
+     "note": "never tagged (52 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "undocumented_surface",
-     "headroom": 0.365,
-     "note": "42 of 115 public symbols carry no doc comment",
+     "headroom": 0.369,
+     "note": "48 of 130 public symbols carry no doc comment",
      "evidence": [
       "scripts/tarama-ozet.py:23 yukle",
       "scripts/tarama-ozet.py:44 main",
       "scripts/ekosistem-tara.py:34 kabuk",
       "scripts/ekosistem-tara.py:93 main",
-      "mcp_vet/cli.py:55 valid_owner_repo",
-      "mcp_vet/cli.py:70 cmd_search"
+      "scripts/demo-uret.py:54 bash",
+      "scripts/demo-uret.py:61 run_all"
      ]
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.133,
+     "headroom": 0.185,
      "note": "mcp_vet/patterns.py is the longest source file",
      "evidence": [
       "mcp_vet/patterns.py"
-     ]
-    },
-    {
-     "signal": "test_mass",
-     "headroom": 0.114,
-     "note": "236061 source bytes, 104583 test bytes in 19 files",
-     "evidence": [
-      "tests/conftest.py",
-      "tests/fixtures/clean_server/server.py",
-      "tests/fixtures/exfil_server/server.py",
-      "tests/fixtures/obfuscated/server.py",
-      "tests/fixtures/poisoned_server/server.py",
-      "tests/fixtures/remote_pipe/install.sh"
      ]
     }
    ]
@@ -3000,27 +3140,29 @@
   {
    "schema": 1,
    "repo": "mini-creative-toolkit",
-   "head": "027c9f6f4e1b794a7cbd41539a72315b6b160ad8",
-   "taken_at": "2026-09-28T11:59:13Z",
-   "total_headroom": 1.798,
+   "head": "5eff86cb8f8f2e89cf80653c7c9d084a99f9e33f",
+   "taken_at": "2026-10-05T12:36:42Z",
+   "total_headroom": 1.56,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 277959
+      "python": 312538,
+      "javascript": 2383
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 277959 bytes"
+      "python 312538 bytes",
+      "javascript 2383 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.5,
+     "value": 0.47,
      "unit": "test bytes per source byte",
-     "detail": "185253 source bytes, 92706 test bytes in 13 files",
+     "detail": "214185 source bytes, 100736 test bytes in 13 files",
      "evidence": [
       "tests/conftest.py",
       "tests/helpers.py",
@@ -3029,20 +3171,20 @@
       "tests/test_cli_and_server.py",
       "tests/test_hosted_generation.py"
      ],
-     "headroom": 0.0
+     "headroom": 0.059355230291570416
     },
     "test_count": {
      "name": "test_count",
-     "value": 213,
+     "value": 229,
      "unit": "cases",
-     "detail": "213 cases across 11 files",
+     "detail": "229 cases across 11 files",
      "evidence": [
       "tests/test_batch.py: 14",
       "tests/test_capabilities_and_config.py: 26",
-      "tests/test_cli_and_server.py: 29",
+      "tests/test_cli_and_server.py: 42",
       "tests/test_hosted_generation.py: 18",
       "tests/test_image_tools.py: 27",
-      "tests/test_inspect_optimize_upscale.py: 23",
+      "tests/test_inspect_optimize_upscale.py: 24",
       "tests/test_model_caching.py: 6",
       "tests/test_paths_security.py: 21"
      ],
@@ -3050,54 +3192,54 @@
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 71,
+     "value": 79,
      "unit": "symbols",
-     "detail": "71 of 128 public symbols carry no doc comment",
+     "detail": "79 of 140 public symbols carry no doc comment",
      "evidence": [
-      "src/mini_creative_toolkit/log.py:22 get_logger",
-      "src/mini_creative_toolkit/paths.py:58 is_within",
-      "src/mini_creative_toolkit/paths.py:125 resolve_input_list",
-      "src/mini_creative_toolkit/paths.py:152 normalize_extension",
-      "src/mini_creative_toolkit/cli.py:100 build_parser",
-      "src/mini_creative_toolkit/cli.py:316 main",
-      "src/mini_creative_toolkit/server.py:95 list_capabilities",
-      "src/mini_creative_toolkit/server.py:106 list_background_models"
+      "scripts/mcp_probe.py:28 Client",
+      "scripts/mcp_probe.py:81 main",
+      "scripts/demo-uret.py:55 bash",
+      "scripts/demo-uret.py:62 make_photo",
+      "scripts/demo-uret.py:79 run_all",
+      "scripts/demo-uret.py:103 write_record",
+      "scripts/demo-uret.py:185 write_pages",
+      "scripts/demo-uret.py:200 record_video"
      ],
-     "headroom": 0.555
+     "headroom": 0.564
     },
     "ci_breadth": {
      "name": "ci_breadth",
-     "value": 1,
+     "value": 2,
      "unit": "distinct runners",
-     "detail": "2 workflow files, ~12 jobs, runners: ubuntu-latest",
+     "detail": "2 workflow files, ~13 jobs, runners: ubuntu-latest, windows-latest",
      "evidence": [
       "ci.yml",
       "yayinla.yml"
      ],
-     "headroom": 0.6666666666666666
+     "headroom": 0.3333333333333333
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 30,
+     "value": 38,
      "unit": "commands",
-     "detail": "30 runnable-looking commands in 8 shell blocks",
+     "detail": "38 runnable-looking commands in 12 shell blocks",
      "evidence": [
+      "uvx --from git+https://github.com/Furkiozknn/mini-creative-toolkit mct inspect photo.jpg",
+      "claude mcp add --transport stdio mini-creative-toolkit -- uvx --from git+https://github.com/Furkiozknn/mini-creative-toolkit mct serve",
+      "uv tool install git+https://github.com/Furkiozknn/mini-creative-toolkit",
+      "mct --version",
+      "git clone https://github.com/Furkiozknn/mini-creative-toolkit",
+      "cd mini-creative-toolkit",
       "uv sync",
-      "sudo apt-get install ffmpeg     # Debian/Ubuntu",
-      "brew install ffmpeg             # macOS",
-      "export UPSCAYL_BIN_PATH=/path/to/upscayl/resources/linux/bin/upscayl-bin",
-      "export UPSCAYL_MODELS_PATH=/path/to/upscayl/resources/models",
-      "claude mcp add --transport stdio mini-creative-toolkit -- uv run --project /path/to/this/repo toolkit.py",
-      "mct serve",
-      "python -m mini_creative_toolkit"
+      "uv run mct capabilities"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 22521,
+     "value": 25525,
      "unit": "bytes",
-     "detail": "22521 bytes, 25 sections, 13 images",
+     "detail": "25525 bytes, 25 sections, 11 images",
      "evidence": [
       "Contents",
       "Why this exists",
@@ -3122,13 +3264,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 492,
+     "value": 524,
      "unit": "lines",
-     "detail": "src/mini_creative_toolkit/server.py is the longest source file",
+     "detail": "src/mini_creative_toolkit/cli.py is the longest source file",
      "evidence": [
-      "src/mini_creative_toolkit/server.py"
+      "src/mini_creative_toolkit/cli.py"
      ],
-     "headroom": 0.07666666666666666
+     "headroom": 0.10333333333333333
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -3142,7 +3284,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (41 commits on HEAD)",
+     "detail": "never tagged (46 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -3157,39 +3299,52 @@
    },
    "opportunities": [
     {
+     "signal": "undocumented_surface",
+     "headroom": 0.564,
+     "note": "79 of 140 public symbols carry no doc comment",
+     "evidence": [
+      "scripts/mcp_probe.py:28 Client",
+      "scripts/mcp_probe.py:81 main",
+      "scripts/demo-uret.py:55 bash",
+      "scripts/demo-uret.py:62 make_photo",
+      "scripts/demo-uret.py:79 run_all",
+      "scripts/demo-uret.py:103 write_record"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (46 commits on HEAD)",
+     "evidence": []
+    },
+    {
      "signal": "ci_breadth",
-     "headroom": 0.667,
-     "note": "2 workflow files, ~12 jobs, runners: ubuntu-latest",
+     "headroom": 0.333,
+     "note": "2 workflow files, ~13 jobs, runners: ubuntu-latest, windows-latest",
      "evidence": [
       "ci.yml",
       "yayinla.yml"
      ]
     },
     {
-     "signal": "undocumented_surface",
-     "headroom": 0.555,
-     "note": "71 of 128 public symbols carry no doc comment",
+     "signal": "largest_source_file",
+     "headroom": 0.103,
+     "note": "src/mini_creative_toolkit/cli.py is the longest source file",
      "evidence": [
-      "src/mini_creative_toolkit/log.py:22 get_logger",
-      "src/mini_creative_toolkit/paths.py:58 is_within",
-      "src/mini_creative_toolkit/paths.py:125 resolve_input_list",
-      "src/mini_creative_toolkit/paths.py:152 normalize_extension",
-      "src/mini_creative_toolkit/cli.py:100 build_parser",
-      "src/mini_creative_toolkit/cli.py:316 main"
+      "src/mini_creative_toolkit/cli.py"
      ]
     },
     {
-     "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (41 commits on HEAD)",
-     "evidence": []
-    },
-    {
-     "signal": "largest_source_file",
-     "headroom": 0.077,
-     "note": "src/mini_creative_toolkit/server.py is the longest source file",
+     "signal": "test_mass",
+     "headroom": 0.059,
+     "note": "214185 source bytes, 100736 test bytes in 13 files",
      "evidence": [
-      "src/mini_creative_toolkit/server.py"
+      "tests/conftest.py",
+      "tests/helpers.py",
+      "tests/test_batch.py",
+      "tests/test_capabilities_and_config.py",
+      "tests/test_cli_and_server.py",
+      "tests/test_hosted_generation.py"
      ]
     }
    ]
@@ -3197,27 +3352,27 @@
   {
    "schema": 1,
    "repo": "model-comparison-harness",
-   "head": "78321ce261084be546e0dffafa514655445beb8a",
-   "taken_at": "2026-09-28T11:59:14Z",
-   "total_headroom": 1.524,
+   "head": "6d13b3e6c55af2de0f6ed5c9cf57783f3e84bc61",
+   "taken_at": "2026-10-05T12:36:43Z",
+   "total_headroom": 1.596,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 70859
+      "python": 126811
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 70859 bytes"
+      "python 126811 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.759,
+     "value": 0.863,
      "unit": "test bytes per source byte",
-     "detail": "40280 source bytes, 30579 test bytes in 5 files",
+     "detail": "68051 source bytes, 58760 test bytes in 5 files",
      "evidence": [
       "tests/test_backends.py",
       "tests/test_cli.py",
@@ -3229,40 +3384,40 @@
     },
     "test_count": {
      "name": "test_count",
-     "value": 64,
+     "value": 109,
      "unit": "cases",
-     "detail": "64 cases across 5 files",
+     "detail": "109 cases across 5 files",
      "evidence": [
-      "tests/test_backends.py: 12",
-      "tests/test_cli.py: 14",
-      "tests/test_config.py: 16",
-      "tests/test_grading.py: 8",
-      "tests/test_runner.py: 14"
+      "tests/test_backends.py: 28",
+      "tests/test_cli.py: 27",
+      "tests/test_config.py: 24",
+      "tests/test_grading.py: 15",
+      "tests/test_runner.py: 15"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 10,
+     "value": 15,
      "unit": "symbols",
-     "detail": "10 of 28 public symbols carry no doc comment",
+     "detail": "15 of 35 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
       "arac/vendor-dogrula.py:70 kanonik_getir",
       "arac/vendor-dogrula.py:76 main",
-      "src/model_comparison_harness/cli.py:137 main",
-      "src/model_comparison_harness/grading.py:35 GradeResult",
-      "src/model_comparison_harness/backends.py:39 Backend",
-      "src/model_comparison_harness/config.py:79 load_backends_from_dict"
+      "arac/demo-uret.py:52 kostur",
+      "arac/demo-uret.py:64 kayit_yaz",
+      "arac/demo-uret.py:81 satir_rengi",
+      "arac/demo-uret.py:122 ciz"
      ],
-     "headroom": 0.357
+     "headroom": 0.429
     },
     "ci_breadth": {
      "name": "ci_breadth",
      "value": 1,
      "unit": "distinct runners",
-     "detail": "2 workflow files, ~8 jobs, runners: ubuntu-latest",
+     "detail": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "yayinla.yml"
@@ -3271,28 +3426,28 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 14,
+     "value": 20,
      "unit": "commands",
-     "detail": "14 runnable-looking commands in 5 shell blocks",
+     "detail": "20 runnable-looking commands in 6 shell blocks",
      "evidence": [
+      "git clone https://github.com/Furkiozknn/model-comparison-harness.git && cd model-comparison-harness",
+      "uv run mch run examples/compare-mocks.yaml --input '{\"prompt\": \"a cat riding a bike\"}'",
+      "git clone https://github.com/Furkiozknn/model-comparison-harness.git",
+      "cd model-comparison-harness",
       "uv sync",
       "uv run mch run examples/compare-mocks.yaml --input '{\"prompt\": \"a cat riding a bike\"}'",
-      "uv run mch validate config.yaml",
-      "uv run mch run config.yaml --input '{\"prompt\": \"...\"}'                  # table output",
-      "uv run mch run config.yaml --input '{\"prompt\": \"...\"}' --json           # machine-readable, one object per backend",
-      "uv run mch run config.yaml --input '{\"prompt\": \"...\"}' --csv            # CSV, e.g. `--csv > results.csv` for a spreadsheet",
-      "uv run mch run config.yaml --input '{\"prompt\": \"...\"}' --fail-on-error  # exit 1 if any backend errored (useful in CI)",
-      "uv run mch run config.yaml --input '{\"prompt\": \"...\"}' --timeout 10     # hard per-backend ceiling enforced by the harness"
+      "uv run mch --version",
+      "uv run mch --help                                                        # first run, flags, exit codes"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 12454,
+     "value": 19502,
      "unit": "bytes",
-     "detail": "12454 bytes, 11 sections, 4 images",
+     "detail": "19502 bytes, 11 sections, 4 images",
      "evidence": [
-      "A comparison config",
+      "Quick start",
       "Backend types",
       "The CLI",
       "Model-graded scoring (`--rubric`)",
@@ -3315,11 +3470,11 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 185,
+     "value": 320,
      "unit": "lines",
-     "detail": "src/model_comparison_harness/cli.py is the longest source file",
+     "detail": "src/model_comparison_harness/backends.py is the longest source file",
      "evidence": [
-      "src/model_comparison_harness/cli.py"
+      "src/model_comparison_harness/backends.py"
      ],
      "headroom": 0.0
     },
@@ -3338,7 +3493,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (29 commits on HEAD)",
+     "detail": "never tagged (36 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -3355,7 +3510,7 @@
     {
      "signal": "ci_breadth",
      "headroom": 0.667,
-     "note": "2 workflow files, ~8 jobs, runners: ubuntu-latest",
+     "note": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "yayinla.yml"
@@ -3364,20 +3519,20 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (29 commits on HEAD)",
+     "note": "never tagged (36 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "undocumented_surface",
-     "headroom": 0.357,
-     "note": "10 of 28 public symbols carry no doc comment",
+     "headroom": 0.429,
+     "note": "15 of 35 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
       "arac/vendor-dogrula.py:70 kanonik_getir",
       "arac/vendor-dogrula.py:76 main",
-      "src/model_comparison_harness/cli.py:137 main",
-      "src/model_comparison_harness/grading.py:35 GradeResult"
+      "arac/demo-uret.py:52 kostur",
+      "arac/demo-uret.py:64 kayit_yaz"
      ]
     }
    ]
@@ -3385,51 +3540,51 @@
   {
    "schema": 1,
    "repo": "nova-drift",
-   "head": "536a28afde7962852ebb014f52cb3de4f1adee75",
-   "taken_at": "2026-09-28T11:59:16Z",
-   "total_headroom": 1.794,
+   "head": "1639fe84579bc0d80e3a7490ac2f4705ad8221a5",
+   "taken_at": "2026-10-05T12:36:44Z",
+   "total_headroom": 1.494,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "javascript": 80805
+      "javascript": 123435
      },
      "unit": "bytes",
      "detail": "primary: javascript",
      "evidence": [
-      "javascript 80805 bytes"
+      "javascript 123435 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.802,
+     "value": 1.192,
      "unit": "test bytes per source byte",
-     "detail": "44840 source bytes, 35965 test bytes in 12 files",
+     "detail": "56318 source bytes, 67117 test bytes in 18 files",
      "evidence": [
       "test/adaptive.spec.js",
       "test/capture-gif.js",
+      "test/capture-screens.js",
       "test/capture-shot.js",
-      "test/fixtures.js",
-      "test/font.spec.js",
-      "test/language.spec.js"
+      "test/contrast.spec.js",
+      "test/feel.spec.js"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 34,
+     "value": 57,
      "unit": "cases",
-     "detail": "34 cases across 9 files",
+     "detail": "57 cases across 13 files",
      "evidence": [
       "test/adaptive.spec.js: 4",
-      "test/font.spec.js: 2",
-      "test/language.spec.js: 4",
-      "test/no-external-requests.spec.js: 3",
-      "test/portal-sizes.spec.js: 2",
-      "test/prng.spec.js: 8",
-      "test/smoke.spec.js: 4",
-      "test/storage.spec.js: 3"
+      "test/contrast.spec.js: 2",
+      "test/feel.spec.js: 2",
+      "test/focus.spec.js: 4",
+      "test/font.spec.js: 3",
+      "test/language.spec.js: 6",
+      "test/menu.spec.js: 12",
+      "test/no-external-requests.spec.js: 3"
      ],
      "headroom": null
     },
@@ -3453,33 +3608,37 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 4,
+     "value": 11,
      "unit": "commands",
-     "detail": "4 runnable-looking commands in 2 shell blocks",
+     "detail": "11 runnable-looking commands in 3 shell blocks",
      "evidence": [
-      "npx serve .",
+      "git clone https://github.com/Furkiozknn/nova-drift.git",
+      "cd nova-drift",
+      "python3 -m http.server 8000      # then open http://localhost:8000",
       "npm install",
       "npx playwright install --with-deps chromium   # first run only",
-      "npm test"
+      "npm test                                      # 61 tests in 13 spec files",
+      "node test/record-reel.js .capture 18 30            # 18 s of portrait 1080x1920 play, interface hidden -> .capture/f0000.jpg ...",
+      "ffmpeg -y -framerate 30 -start_number 150 -t 6 -i .capture/f%04d.jpg \\"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 16179,
+     "value": 23624,
      "unit": "bytes",
-     "detail": "16179 bytes, 20 sections, 12 images",
+     "detail": "23624 bytes, 26 sections, 13 images",
      "evidence": [
       "Table of Contents",
       "Gameplay",
+      "Objective",
       "Controls",
       "Power-Ups",
       "Scoring",
       "Leaderboard",
       "Daily Challenge",
       "How It Works",
-      "Scene, Camera & Tunnel",
-      "Bloom Pipeline"
+      "Scene, Camera & Tunnel"
      ],
      "headroom": 0.0
     },
@@ -3493,13 +3652,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 1153,
+     "value": 1393,
      "unit": "lines",
      "detail": "script.js is the longest source file",
      "evidence": [
       "script.js"
      ],
-     "headroom": 0.6275
+     "headroom": 0.8275
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -3511,11 +3670,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": null,
+     "value": 0,
      "unit": "commits since last tag",
-     "detail": "never tagged (41 commits on HEAD)",
-     "evidence": [],
-     "headroom": 0.5
+     "detail": "last tag v1.0.0, 0 commits since",
+     "evidence": [
+      "v1.0.0"
+     ],
+     "headroom": 0.0
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -3530,53 +3691,49 @@
    },
    "opportunities": [
     {
-     "signal": "ci_breadth",
-     "headroom": 0.667,
-     "note": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
-     "evidence": [
-      "ci.yml"
-     ]
-    },
-    {
      "signal": "largest_source_file",
-     "headroom": 0.627,
+     "headroom": 0.828,
      "note": "script.js is the longest source file",
      "evidence": [
       "script.js"
      ]
     },
     {
-     "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (41 commits on HEAD)",
-     "evidence": []
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ]
     }
    ]
   },
   {
    "schema": 1,
    "repo": "nvidia-nim-mcp",
-   "head": "da9618a339365c4a07e63faf668ad49e5a82664c",
-   "taken_at": "2026-09-28T11:59:17Z",
-   "total_headroom": 1.583,
+   "head": "62a2a7b71dd5e86315f564e0b01241926e254ae0",
+   "taken_at": "2026-10-05T12:36:44Z",
+   "total_headroom": 2.247,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 93036
+      "python": 125880,
+      "javascript": 2383
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 93036 bytes"
+      "python 125880 bytes",
+      "javascript 2383 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 1.34,
+     "value": 0.98,
      "unit": "test bytes per source byte",
-     "detail": "39760 source bytes, 53276 test bytes in 10 files",
+     "detail": "64786 source bytes, 63477 test bytes in 11 files",
      "evidence": [
       "tests/conftest.py",
       "tests/test_api_key_guard.py",
@@ -3589,9 +3746,9 @@
     },
     "test_count": {
      "name": "test_count",
-     "value": 73,
+     "value": 95,
      "unit": "cases",
-     "detail": "73 cases across 9 files",
+     "detail": "95 cases across 10 files",
      "evidence": [
       "tests/test_api_key_guard.py: 10",
       "tests/test_build_chat_chain.py: 7",
@@ -3600,17 +3757,26 @@
       "tests/test_create_embedding_fallback.py: 6",
       "tests/test_describe_image_fallback.py: 5",
       "tests/test_fallback.py: 9",
-      "tests/test_generate_image.py: 15"
+      "tests/test_first_use.py: 22"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 0,
+     "value": 10,
      "unit": "symbols",
-     "detail": "0 of 8 public symbols carry no doc comment",
-     "evidence": [],
-     "headroom": 0.0
+     "detail": "10 of 19 public symbols carry no doc comment",
+     "evidence": [
+      "scripts/sonda.py:30 parse",
+      "scripts/sonda.py:60 run",
+      "scripts/sonda.py:96 main",
+      "scripts/demo-uret.py:54 bash",
+      "scripts/demo-uret.py:61 run_all",
+      "scripts/demo-uret.py:85 checkout_sha",
+      "scripts/demo-uret.py:93 write_record",
+      "scripts/demo-uret.py:173 write_pages"
+     ],
+     "headroom": 0.526
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -3625,26 +3791,26 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 11,
+     "value": 12,
      "unit": "commands",
-     "detail": "11 runnable-looking commands in 5 shell blocks",
+     "detail": "12 runnable-looking commands in 5 shell blocks",
      "evidence": [
-      "uv sync",
+      "claude mcp add --transport stdio --env NVIDIA_API_KEY=YOUR_KEY nvidia-nim -- \\",
+      "uvx --from git+https://github.com/Furkiozknn/nvidia-nim-mcp nvidia-nim-mcp",
       "NVIDIA_API_KEY=your-key-here",
       "GROQ_API_KEY=",
       "MISTRAL_API_KEY=",
       "GEMINI_API_KEY=",
       "CEREBRAS_API_KEY=",
-      "claude mcp add --transport stdio nvidia-nim -- uv run --project /path/to/this/repo nvidia_image.py",
-      "uv sync --group dev"
+      "uv run python scripts/sonda.py --no-keys -- nvidia-nim-mcp"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 14750,
+     "value": 18048,
      "unit": "bytes",
-     "detail": "14750 bytes, 12 sections, 7 images",
+     "detail": "18048 bytes, 12 sections, 8 images",
      "evidence": [
       "Table of Contents",
       "🧰 Tools",
@@ -3669,13 +3835,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 900,
+     "value": 1065,
      "unit": "lines",
      "detail": "nvidia_image.py is the longest source file",
      "evidence": [
       "nvidia_image.py"
      ],
-     "headroom": 0.4166666666666667
+     "headroom": 0.5541666666666667
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -3692,7 +3858,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (37 commits on HEAD)",
+     "detail": "never tagged (40 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -3716,90 +3882,107 @@
      ]
     },
     {
-     "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (37 commits on HEAD)",
-     "evidence": []
-    },
-    {
      "signal": "largest_source_file",
-     "headroom": 0.417,
+     "headroom": 0.554,
      "note": "nvidia_image.py is the longest source file",
      "evidence": [
       "nvidia_image.py"
      ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.526,
+     "note": "10 of 19 public symbols carry no doc comment",
+     "evidence": [
+      "scripts/sonda.py:30 parse",
+      "scripts/sonda.py:60 run",
+      "scripts/sonda.py:96 main",
+      "scripts/demo-uret.py:54 bash",
+      "scripts/demo-uret.py:61 run_all",
+      "scripts/demo-uret.py:85 checkout_sha"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (40 commits on HEAD)",
+     "evidence": []
     }
    ]
   },
   {
    "schema": 1,
    "repo": "prompt-template-manager",
-   "head": "87ee7ed3e6de05c146b48376ab8a2a233f597e5a",
-   "taken_at": "2026-09-28T11:59:19Z",
-   "total_headroom": 1.615,
+   "head": "da483cc01a7d5ca67b64b54e16aa0191b9d71292",
+   "taken_at": "2026-10-05T12:36:45Z",
+   "total_headroom": 1.667,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 56617
+      "python": 110812,
+      "javascript": 2380
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 56617 bytes"
+      "python 110812 bytes",
+      "javascript 2380 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.655,
+     "value": 0.626,
      "unit": "test bytes per source byte",
-     "detail": "34215 source bytes, 22402 test bytes in 5 files",
+     "detail": "69600 source bytes, 43592 test bytes in 6 files",
      "evidence": [
       "tests/test_cli.py",
       "tests/test_gateway_client.py",
       "tests/test_loader.py",
       "tests/test_models.py",
-      "tests/test_renderer.py"
+      "tests/test_renderer.py",
+      "tests/test_untrusted_input.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 61,
+     "value": 118,
      "unit": "cases",
-     "detail": "61 cases across 5 files",
+     "detail": "118 cases across 6 files",
      "evidence": [
-      "tests/test_cli.py: 12",
-      "tests/test_gateway_client.py: 6",
-      "tests/test_loader.py: 11",
-      "tests/test_models.py: 7",
-      "tests/test_renderer.py: 25"
+      "tests/test_cli.py: 27",
+      "tests/test_gateway_client.py: 18",
+      "tests/test_loader.py: 14",
+      "tests/test_models.py: 11",
+      "tests/test_renderer.py: 28",
+      "tests/test_untrusted_input.py: 20"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 13,
+     "value": 21,
      "unit": "symbols",
-     "detail": "13 of 29 public symbols carry no doc comment",
+     "detail": "21 of 42 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
       "arac/vendor-dogrula.py:70 kanonik_getir",
       "arac/vendor-dogrula.py:76 main",
-      "src/prompt_template_manager/renderer.py:136 render_value",
-      "src/prompt_template_manager/cli.py:122 main",
-      "src/prompt_template_manager/models.py:27 VariableSpec",
-      "src/prompt_template_manager/models.py:47 Template"
+      "arac/terminal-svg.py:40 run",
+      "arac/terminal-svg.py:55 main",
+      "arac/demo-uret.py:54 bash",
+      "arac/demo-uret.py:61 run_all"
      ],
-     "headroom": 0.448
+     "headroom": 0.5
     },
     "ci_breadth": {
      "name": "ci_breadth",
      "value": 1,
      "unit": "distinct runners",
-     "detail": "2 workflow files, ~8 jobs, runners: ubuntu-latest",
+     "detail": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "yayinla.yml"
@@ -3808,37 +3991,37 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 15,
+     "value": 36,
      "unit": "commands",
-     "detail": "15 runnable-looking commands in 8 shell blocks",
+     "detail": "36 runnable-looking commands in 11 shell blocks",
      "evidence": [
+      "uvx --from git+https://github.com/Furkiozknn/prompt-template-manager ptm --help",
       "uvx --from git+https://github.com/Furkiozknn/prompt-template-manager ptm --help",
       "uv tool install git+https://github.com/Furkiozknn/prompt-template-manager",
       "ptm --help",
-      "uv sync",
-      "uv run ptm validate examples/product-photo.yaml",
-      "uv run ptm render examples/product-photo.yaml --var product_name=\"a red sneaker\" --pretty",
-      "uv run ptm info examples/product-photo.yaml",
-      "uv run ptm submit examples/product-photo.yaml --gateway-url http://127.0.0.1:8000 --var product_name=\"a red sneaker\""
+      "cat > hello.yaml <<'EOF'",
+      "name: hello",
+      "version: \"1\"",
+      "capability: mock-generate"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 14870,
+     "value": 22235,
      "unit": "bytes",
-     "detail": "14870 bytes, 17 sections, 5 images",
+     "detail": "22235 bytes, 20 sections, 5 images",
      "evidence": [
       "The problem this solves",
       "Install",
+      "Your first template (one minute, no checkout needed)",
       "Quickstart",
       "A template",
       "The CLI",
       "`validate`",
       "`render`",
-      "`info`",
-      "`submit`",
-      "Using it as a library"
+      "Exit codes",
+      "`info`"
      ],
      "headroom": 0.0
     },
@@ -3852,7 +4035,7 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 218,
+     "value": 310,
      "unit": "lines",
      "detail": "src/prompt_template_manager/renderer.py is the longest source file",
      "evidence": [
@@ -3876,7 +4059,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (35 commits on HEAD)",
+     "detail": "never tagged (41 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -3893,57 +4076,57 @@
     {
      "signal": "ci_breadth",
      "headroom": 0.667,
-     "note": "2 workflow files, ~8 jobs, runners: ubuntu-latest",
+     "note": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "yayinla.yml"
      ]
     },
     {
-     "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (35 commits on HEAD)",
-     "evidence": []
-    },
-    {
      "signal": "undocumented_surface",
-     "headroom": 0.448,
-     "note": "13 of 29 public symbols carry no doc comment",
+     "headroom": 0.5,
+     "note": "21 of 42 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
       "arac/vendor-dogrula.py:70 kanonik_getir",
       "arac/vendor-dogrula.py:76 main",
-      "src/prompt_template_manager/renderer.py:136 render_value",
-      "src/prompt_template_manager/cli.py:122 main"
+      "arac/terminal-svg.py:40 run",
+      "arac/terminal-svg.py:55 main"
      ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (41 commits on HEAD)",
+     "evidence": []
     }
    ]
   },
   {
    "schema": 1,
    "repo": "repo-ratchet",
-   "head": "0708cc79184c98c4686abed3f979e303a8e135f8",
-   "taken_at": "2026-09-28T11:59:20Z",
-   "total_headroom": 0.658,
+   "head": "7a29b220d3cdd7a8e8f15abec6dc1607c9e6c68f",
+   "taken_at": "2026-10-05T12:36:45Z",
+   "total_headroom": 0.768,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 108400
+      "python": 131324
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 108400 bytes"
+      "python 131324 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.618,
+     "value": 0.641,
      "unit": "test bytes per source byte",
-     "detail": "67014 source bytes, 41386 test bytes in 6 files",
+     "detail": "80017 source bytes, 51307 test bytes in 6 files",
      "evidence": [
       "tests/conftest.py",
       "tests/test_plan.py",
@@ -3956,25 +4139,31 @@
     },
     "test_count": {
      "name": "test_count",
-     "value": 131,
+     "value": 152,
      "unit": "cases",
-     "detail": "131 cases across 5 files",
+     "detail": "152 cases across 5 files",
      "evidence": [
       "tests/test_plan.py: 10",
       "tests/test_records.py: 25",
-      "tests/test_signals.py: 51",
-      "tests/test_survey_cli.py: 26",
-      "tests/test_verify.py: 19"
+      "tests/test_signals.py: 54",
+      "tests/test_survey_cli.py: 40",
+      "tests/test_verify.py: 23"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 0,
+     "value": 5,
      "unit": "symbols",
-     "detail": "0 of 45 public symbols carry no doc comment",
-     "evidence": [],
-     "headroom": 0.0
+     "detail": "5 of 52 public symbols carry no doc comment",
+     "evidence": [
+      "docs/demo/uret.py:23 steps",
+      "docs/demo/uret.py:52 render",
+      "docs/demo/uret.py:79 main",
+      "docs/demo/kaydet.py:18 run",
+      "docs/demo/kaydet.py:25 step"
+     ],
+     "headroom": 0.096
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -3989,27 +4178,29 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 8,
+     "value": 21,
      "unit": "commands",
-     "detail": "8 runnable-looking commands in 2 shell blocks",
+     "detail": "21 runnable-looking commands in 6 shell blocks",
      "evidence": [
-      "ratchet discover Furkiozknn          # ask GitHub what exists",
-      "ratchet survey                       # clone each one and measure it",
-      "ratchet queue                        # which repository to open next, and why",
-      "ratchet check ./some-repo            # run that repository's own checks, inside a fence",
-      "ratchet record some-repo --round 1 --outcome advanced \\",
-      "--summary \"...\" --before <sha> --after <sha> --verifications v.json",
-      "ratchet report --out KAYITLAR.md     # the work log",
-      "python3 -m pytest -q"
+      "uvx --from git+https://github.com/Furkiozknn/repo-ratchet ratchet survey --path .",
+      "git clone https://github.com/Furkiozknn/repo-ratchet",
+      "cd repo-ratchet",
+      "python3 -m venv .venv && . .venv/bin/activate     # Windows: .venv\\Scripts\\activate",
+      "python -m pip install .        # puts `ratchet` on PATH; nothing else gets installed",
+      "ratchet queue                  # rank the repositories already surveyed in durum/ - no network",
+      "ratchet survey --path .        # measure any checkout on disk; nothing inside it is executed",
+      "ratchet check .                # run this repository's own check (ratchet.toml), inside the fence"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 11180,
+     "value": 18092,
      "unit": "bytes",
-     "detail": "11180 bytes, 10 sections, 1 images",
+     "detail": "18092 bytes, 14 sections, 6 images",
      "evidence": [
+      "Quick start",
+      "A whole round",
       "What it is not",
       "The three rules it enforces in code",
       "What it measures",
@@ -4017,9 +4208,7 @@
       "Rounds",
       "What round 1 found",
       "Round 2, in progress",
-      "Working on this repository",
-      "Where it fits",
-      "Licence"
+      "Configuration"
      ],
      "headroom": 0.0
     },
@@ -4033,13 +4222,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 590,
+     "value": 606,
      "unit": "lines",
      "detail": "ratchet/signals.py is the longest source file",
      "evidence": [
       "ratchet/signals.py"
      ],
-     "headroom": 0.15833333333333333
+     "headroom": 0.17166666666666666
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -4053,7 +4242,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (17 commits on HEAD)",
+     "detail": "never tagged (21 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -4070,15 +4259,27 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (17 commits on HEAD)",
+     "note": "never tagged (21 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.158,
+     "headroom": 0.172,
      "note": "ratchet/signals.py is the longest source file",
      "evidence": [
       "ratchet/signals.py"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.096,
+     "note": "5 of 52 public symbols carry no doc comment",
+     "evidence": [
+      "docs/demo/uret.py:23 steps",
+      "docs/demo/uret.py:52 render",
+      "docs/demo/uret.py:79 main",
+      "docs/demo/kaydet.py:18 run",
+      "docs/demo/kaydet.py:25 step"
      ]
     }
    ]
@@ -4086,59 +4287,72 @@
   {
    "schema": 1,
    "repo": "repo-vet",
-   "head": "57f145348ab4093da938b20ca1b4e9ed2965acfc",
-   "taken_at": "2026-09-28T11:59:22Z",
-   "total_headroom": 0.922,
+   "head": "fae6545c20201d3b7e893c2391f4594e66486856",
+   "taken_at": "2026-10-05T12:36:46Z",
+   "total_headroom": 1.37,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 71192
+      "python": 137684,
+      "javascript": 2383
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 71192 bytes"
+      "python 137684 bytes",
+      "javascript 2383 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.879,
+     "value": 1.064,
      "unit": "test bytes per source byte",
-     "detail": "37886 source bytes, 33306 test bytes in 5 files",
+     "detail": "67866 source bytes, 72201 test bytes in 9 files",
      "evidence": [
       "tests/fakes.py",
       "tests/test_checks.py",
       "tests/test_cli.py",
+      "tests/test_first_run.py",
       "tests/test_readme.py",
-      "tests/test_runner_report.py"
+      "tests/test_reads_and_refs.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 103,
+     "value": 188,
      "unit": "cases",
-     "detail": "103 cases across 4 files",
+     "detail": "188 cases across 8 files",
      "evidence": [
-      "tests/test_checks.py: 40",
+      "tests/test_checks.py: 45",
       "tests/test_cli.py: 19",
-      "tests/test_readme.py: 31",
-      "tests/test_runner_report.py: 13"
+      "tests/test_first_run.py: 16",
+      "tests/test_readme.py: 38",
+      "tests/test_reads_and_refs.py: 28",
+      "tests/test_runner_report.py: 13",
+      "tests/test_sources.py: 5",
+      "tests/test_unchecked.py: 24"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 2,
+     "value": 10,
      "unit": "symbols",
-     "detail": "2 of 21 public symbols carry no doc comment",
+     "detail": "10 of 33 public symbols carry no doc comment",
      "evidence": [
-      "repo_vet/cli.py:51 main",
-      "repo_vet/report.py:23 as_text"
+      "repo_vet/cli.py:85 slug_ok",
+      "repo_vet/cli.py:91 ref_ok",
+      "repo_vet/cli.py:120 main",
+      "repo_vet/report.py:23 as_text",
+      "scripts/demo-uret.py:56 bash",
+      "scripts/demo-uret.py:63 run_all",
+      "scripts/demo-uret.py:90 write_record",
+      "scripts/demo-uret.py:172 write_pages"
      ],
-     "headroom": 0.095
+     "headroom": 0.303
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -4153,26 +4367,26 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 19,
+     "value": 15,
      "unit": "commands",
-     "detail": "19 runnable-looking commands in 5 shell blocks",
+     "detail": "15 runnable-looking commands in 5 shell blocks",
      "evidence": [
-      "repo-vet Furkiozknn/prompt-template-manager Furkiozknn/Furkiozknn",
-      "Furkiozknn/prompt-template-manager  1 finding, 0 of them errors",
-      "Release chain",
-      "! `pyproject.toml` declares version 0.1.0, but the repository has no tags.",
-      "pyproject.toml -> 0.1.0, tags -> none",
-      "Furkiozknn/Furkiozknn  clean (6 checks)",
+      "uvx --from git+https://github.com/Furkiozknn/repo-vet repo-vet Furkiozknn/repo-vet",
       "repo-vet --from-file corpus.txt --skip web",
-      "uvx --from git+https://github.com/Furkiozknn/repo-vet repo-vet --help"
+      "uvx --from git+https://github.com/Furkiozknn/repo-vet repo-vet --help",
+      "uv tool install git+https://github.com/Furkiozknn/repo-vet",
+      "repo-vet Furkiozknn/repo-vet",
+      "repo-vet OWNER/NAME [OWNER/NAME ...]",
+      "repo-vet psf/requests --skip web          # skip the slow outbound-link pass",
+      "repo-vet OWNER/NAME --only install,links  # just the two that break most often"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 10248,
+     "value": 14211,
      "unit": "bytes",
-     "detail": "10248 bytes, 11 sections, 8 images",
+     "detail": "14211 bytes, 11 sections, 7 images",
      "evidence": [
       "Status",
       "What it checks",
@@ -4197,7 +4411,7 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 268,
+     "value": 310,
      "unit": "lines",
      "detail": "repo_vet/checks.py is the longest source file",
      "evidence": [
@@ -4215,13 +4429,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 4,
+     "value": 10,
      "unit": "commits since last tag",
-     "detail": "last tag v0.1.0, 4 commits since",
+     "detail": "last tag v0.1.0, 10 commits since",
      "evidence": [
       "v0.1.0"
      ],
-     "headroom": 0.16
+     "headroom": 0.4
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -4244,19 +4458,23 @@
     },
     {
      "signal": "release_lag",
-     "headroom": 0.16,
-     "note": "last tag v0.1.0, 4 commits since",
+     "headroom": 0.4,
+     "note": "last tag v0.1.0, 10 commits since",
      "evidence": [
       "v0.1.0"
      ]
     },
     {
      "signal": "undocumented_surface",
-     "headroom": 0.095,
-     "note": "2 of 21 public symbols carry no doc comment",
+     "headroom": 0.303,
+     "note": "10 of 33 public symbols carry no doc comment",
      "evidence": [
-      "repo_vet/cli.py:51 main",
-      "repo_vet/report.py:23 as_text"
+      "repo_vet/cli.py:85 slug_ok",
+      "repo_vet/cli.py:91 ref_ok",
+      "repo_vet/cli.py:120 main",
+      "repo_vet/report.py:23 as_text",
+      "scripts/demo-uret.py:56 bash",
+      "scripts/demo-uret.py:63 run_all"
      ]
     }
    ]
@@ -4264,51 +4482,60 @@
   {
    "schema": 1,
    "repo": "tek-tus-kosu",
-   "head": "a66bf4edc9fec8c08fe48fe4beb6fabf0b17f14d",
-   "taken_at": "2026-09-28T11:59:25Z",
-   "total_headroom": 2.269,
+   "head": "aca636395f9315ab3c4c8eb7c96eb5446fea9789",
+   "taken_at": "2026-10-05T12:36:47Z",
+   "total_headroom": 3.446,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "gdscript": 311828,
-      "python": 2109
+      "gdscript": 405134,
+      "python": 8094,
+      "shell": 4261
      },
      "unit": "bytes",
      "detail": "primary: gdscript",
      "evidence": [
-      "gdscript 311828 bytes",
-      "python 2109 bytes"
+      "gdscript 405134 bytes",
+      "python 8094 bytes",
+      "shell 4261 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.354,
+     "value": 0.412,
      "unit": "test bytes per source byte",
-     "detail": "231930 source bytes, 82007 test bytes in 1 files",
+     "detail": "295584 source bytes, 121905 test bytes in 3 files",
      "evidence": [
+      "tests/kapi.sh",
+      "tests/kapi_sinama.sh",
       "tests/testler.gd"
      ],
-     "headroom": 0.29282973310912774
+     "headroom": 0.17515833062682684
     },
     "test_count": {
      "name": "test_count",
-     "value": 22,
+     "value": 29,
      "unit": "cases",
-     "detail": "22 cases across 1 files",
+     "detail": "29 cases across 1 files",
      "evidence": [
-      "tests/testler.gd: 22"
+      "tests/testler.gd: 29"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": null,
-     "unit": "",
-     "detail": "no Python or Rust public surface",
-     "evidence": [],
-     "headroom": null
+     "value": 4,
+     "unit": "symbols",
+     "detail": "4 of 4 public symbols carry no doc comment",
+     "evidence": [
+      "tools/web_duman.py:44 SessizIsleyici",
+      "tools/web_duman.py:49 sunucu_baslat",
+      "tools/web_duman.py:56 renk_sayisi",
+      "tools/web_duman.py:61 main"
+     ],
+     "headroom": 1.0
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -4331,9 +4558,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 23590,
+     "value": 26033,
      "unit": "bytes",
-     "detail": "23590 bytes, 11 sections, 4 images",
+     "detail": "26033 bytes, 11 sections, 5 images",
      "evidence": [
       "Kontroller",
       "Oyun içeriği",
@@ -4358,13 +4585,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 1156,
+     "value": 1317,
      "unit": "lines",
      "detail": "scripts/oyun.gd is the longest source file",
      "evidence": [
       "scripts/oyun.gd"
      ],
-     "headroom": 0.63
+     "headroom": 0.7641666666666667
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -4376,13 +4603,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 17,
+     "value": 21,
      "unit": "commits since last tag",
-     "detail": "last tag v1.7.3, 17 commits since",
+     "detail": "last tag v1.7.3, 21 commits since",
      "evidence": [
       "v1.7.3"
      ],
-     "headroom": 0.68
+     "headroom": 0.84
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -4395,11 +4622,30 @@
    },
    "opportunities": [
     {
+     "signal": "undocumented_surface",
+     "headroom": 1.0,
+     "note": "4 of 4 public symbols carry no doc comment",
+     "evidence": [
+      "tools/web_duman.py:44 SessizIsleyici",
+      "tools/web_duman.py:49 sunucu_baslat",
+      "tools/web_duman.py:56 renk_sayisi",
+      "tools/web_duman.py:61 main"
+     ]
+    },
+    {
      "signal": "release_lag",
-     "headroom": 0.68,
-     "note": "last tag v1.7.3, 17 commits since",
+     "headroom": 0.84,
+     "note": "last tag v1.7.3, 21 commits since",
      "evidence": [
       "v1.7.3"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.764,
+     "note": "scripts/oyun.gd is the longest source file",
+     "evidence": [
+      "scripts/oyun.gd"
      ]
     },
     {
@@ -4412,18 +4658,12 @@
      ]
     },
     {
-     "signal": "largest_source_file",
-     "headroom": 0.63,
-     "note": "scripts/oyun.gd is the longest source file",
-     "evidence": [
-      "scripts/oyun.gd"
-     ]
-    },
-    {
      "signal": "test_mass",
-     "headroom": 0.293,
-     "note": "231930 source bytes, 82007 test bytes in 1 files",
+     "headroom": 0.175,
+     "note": "295584 source bytes, 121905 test bytes in 3 files",
      "evidence": [
+      "tests/kapi.sh",
+      "tests/kapi_sinama.sh",
       "tests/testler.gd"
      ]
     }
@@ -4432,49 +4672,49 @@
   {
    "schema": 1,
    "repo": "turkce-ajanlar",
-   "head": "37b56fbc0343794c79068ee2da1bc29482f8404b",
-   "taken_at": "2026-09-28T11:59:26Z",
-   "total_headroom": 1.535,
+   "head": "16d3e226c9d45e4ebb3a4fa1ce02a336ede314c6",
+   "taken_at": "2026-10-05T12:36:48Z",
+   "total_headroom": 2.2,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "javascript": 163813
+      "javascript": 657595
      },
      "unit": "bytes",
      "detail": "primary: javascript",
      "evidence": [
-      "javascript 163813 bytes"
+      "javascript 657595 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.515,
+     "value": 0.136,
      "unit": "test bytes per source byte",
-     "detail": "108129 source bytes, 55684 test bytes in 8 files",
+     "detail": "578803 source bytes, 78792 test bytes in 10 files",
      "evidence": [
+      "arac/banner-uret-test.js",
       "arac/bicim-kontrol-test.js",
       "arac/disari-aktar-test.js",
       "arac/dogrula-test.js",
       "arac/ekip-kos-test.js",
-      "arac/modul-turu-test.js",
-      "arac/sinir-denetle-test.js"
+      "arac/modul-turu-test.js"
      ],
-     "headroom": 0.0
+     "headroom": 0.7277415631916213
     },
     "test_count": {
      "name": "test_count",
-     "value": 92,
+     "value": 136,
      "unit": "cases (lower bound)",
-     "detail": "at least 92 cases across 3 files; 5 further test file(s) declare their cases in a form this cannot count",
+     "detail": "at least 136 cases across 3 files; 7 further test file(s) declare their cases in a form this cannot count",
      "evidence": [
       "arac/bicim-kontrol-test.js: 33",
       "arac/tetik-cakisma-test.js: 19",
-      "arac/web-test.js: 40",
+      "arac/web-test.js: 84",
+      "uncounted: arac/banner-uret-test.js",
       "uncounted: arac/disari-aktar-test.js",
-      "uncounted: arac/dogrula-test.js",
-      "uncounted: arac/ekip-kos-test.js"
+      "uncounted: arac/dogrula-test.js"
      ],
      "headroom": null
     },
@@ -4490,7 +4730,7 @@
      "name": "ci_breadth",
      "value": 1,
      "unit": "distinct runners",
-     "detail": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "detail": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
      "evidence": [
       "dogrula.yml",
       "yayinla.yml"
@@ -4499,26 +4739,26 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 11,
+     "value": 14,
      "unit": "commands",
-     "detail": "11 runnable-looking commands in 3 shell blocks",
+     "detail": "14 runnable-looking commands in 5 shell blocks",
      "evidence": [
+      "claude plugin marketplace add Furkiozknn/turkce-ajanlar; claude plugin install turkce-ajanlar@turkce-ajanlar",
       "node arac/ekip-kos.js --proje ../ajans-os --dalga kod-haritacisi,test-doktoru",
       "node arac/ekip-kos.js --proje . \\",
       "--dalga kod-haritacisi,bagimlilik-envanteri \\",
       "--dalga kod-gozden-gecirici,guvenlik-denetci \\",
       "--cikti rapor/ --butce 5",
       "node arac/ekip-kos.js --proje . --dalga repo-denetci --kuru",
-      "node arac/sinir-denetle.js          # 71/71",
-      "node arac/sinir-denetle.js --kati   # uyarılar da hata"
+      "npm test          # 13 adım: ajan/eklenti/sınır/yönlendirme kapıları ve araçların kendi testleri"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 39350,
+     "value": 43470,
      "unit": "bytes",
-     "detail": "39350 bytes, 30 sections, 11 images",
+     "detail": "43470 bytes, 30 sections, 11 images",
      "evidence": [
       "Neden bu var",
       "Ajanlar",
@@ -4543,13 +4783,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 842,
+     "value": 1319,
      "unit": "lines",
      "detail": "arac/web-uret.js is the longest source file",
      "evidence": [
       "arac/web-uret.js"
      ],
-     "headroom": 0.36833333333333335
+     "headroom": 0.7658333333333334
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -4561,11 +4801,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": null,
+     "value": 1,
      "unit": "commits since last tag",
-     "detail": "never tagged (55 commits on HEAD)",
-     "evidence": [],
-     "headroom": 0.5
+     "detail": "last tag v0.4.1, 1 commits since",
+     "evidence": [
+      "v0.4.1"
+     ],
+     "headroom": 0.04
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -4578,9 +4820,30 @@
    },
    "opportunities": [
     {
+     "signal": "largest_source_file",
+     "headroom": 0.766,
+     "note": "arac/web-uret.js is the longest source file",
+     "evidence": [
+      "arac/web-uret.js"
+     ]
+    },
+    {
+     "signal": "test_mass",
+     "headroom": 0.728,
+     "note": "578803 source bytes, 78792 test bytes in 10 files",
+     "evidence": [
+      "arac/banner-uret-test.js",
+      "arac/bicim-kontrol-test.js",
+      "arac/disari-aktar-test.js",
+      "arac/dogrula-test.js",
+      "arac/ekip-kos-test.js",
+      "arac/modul-turu-test.js"
+     ]
+    },
+    {
      "signal": "ci_breadth",
      "headroom": 0.667,
-     "note": "2 workflow files, ~6 jobs, runners: ubuntu-latest",
+     "note": "2 workflow files, ~7 jobs, runners: ubuntu-latest",
      "evidence": [
       "dogrula.yml",
       "yayinla.yml"
@@ -4588,16 +4851,10 @@
     },
     {
      "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (55 commits on HEAD)",
-     "evidence": []
-    },
-    {
-     "signal": "largest_source_file",
-     "headroom": 0.368,
-     "note": "arac/web-uret.js is the longest source file",
+     "headroom": 0.04,
+     "note": "last tag v0.4.1, 1 commits since",
      "evidence": [
-      "arac/web-uret.js"
+      "v0.4.1"
      ]
     }
    ]
@@ -4605,64 +4862,77 @@
   {
    "schema": 1,
    "repo": "voice-io-mcp",
-   "head": "a539cf8dd9116576fb4d5efd77fdf1b11e7e8045",
-   "taken_at": "2026-09-28T11:59:28Z",
-   "total_headroom": 1.189,
+   "head": "bc4169c44423bcf52bc96041e501e2960b2da824",
+   "taken_at": "2026-10-05T12:36:49Z",
+   "total_headroom": 2.001,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 38303
+      "python": 86251,
+      "javascript": 2362
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 38303 bytes"
+      "python 86251 bytes",
+      "javascript 2362 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 1.099,
+     "value": 0.875,
      "unit": "test bytes per source byte",
-     "detail": "18244 source bytes, 20059 test bytes in 6 files",
+     "detail": "47251 source bytes, 41362 test bytes in 8 files",
      "evidence": [
       "tests/conftest.py",
       "tests/test_check_provider_health.py",
+      "tests/test_cli.py",
       "tests/test_local_integration.py",
       "tests/test_misc.py",
-      "tests/test_speech_to_text.py",
-      "tests/test_text_to_speech.py"
+      "tests/test_speech_to_text.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 37,
+     "value": 70,
      "unit": "cases",
-     "detail": "37 cases across 5 files",
+     "detail": "70 cases across 7 files",
      "evidence": [
-      "tests/test_check_provider_health.py: 6",
-      "tests/test_local_integration.py: 2",
-      "tests/test_misc.py: 7",
-      "tests/test_speech_to_text.py: 10",
-      "tests/test_text_to_speech.py: 12"
+      "tests/test_check_provider_health.py: 7",
+      "tests/test_cli.py: 7",
+      "tests/test_local_integration.py: 3",
+      "tests/test_misc.py: 8",
+      "tests/test_speech_to_text.py: 20",
+      "tests/test_stdio.py: 2",
+      "tests/test_text_to_speech.py: 23"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 0,
+     "value": 8,
      "unit": "symbols",
-     "detail": "0 of 5 public symbols carry no doc comment",
-     "evidence": [],
-     "headroom": 0.0
+     "detail": "8 of 14 public symbols carry no doc comment",
+     "evidence": [
+      "scripts/probe.py:25 first_sentence",
+      "scripts/probe.py:31 main",
+      "scripts/demo-uret.py:51 bash",
+      "scripts/demo-uret.py:58 run_all",
+      "scripts/demo-uret.py:78 write_record",
+      "scripts/demo-uret.py:158 write_pages",
+      "scripts/demo-uret.py:174 record_video",
+      "scripts/demo-uret.py:207 main"
+     ],
+     "headroom": 0.571
     },
     "ci_breadth": {
      "name": "ci_breadth",
      "value": 1,
      "unit": "distinct runners",
-     "detail": "2 workflow files, ~10 jobs, runners: ubuntu-latest",
+     "detail": "2 workflow files, ~11 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "yayinla.yml"
@@ -4671,27 +4941,28 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 9,
+     "value": 16,
      "unit": "commands",
-     "detail": "9 runnable-looking commands in 6 shell blocks",
+     "detail": "16 runnable-looking commands in 10 shell blocks",
      "evidence": [
-      "uv sync",
-      "cp .env.example .env",
-      "uv sync --extra local-tts   # Kokoro-82M — also needs the `espeak-ng` system package",
-      "uv sync --extra local-stt   # faster-whisper",
-      "claude mcp add --transport stdio voice-io -- uv run --project /path/to/this/repo voice_io.py",
-      "uv sync --group dev",
-      "uv run pytest                              # the whole suite",
-      "uv run pytest tests/test_speech_to_text.py # one module"
+      "claude mcp add voice-io -e GROQ_API_KEY=your-key -- uvx --python 3.11 --from git+https://github.com/Furkiozknn/voice-io-mcp voice-io-mcp",
+      "claude mcp add voice-io -e GROQ_API_KEY=your-key -- \\",
+      "uvx --python 3.11 --from git+https://github.com/Furkiozknn/voice-io-mcp voice-io-mcp",
+      "claude mcp add voice-io -- \\",
+      "uvx --python 3.11 --from \"voice-io-mcp[local-tts,local-stt] @ git+https://github.com/Furkiozknn/voice-io-mcp\" voice-io-mcp",
+      "uvx --python 3.11 --from git+https://github.com/Furkiozknn/voice-io-mcp voice-io-mcp --check",
+      "git clone https://github.com/Furkiozknn/voice-io-mcp && cd voice-io-mcp",
+      "uv sync"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 12858,
+     "value": 22460,
      "unit": "bytes",
-     "detail": "12858 bytes, 12 sections, 8 images",
+     "detail": "22460 bytes, 13 sections, 8 images",
      "evidence": [
+      "⚡ Quick start",
       "📖 Table of Contents",
       "🧰 Tools",
       "🔄 The fallback chain",
@@ -4700,8 +4971,7 @@
       "🏗 Architecture",
       "🛠 Development",
       "🧪 Testing",
-      "What this server can actually do",
-      "🚧 Known limitations / roadmap"
+      "What this server can actually do"
      ],
      "headroom": 0.0
     },
@@ -4715,13 +4985,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 427,
+     "value": 716,
      "unit": "lines",
      "detail": "voice_io.py is the longest source file",
      "evidence": [
       "voice_io.py"
      ],
-     "headroom": 0.0225
+     "headroom": 0.2633333333333333
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -4737,7 +5007,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (28 commits on HEAD)",
+     "detail": "never tagged (36 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -4754,21 +5024,34 @@
     {
      "signal": "ci_breadth",
      "headroom": 0.667,
-     "note": "2 workflow files, ~10 jobs, runners: ubuntu-latest",
+     "note": "2 workflow files, ~11 jobs, runners: ubuntu-latest",
      "evidence": [
       "ci.yml",
       "yayinla.yml"
      ]
     },
     {
+     "signal": "undocumented_surface",
+     "headroom": 0.571,
+     "note": "8 of 14 public symbols carry no doc comment",
+     "evidence": [
+      "scripts/probe.py:25 first_sentence",
+      "scripts/probe.py:31 main",
+      "scripts/demo-uret.py:51 bash",
+      "scripts/demo-uret.py:58 run_all",
+      "scripts/demo-uret.py:78 write_record",
+      "scripts/demo-uret.py:158 write_pages"
+     ]
+    },
+    {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (28 commits on HEAD)",
+     "note": "never tagged (36 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.022,
+     "headroom": 0.263,
      "note": "voice_io.py is the longest source file",
      "evidence": [
       "voice_io.py"
@@ -4779,50 +5062,54 @@
   {
    "schema": 1,
    "repo": "yercekimi-cevir",
-   "head": "8c3b8b8a774c55d18ea5d4f621dca44571afdd22",
-   "taken_at": "2026-09-28T11:59:33Z",
-   "total_headroom": 2.218,
+   "head": "8c30c46b5bc93c0677fe818a0609e650bafb9ded",
+   "taken_at": "2026-10-05T12:36:52Z",
+   "total_headroom": 2.661,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "gdscript": 300226,
-      "python": 56105
+      "gdscript": 382564,
+      "python": 47715,
+      "shell": 6357
      },
      "unit": "bytes",
      "detail": "primary: gdscript",
      "evidence": [
-      "gdscript 300226 bytes",
-      "python 56105 bytes"
+      "gdscript 382564 bytes",
+      "python 47715 bytes",
+      "shell 6357 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.443,
+     "value": 0.496,
      "unit": "test bytes per source byte",
-     "detail": "246890 source bytes, 109441 test bytes in 2 files",
+     "detail": "291784 source bytes, 144852 test bytes in 4 files",
      "evidence": [
       "tests/ekran.gd",
+      "tests/kapi.sh",
+      "tests/kapi_sinama.sh",
       "tests/testler.gd"
      ],
-     "headroom": 0.1134432338288307
+     "headroom": 0.0071285608532338784
     },
     "test_count": {
      "name": "test_count",
-     "value": 344,
+     "value": 440,
      "unit": "cases",
-     "detail": "344 cases across 1 files",
+     "detail": "440 cases across 1 files",
      "evidence": [
-      "tests/testler.gd: 344"
+      "tests/testler.gd: 440"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 19,
+     "value": 26,
      "unit": "symbols",
-     "detail": "19 of 50 public symbols carry no doc comment",
+     "detail": "26 of 54 public symbols carry no doc comment",
      "evidence": [
       "arac/uret_bolumler.py:93 yasak_listesi",
       "arac/uret_bolumler.py:97 tek_listesi",
@@ -4833,7 +5120,7 @@
       "tools/gif_yap.py:174 gif_yaz",
       "tools/gif_yap.py:211 main"
      ],
-     "headroom": 0.38
+     "headroom": 0.481
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -4848,37 +5135,37 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 17,
+     "value": 31,
      "unit": "commands",
-     "detail": "17 runnable-looking commands in 4 shell blocks",
+     "detail": "31 runnable-looking commands in 6 shell blocks",
      "evidence": [
-      "godot --path .                                        # oyunu aç",
+      "git lfs install                       # bir kez, makine başına",
+      "git clone https://github.com/Furkiozknn/yercekimi-cevir.git",
+      "cd yercekimi-cevir",
+      "git lfs pull                          # LFS kancası kurulu değilken klonladıysan",
+      "godot --headless --path . --import    # bir kez: .godot önbelleğini kur",
+      "godot --path .                        # oyunu aç (ana sahne: menü)",
       "godot --headless --path . res://tests/testler.tscn    # otomatik testler (çıkış kodu 0 = geçti)",
-      "godot --path . res://tests/ekran.tscn -- 2 <klasör>   # 3. bölümü sürüp ekran görüntüsü al",
-      "godot --path . res://tests/ekran.tscn -- -1 <klasör>  # menü / bölüm seç / ayarlar",
-      "godot --path . res://tests/ekran.tscn -- -2 <klasör>  # yayın paketi görselleri + kapak",
-      "godot --path . res://tests/ekran.tscn -- -3 <klasör>  # tur 2 özelliklerinin denetim kareleri",
-      "godot --path . res://tests/ekran.tscn -- -7 <klasör>  # tur 5 (v0.6): HUD solması, hayalet yarışı, paylaşım, parıltı",
-      "godot --path . res://tests/ekran.tscn -- -8 <klasör>  # tur 6 (v0.7): yasak bölge, tek yönlü platform, tabela, süre listesi"
+      "godot --path . res://tests/ekran.tscn -- 2 <klasör>   # 3. bölümü sürüp ekran görüntüsü al"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 32906,
+     "value": 26140,
      "unit": "bytes",
-     "detail": "32906 bytes, 20 sections, 7 images",
+     "detail": "26140 bytes, 18 sections, 12 images",
      "evidence": [
+      "Nasıl oynarım?",
       "Kontroller",
       "Bölümde ne var",
       "Okunurluk ve yardım",
       "Lisanslar",
       "Ekranlar",
-      "Nasıl çalıştırılır",
-      "Godot kurmadan bir paket indir",
-      "Kod düzeni",
-      "1. turda verilen kararlar (v0.2 — ilk yayına hazır sürüm)",
-      "2. turda verilen kararlar (v0.3 — rakip analizinden)"
+      "Platform ve performans",
+      "Kaynaktan çalıştır",
+      "Elle duman testi (2 dakika)",
+      "Geliştirici komutları"
      ],
      "headroom": 0.0
     },
@@ -4892,13 +5179,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 853,
+     "value": 1104,
      "unit": "lines",
      "detail": "scripts/oyun.gd is the longest source file",
      "evidence": [
       "scripts/oyun.gd"
      ],
-     "headroom": 0.3775
+     "headroom": 0.5866666666666667
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -4910,13 +5197,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 17,
+     "value": 23,
      "unit": "commits since last tag",
-     "detail": "last tag v0.7.2, 17 commits since",
+     "detail": "last tag v0.7.2, 23 commits since",
      "evidence": [
       "v0.7.2"
      ],
-     "headroom": 0.68
+     "headroom": 0.92
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -4930,8 +5217,8 @@
    "opportunities": [
     {
      "signal": "release_lag",
-     "headroom": 0.68,
-     "note": "last tag v0.7.2, 17 commits since",
+     "headroom": 0.92,
+     "note": "last tag v0.7.2, 23 commits since",
      "evidence": [
       "v0.7.2"
      ]
@@ -4946,9 +5233,17 @@
      ]
     },
     {
+     "signal": "largest_source_file",
+     "headroom": 0.587,
+     "note": "scripts/oyun.gd is the longest source file",
+     "evidence": [
+      "scripts/oyun.gd"
+     ]
+    },
+    {
      "signal": "undocumented_surface",
-     "headroom": 0.38,
-     "note": "19 of 50 public symbols carry no doc comment",
+     "headroom": 0.481,
+     "note": "26 of 54 public symbols carry no doc comment",
      "evidence": [
       "arac/uret_bolumler.py:93 yasak_listesi",
       "arac/uret_bolumler.py:97 tek_listesi",
@@ -4959,19 +5254,13 @@
      ]
     },
     {
-     "signal": "largest_source_file",
-     "headroom": 0.378,
-     "note": "scripts/oyun.gd is the longest source file",
-     "evidence": [
-      "scripts/oyun.gd"
-     ]
-    },
-    {
      "signal": "test_mass",
-     "headroom": 0.113,
-     "note": "246890 source bytes, 109441 test bytes in 2 files",
+     "headroom": 0.007,
+     "note": "291784 source bytes, 144852 test bytes in 4 files",
      "evidence": [
       "tests/ekran.gd",
+      "tests/kapi.sh",
+      "tests/kapi_sinama.sh",
       "tests/testler.gd"
      ]
     }
