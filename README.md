@@ -283,10 +283,9 @@ another repository.
 - Discovery lists one account's public, non-fork repositories, and the work log links
   repositories under `github.com/Furkiozknn`: it is built for this account.
 - Signals are heuristics over files, not builds. They are wrong sometimes — the round notes
-  below are mostly about exactly that — which is why they rank and never decide.
-- `release_lag` and the "unchanged since its last record" rule need a real git checkout.
-  The surveys committed in `durum/` today were taken from copies without `.git`, so those
-  two are empty there until the weekly round retakes them.
+  above are mostly about exactly that — which is why they rank and never decide.
+- `release_lag` and the "unchanged since its last record" rule need a real git checkout;
+  a survey taken from a copy without `.git` leaves both empty.
 
 ## Working on this repository
 
