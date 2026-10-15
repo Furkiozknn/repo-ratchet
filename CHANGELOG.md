@@ -5,12 +5,13 @@ yet; the first tag will be `v0.2.0`.
 
 ## Unreleased
 
+- New signal `unpinned_actions`: workflow steps (and a root `action.yml`'s composite steps) that run an action by a tag or branch instead of a full commit SHA. It is OpenSSF Scorecard's Pinned-Dependencies question, read from the files: the value is the count, the evidence names each `file:line ref`, and the headroom is the unpinned share. Local actions and `docker://` images are not counted. On this repository: 6 of 6 references are tags (all `actions/*`). Thirteen signals now.
 - A path that is not a directory (`survey --path`, `check`) is refused in words, exit 2.
 - `record --verifications` with a file that is not JSON / not a `check --out` file is refused (exit 2) instead of a traceback with exit 1.
 - `queue` with no surveys says which file it looked at and how to make one; `--help` states the flow and the exit codes.
 - The work log says "1 repository" / "1 check recorded" when it is one.
 - README: one-sentence definition, one `uvx` command, a demo recorded from real output (`docs/demo/`); the old reel, which had no generator in the repository, is gone.
-- 167 tests.
+- 172 tests.
 
 ## v0.2.0 — 2026-09-25
 

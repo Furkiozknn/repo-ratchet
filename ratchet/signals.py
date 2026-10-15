@@ -409,6 +409,65 @@ def ci_breadth(root: Path) -> Signal:
     )
 
 
+#: `uses: owner/repo@ref` or `uses: owner/repo/path@ref` in a workflow step or
+#: a composite action. The ref is read up to whitespace, a quote or a comment.
+USES = re.compile(r"""^\s*(?:-\s*)?uses:\s*['"]?([^'"\s#]+)""")
+FULL_SHA = re.compile(r"^[0-9a-f]{40}$")
+#: Owners whose actions ship with GitHub itself. Still movable when pinned by
+#: tag, so they are counted, but reported apart from third-party ones.
+FIRST_PARTY = {"actions", "github"}
+
+
+def unpinned_actions(root: Path) -> Signal:
+    """Workflow steps that run an action by a movable tag instead of a commit.
+
+    `uses: someone/thing@v3` runs whatever that tag points at on the day the
+    job starts, and a tag can be moved by whoever controls the repository -
+    the tj-actions/changed-files compromise of March 2025 rewrote every tag of
+    an action thousands of workflows used. A full commit SHA cannot be moved.
+    This is OpenSSF Scorecard's Pinned-Dependencies question, answered from
+    the files alone: local actions (`./x`) and container images
+    (`docker://...`) are not GitHub refs and are not counted.
+    """
+    files: list[Path] = []
+    wf_dir = root / ".github" / "workflows"
+    if wf_dir.is_dir():
+        files += sorted(p for p in wf_dir.glob("*.y*ml") if _own(root, p))
+    for name in ("action.yml", "action.yaml"):
+        if _own(root, root / name):
+            files.append(root / name)
+    if not files:
+        return Signal("unpinned_actions", None, detail="no workflows and no action.yml")
+    total = 0
+    loose: list[str] = []
+    third_party = 0
+    for p in files:
+        rel = p.relative_to(root).as_posix()
+        for i, line in enumerate(_read(p).splitlines(), 1):
+            m = USES.match(line)
+            if not m:
+                continue
+            ref = m.group(1)
+            if ref.startswith(("./", "../", "docker://")) or "@" not in ref:
+                continue
+            total += 1
+            target, _, version = ref.rpartition("@")
+            if FULL_SHA.match(version):
+                continue
+            loose.append("%s:%d %s" % (rel, i, ref))
+            if target.split("/")[0].lower() not in FIRST_PARTY:
+                third_party += 1
+    if total == 0:
+        return Signal("unpinned_actions", None, detail="no action references in %d files" % len(files))
+    return Signal(
+        "unpinned_actions", len(loose), unit="action references",
+        detail="%d of %d action references are a tag or branch, not a commit SHA "
+               "(%d of them outside actions/ and github/)" % (len(loose), total, third_party),
+        evidence=loose[:8],
+        headroom=round(len(loose) / total, 3) if loose else 0.0,
+    )
+
+
 def readme_commands(root: Path) -> Signal:
     """Shell commands the README tells a reader to run.
 
@@ -596,6 +655,7 @@ ALL = (
     test_count,
     undocumented_surface,
     ci_breadth,
+    unpinned_actions,
     readme_commands,
     readme_depth,
     todo_density,
