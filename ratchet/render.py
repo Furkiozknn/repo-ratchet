@@ -50,6 +50,63 @@ def survey_text(s: Survey) -> str:
     return "\n".join(lines) + "\n"
 
 
+def _cell(text: object) -> str:
+    """A value made safe for one Markdown table cell."""
+    return str(text).replace("\\", "\\\\").replace("|", "\\|").replace("\n", " ")
+
+
+def queue_markdown(round_n: int, queue: list[Entry], finished: list[Entry]) -> str:
+    """The queue as Markdown: a GitHub step summary, an issue, a pull request.
+
+    Same entries and the same order as `queue_text`; the evidence stays
+    attached to every row, because a ranking without its reasons is the
+    checklist this engine refuses to be.
+    """
+    lines = ["### ratchet queue - round %d" % round_n, "",
+             "%d waiting, %d already recorded." % (len(queue), len(finished)), ""]
+    if not queue:
+        lines.append("Nothing waiting: every surveyed repository has a record in this round.")
+    else:
+        lines.append("| # | Repository | Headroom | Where the room is | Candidates |")
+        lines.append("| ---: | --- | ---: | --- | --- |")
+        for i, e in enumerate(queue, 1):
+            repo = "`%s`" % _cell(e.repo)
+            if e.unchanged_since_last_record:
+                repo += " (unchanged since its last record)"
+            lines.append("| %d | %s | %.2f | %s | %s |" % (
+                i, repo, e.headroom, _cell(e.reason),
+                "<br>".join(_cell(c) for c in e.candidates[:3]) or "-"))
+    if finished:
+        lines.append("")
+        lines.append("Recorded this round: " + ", ".join("`%s`" % _cell(e.repo) for e in finished))
+    lines.append("")
+    lines.append("<sub>Every entry is a candidate, not an instruction.</sub>")
+    return "\n".join(lines) + "\n"
+
+
+def survey_markdown(s: Survey) -> str:
+    """One repository's measurements as a Markdown table, `None` shown as a dash."""
+    lines = ["### ratchet survey - `%s` @ %s" % (_cell(s.repo), (s.head or "no git")[:12]), "",
+             "Taken %s. Total headroom **%.2f** across %d signals."
+             % (s.taken_at, s.total_headroom, len(s.opportunities)), "",
+             "| Signal | Value | Detail | Headroom |", "| --- | --- | --- | ---: |"]
+    for name, d in sorted(s.signals.items()):
+        value = d.get("value")
+        if value is None:
+            shown = "-"
+        elif isinstance(value, (dict, list)):
+            shown = json.dumps(value, ensure_ascii=False)
+        else:
+            shown = str(value)
+        if value is not None and d.get("unit"):
+            shown += " " + d["unit"]
+        head = d.get("headroom")
+        lines.append("| `%s` | %s | %s | %s |" % (
+            name, _cell(shown), _cell(d.get("detail") or ""),
+            "-" if head is None else "%.2f" % head))
+    return "\n".join(lines) + "\n"
+
+
 def records_markdown(records: list[Record]) -> str:
     """The work log, as the repository's own README-facing table."""
     if not records:

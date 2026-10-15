@@ -75,6 +75,10 @@ ratchet record some-repo --round 2 --outcome advanced \
 ratchet report --out KAYITLAR.md     # the work log
 ```
 
+`queue --markdown` and `survey --path . --markdown` print the same numbers as a Markdown
+table, with each row's evidence still attached. They are meant for a GitHub step summary
+(`ratchet queue --markdown >> "$GITHUB_STEP_SUMMARY"`), an issue or a pull request.
+
 `discover` is the only command that talks to the GitHub API; `survey` clones over HTTPS.
 Everything else works offline on the files in `durum/` and `kayitlar/`.
 
@@ -296,7 +300,7 @@ python3 -m pip install pytest
 python3 -m pytest
 ```
 
-172 tests, on Linux, macOS and Windows with Python 3.11–3.14 in CI. The suite builds
+177 tests, on Linux, macOS and Windows with Python 3.11–3.14 in CI. The suite builds
 throwaway repositories on disk — including real git ones, for the signals that need
 history — so every measurement is tested against a repository it has never seen. The record rules and the
 fence get the heaviest coverage, because a record that can lie is a record that will, and
