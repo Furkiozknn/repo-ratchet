@@ -240,6 +240,59 @@ def test_ci_breadth_none_without_workflows(make_repo):
     assert signals.ci_breadth(root).value is None
 
 
+SHA = "0123456789abcdef0123456789abcdef01234567"
+
+
+def test_unpinned_actions_counts_tags_and_branches_but_not_shas(make_repo):
+    root = make_repo("pin1", {
+        ".github/workflows/ci.yml": (
+            "jobs:\n  a:\n    runs-on: ubuntu-latest\n    steps:\n"
+            "      - uses: actions/checkout@v7\n"
+            "      - uses: someone/thing@%s  # v2.1.0\n"
+            "      - name: x\n        uses: 'other/tool@main'\n"
+            "      - uses: ./local-action\n"
+            "      - uses: docker://alpine:3.20\n" % SHA
+        ),
+    })
+    s = signals.unpinned_actions(root)
+    assert s.value == 2
+    assert s.headroom == round(2 / 3, 3)
+    assert s.evidence == [".github/workflows/ci.yml:5 actions/checkout@v7",
+                          ".github/workflows/ci.yml:8 other/tool@main"]
+    assert "1 of them outside actions/ and github/" in s.detail
+
+
+def test_a_fully_pinned_repository_has_no_headroom(make_repo):
+    root = make_repo("pin2", {
+        ".github/workflows/ci.yml": "steps:\n  - uses: actions/checkout@%s\n" % SHA,
+    })
+    s = signals.unpinned_actions(root)
+    assert s.value == 0 and s.headroom == 0.0
+
+
+def test_a_composite_action_at_the_root_is_read_too(make_repo):
+    # godot-refcheck and repo-vet ship one; its `uses:` run in other people's jobs.
+    root = make_repo("pin3", {
+        "action.yml": "runs:\n  using: composite\n  steps:\n    - uses: actions/setup-python@v6\n",
+    })
+    s = signals.unpinned_actions(root)
+    assert s.value == 1 and s.evidence == ["action.yml:4 actions/setup-python@v6"]
+
+
+def test_unpinned_actions_is_none_without_workflows_or_references(make_repo):
+    assert signals.unpinned_actions(make_repo("pin4", {"a.py": "x\n"})).value is None
+    root = make_repo("pin5", {".github/workflows/ci.yml": "jobs:\n  a:\n    steps:\n      - run: make\n"})
+    s = signals.unpinned_actions(root)
+    assert s.value is None and "no action references" in s.detail
+
+
+def test_a_reusable_workflow_reference_is_an_action_reference(make_repo):
+    root = make_repo("pin6", {
+        ".github/workflows/ci.yml": "jobs:\n  call:\n    uses: org/repo/.github/workflows/x.yml@v1\n",
+    })
+    assert signals.unpinned_actions(root).value == 1
+
+
 def test_readme_commands_extracts_shell_blocks(make_repo):
     root = make_repo("o", {
         "README.md": "# t\n\n```sh\n$ pip install x\n# a comment\npytest -q\n```\n",

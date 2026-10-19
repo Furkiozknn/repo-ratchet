@@ -1,43 +1,43 @@
 {
  "schema": 1,
- "generated": "2026-10-05T12:36:52Z",
+ "generated": "2026-10-12T13:31:23Z",
  "surveys": [
   {
    "schema": 1,
    "repo": "Furkiozknn",
-   "head": "cdef25d7b5a3d516e56f0b045fe84f7f1be224a1",
-   "taken_at": "2026-10-05T12:36:26Z",
-   "total_headroom": 1.945,
+   "head": "0e2ccb5c9adeb634ba5442601f629164d1cec633",
+   "taken_at": "2026-10-12T13:30:27Z",
+   "total_headroom": 1.921,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 140950
+      "python": 142262
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 140950 bytes"
+      "python 142262 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.391,
+     "value": 0.397,
      "unit": "test bytes per source byte",
-     "detail": "101327 source bytes, 39623 test bytes in 1 files",
+     "detail": "101858 source bytes, 40404 test bytes in 1 files",
      "evidence": [
       "schema/test_schema.py"
      ],
-     "headroom": 0.21791822515222992
+     "headroom": 0.20666025250839404
     },
     "test_count": {
      "name": "test_count",
-     "value": 98,
+     "value": 101,
      "unit": "cases",
-     "detail": "98 cases across 1 files",
+     "detail": "101 cases across 1 files",
      "evidence": [
-      "schema/test_schema.py: 98"
+      "schema/test_schema.py: 101"
      ],
      "headroom": null
     },
@@ -45,7 +45,7 @@
      "name": "undocumented_surface",
      "value": 17,
      "unit": "symbols",
-     "detail": "17 of 36 public symbols carry no doc comment",
+     "detail": "17 of 37 public symbols carry no doc comment",
      "evidence": [
       "schema/denetim.py:829 main",
       "schema/koruma.py:67 main",
@@ -54,9 +54,9 @@
       "schema/uret.py:73 surum",
       "schema/uret.py:140 ilk",
       "schema/uret.py:147 uret",
-      "schema/uret.py:202 main"
+      "schema/uret.py:215 main"
      ],
-     "headroom": 0.472
+     "headroom": 0.459
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -84,9 +84,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 17639,
+     "value": 17806,
      "unit": "bytes",
-     "detail": "17639 bytes, 20 sections, 19 images",
+     "detail": "17806 bytes, 20 sections, 19 images",
      "evidence": [
       "▸ No install, no signup — just click",
       "🚀 [nova-drift →](https://furkiozknn.github.io/nova-drift/)",
@@ -131,7 +131,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (114 commits on HEAD)",
+     "detail": "never tagged (128 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -151,13 +151,13 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (114 commits on HEAD)",
+     "note": "never tagged (128 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "undocumented_surface",
-     "headroom": 0.472,
-     "note": "17 of 36 public symbols carry no doc comment",
+     "headroom": 0.459,
+     "note": "17 of 37 public symbols carry no doc comment",
      "evidence": [
       "schema/denetim.py:829 main",
       "schema/koruma.py:67 main",
@@ -190,8 +190,8 @@
     },
     {
      "signal": "test_mass",
-     "headroom": 0.218,
-     "note": "101327 source bytes, 39623 test bytes in 1 files",
+     "headroom": 0.207,
+     "note": "101858 source bytes, 40404 test bytes in 1 files",
      "evidence": [
       "schema/test_schema.py"
      ]
@@ -201,8 +201,8 @@
   {
    "schema": 1,
    "repo": "Furkiozknn.github.io",
-   "head": "9e7872c4d6bb23801489537a47f3f058f12e2aa5",
-   "taken_at": "2026-10-05T12:36:26Z",
+   "head": "0db2ef9b290624aed8501359d6e37f44bce66dd4",
+   "taken_at": "2026-10-12T13:30:28Z",
    "total_headroom": 1.193,
    "signals": {
     "languages": {
@@ -312,7 +312,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (16 commits on HEAD)",
+     "detail": "never tagged (17 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -340,7 +340,7 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (16 commits on HEAD)",
+     "note": "never tagged (17 commits on HEAD)",
      "evidence": []
     },
     {
@@ -357,7 +357,7 @@
    "schema": 1,
    "repo": "ai-job-gateway",
    "head": "b7abf24dee0d638d24e47a06fcc2d2ad7c5ae44d",
-   "taken_at": "2026-10-05T12:36:27Z",
+   "taken_at": "2026-10-12T13:30:30Z",
    "total_headroom": 1.448,
    "signals": {
     "languages": {
@@ -554,7 +554,7 @@
    "schema": 1,
    "repo": "ai-workflow-engine",
    "head": "3a9286f1d6e2852aaef78d137c10c953fc9b598c",
-   "taken_at": "2026-10-05T12:36:27Z",
+   "taken_at": "2026-10-12T13:30:31Z",
    "total_headroom": 1.409,
    "signals": {
     "languages": {
@@ -746,7 +746,7 @@
    "schema": 1,
    "repo": "ajans-os",
    "head": "073b20bc6357c3525a10d2f96fae3db08e5b0ded",
-   "taken_at": "2026-10-05T12:36:28Z",
+   "taken_at": "2026-10-12T13:30:32Z",
    "total_headroom": 1.686,
    "signals": {
     "languages": {
@@ -947,7 +947,7 @@
    "schema": 1,
    "repo": "asset-provenance-toolkit",
    "head": "457f2280a4acb9557ce2995a217753526fe041d9",
-   "taken_at": "2026-10-05T12:36:29Z",
+   "taken_at": "2026-10-12T13:30:34Z",
    "total_headroom": 1.738,
    "signals": {
     "languages": {
@@ -1142,9 +1142,9 @@
   {
    "schema": 1,
    "repo": "buradane",
-   "head": "35d70025cfd3d7c3b4cbe53ebec7ee413bde3c30",
-   "taken_at": "2026-10-05T12:36:31Z",
-   "total_headroom": 2.664,
+   "head": "53ddf6741560c138d25b9b58b43e309f27cfb13c",
+   "taken_at": "2026-10-12T13:30:36Z",
+   "total_headroom": 2.704,
    "signals": {
     "languages": {
      "name": "languages",
@@ -1286,13 +1286,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 1,
+     "value": 2,
      "unit": "commits since last tag",
-     "detail": "last tag v1.1.0, 1 commits since",
+     "detail": "last tag v1.1.0, 2 commits since",
      "evidence": [
       "v1.1.0"
      ],
-     "headroom": 0.04
+     "headroom": 0.08
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -1351,8 +1351,8 @@
     },
     {
      "signal": "release_lag",
-     "headroom": 0.04,
-     "note": "last tag v1.1.0, 1 commits since",
+     "headroom": 0.08,
+     "note": "last tag v1.1.0, 2 commits since",
      "evidence": [
       "v1.1.0"
      ]
@@ -1363,7 +1363,7 @@
    "schema": 1,
    "repo": "claude-code-intelligence",
    "head": "5d2f6c4052dfba53028157f399ac6adfa5f72732",
-   "taken_at": "2026-10-05T12:36:32Z",
+   "taken_at": "2026-10-12T13:30:38Z",
    "total_headroom": 2.364,
    "signals": {
     "languages": {
@@ -1571,7 +1571,7 @@
    "schema": 1,
    "repo": "derin-kazi",
    "head": "2b9c32d29e6a2726610717a16091c84414b1f5ef",
-   "taken_at": "2026-10-05T12:36:35Z",
+   "taken_at": "2026-10-12T13:30:42Z",
    "total_headroom": 3.393,
    "signals": {
     "languages": {
@@ -1765,7 +1765,7 @@
    "schema": 1,
    "repo": "godot-2d-sablon",
    "head": "af71a93ed3e310ae1071ac785c84fdce41d05c03",
-   "taken_at": "2026-10-05T12:36:35Z",
+   "taken_at": "2026-10-12T13:30:44Z",
    "total_headroom": 1.689,
    "signals": {
     "languages": {
@@ -1950,7 +1950,7 @@
    "schema": 1,
    "repo": "godot-refcheck",
    "head": "d999cd882bb3d023d73ac3882d23e6ba9ab24603",
-   "taken_at": "2026-10-05T12:36:36Z",
+   "taken_at": "2026-10-12T13:30:45Z",
    "total_headroom": 2.162,
    "signals": {
     "languages": {
@@ -2161,7 +2161,7 @@
    "schema": 1,
    "repo": "kanca",
    "head": "4991a3396323aa77c2687f7f5c68f2153fdd9797",
-   "taken_at": "2026-10-05T12:36:39Z",
+   "taken_at": "2026-10-12T13:30:55Z",
    "total_headroom": 3.367,
    "signals": {
     "languages": {
@@ -2357,7 +2357,7 @@
    "schema": 1,
    "repo": "local-notes-search-mcp",
    "head": "d3323ba835c6e3b7fed7fd5f6c4cd587b02fc1d6",
-   "taken_at": "2026-10-05T12:36:39Z",
+   "taken_at": "2026-10-12T13:30:57Z",
    "total_headroom": 2.146,
    "signals": {
     "languages": {
@@ -2554,7 +2554,7 @@
    "schema": 1,
    "repo": "masal",
    "head": "2b48b3276c54a3e39a07b80e07eb461b3e1d112f",
-   "taken_at": "2026-10-05T12:36:40Z",
+   "taken_at": "2026-10-12T13:30:58Z",
    "total_headroom": 2.177,
    "signals": {
     "languages": {
@@ -2738,7 +2738,7 @@
    "schema": 1,
    "repo": "mcp-census",
    "head": "115329c56d9aaf82aa5f2ec41637dd4e5fb43005",
-   "taken_at": "2026-10-05T12:36:40Z",
+   "taken_at": "2026-10-12T13:30:59Z",
    "total_headroom": 1.861,
    "signals": {
     "languages": {
@@ -2940,7 +2940,7 @@
    "schema": 1,
    "repo": "mcp-vet",
    "head": "836f7a2840a5449ba239fc51b2ba333fd532e2c9",
-   "taken_at": "2026-10-05T12:36:41Z",
+   "taken_at": "2026-10-12T13:31:01Z",
    "total_headroom": 1.721,
    "signals": {
     "languages": {
@@ -3140,29 +3140,29 @@
   {
    "schema": 1,
    "repo": "mini-creative-toolkit",
-   "head": "5eff86cb8f8f2e89cf80653c7c9d084a99f9e33f",
-   "taken_at": "2026-10-05T12:36:42Z",
-   "total_headroom": 1.56,
+   "head": "c26d0f5ef120dce75536267a5a6f6cf48ac1ad65",
+   "taken_at": "2026-10-12T13:31:02Z",
+   "total_headroom": 1.748,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 312538,
+      "python": 352060,
       "javascript": 2383
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 312538 bytes",
+      "python 352060 bytes",
       "javascript 2383 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.47,
+     "value": 0.524,
      "unit": "test bytes per source byte",
-     "detail": "214185 source bytes, 100736 test bytes in 13 files",
+     "detail": "232635 source bytes, 121808 test bytes in 13 files",
      "evidence": [
       "tests/conftest.py",
       "tests/helpers.py",
@@ -3171,22 +3171,22 @@
       "tests/test_cli_and_server.py",
       "tests/test_hosted_generation.py"
      ],
-     "headroom": 0.059355230291570416
+     "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 229,
+     "value": 258,
      "unit": "cases",
-     "detail": "229 cases across 11 files",
+     "detail": "258 cases across 11 files",
      "evidence": [
-      "tests/test_batch.py: 14",
-      "tests/test_capabilities_and_config.py: 26",
-      "tests/test_cli_and_server.py: 42",
-      "tests/test_hosted_generation.py: 18",
-      "tests/test_image_tools.py: 27",
-      "tests/test_inspect_optimize_upscale.py: 24",
-      "tests/test_model_caching.py: 6",
-      "tests/test_paths_security.py: 21"
+      "tests/test_batch.py: 17",
+      "tests/test_capabilities_and_config.py: 28",
+      "tests/test_cli_and_server.py: 46",
+      "tests/test_hosted_generation.py: 19",
+      "tests/test_image_tools.py: 33",
+      "tests/test_inspect_optimize_upscale.py: 25",
+      "tests/test_model_caching.py: 7",
+      "tests/test_paths_security.py: 25"
      ],
      "headroom": null
     },
@@ -3194,7 +3194,7 @@
      "name": "undocumented_surface",
      "value": 79,
      "unit": "symbols",
-     "detail": "79 of 140 public symbols carry no doc comment",
+     "detail": "79 of 141 public symbols carry no doc comment",
      "evidence": [
       "scripts/mcp_probe.py:28 Client",
       "scripts/mcp_probe.py:81 main",
@@ -3205,7 +3205,7 @@
       "scripts/demo-uret.py:185 write_pages",
       "scripts/demo-uret.py:200 record_video"
      ],
-     "headroom": 0.564
+     "headroom": 0.56
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -3220,9 +3220,9 @@
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 38,
+     "value": 40,
      "unit": "commands",
-     "detail": "38 runnable-looking commands in 12 shell blocks",
+     "detail": "40 runnable-looking commands in 12 shell blocks",
      "evidence": [
       "uvx --from git+https://github.com/Furkiozknn/mini-creative-toolkit mct inspect photo.jpg",
       "claude mcp add --transport stdio mini-creative-toolkit -- uvx --from git+https://github.com/Furkiozknn/mini-creative-toolkit mct serve",
@@ -3237,9 +3237,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 25525,
+     "value": 26891,
      "unit": "bytes",
-     "detail": "25525 bytes, 25 sections, 11 images",
+     "detail": "26891 bytes, 25 sections, 11 images",
      "evidence": [
       "Contents",
       "Why this exists",
@@ -3264,13 +3264,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 524,
+     "value": 826,
      "unit": "lines",
-     "detail": "src/mini_creative_toolkit/cli.py is the longest source file",
+     "detail": "src/mini_creative_toolkit/server.py is the longest source file",
      "evidence": [
-      "src/mini_creative_toolkit/cli.py"
+      "src/mini_creative_toolkit/server.py"
      ],
-     "headroom": 0.10333333333333333
+     "headroom": 0.355
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -3284,7 +3284,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (46 commits on HEAD)",
+     "detail": "never tagged (49 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -3300,8 +3300,8 @@
    "opportunities": [
     {
      "signal": "undocumented_surface",
-     "headroom": 0.564,
-     "note": "79 of 140 public symbols carry no doc comment",
+     "headroom": 0.56,
+     "note": "79 of 141 public symbols carry no doc comment",
      "evidence": [
       "scripts/mcp_probe.py:28 Client",
       "scripts/mcp_probe.py:81 main",
@@ -3314,8 +3314,16 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (46 commits on HEAD)",
+     "note": "never tagged (49 commits on HEAD)",
      "evidence": []
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.355,
+     "note": "src/mini_creative_toolkit/server.py is the longest source file",
+     "evidence": [
+      "src/mini_creative_toolkit/server.py"
+     ]
     },
     {
      "signal": "ci_breadth",
@@ -3325,27 +3333,6 @@
       "ci.yml",
       "yayinla.yml"
      ]
-    },
-    {
-     "signal": "largest_source_file",
-     "headroom": 0.103,
-     "note": "src/mini_creative_toolkit/cli.py is the longest source file",
-     "evidence": [
-      "src/mini_creative_toolkit/cli.py"
-     ]
-    },
-    {
-     "signal": "test_mass",
-     "headroom": 0.059,
-     "note": "214185 source bytes, 100736 test bytes in 13 files",
-     "evidence": [
-      "tests/conftest.py",
-      "tests/helpers.py",
-      "tests/test_batch.py",
-      "tests/test_capabilities_and_config.py",
-      "tests/test_cli_and_server.py",
-      "tests/test_hosted_generation.py"
-     ]
     }
    ]
   },
@@ -3353,7 +3340,7 @@
    "schema": 1,
    "repo": "model-comparison-harness",
    "head": "6d13b3e6c55af2de0f6ed5c9cf57783f3e84bc61",
-   "taken_at": "2026-10-05T12:36:43Z",
+   "taken_at": "2026-10-12T13:31:03Z",
    "total_headroom": 1.596,
    "signals": {
     "languages": {
@@ -3541,7 +3528,7 @@
    "schema": 1,
    "repo": "nova-drift",
    "head": "1639fe84579bc0d80e3a7490ac2f4705ad8221a5",
-   "taken_at": "2026-10-05T12:36:44Z",
+   "taken_at": "2026-10-12T13:31:06Z",
    "total_headroom": 1.494,
    "signals": {
     "languages": {
@@ -3712,7 +3699,7 @@
    "schema": 1,
    "repo": "nvidia-nim-mcp",
    "head": "62a2a7b71dd5e86315f564e0b01241926e254ae0",
-   "taken_at": "2026-10-05T12:36:44Z",
+   "taken_at": "2026-10-12T13:31:07Z",
    "total_headroom": 2.247,
    "signals": {
     "languages": {
@@ -3914,7 +3901,7 @@
    "schema": 1,
    "repo": "prompt-template-manager",
    "head": "da483cc01a7d5ca67b64b54e16aa0191b9d71292",
-   "taken_at": "2026-10-05T12:36:45Z",
+   "taken_at": "2026-10-12T13:31:08Z",
    "total_headroom": 1.667,
    "signals": {
     "languages": {
@@ -4106,8 +4093,8 @@
   {
    "schema": 1,
    "repo": "repo-ratchet",
-   "head": "7a29b220d3cdd7a8e8f15abec6dc1607c9e6c68f",
-   "taken_at": "2026-10-05T12:36:45Z",
+   "head": "7a1ed6e13ac627268c68f8cbdb9526748811e379",
+   "taken_at": "2026-10-12T13:31:09Z",
    "total_headroom": 0.768,
    "signals": {
     "languages": {
@@ -4242,7 +4229,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (21 commits on HEAD)",
+     "detail": "never tagged (22 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -4259,7 +4246,7 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (21 commits on HEAD)",
+     "note": "never tagged (22 commits on HEAD)",
      "evidence": []
     },
     {
@@ -4288,7 +4275,7 @@
    "schema": 1,
    "repo": "repo-vet",
    "head": "fae6545c20201d3b7e893c2391f4594e66486856",
-   "taken_at": "2026-10-05T12:36:46Z",
+   "taken_at": "2026-10-12T13:31:11Z",
    "total_headroom": 1.37,
    "signals": {
     "languages": {
@@ -4483,7 +4470,7 @@
    "schema": 1,
    "repo": "tek-tus-kosu",
    "head": "aca636395f9315ab3c4c8eb7c96eb5446fea9789",
-   "taken_at": "2026-10-05T12:36:47Z",
+   "taken_at": "2026-10-12T13:31:14Z",
    "total_headroom": 3.446,
    "signals": {
     "languages": {
@@ -4673,7 +4660,7 @@
    "schema": 1,
    "repo": "turkce-ajanlar",
    "head": "16d3e226c9d45e4ebb3a4fa1ce02a336ede314c6",
-   "taken_at": "2026-10-05T12:36:48Z",
+   "taken_at": "2026-10-12T13:31:16Z",
    "total_headroom": 2.2,
    "signals": {
     "languages": {
@@ -4863,7 +4850,7 @@
    "schema": 1,
    "repo": "voice-io-mcp",
    "head": "bc4169c44423bcf52bc96041e501e2960b2da824",
-   "taken_at": "2026-10-05T12:36:49Z",
+   "taken_at": "2026-10-12T13:31:18Z",
    "total_headroom": 2.001,
    "signals": {
     "languages": {
@@ -5063,7 +5050,7 @@
    "schema": 1,
    "repo": "yercekimi-cevir",
    "head": "8c30c46b5bc93c0677fe818a0609e650bafb9ded",
-   "taken_at": "2026-10-05T12:36:52Z",
+   "taken_at": "2026-10-12T13:31:23Z",
    "total_headroom": 2.661,
    "signals": {
     "languages": {

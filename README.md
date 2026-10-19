@@ -15,7 +15,7 @@ Standard library only, no network for most commands.
 uvx --from git+https://github.com/Furkiozknn/repo-ratchet ratchet survey --path .
 ```
 
-That measures the checkout you are standing in (twelve signals, nothing inside it is executed) and prints the
+That measures the checkout you are standing in (thirteen signals, nothing inside it is executed) and prints the
 evidence behind each number. Measured cold on Windows 11 / Python 3.12: **15 s** from an empty cache to the
 first result. No `uv`? `python -m pip install git+https://github.com/Furkiozknn/repo-ratchet`, then the same
 `ratchet survey --path .`.
@@ -75,6 +75,10 @@ ratchet record some-repo --round 2 --outcome advanced \
 ratchet report --out KAYITLAR.md     # the work log
 ```
 
+`queue --markdown` and `survey --path . --markdown` print the same numbers as a Markdown
+table, with each row's evidence still attached. They are meant for a GitHub step summary
+(`ratchet queue --markdown >> "$GITHUB_STEP_SUMMARY"`), an issue or a pull request.
+
 `discover` is the only command that talks to the GitHub API; `survey` clones over HTTPS.
 Everything else works offline on the files in `durum/` and `kayitlar/`.
 
@@ -128,7 +132,7 @@ refused: a 'no-change' record has to say why
 
 ## What it measures
 
-Twelve signals, each returning a number **and the evidence behind it**. A signal that does
+Thirteen signals, each returning a number **and the evidence behind it**. A signal that does
 not apply returns `None` and stays `None` all the way through — "there is no test directory"
 and "there are zero tests in the test directory" are different facts, and a tool that renders
 both as `0` has destroyed the more useful one.
@@ -140,6 +144,7 @@ both as `0` has destroyed the more useful one.
 | `test_count` | declared test cases, counted per language — `None` rather than `0` when a repository's test files declare their cases in a form this cannot count |
 | `undocumented_surface` | public Python/Rust symbols with no doc comment |
 | `ci_breadth` | how many distinct runners the CI really exercises |
+| `unpinned_actions` | workflow steps that run an action by a movable tag rather than a commit SHA |
 | `readme_commands` | the commands a first-time visitor will paste |
 | `readme_depth` | how much that visitor is told at all |
 | `todo_density` | unfinished business the code admits to |
@@ -294,7 +299,7 @@ python3 -m pip install pytest
 python3 -m pytest
 ```
 
-167 tests, on Linux, macOS and Windows with Python 3.11–3.14 in CI. The suite builds
+177 tests, on Linux, macOS and Windows with Python 3.11–3.14 in CI. The suite builds
 throwaway repositories on disk — including real git ones, for the signals that need
 history — so every measurement is tested against a repository it has never seen. The record rules and the
 fence get the heaviest coverage, because a record that can lie is a record that will, and

@@ -88,7 +88,7 @@ def cmd_survey(args: argparse.Namespace) -> int:
             return 2
         # `--path .` has no name of its own; the directory it resolves to does.
         s = take(Path(args.path), repo=args.repo or Path(args.path).resolve().name)
-        print(render.survey_text(s), end="")
+        print((render.survey_markdown(s) if args.markdown else render.survey_text(s)), end="")
         if args.save:
             existing = {x.repo: x for x in load_all(_surveys_path(state))}
             existing[s.repo] = s
@@ -143,6 +143,9 @@ def cmd_queue(args: argparse.Namespace) -> int:
             "queue": [e.as_dict() for e in queue],
             "finished": [e.as_dict() for e in finished],
         }, indent=1, ensure_ascii=False))
+        return 0
+    if args.markdown:
+        print(render.queue_markdown(round_n, queue, finished), end="")
         return 0
     if args.next:
         if not queue:
@@ -266,12 +269,16 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--depth", type=int, default=0, help="git clone depth, 0 for full (needed for release_lag)")
     s.add_argument("--refresh", action="store_true", help="re-clone even if the checkout is there")
     s.add_argument("--save", action="store_true", help="with --path, add the result to the survey file")
+    s.add_argument("--markdown", action="store_true",
+                   help="with --path, print the measurements as a Markdown table")
     s.set_defaults(fn=cmd_survey)
 
     q = sub.add_parser("queue", help="which repository to open next, and why")
     q.add_argument("--round", type=int)
     q.add_argument("--json", action="store_true")
     q.add_argument("--next", action="store_true", help="print only the next repository name")
+    q.add_argument("--markdown", action="store_true",
+                   help="print the queue as Markdown, e.g. for a GitHub step summary")
     q.set_defaults(fn=cmd_queue)
 
     c = sub.add_parser("check", help="run a repository's own checks, inside the fence")

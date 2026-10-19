@@ -171,6 +171,70 @@ def test_a_round_that_opens_one_repository_twice_still_counts_it_once():
     assert md.count("| [one](") == 2
 
 
+# --- markdown -------------------------------------------------------------
+
+
+def _table_rows(md):
+    return [l for l in md.splitlines() if l.startswith("| ") and not l.startswith("| ---")]
+
+
+def test_queue_markdown_keeps_order_and_evidence(make_repo, tmp_path):
+    from ratchet import plan
+
+    big = take(make_repo("big", {"src/a.py": "def f():\n    return 1\n" * 200}))
+    small = take(make_repo("small", {
+        "src/a.py": 'def f():\n    """Doc."""\n    return 1\n',
+        "tests/test_a.py": "def test_f():\n    assert True\n" * 20,
+        "README.md": "# small\n" + ("prose " * 600),
+    }))
+    round_n, queue, finished = plan.build([small, big], Ledger(tmp_path / "k"))
+    md = render.queue_markdown(round_n, queue, finished)
+    rows = _table_rows(md)
+    assert rows[0].startswith("| # | Repository |")
+    assert rows[1].startswith("| 1 | `big` |") and rows[2].startswith("| 2 | `small` |")
+    assert "candidate, not an instruction" in md
+    # The candidates (signal, headroom, evidence note) travel with the row.
+    assert queue[0].candidates[0].split(" (")[0] in rows[1]
+
+
+def test_queue_markdown_escapes_pipes_and_names_finished_repositories(tmp_path):
+    from ratchet.plan import Entry
+
+    e = Entry(repo="a|b", headroom=1.5, reason="x | y", candidates=["c|d"])
+    md = render.queue_markdown(3, [e], [Entry(repo="done", headroom=0, reason="")])
+    assert "`a\\|b`" in md and "x \\| y" in md and "c\\|d" in md
+    assert "Recorded this round: `done`" in md
+    assert len(_table_rows(md)) == 2
+
+
+def test_an_empty_queue_in_markdown_says_so():
+    assert "Nothing waiting" in render.queue_markdown(1, [], [])
+
+
+def test_survey_markdown_has_one_row_per_signal_and_dashes_for_none(make_repo):
+    from ratchet import signals
+
+    s = take(make_repo("md", {"a.py": "x = 1  # TODO\n"}))
+    md = render.survey_markdown(s)
+    rows = _table_rows(md)[1:]
+    assert len(rows) == len(signals.ALL)
+    ci = [r for r in rows if r.startswith("| `ci_breadth` |")][0]
+    assert ci.startswith("| `ci_breadth` | - |")
+    todo = [r for r in rows if r.startswith("| `todo_density` |")][0]
+    assert "| 1 markers |" in todo
+
+
+def test_cli_markdown_flags(make_repo, tmp_path, capsys):
+    root = make_repo("mdcli", {"src/a.py": "x = 1\n" * 200})
+    assert main(["survey", "--path", str(root), "--markdown"]) == 0
+    assert capsys.readouterr().out.startswith("### ratchet survey - `mdcli`")
+    save_all(tmp_path / "olcumler.json", [take(root)])
+    assert main(["--state", str(tmp_path), "--records", str(tmp_path / "k"),
+                 "queue", "--markdown"]) == 0
+    out = capsys.readouterr().out
+    assert out.startswith("### ratchet queue - round 1") and "| 1 | `mdcli` |" in out
+
+
 # --- command line ---------------------------------------------------------
 
 
