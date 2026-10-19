@@ -1,43 +1,43 @@
 {
  "schema": 1,
- "generated": "2026-10-12T13:31:23Z",
+ "generated": "2026-10-19T11:15:37Z",
  "surveys": [
   {
    "schema": 1,
    "repo": "Furkiozknn",
-   "head": "0e2ccb5c9adeb634ba5442601f629164d1cec633",
-   "taken_at": "2026-10-12T13:30:27Z",
-   "total_headroom": 1.921,
+   "head": "74fa58ca0d6e306d2f57ebefcde2e09654a49561",
+   "taken_at": "2026-10-19T11:14:48Z",
+   "total_headroom": 2.913,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 142262
+      "python": 143354
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 142262 bytes"
+      "python 143354 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.397,
+     "value": 0.401,
      "unit": "test bytes per source byte",
-     "detail": "101858 source bytes, 40404 test bytes in 1 files",
+     "detail": "102346 source bytes, 41008 test bytes in 1 files",
      "evidence": [
       "schema/test_schema.py"
      ],
-     "headroom": 0.20666025250839404
+     "headroom": 0.19863990776385987
     },
     "test_count": {
      "name": "test_count",
-     "value": 101,
+     "value": 102,
      "unit": "cases",
-     "detail": "101 cases across 1 files",
+     "detail": "102 cases across 1 files",
      "evidence": [
-      "schema/test_schema.py: 101"
+      "schema/test_schema.py: 102"
      ],
      "headroom": null
     },
@@ -74,6 +74,23 @@
      ],
      "headroom": 0.3333333333333333
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 18,
+     "unit": "action references",
+     "detail": "18 of 18 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/baglanti.yml:35 actions/checkout@v4",
+      ".github/workflows/ci.yml:41 actions/checkout@v4",
+      ".github/workflows/ci.yml:51 actions/setup-python@v5",
+      ".github/workflows/denetim.yml:40 actions/checkout@v4",
+      ".github/workflows/denetim.yml:50 actions/setup-python@v5",
+      ".github/workflows/denetim.yml:69 actions/upload-artifact@v4",
+      ".github/workflows/guvenlik.yml:41 actions/checkout@v4",
+      ".github/workflows/guvenlik.yml:51 actions/setup-python@v5"
+     ],
+     "headroom": 1.0
+    },
     "readme_commands": {
      "name": "readme_commands",
      "value": 0,
@@ -84,20 +101,15 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 17806,
+     "value": 19022,
      "unit": "bytes",
-     "detail": "17806 bytes, 20 sections, 19 images",
+     "detail": "19022 bytes, 5 sections, 6 images",
      "evidence": [
-      "▸ No install, no signup — just click",
-      "🚀 [nova-drift →](https://furkiozknn.github.io/nova-drift/)",
-      "📖 [masal →](https://furkiozknn.github.io/masal/)",
-      "🇹🇷 [turkce-ajanlar →](https://furkiozknn.github.io/turkce-ajanlar/)",
-      "▸ This is one system, not twenty-seven side projects",
-      "▸ Start here",
-      "▸ Everything, in one table",
-      "Agent infrastructure, MCP and developer tooling",
-      "Games — Godot 4, each one tested headlessly in CI",
-      "▸ Every repository carries its own metadata"
+      "Featured",
+      "Games & apps",
+      "More",
+      "Every project",
+      "How this page stays true"
      ],
      "headroom": 0.0
     },
@@ -131,7 +143,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (128 commits on HEAD)",
+     "detail": "never tagged (132 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -149,9 +161,22 @@
    },
    "opportunities": [
     {
+     "signal": "unpinned_actions",
+     "headroom": 1.0,
+     "note": "18 of 18 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/baglanti.yml:35 actions/checkout@v4",
+      ".github/workflows/ci.yml:41 actions/checkout@v4",
+      ".github/workflows/ci.yml:51 actions/setup-python@v5",
+      ".github/workflows/denetim.yml:40 actions/checkout@v4",
+      ".github/workflows/denetim.yml:50 actions/setup-python@v5",
+      ".github/workflows/denetim.yml:69 actions/upload-artifact@v4"
+     ]
+    },
+    {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (128 commits on HEAD)",
+     "note": "never tagged (132 commits on HEAD)",
      "evidence": []
     },
     {
@@ -190,8 +215,8 @@
     },
     {
      "signal": "test_mass",
-     "headroom": 0.207,
-     "note": "101858 source bytes, 40404 test bytes in 1 files",
+     "headroom": 0.199,
+     "note": "102346 source bytes, 41008 test bytes in 1 files",
      "evidence": [
       "schema/test_schema.py"
      ]
@@ -201,27 +226,27 @@
   {
    "schema": 1,
    "repo": "Furkiozknn.github.io",
-   "head": "0db2ef9b290624aed8501359d6e37f44bce66dd4",
-   "taken_at": "2026-10-12T13:30:28Z",
-   "total_headroom": 1.193,
+   "head": "4438ca5dd16ee34c9b55d2b517aecf42e1896f10",
+   "taken_at": "2026-10-19T11:14:49Z",
+   "total_headroom": 2.369,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 41415
+      "python": 59006
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 41415 bytes"
+      "python 59006 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 1.418,
+     "value": 1.352,
      "unit": "test bytes per source byte",
-     "detail": "17128 source bytes, 24287 test bytes in 1 files",
+     "detail": "25091 source bytes, 33915 test bytes in 1 files",
      "evidence": [
       "tests/test_uret.py"
      ],
@@ -229,21 +254,23 @@
     },
     "test_count": {
      "name": "test_count",
-     "value": 59,
+     "value": 75,
      "unit": "cases",
-     "detail": "59 cases across 1 files",
+     "detail": "75 cases across 1 files",
      "evidence": [
-      "tests/test_uret.py: 59"
+      "tests/test_uret.py: 75"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 0,
+     "value": 1,
      "unit": "symbols",
-     "detail": "0 of 18 public symbols carry no doc comment",
-     "evidence": [],
-     "headroom": 0.0
+     "detail": "1 of 26 public symbols carry no doc comment",
+     "evidence": [
+      "uret.py:166 fetch_bytes"
+     ],
+     "headroom": 0.038
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -256,24 +283,41 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 5,
+     "unit": "action references",
+     "detail": "5 of 5 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:33 actions/checkout@v7",
+      ".github/workflows/ci.yml:34 actions/setup-python@v7",
+      ".github/workflows/ci.yml:46 actions/checkout@v7",
+      ".github/workflows/ci.yml:47 actions/setup-python@v7",
+      ".github/workflows/yenile.yml:25 actions/checkout@v7"
+     ],
+     "headroom": 1.0
+    },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 3,
+     "value": 4,
      "unit": "commands",
-     "detail": "3 runnable-looking commands in 1 shell blocks",
+     "detail": "4 runnable-looking commands in 1 shell blocks",
      "evidence": [
       "python3 uret.py            # fetch every repository's metadata, then render",
       "python3 uret.py --yerel    # render from the snapshot already in veri/",
-      "python3 -m pytest tests -q # 63 tests over the generator"
+      "python3 uret.py --onizleme # refresh only the card previews (raw downloads, no API call)",
+      "python3 -m pytest tests -q # 89 tests over the generator"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 6934,
+     "value": 8973,
      "unit": "bytes",
-     "detail": "6934 bytes, 5 sections, 2 images",
+     "detail": "8973 bytes, 7 sections, 2 images",
      "evidence": [
+      "Try it now",
+      "Card previews",
       "Linking to a project",
       "When a repository's prose disagrees with its own count",
       "What the tests are for",
@@ -292,13 +336,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 432,
+     "value": 597,
      "unit": "lines",
      "detail": "uret.py is the longest source file",
      "evidence": [
       "uret.py"
      ],
-     "headroom": 0.02666666666666667
+     "headroom": 0.16416666666666666
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -312,7 +356,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (17 commits on HEAD)",
+     "detail": "never tagged (27 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -329,6 +373,18 @@
    },
    "opportunities": [
     {
+     "signal": "unpinned_actions",
+     "headroom": 1.0,
+     "note": "5 of 5 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:33 actions/checkout@v7",
+      ".github/workflows/ci.yml:34 actions/setup-python@v7",
+      ".github/workflows/ci.yml:46 actions/checkout@v7",
+      ".github/workflows/ci.yml:47 actions/setup-python@v7",
+      ".github/workflows/yenile.yml:25 actions/checkout@v7"
+     ]
+    },
+    {
      "signal": "ci_breadth",
      "headroom": 0.667,
      "note": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
@@ -340,15 +396,23 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (17 commits on HEAD)",
+     "note": "never tagged (27 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.027,
+     "headroom": 0.164,
      "note": "uret.py is the longest source file",
      "evidence": [
       "uret.py"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.038,
+     "note": "1 of 26 public symbols carry no doc comment",
+     "evidence": [
+      "uret.py:166 fetch_bytes"
      ]
     }
    ]
@@ -356,68 +420,70 @@
   {
    "schema": 1,
    "repo": "ai-job-gateway",
-   "head": "b7abf24dee0d638d24e47a06fcc2d2ad7c5ae44d",
-   "taken_at": "2026-10-12T13:30:30Z",
-   "total_headroom": 1.448,
+   "head": "61da2091baa3d0628144522539cfaf44d310c3b3",
+   "taken_at": "2026-10-19T11:14:50Z",
+   "total_headroom": 2.207,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 229761
+      "python": 301632
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 229761 bytes"
+      "python 301632 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.802,
+     "value": 0.836,
      "unit": "test bytes per source byte",
-     "detail": "127509 source bytes, 102252 test bytes in 13 files",
+     "detail": "164315 source bytes, 137317 test bytes in 18 files",
      "evidence": [
       "tests/conftest.py",
+      "tests/test_cancel.py",
       "tests/test_cli.py",
       "tests/test_client.py",
-      "tests/test_default_registry.py",
-      "tests/test_manager.py",
-      "tests/test_netguard.py"
+      "tests/test_client_poll_retry.py",
+      "tests/test_default_registry.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 142,
+     "value": 188,
      "unit": "cases",
-     "detail": "142 cases across 12 files",
+     "detail": "188 cases across 17 files",
      "evidence": [
+      "tests/test_cancel.py: 13",
       "tests/test_cli.py: 10",
       "tests/test_client.py: 9",
+      "tests/test_client_poll_retry.py: 5",
       "tests/test_default_registry.py: 2",
-      "tests/test_manager.py: 25",
-      "tests/test_netguard.py: 6",
-      "tests/test_providers.py: 7",
-      "tests/test_providers_local.py: 9",
-      "tests/test_providers_pollinations.py: 14"
+      "tests/test_gateway_poll_contract.py: 9",
+      "tests/test_idempotency_fingerprint.py: 8",
+      "tests/test_manager.py: 25"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 6,
+     "value": 9,
      "unit": "symbols",
-     "detail": "6 of 48 public symbols carry no doc comment",
+     "detail": "9 of 59 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
       "arac/vendor-dogrula.py:70 kanonik_getir",
       "arac/vendor-dogrula.py:76 main",
-      "src/ai_job_gateway/cli.py:117 main",
-      "src/ai_job_gateway/providers_local.py:48 toolkit_available"
+      "src/ai_job_gateway/cli.py:145 main",
+      "src/ai_job_gateway/metrics.py:83 Counter",
+      "src/ai_job_gateway/metrics.py:101 Gauge",
+      "src/ai_job_gateway/metrics.py:108 Histogram"
      ],
-     "headroom": 0.125
+     "headroom": 0.153
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -430,11 +496,25 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 5,
+     "unit": "action references",
+     "detail": "5 of 9 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:24 actions/checkout@v7",
+      ".github/workflows/ci.yml:60 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:46 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:66 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:87 actions/download-artifact@v8"
+     ],
+     "headroom": 0.556
+    },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 42,
+     "value": 65,
      "unit": "commands",
-     "detail": "42 runnable-looking commands in 11 shell blocks",
+     "detail": "65 runnable-looking commands in 14 shell blocks",
      "evidence": [
       "uvx --from git+https://github.com/Furkiozknn/ai-job-gateway ai-job-gateway serve   # http://127.0.0.1:8000, docs at /docs",
       "ai-job-gateway submit echo '{\"prompt\": \"hello\"}'",
@@ -449,11 +529,12 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 29528,
+     "value": 36792,
      "unit": "bytes",
-     "detail": "29528 bytes, 20 sections, 3 images",
+     "detail": "36792 bytes, 23 sections, 3 images",
      "evidence": [
       "When to use it, when not",
+      "Why not Celery or Hatchet?",
       "The contract",
       "Install from a clone",
       "Why this contract",
@@ -461,8 +542,7 @@
       "Writing a new Provider",
       "Providers that ship",
       "What the real providers guarantee",
-      "Running the reference server",
-      "Webhooks"
+      "Running the reference server"
      ],
      "headroom": 0.0
     },
@@ -476,13 +556,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 588,
+     "value": 797,
      "unit": "lines",
-     "detail": "src/ai_job_gateway/store.py is the longest source file",
+     "detail": "src/ai_job_gateway/manager.py is the longest source file",
      "evidence": [
-      "src/ai_job_gateway/store.py"
+      "src/ai_job_gateway/manager.py"
      ],
-     "headroom": 0.15666666666666668
+     "headroom": 0.3308333333333333
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -498,7 +578,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (45 commits on HEAD)",
+     "detail": "never tagged (55 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -522,30 +602,42 @@
      ]
     },
     {
+     "signal": "unpinned_actions",
+     "headroom": 0.556,
+     "note": "5 of 9 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:24 actions/checkout@v7",
+      ".github/workflows/ci.yml:60 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:46 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:66 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:87 actions/download-artifact@v8"
+     ]
+    },
+    {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (45 commits on HEAD)",
+     "note": "never tagged (55 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.157,
-     "note": "src/ai_job_gateway/store.py is the longest source file",
+     "headroom": 0.331,
+     "note": "src/ai_job_gateway/manager.py is the longest source file",
      "evidence": [
-      "src/ai_job_gateway/store.py"
+      "src/ai_job_gateway/manager.py"
      ]
     },
     {
      "signal": "undocumented_surface",
-     "headroom": 0.125,
-     "note": "6 of 48 public symbols carry no doc comment",
+     "headroom": 0.153,
+     "note": "9 of 59 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
       "arac/vendor-dogrula.py:70 kanonik_getir",
       "arac/vendor-dogrula.py:76 main",
-      "src/ai_job_gateway/cli.py:117 main",
-      "src/ai_job_gateway/providers_local.py:48 toolkit_available"
+      "src/ai_job_gateway/cli.py:145 main",
+      "src/ai_job_gateway/metrics.py:83 Counter"
      ]
     }
    ]
@@ -553,50 +645,51 @@
   {
    "schema": 1,
    "repo": "ai-workflow-engine",
-   "head": "3a9286f1d6e2852aaef78d137c10c953fc9b598c",
-   "taken_at": "2026-10-12T13:30:31Z",
-   "total_headroom": 1.409,
+   "head": "eba065aff9e106fd5fa2b82e1c41f1c9690891c3",
+   "taken_at": "2026-10-19T11:14:51Z",
+   "total_headroom": 1.99,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 103341
+      "python": 144563
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 103341 bytes"
+      "python 144563 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 1.066,
+     "value": 1.077,
      "unit": "test bytes per source byte",
-     "detail": "50023 source bytes, 53318 test bytes in 7 files",
+     "detail": "69618 source bytes, 74945 test bytes in 11 files",
      "evidence": [
       "tests/test_cli.py",
+      "tests/test_gateway_poll_contract.py",
       "tests/test_gercek_gateway.py",
+      "tests/test_graph.py",
       "tests/test_on_kontrol.py",
-      "tests/test_pipeline.py",
-      "tests/test_runner.py",
-      "tests/test_templating.py"
+      "tests/test_pipeline.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 95,
+     "value": 133,
      "unit": "cases",
-     "detail": "95 cases across 7 files",
+     "detail": "133 cases across 11 files",
      "evidence": [
       "tests/test_cli.py: 14",
+      "tests/test_gateway_poll_contract.py: 9",
       "tests/test_gercek_gateway.py: 9",
+      "tests/test_graph.py: 9",
       "tests/test_on_kontrol.py: 11",
       "tests/test_pipeline.py: 29",
-      "tests/test_runner.py: 17",
-      "tests/test_templating.py: 14",
-      "tests/test_version.py: 1"
+      "tests/test_poll_retry.py: 6",
+      "tests/test_resume.py: 14"
      ],
      "headroom": null
     },
@@ -604,18 +697,18 @@
      "name": "undocumented_surface",
      "value": 8,
      "unit": "symbols",
-     "detail": "8 of 33 public symbols carry no doc comment",
+     "detail": "8 of 42 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
       "arac/vendor-dogrula.py:70 kanonik_getir",
       "arac/vendor-dogrula.py:76 main",
-      "src/ai_workflow_engine/cli.py:114 main",
+      "src/ai_workflow_engine/cli.py:151 main",
       "src/ai_workflow_engine/pipeline.py:135 parse_pipeline",
       "src/ai_workflow_engine/templating.py:34 TemplateRenderError",
       "src/ai_workflow_engine/templating.py:38 render_params"
      ],
-     "headroom": 0.242
+     "headroom": 0.19
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -628,11 +721,27 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 7,
+     "unit": "action references",
+     "detail": "7 of 12 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:29 actions/checkout@v7",
+      ".github/workflows/ci.yml:51 actions/checkout@v7",
+      ".github/workflows/ci.yml:70 actions/checkout@v7",
+      ".github/workflows/ci.yml:100 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:67 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:88 actions/download-artifact@v8"
+     ],
+     "headroom": 0.583
+    },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 59,
+     "value": 92,
      "unit": "commands",
-     "detail": "59 runnable-looking commands in 7 shell blocks",
+     "detail": "92 runnable-looking commands in 10 shell blocks",
      "evidence": [
       "uvx --from git+https://github.com/Furkiozknn/ai-workflow-engine awe --help",
       "uvx --from git+https://github.com/Furkiozknn/ai-job-gateway ai-job-gateway serve   # other terminal",
@@ -647,20 +756,20 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 23448,
+     "value": 30057,
      "unit": "bytes",
-     "detail": "23448 bytes, 15 sections, 4 images",
+     "detail": "30057 bytes, 18 sections, 4 images",
      "evidence": [
       "When to use it, when not",
+      "Why not Prefect or Kestra?",
       "Why",
       "What it does",
       "Install",
       "Pipeline file format",
       "CLI usage",
+      "Seeing the DAG: `awe graph`",
       "Pacing: what a layer costs the gateway",
-      "Library usage",
-      "Testing",
-      "Against the real gateway, not against our idea of it"
+      "Resuming a failed run"
      ],
      "headroom": 0.0
     },
@@ -674,13 +783,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 314,
+     "value": 460,
      "unit": "lines",
-     "detail": "src/ai_workflow_engine/pipeline.py is the longest source file",
+     "detail": "src/ai_workflow_engine/runner.py is the longest source file",
      "evidence": [
-      "src/ai_workflow_engine/pipeline.py"
+      "src/ai_workflow_engine/runner.py"
      ],
-     "headroom": 0.0
+     "headroom": 0.05
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -698,7 +807,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (39 commits on HEAD)",
+     "detail": "never tagged (44 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -722,22 +831,43 @@
      ]
     },
     {
+     "signal": "unpinned_actions",
+     "headroom": 0.583,
+     "note": "7 of 12 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:29 actions/checkout@v7",
+      ".github/workflows/ci.yml:51 actions/checkout@v7",
+      ".github/workflows/ci.yml:70 actions/checkout@v7",
+      ".github/workflows/ci.yml:100 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:67 actions/upload-artifact@v7"
+     ]
+    },
+    {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (39 commits on HEAD)",
+     "note": "never tagged (44 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "undocumented_surface",
-     "headroom": 0.242,
-     "note": "8 of 33 public symbols carry no doc comment",
+     "headroom": 0.19,
+     "note": "8 of 42 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
       "arac/vendor-dogrula.py:70 kanonik_getir",
       "arac/vendor-dogrula.py:76 main",
-      "src/ai_workflow_engine/cli.py:114 main",
+      "src/ai_workflow_engine/cli.py:151 main",
       "src/ai_workflow_engine/pipeline.py:135 parse_pipeline"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.05,
+     "note": "src/ai_workflow_engine/runner.py is the longest source file",
+     "evidence": [
+      "src/ai_workflow_engine/runner.py"
      ]
     }
    ]
@@ -745,31 +875,31 @@
   {
    "schema": 1,
    "repo": "ajans-os",
-   "head": "073b20bc6357c3525a10d2f96fae3db08e5b0ded",
-   "taken_at": "2026-10-12T13:30:32Z",
-   "total_headroom": 1.686,
+   "head": "330375c43392ada6153ff7efa5f6d57f8236e329",
+   "taken_at": "2026-10-19T11:14:52Z",
+   "total_headroom": 2.886,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "javascript": 361718,
-      "typescript": 34317,
+      "javascript": 412339,
+      "typescript": 34504,
       "python": 10159
      },
      "unit": "bytes",
      "detail": "primary: javascript",
      "evidence": [
-      "javascript 361718 bytes",
-      "typescript 34317 bytes",
+      "javascript 412339 bytes",
+      "typescript 34504 bytes",
       "python 10159 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.555,
+     "value": 0.572,
      "unit": "test bytes per source byte",
-     "detail": "261254 source bytes, 144940 test bytes in 19 files",
+     "detail": "290668 source bytes, 166334 test bytes in 21 files",
      "evidence": [
       "arac/kanit-dogrula-test.js",
       "arac/yapi-dogrula-test.js",
@@ -782,9 +912,9 @@
     },
     "test_count": {
      "name": "test_count",
-     "value": 172,
+     "value": 190,
      "unit": "cases (lower bound)",
-     "detail": "at least 172 cases across 18 files; 1 further test file(s) declare their cases in a form this cannot count",
+     "detail": "at least 190 cases across 20 files; 1 further test file(s) declare their cases in a form this cannot count",
      "evidence": [
       "arac/kanit-dogrula-test.js: 7",
       "src/agent-registry/index.test.js: 7",
@@ -822,37 +952,51 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 3,
+     "unit": "action references",
+     "detail": "3 of 3 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:31 actions/checkout@v7",
+      ".github/workflows/ci.yml:44 actions/checkout@v7",
+      ".github/workflows/ci.yml:51 actions/setup-node@v7"
+     ],
+     "headroom": 1.0
+    },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 6,
+     "value": 9,
      "unit": "commands",
-     "detail": "6 runnable-looking commands in 2 shell blocks",
+     "detail": "9 runnable-looking commands in 4 shell blocks",
      "evidence": [
       "git clone https://github.com/Furkiozknn/ajans-os && cd ajans-os && npm run kapi",
       "git clone https://github.com/Furkiozknn/ajans-os && cd ajans-os",
-      "npm test        # 179 test (uçtan uca kabul koşusu dahil)",
+      "npm test        # 203 test (uçtan uca kabul koşusu dahil)",
       "npm run yapi    # yapı doğrulama: 13 modül, blueprint §2 ile eşli, import yönü tek",
       "npm run sema    # sözleşmeler: örnekler + doğrulayıcının öz-testi + mutasyon ölçümü",
-      "npm run kapi    # hepsi birden — kapı kontrolü (CI'ın koştuğu komutun aynısı)"
+      "npm run kapi    # hepsi birden — kapı kontrolü (CI'ın koştuğu komutun aynısı)",
+      "node arac/plan-preview.js contracts/ornek/gorev/gece-mimari-turu.json --ajanlar contracts/ornek",
+      "node arac/run-report.js contracts/ornek/gorev/gece-mimari-turu.json"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 12880,
+     "value": 14914,
      "unit": "bytes",
-     "detail": "12880 bytes, 11 sections, 9 images",
+     "detail": "14914 bytes, 13 sections, 9 images",
      "evidence": [
       "Çalıştır",
       "İlk koşuda göreceğiniz iki atlama bilinçli, hata değil",
+      "Koşmadan önce: plan önizleme (kuru koşu)",
+      "Koştuktan sonra: koşu raporu",
       "Nereden başlamalı",
       "Neden var",
       "Altı sütun",
       "Program",
       "Klasörler",
-      "Sınırlar",
-      "Dil",
-      "Lisans"
+      "Sınırlar"
      ],
      "headroom": 0.0
     },
@@ -884,13 +1028,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 1,
+     "value": 6,
      "unit": "commits since last tag",
-     "detail": "last tag v0.1.0, 1 commits since",
+     "detail": "last tag v0.1.0, 6 commits since",
      "evidence": [
       "v0.1.0"
      ],
-     "headroom": 0.04
+     "headroom": 0.24
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -904,6 +1048,16 @@
     }
    },
    "opportunities": [
+    {
+     "signal": "unpinned_actions",
+     "headroom": 1.0,
+     "note": "3 of 3 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:31 actions/checkout@v7",
+      ".github/workflows/ci.yml:44 actions/checkout@v7",
+      ".github/workflows/ci.yml:51 actions/setup-node@v7"
+     ]
+    },
     {
      "signal": "ci_breadth",
      "headroom": 0.667,
@@ -935,8 +1089,8 @@
     },
     {
      "signal": "release_lag",
-     "headroom": 0.04,
-     "note": "last tag v0.1.0, 1 commits since",
+     "headroom": 0.24,
+     "note": "last tag v0.1.0, 6 commits since",
      "evidence": [
       "v0.1.0"
      ]
@@ -946,21 +1100,21 @@
   {
    "schema": 1,
    "repo": "asset-provenance-toolkit",
-   "head": "457f2280a4acb9557ce2995a217753526fe041d9",
-   "taken_at": "2026-10-12T13:30:34Z",
-   "total_headroom": 1.738,
+   "head": "639bc4c4bfbf23f9f5156bb857427e9e8cdbb6ca",
+   "taken_at": "2026-10-19T11:14:53Z",
+   "total_headroom": 2.224,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 150148,
+      "python": 181012,
       "javascript": 2383,
       "shell": 1233
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 150148 bytes",
+      "python 181012 bytes",
       "javascript 2383 bytes",
       "shell 1233 bytes"
      ],
@@ -968,33 +1122,33 @@
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.896,
+     "value": 0.919,
      "unit": "test bytes per source byte",
-     "detail": "81088 source bytes, 72676 test bytes in 11 files",
+     "detail": "96203 source bytes, 88425 test bytes in 13 files",
      "evidence": [
       "tests/conftest.py",
+      "tests/test_c2pa_export.py",
       "tests/test_cli.py",
+      "tests/test_content_hash.py",
       "tests/test_core.py",
-      "tests/test_gateway_client.py",
-      "tests/test_ilk_kullanim.py",
-      "tests/test_jpeg_backend.py"
+      "tests/test_gateway_client.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 153,
+     "value": 173,
      "unit": "cases",
-     "detail": "153 cases across 10 files",
+     "detail": "173 cases across 12 files",
      "evidence": [
+      "tests/test_c2pa_export.py: 9",
       "tests/test_cli.py: 19",
+      "tests/test_content_hash.py: 11",
       "tests/test_core.py: 21",
       "tests/test_gateway_client.py: 5",
       "tests/test_ilk_kullanim.py: 14",
       "tests/test_jpeg_backend.py: 12",
-      "tests/test_mp4_backend.py: 23",
-      "tests/test_png_backend.py: 17",
-      "tests/test_robustness.py: 22"
+      "tests/test_mp4_backend.py: 23"
      ],
      "headroom": null
     },
@@ -1002,7 +1156,7 @@
      "name": "undocumented_surface",
      "value": 24,
      "unit": "symbols",
-     "detail": "24 of 42 public symbols carry no doc comment",
+     "detail": "24 of 49 public symbols carry no doc comment",
      "evidence": [
       "arac/gercek-video-dogrula.py:68 sorun",
       "arac/gercek-video-dogrula.py:74 tamam",
@@ -1013,7 +1167,7 @@
       "scripts/demo-uret.py:72 prepare",
       "scripts/demo-uret.py:80 run_all"
      ],
-     "headroom": 0.571
+     "headroom": 0.49
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -1026,11 +1180,26 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 6,
+     "unit": "action references",
+     "detail": "6 of 11 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:25 actions/checkout@v7",
+      ".github/workflows/ci.yml:47 actions/checkout@v7",
+      ".github/workflows/ci.yml:80 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:67 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:88 actions/download-artifact@v8"
+     ],
+     "headroom": 0.545
+    },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 25,
+     "value": 66,
      "unit": "commands",
-     "detail": "25 runnable-looking commands in 5 shell blocks",
+     "detail": "66 runnable-looking commands in 7 shell blocks",
      "evidence": [
       "uv tool install git+https://github.com/Furkiozknn/asset-provenance-toolkit",
       "aprov embed cover.png --capability image-generate --provider flux-2 --params '{\"prompt\": \"a red sneaker\"}'",
@@ -1045,20 +1214,20 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 17924,
+     "value": 26001,
      "unit": "bytes",
-     "detail": "17924 bytes, 14 sections, 4 images",
+     "detail": "26001 bytes, 17 sections, 4 images",
      "evidence": [
       "When to use it, when not",
+      "Why not C2PA or ExifTool?",
       "Why",
       "What it does",
       "When something is wrong",
       "Working from a clone",
       "Backends",
       "Relationship to C2PA / Content Credentials",
-      "CLI usage",
-      "Library usage",
-      "The provenance schema"
+      "Promoting a record to a Content Credential: `aprov c2pa-manifest`",
+      "CLI usage"
      ],
      "headroom": 0.0
     },
@@ -1072,13 +1241,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 325,
+     "value": 427,
      "unit": "lines",
-     "detail": "src/asset_provenance_toolkit/mp4_backend.py is the longest source file",
+     "detail": "src/asset_provenance_toolkit/cli.py is the longest source file",
      "evidence": [
-      "src/asset_provenance_toolkit/mp4_backend.py"
+      "src/asset_provenance_toolkit/cli.py"
      ],
-     "headroom": 0.0
+     "headroom": 0.0225
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -1095,7 +1264,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (33 commits on HEAD)",
+     "detail": "never tagged (38 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -1119,9 +1288,28 @@
      ]
     },
     {
+     "signal": "unpinned_actions",
+     "headroom": 0.545,
+     "note": "6 of 11 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:25 actions/checkout@v7",
+      ".github/workflows/ci.yml:47 actions/checkout@v7",
+      ".github/workflows/ci.yml:80 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:67 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:88 actions/download-artifact@v8"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (38 commits on HEAD)",
+     "evidence": []
+    },
+    {
      "signal": "undocumented_surface",
-     "headroom": 0.571,
-     "note": "24 of 42 public symbols carry no doc comment",
+     "headroom": 0.49,
+     "note": "24 of 49 public symbols carry no doc comment",
      "evidence": [
       "arac/gercek-video-dogrula.py:68 sorun",
       "arac/gercek-video-dogrula.py:74 tamam",
@@ -1132,41 +1320,43 @@
      ]
     },
     {
-     "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (33 commits on HEAD)",
-     "evidence": []
+     "signal": "largest_source_file",
+     "headroom": 0.022,
+     "note": "src/asset_provenance_toolkit/cli.py is the longest source file",
+     "evidence": [
+      "src/asset_provenance_toolkit/cli.py"
+     ]
     }
    ]
   },
   {
    "schema": 1,
    "repo": "buradane",
-   "head": "53ddf6741560c138d25b9b58b43e309f27cfb13c",
-   "taken_at": "2026-10-12T13:30:36Z",
-   "total_headroom": 2.704,
+   "head": "587d78a7dc924735c4a074f90678908ce3a84edb",
+   "taken_at": "2026-10-19T11:14:56Z",
+   "total_headroom": 4.042,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "typescript": 623813,
-      "python": 316255,
+      "typescript": 647399,
+      "python": 320791,
       "javascript": 11073
      },
      "unit": "bytes",
      "detail": "primary: typescript",
      "evidence": [
-      "typescript 623813 bytes",
-      "python 316255 bytes",
+      "typescript 647399 bytes",
+      "python 320791 bytes",
       "javascript 11073 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.316,
+     "value": 0.327,
      "unit": "test bytes per source byte",
-     "detail": "722930 source bytes, 228211 test bytes in 40 files",
+     "detail": "738111 source bytes, 241152 test bytes in 42 files",
      "evidence": [
       "backend/tests/__init__.py",
       "backend/tests/conftest.py",
@@ -1175,13 +1365,13 @@
       "backend/tests/test_dedup_math.py",
       "backend/tests/test_default_secret_warning.py"
      ],
-     "headroom": 0.3686498001189603
+     "headroom": 0.34656982486374
     },
     "test_count": {
      "name": "test_count",
-     "value": 366,
+     "value": 396,
      "unit": "cases",
-     "detail": "366 cases across 38 files",
+     "detail": "396 cases across 40 files",
      "evidence": [
       "backend/tests/test_admin_moderation.py: 14",
       "backend/tests/test_dedup_integration.py: 4",
@@ -1222,6 +1412,19 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 4,
+     "unit": "action references",
+     "detail": "4 of 5 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:44 actions/checkout@v7",
+      ".github/workflows/ci.yml:50 actions/setup-python@v7",
+      ".github/workflows/frontend.yml:52 actions/checkout@v7",
+      ".github/workflows/frontend.yml:55 actions/setup-node@v7"
+     ],
+     "headroom": 0.8
+    },
     "readme_commands": {
      "name": "readme_commands",
      "value": 25,
@@ -1241,9 +1444,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 45410,
+     "value": 48007,
      "unit": "bytes",
-     "detail": "45410 bytes, 29 sections, 7 images",
+     "detail": "48007 bytes, 30 sections, 8 images",
      "evidence": [
       "v1 Kapsamı",
       "Hızlı Başlangıç",
@@ -1286,13 +1489,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 2,
+     "value": 16,
      "unit": "commits since last tag",
-     "detail": "last tag v1.1.0, 2 commits since",
+     "detail": "last tag v1.1.0, 16 commits since",
      "evidence": [
       "v1.1.0"
      ],
-     "headroom": 0.08
+     "headroom": 0.64
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -1312,6 +1515,17 @@
      "note": "frontend/src/components/AppShell.tsx is the longest source file",
      "evidence": [
       "frontend/src/components/AppShell.tsx"
+     ]
+    },
+    {
+     "signal": "unpinned_actions",
+     "headroom": 0.8,
+     "note": "4 of 5 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:44 actions/checkout@v7",
+      ".github/workflows/ci.yml:50 actions/setup-python@v7",
+      ".github/workflows/frontend.yml:52 actions/checkout@v7",
+      ".github/workflows/frontend.yml:55 actions/setup-node@v7"
      ]
     },
     {
@@ -1337,9 +1551,17 @@
      ]
     },
     {
+     "signal": "release_lag",
+     "headroom": 0.64,
+     "note": "last tag v1.1.0, 16 commits since",
+     "evidence": [
+      "v1.1.0"
+     ]
+    },
+    {
      "signal": "test_mass",
-     "headroom": 0.369,
-     "note": "722930 source bytes, 228211 test bytes in 40 files",
+     "headroom": 0.347,
+     "note": "738111 source bytes, 241152 test bytes in 42 files",
      "evidence": [
       "backend/tests/__init__.py",
       "backend/tests/conftest.py",
@@ -1348,13 +1570,145 @@
       "backend/tests/test_dedup_math.py",
       "backend/tests/test_default_secret_warning.py"
      ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "canli-dunyalar",
+   "head": "09aa24fc86891923f864c0c7d90b2b108b4131c3",
+   "taken_at": "2026-10-19T11:14:56Z",
+   "total_headroom": 1.991,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": null,
+     "unit": "",
+     "detail": "no recognised source files",
+     "evidence": [],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": null,
+     "unit": "",
+     "detail": "no source files to weigh",
+     "evidence": [],
+     "headroom": null
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 0,
+     "unit": "cases",
+     "detail": "no test cases found",
+     "evidence": [],
+     "headroom": 1.0
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": null,
+     "unit": "",
+     "detail": "no Python or Rust public surface",
+     "evidence": [],
+     "headroom": null
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": null,
+     "unit": "",
+     "detail": "no .github/workflows",
+     "evidence": [],
+     "headroom": null
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": null,
+     "unit": "",
+     "detail": "no workflows and no action.yml",
+     "evidence": [],
+     "headroom": null
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 0,
+     "unit": "commands",
+     "detail": "0 runnable-looking commands in 0 shell blocks",
+     "evidence": [],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 1273,
+     "unit": "bytes",
+     "detail": "1273 bytes, 1 sections, 2 images",
+     "evidence": [
+      "How they're made"
+     ],
+     "headroom": 0.4908
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": null,
+     "unit": "",
+     "detail": "no source files",
+     "evidence": [],
+     "headroom": null
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (4 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 2 left null",
+     "evidence": [
+      "tests",
+      "version"
+     ],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "test_count",
+     "headroom": 1.0,
+     "note": "no test cases found",
+     "evidence": []
     },
     {
      "signal": "release_lag",
-     "headroom": 0.08,
-     "note": "last tag v1.1.0, 2 commits since",
+     "headroom": 0.5,
+     "note": "never tagged (4 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "readme_depth",
+     "headroom": 0.491,
+     "note": "1273 bytes, 1 sections, 2 images",
      "evidence": [
-      "v1.1.0"
+      "How they're made"
      ]
     }
    ]
@@ -1362,27 +1716,27 @@
   {
    "schema": 1,
    "repo": "claude-code-intelligence",
-   "head": "5d2f6c4052dfba53028157f399ac6adfa5f72732",
-   "taken_at": "2026-10-12T13:30:38Z",
-   "total_headroom": 2.364,
+   "head": "98fb38e362b08e8ebbb1214a06620dfe0d8f9fa2",
+   "taken_at": "2026-10-19T11:14:58Z",
+   "total_headroom": 2.986,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 555130
+      "python": 585133
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 555130 bytes"
+      "python 585133 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.46,
+     "value": 0.468,
      "unit": "test bytes per source byte",
-     "detail": "380110 source bytes, 175020 test bytes in 29 files",
+     "detail": "398639 source bytes, 186494 test bytes in 31 files",
      "evidence": [
       "research/tools/test_catalog.py",
       "tests/test_adapter_contract.py",
@@ -1391,13 +1745,13 @@
       "tests/test_alerts.py",
       "tests/test_anomaly.py"
      ],
-     "headroom": 0.07910867906658603
+     "headroom": 0.06434643875787371
     },
     "test_count": {
      "name": "test_count",
-     "value": 257,
+     "value": 274,
      "unit": "cases",
-     "detail": "257 cases across 29 files",
+     "detail": "274 cases across 31 files",
      "evidence": [
       "research/tools/test_catalog.py: 9",
       "tests/test_adapter_contract.py: 8",
@@ -1406,26 +1760,26 @@
       "tests/test_alerts.py: 6",
       "tests/test_anomaly.py: 5",
       "tests/test_api_http.py: 12",
-      "tests/test_claude_code_paths.py: 8"
+      "tests/test_budget.py: 10"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 174,
+     "value": 175,
      "unit": "symbols",
-     "detail": "174 of 246 public symbols carry no doc comment",
+     "detail": "175 of 255 public symbols carry no doc comment",
      "evidence": [
-      "cci/cli.py:45 default_data_dir",
-      "cci/cli.py:52 local_tz",
-      "cci/cli.py:65 Context",
-      "cci/cli.py:143 latest_quota",
-      "cci/cli.py:153 store_quota",
-      "cci/cli.py:165 quota_lines",
-      "cci/cli.py:186 cmd_scan",
-      "cci/cli.py:256 cmd_daily"
+      "cci/cli.py:47 default_data_dir",
+      "cci/cli.py:54 local_tz",
+      "cci/cli.py:67 Context",
+      "cci/cli.py:145 latest_quota",
+      "cci/cli.py:155 store_quota",
+      "cci/cli.py:167 quota_lines",
+      "cci/cli.py:188 cmd_scan",
+      "cci/cli.py:258 cmd_daily"
      ],
-     "headroom": 0.707
+     "headroom": 0.686
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -1437,6 +1791,20 @@
       "yayinla.yml"
      ],
      "headroom": 0.6666666666666666
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 5,
+     "unit": "action references",
+     "detail": "5 of 9 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:27 actions/checkout@v7",
+      ".github/workflows/ci.yml:69 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:48 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:68 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:89 actions/download-artifact@v8"
+     ],
+     "headroom": 0.556
     },
     "readme_commands": {
      "name": "readme_commands",
@@ -1455,17 +1823,20 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 12463,
+     "value": 20134,
      "unit": "bytes",
-     "detail": "12463 bytes, 7 sections, 4 images",
+     "detail": "20134 bytes, 11 sections, 4 images",
      "evidence": [
       "Hızlı başlangıç",
+      "Kota ucu: ne okunur, ne gönderilir",
       "Yöntem ve durum",
+      "Proje başına kırılım: `cci projects`",
+      "Bütçe: `cci budget` ve bütçe uyarıları",
       "Temel ilkeler (baştan sabit; araştırmayla somutlaştı)",
+      "Why not ccusage?",
       "Önceki çalışmayla ilişki",
       "Güvenlik notu (araştırmadan)",
-      "Kendi adaptörünü yazmak",
-      "Bu ekosistemden başka projeler"
+      "Kendi adaptörünü yazmak"
      ],
      "headroom": 0.0
     },
@@ -1479,13 +1850,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 894,
+     "value": 1015,
      "unit": "lines",
      "detail": "cci/cli.py is the longest source file",
      "evidence": [
       "cci/cli.py"
      ],
-     "headroom": 0.4116666666666667
+     "headroom": 0.5125
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -1502,7 +1873,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (69 commits on HEAD)",
+     "detail": "never tagged (77 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -1518,15 +1889,15 @@
    "opportunities": [
     {
      "signal": "undocumented_surface",
-     "headroom": 0.707,
-     "note": "174 of 246 public symbols carry no doc comment",
+     "headroom": 0.686,
+     "note": "175 of 255 public symbols carry no doc comment",
      "evidence": [
-      "cci/cli.py:45 default_data_dir",
-      "cci/cli.py:52 local_tz",
-      "cci/cli.py:65 Context",
-      "cci/cli.py:143 latest_quota",
-      "cci/cli.py:153 store_quota",
-      "cci/cli.py:165 quota_lines"
+      "cci/cli.py:47 default_data_dir",
+      "cci/cli.py:54 local_tz",
+      "cci/cli.py:67 Context",
+      "cci/cli.py:145 latest_quota",
+      "cci/cli.py:155 store_quota",
+      "cci/cli.py:167 quota_lines"
      ]
     },
     {
@@ -1539,23 +1910,35 @@
      ]
     },
     {
-     "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (69 commits on HEAD)",
-     "evidence": []
+     "signal": "unpinned_actions",
+     "headroom": 0.556,
+     "note": "5 of 9 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:27 actions/checkout@v7",
+      ".github/workflows/ci.yml:69 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:48 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:68 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:89 actions/download-artifact@v8"
+     ]
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.412,
+     "headroom": 0.512,
      "note": "cci/cli.py is the longest source file",
      "evidence": [
       "cci/cli.py"
      ]
     },
     {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (77 commits on HEAD)",
+     "evidence": []
+    },
+    {
      "signal": "test_mass",
-     "headroom": 0.079,
-     "note": "380110 source bytes, 175020 test bytes in 29 files",
+     "headroom": 0.064,
+     "note": "398639 source bytes, 186494 test bytes in 31 files",
      "evidence": [
       "research/tools/test_catalog.py",
       "tests/test_adapter_contract.py",
@@ -1570,21 +1953,21 @@
   {
    "schema": 1,
    "repo": "derin-kazi",
-   "head": "2b9c32d29e6a2726610717a16091c84414b1f5ef",
-   "taken_at": "2026-10-12T13:30:42Z",
-   "total_headroom": 3.393,
+   "head": "ba7303879b585720090f82310eb36cf4c69f64e1",
+   "taken_at": "2026-10-19T11:15:02Z",
+   "total_headroom": 4.414,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "gdscript": 446068,
+      "gdscript": 467682,
       "shell": 6982,
       "python": 1758
      },
      "unit": "bytes",
      "detail": "primary: gdscript",
      "evidence": [
-      "gdscript 446068 bytes",
+      "gdscript 467682 bytes",
       "shell 6982 bytes",
       "python 1758 bytes"
      ],
@@ -1592,9 +1975,9 @@
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.638,
+     "value": 0.644,
      "unit": "test bytes per source byte",
-     "detail": "277611 source bytes, 177197 test bytes in 8 files",
+     "detail": "289876 source bytes, 186546 test bytes in 8 files",
      "evidence": [
       "tests/bot.gd",
       "tests/kapi.sh",
@@ -1607,14 +1990,14 @@
     },
     "test_count": {
      "name": "test_count",
-     "value": 559,
+     "value": 604,
      "unit": "cases (lower bound)",
-     "detail": "at least 559 cases across 4 files; 1 further test file(s) declare their cases in a form this cannot count",
+     "detail": "at least 604 cases across 4 files; 1 further test file(s) declare their cases in a form this cannot count",
      "evidence": [
-      "tests/test_calistir.gd: 319",
+      "tests/test_calistir.gd: 356",
       "tests/test_denge.gd: 7",
       "tests/test_insan.gd: 10",
-      "tests/test_oynanis.gd: 223",
+      "tests/test_oynanis.gd: 231",
       "uncounted: tests/test_fay_olcum.gd"
      ],
      "headroom": null
@@ -1642,6 +2025,23 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 10,
+     "unit": "action references",
+     "detail": "10 of 11 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:55 actions/checkout@v7",
+      ".github/workflows/ci.yml:134 actions/checkout@v7",
+      ".github/workflows/ci.yml:157 github/codeql-action/upload-sarif@v4",
+      ".github/workflows/yapi.yml:55 actions/checkout@v7",
+      ".github/workflows/yapi.yml:102 actions/upload-artifact@v7",
+      ".github/workflows/yapi.yml:108 actions/upload-artifact@v7",
+      ".github/workflows/yapi.yml:128 actions/download-artifact@v8",
+      ".github/workflows/yapi.yml:139 actions/configure-pages@v6"
+     ],
+     "headroom": 0.909
+    },
     "readme_commands": {
      "name": "readme_commands",
      "value": 8,
@@ -1654,16 +2054,16 @@
       "godot --headless --path . --import   # ilk açılışta içe aktarma",
       "godot --path .                       # oyna",
       "godot --headless --path . --script res://tests/test_calistir.gd 2>&1 | tee birim.log",
-      "bash tests/kapi.sh birim.log 333                                  # CI'daki kapının aynısı",
+      "bash tests/kapi.sh birim.log 358                                  # CI'daki kapının aynısı",
       "bash tests/kapi_sinama.sh                                         # kapının sınaması, Godot gerektirmez"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 34333,
+     "value": 36704,
      "unit": "bytes",
-     "detail": "34333 bytes, 18 sections, 6 images",
+     "detail": "36704 bytes, 19 sections, 6 images",
      "evidence": [
       "Hızlı başlangıç",
       "Kontroller",
@@ -1688,13 +2088,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 1367,
+     "value": 1406,
      "unit": "lines",
      "detail": "scripts/oyun.gd is the longest source file",
      "evidence": [
       "scripts/oyun.gd"
      ],
-     "headroom": 0.8058333333333333
+     "headroom": 0.8383333333333334
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -1706,13 +2106,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 23,
+     "value": 32,
      "unit": "commits since last tag",
-     "detail": "last tag v0.7.2, 23 commits since",
+     "detail": "last tag v0.7.2, 32 commits since",
      "evidence": [
       "v0.7.2"
      ],
-     "headroom": 0.92
+     "headroom": 1.0
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -1736,15 +2136,28 @@
     },
     {
      "signal": "release_lag",
-     "headroom": 0.92,
-     "note": "last tag v0.7.2, 23 commits since",
+     "headroom": 1.0,
+     "note": "last tag v0.7.2, 32 commits since",
      "evidence": [
       "v0.7.2"
      ]
     },
     {
+     "signal": "unpinned_actions",
+     "headroom": 0.909,
+     "note": "10 of 11 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:55 actions/checkout@v7",
+      ".github/workflows/ci.yml:134 actions/checkout@v7",
+      ".github/workflows/ci.yml:157 github/codeql-action/upload-sarif@v4",
+      ".github/workflows/yapi.yml:55 actions/checkout@v7",
+      ".github/workflows/yapi.yml:102 actions/upload-artifact@v7",
+      ".github/workflows/yapi.yml:108 actions/upload-artifact@v7"
+     ]
+    },
+    {
      "signal": "largest_source_file",
-     "headroom": 0.806,
+     "headroom": 0.838,
      "note": "scripts/oyun.gd is the longest source file",
      "evidence": [
       "scripts/oyun.gd"
@@ -1763,46 +2176,210 @@
   },
   {
    "schema": 1,
-   "repo": "godot-2d-sablon",
-   "head": "af71a93ed3e310ae1071ac785c84fdce41d05c03",
-   "taken_at": "2026-10-12T13:30:44Z",
-   "total_headroom": 1.689,
+   "repo": "frk-components",
+   "head": "785839fa04782c224478d4c4247069c8593c4067",
+   "taken_at": "2026-10-19T11:15:05Z",
+   "total_headroom": 3.5,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 25718,
-      "gdscript": 14238
+      "javascript": 109762,
+      "python": 1562
      },
      "unit": "bytes",
-     "detail": "primary: python",
+     "detail": "primary: javascript",
      "evidence": [
-      "python 25718 bytes",
-      "gdscript 14238 bytes"
+      "javascript 109762 bytes",
+      "python 1562 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.453,
+     "value": 0.0,
      "unit": "test bytes per source byte",
-     "detail": "27494 source bytes, 12462 test bytes in 3 files",
+     "detail": "111324 source bytes, 0 test bytes in 0 files",
+     "evidence": [],
+     "headroom": 1.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 0,
+     "unit": "cases",
+     "detail": "no test cases found",
+     "evidence": [],
+     "headroom": 1.0
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 1,
+     "unit": "symbols",
+     "detail": "1 of 1 public symbols carry no doc comment",
      "evidence": [
+      "araclar/ses/edge_sentez.py:17 main"
+     ],
+     "headroom": 1.0
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": null,
+     "unit": "",
+     "detail": "no .github/workflows",
+     "evidence": [],
+     "headroom": null
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": null,
+     "unit": "",
+     "detail": "no workflows and no action.yml",
+     "evidence": [],
+     "headroom": null
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 0,
+     "unit": "commands",
+     "detail": "0 runnable-looking commands in 0 shell blocks",
+     "evidence": [],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 9952,
+     "unit": "bytes",
+     "detail": "9952 bytes, 7 sections, 7 images",
+     "evidence": [
+      "Parçalar / Parts",
+      "Video / Video",
+      "Katalog manifestleri / Catalogue manifests",
+      "Ortak sözleşme / Shared contract",
+      "Galeri / Gallery (390 px)",
+      "Ölçüm / Measuring",
+      "Kimlik ve lisanslar / Identity and licences"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 317,
+     "unit": "lines",
+     "detail": "components/rope-swing/rope-swing.js is the longest source file",
+     "evidence": [
+      "components/rope-swing/rope-swing.js"
+     ],
+     "headroom": 0.0
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (54 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 20 top-level fields, 2 left null",
+     "evidence": [
+      "homepage",
+      "version"
+     ],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "test_mass",
+     "headroom": 1.0,
+     "note": "111324 source bytes, 0 test bytes in 0 files",
+     "evidence": []
+    },
+    {
+     "signal": "test_count",
+     "headroom": 1.0,
+     "note": "no test cases found",
+     "evidence": []
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 1.0,
+     "note": "1 of 1 public symbols carry no doc comment",
+     "evidence": [
+      "araclar/ses/edge_sentez.py:17 main"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (54 commits on HEAD)",
+     "evidence": []
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "godot-2d-sablon",
+   "head": "20592879c5db7617005554476f27d1acfcd606eb",
+   "taken_at": "2026-10-19T11:15:06Z",
+   "total_headroom": 2.79,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "gdscript": 37422,
+      "python": 30731
+     },
+     "unit": "bytes",
+     "detail": "primary: gdscript",
+     "evidence": [
+      "gdscript 37422 bytes",
+      "python 30731 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.313,
+     "unit": "test bytes per source byte",
+     "detail": "51902 source bytes, 16251 test bytes in 4 files",
+     "evidence": [
+      "testler/test_girdi_ayarlari.py",
       "testler/test_motor_karsilastir.py",
       "testler/test_readme_ayarlar.py",
       "testler/test_zipla.py"
      ],
-     "headroom": 0.09347493998690626
+     "headroom": 0.373781357173134
     },
     "test_count": {
      "name": "test_count",
-     "value": 33,
+     "value": 42,
      "unit": "cases",
-     "detail": "33 cases across 3 files",
+     "detail": "42 cases across 4 files",
      "evidence": [
-      "testler/test_motor_karsilastir.py: 11",
+      "testler/test_girdi_ayarlari.py: 5",
+      "testler/test_motor_karsilastir.py: 12",
       "testler/test_readme_ayarlar.py: 1",
-      "testler/test_zipla.py: 21"
+      "testler/test_zipla.py: 24"
      ],
      "headroom": null
     },
@@ -1810,13 +2387,13 @@
      "name": "undocumented_surface",
      "value": 3,
      "unit": "symbols",
-     "detail": "3 of 7 public symbols carry no doc comment",
+     "detail": "3 of 8 public symbols carry no doc comment",
      "evidence": [
-      "arac/motor-karsilastir.py:87 main",
+      "arac/motor-karsilastir.py:90 main",
       "arac/dogrula.py:61 main",
-      "arac/zipla-egrisi.py:112 main"
+      "arac/zipla-egrisi.py:129 main"
      ],
-     "headroom": 0.429
+     "headroom": 0.375
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -1828,11 +2405,27 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 7,
+     "unit": "action references",
+     "detail": "7 of 8 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:47 actions/checkout@v7",
+      ".github/workflows/ci.yml:48 actions/setup-python@v7",
+      ".github/workflows/ci.yml:62 actions/checkout@v7",
+      ".github/workflows/ci.yml:64 actions/setup-python@v7",
+      ".github/workflows/ci.yml:80 actions/checkout@v7",
+      ".github/workflows/ci.yml:148 actions/checkout@v7",
+      ".github/workflows/ci.yml:164 github/codeql-action/upload-sarif@v4"
+     ],
+     "headroom": 0.875
+    },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 34,
+     "value": 38,
      "unit": "commands",
-     "detail": "34 runnable-looking commands in 9 shell blocks",
+     "detail": "38 runnable-looking commands in 10 shell blocks",
      "evidence": [
       "git clone https://github.com/Furkiozknn/godot-2d-sablon.git",
       "cd godot-2d-sablon",
@@ -1847,20 +2440,20 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 17733,
+     "value": 20067,
      "unit": "bytes",
-     "detail": "17733 bytes, 13 sections, 9 images",
+     "detail": "20067 bytes, 14 sections, 9 images",
      "evidence": [
       "Ne var içinde",
       "Hızlı başlangıç",
+      "Duraklatma menüsü ve tuş atama",
       "Yandan görünümdeki üç önemli detay",
       "Ayarlar",
       "Neden GL Compatibility",
       "Proje yapısı",
       "Dışa aktarma",
       "Nasıl devam edilir",
-      "Şablon güncellemelerini almak",
-      "Sayılar nasıl korunuyor"
+      "Şablon güncellemelerini almak"
      ],
      "headroom": 0.0
     },
@@ -1874,7 +2467,7 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 233,
+     "value": 238,
      "unit": "lines",
      "detail": "arac/motor-olcumu.gd is the longest source file",
      "evidence": [
@@ -1894,7 +2487,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (26 commits on HEAD)",
+     "detail": "never tagged (31 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -1911,6 +2504,19 @@
    },
    "opportunities": [
     {
+     "signal": "unpinned_actions",
+     "headroom": 0.875,
+     "note": "7 of 8 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:47 actions/checkout@v7",
+      ".github/workflows/ci.yml:48 actions/setup-python@v7",
+      ".github/workflows/ci.yml:62 actions/checkout@v7",
+      ".github/workflows/ci.yml:64 actions/setup-python@v7",
+      ".github/workflows/ci.yml:80 actions/checkout@v7",
+      ".github/workflows/ci.yml:148 actions/checkout@v7"
+     ]
+    },
+    {
      "signal": "ci_breadth",
      "headroom": 0.667,
      "note": "1 workflow files, ~6 jobs, runners: ubuntu-latest",
@@ -1921,24 +2527,25 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (26 commits on HEAD)",
+     "note": "never tagged (31 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "undocumented_surface",
-     "headroom": 0.429,
-     "note": "3 of 7 public symbols carry no doc comment",
+     "headroom": 0.375,
+     "note": "3 of 8 public symbols carry no doc comment",
      "evidence": [
-      "arac/motor-karsilastir.py:87 main",
+      "arac/motor-karsilastir.py:90 main",
       "arac/dogrula.py:61 main",
-      "arac/zipla-egrisi.py:112 main"
+      "arac/zipla-egrisi.py:129 main"
      ]
     },
     {
      "signal": "test_mass",
-     "headroom": 0.093,
-     "note": "27494 source bytes, 12462 test bytes in 3 files",
+     "headroom": 0.374,
+     "note": "51902 source bytes, 16251 test bytes in 4 files",
      "evidence": [
+      "testler/test_girdi_ayarlari.py",
       "testler/test_motor_karsilastir.py",
       "testler/test_readme_ayarlar.py",
       "testler/test_zipla.py"
@@ -1949,75 +2556,76 @@
   {
    "schema": 1,
    "repo": "godot-refcheck",
-   "head": "d999cd882bb3d023d73ac3882d23e6ba9ab24603",
-   "taken_at": "2026-10-12T13:30:45Z",
-   "total_headroom": 2.162,
+   "head": "e5df3fb4f3307810de63061134185a7836347366",
+   "taken_at": "2026-10-19T11:15:07Z",
+   "total_headroom": 2.671,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "rust": 178124,
-      "python": 39932,
-      "gdscript": 2980,
+      "rust": 206297,
+      "python": 41311,
+      "gdscript": 4567,
       "javascript": 2381
      },
      "unit": "bytes",
      "detail": "primary: rust",
      "evidence": [
-      "rust 178124 bytes",
-      "python 39932 bytes",
-      "gdscript 2980 bytes",
+      "rust 206297 bytes",
+      "python 41311 bytes",
+      "gdscript 4567 bytes",
       "javascript 2381 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.252,
+     "value": 0.276,
      "unit": "test bytes per source byte",
-     "detail": "178407 source bytes, 45010 test bytes in 18 files",
+     "detail": "199511 source bytes, 55045 test bytes in 21 files",
      "evidence": [
       "tests/cli.rs",
       "tests/fixtures.rs",
+      "tests/input_actions.rs",
       "tests/projects/bom/tools.gd",
       "tests/projects/broken/main.gd",
-      "tests/projects/clean/addons/demo/plugin.gd",
-      "tests/projects/clean/main.gd"
+      "tests/projects/clean/addons/demo/plugin.gd"
      ],
-     "headroom": 0.49542338585369405
+     "headroom": 0.4482008510808928
     },
     "test_count": {
      "name": "test_count",
-     "value": 152,
+     "value": 176,
      "unit": "cases",
-     "detail": "152 cases across 7 files",
+     "detail": "176 cases across 9 files",
      "evidence": [
       "src/baseline.rs: 5",
       "src/fix.rs: 5",
       "src/parse/cfgfile.rs: 9",
-      "src/parse/gdscript.rs: 31",
+      "src/parse/gdscript.rs: 38",
       "src/project.rs: 12",
-      "tests/cli.rs: 35",
+      "src/report.rs: 3",
+      "tests/cli.rs: 39",
       "tests/fixtures.rs: 55"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 69,
+     "value": 70,
      "unit": "symbols",
-     "detail": "69 of 103 public symbols carry no doc comment",
+     "detail": "70 of 109 public symbols carry no doc comment",
      "evidence": [
-      "tools/verify_with_godot.py:63 download_godot",
-      "tools/verify_with_godot.py:106 run_refcheck",
-      "tools/verify_with_godot.py:118 engine_errors",
-      "tools/verify_with_godot.py:141 real_project_round_trip",
-      "tools/verify_with_godot.py:172 main",
+      "tools/verify_with_godot.py:49 project_dir",
+      "tools/verify_with_godot.py:72 download_godot",
+      "tools/verify_with_godot.py:115 run_refcheck",
+      "tools/verify_with_godot.py:127 engine_errors",
+      "tools/verify_with_godot.py:150 real_project_round_trip",
+      "tools/verify_with_godot.py:181 main",
       "tools/demo_uret.py:48 bash",
-      "tools/demo_uret.py:64 run_all",
-      "tools/demo_uret.py:82 write_record"
+      "tools/demo_uret.py:64 run_all"
      ],
-     "headroom": 0.67
+     "headroom": 0.642
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -2031,11 +2639,28 @@
      ],
      "headroom": 0.0
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 12,
+     "unit": "action references",
+     "detail": "12 of 12 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:26 actions/checkout@v7",
+      ".github/workflows/ci.yml:41 actions/upload-artifact@v7",
+      ".github/workflows/ci.yml:67 actions/checkout@v7",
+      ".github/workflows/ci.yml:76 actions/checkout@v7",
+      ".github/workflows/ci.yml:108 actions/checkout@v7",
+      ".github/workflows/ci.yml:122 actions/checkout@v7",
+      ".github/workflows/ci.yml:129 github/codeql-action/upload-sarif@v4",
+      ".github/workflows/ci.yml:143 actions/checkout@v7"
+     ],
+     "headroom": 1.0
+    },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 26,
+     "value": 27,
      "unit": "commands",
-     "detail": "26 runnable-looking commands in 6 shell blocks",
+     "detail": "27 runnable-looking commands in 6 shell blocks",
      "evidence": [
       "cargo install --git https://github.com/Furkiozknn/godot-refcheck   # or unpack a release binary, see Install",
       "godot-refcheck path/to/project        # 0 clean, 1 findings, 2 usage error or unreadable project",
@@ -2050,9 +2675,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 20250,
+     "value": 22974,
      "unit": "bytes",
-     "detail": "20250 bytes, 11 sections, 6 images",
+     "detail": "22974 bytes, 11 sections, 6 images",
      "evidence": [
       "What it checks",
       "Install",
@@ -2077,13 +2702,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 972,
+     "value": 1001,
      "unit": "lines",
      "detail": "src/project.rs is the longest source file",
      "evidence": [
       "src/project.rs"
      ],
-     "headroom": 0.4766666666666667
+     "headroom": 0.5008333333333334
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -2095,13 +2720,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 13,
+     "value": 2,
      "unit": "commits since last tag",
-     "detail": "last tag v0.2.0, 13 commits since",
+     "detail": "last tag v0.3.0, 2 commits since",
      "evidence": [
-      "v0.2.0"
+      "v0.3.0"
      ],
-     "headroom": 0.52
+     "headroom": 0.08
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -2114,45 +2739,257 @@
    },
    "opportunities": [
     {
+     "signal": "unpinned_actions",
+     "headroom": 1.0,
+     "note": "12 of 12 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:26 actions/checkout@v7",
+      ".github/workflows/ci.yml:41 actions/upload-artifact@v7",
+      ".github/workflows/ci.yml:67 actions/checkout@v7",
+      ".github/workflows/ci.yml:76 actions/checkout@v7",
+      ".github/workflows/ci.yml:108 actions/checkout@v7",
+      ".github/workflows/ci.yml:122 actions/checkout@v7"
+     ]
+    },
+    {
      "signal": "undocumented_surface",
-     "headroom": 0.67,
-     "note": "69 of 103 public symbols carry no doc comment",
+     "headroom": 0.642,
+     "note": "70 of 109 public symbols carry no doc comment",
      "evidence": [
-      "tools/verify_with_godot.py:63 download_godot",
-      "tools/verify_with_godot.py:106 run_refcheck",
-      "tools/verify_with_godot.py:118 engine_errors",
-      "tools/verify_with_godot.py:141 real_project_round_trip",
-      "tools/verify_with_godot.py:172 main",
-      "tools/demo_uret.py:48 bash"
-     ]
-    },
-    {
-     "signal": "release_lag",
-     "headroom": 0.52,
-     "note": "last tag v0.2.0, 13 commits since",
-     "evidence": [
-      "v0.2.0"
-     ]
-    },
-    {
-     "signal": "test_mass",
-     "headroom": 0.495,
-     "note": "178407 source bytes, 45010 test bytes in 18 files",
-     "evidence": [
-      "tests/cli.rs",
-      "tests/fixtures.rs",
-      "tests/projects/bom/tools.gd",
-      "tests/projects/broken/main.gd",
-      "tests/projects/clean/addons/demo/plugin.gd",
-      "tests/projects/clean/main.gd"
+      "tools/verify_with_godot.py:49 project_dir",
+      "tools/verify_with_godot.py:72 download_godot",
+      "tools/verify_with_godot.py:115 run_refcheck",
+      "tools/verify_with_godot.py:127 engine_errors",
+      "tools/verify_with_godot.py:150 real_project_round_trip",
+      "tools/verify_with_godot.py:181 main"
      ]
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.477,
+     "headroom": 0.501,
      "note": "src/project.rs is the longest source file",
      "evidence": [
       "src/project.rs"
+     ]
+    },
+    {
+     "signal": "test_mass",
+     "headroom": 0.448,
+     "note": "199511 source bytes, 55045 test bytes in 21 files",
+     "evidence": [
+      "tests/cli.rs",
+      "tests/fixtures.rs",
+      "tests/input_actions.rs",
+      "tests/projects/bom/tools.gd",
+      "tests/projects/broken/main.gd",
+      "tests/projects/clean/addons/demo/plugin.gd"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.08,
+     "note": "last tag v0.3.0, 2 commits since",
+     "evidence": [
+      "v0.3.0"
+     ]
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "isik-tuneli",
+   "head": "59032d2637a27728242991cd4ad331b732778d6b",
+   "taken_at": "2026-10-19T11:15:08Z",
+   "total_headroom": 3.013,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "javascript": 150357
+     },
+     "unit": "bytes",
+     "detail": "primary: javascript",
+     "evidence": [
+      "javascript 150357 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 1.222,
+     "unit": "test bytes per source byte",
+     "detail": "67655 source bytes, 82702 test bytes in 20 files",
+     "evidence": [
+      "test/adaptive.spec.js",
+      "test/capture-gif.js",
+      "test/capture-screens.js",
+      "test/capture-shot.js",
+      "test/contrast.spec.js",
+      "test/feel.spec.js"
+     ],
+     "headroom": 0.0
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 77,
+     "unit": "cases",
+     "detail": "77 cases across 15 files",
+     "evidence": [
+      "test/adaptive.spec.js: 4",
+      "test/contrast.spec.js: 2",
+      "test/feel.spec.js: 2",
+      "test/focus.spec.js: 4",
+      "test/font.spec.js: 3",
+      "test/gamepad.spec.js: 10",
+      "test/language.spec.js: 6",
+      "test/menu.spec.js: 12"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": null,
+     "unit": "",
+     "detail": "no Python or Rust public surface",
+     "evidence": [],
+     "headroom": null
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 2,
+     "unit": "action references",
+     "detail": "2 of 2 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:27 actions/checkout@v7",
+      ".github/workflows/ci.yml:29 actions/setup-node@v7"
+     ],
+     "headroom": 1.0
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 11,
+     "unit": "commands",
+     "detail": "11 runnable-looking commands in 3 shell blocks",
+     "evidence": [
+      "git clone https://github.com/Furkiozknn/isik-tuneli.git",
+      "cd isik-tuneli",
+      "python3 -m http.server 8000      # then open http://localhost:8000",
+      "npm install",
+      "npx playwright install --with-deps chromium   # first run only",
+      "npm test                                      # 61 tests in 13 spec files",
+      "node test/record-reel.js .capture 18 30            # 18 s of portrait 1080x1920 play, interface hidden -> .capture/f0000.jpg ...",
+      "ffmpeg -y -framerate 30 -start_number 150 -t 6 -i .capture/f%04d.jpg \\"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 27005,
+     "unit": "bytes",
+     "detail": "27005 bytes, 27 sections, 13 images",
+     "evidence": [
+      "Table of Contents",
+      "Gameplay",
+      "Objective",
+      "Controls",
+      "Power-Ups",
+      "Scoring",
+      "Leaderboard",
+      "Daily Challenge",
+      "Run Codes & Challenge Links",
+      "How It Works"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 1487,
+     "unit": "lines",
+     "detail": "script.js is the longest source file",
+     "evidence": [
+      "script.js"
+     ],
+     "headroom": 0.9058333333333334
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": 0,
+     "unit": "runtime dependencies",
+     "detail": "node: 0",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": 11,
+     "unit": "commits since last tag",
+     "detail": "last tag v1.0.0, 11 commits since",
+     "evidence": [
+      "v1.0.0"
+     ],
+     "headroom": 0.44
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 1 left null",
+     "evidence": [
+      "version"
+     ],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "unpinned_actions",
+     "headroom": 1.0,
+     "note": "2 of 2 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:27 actions/checkout@v7",
+      ".github/workflows/ci.yml:29 actions/setup-node@v7"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.906,
+     "note": "script.js is the longest source file",
+     "evidence": [
+      "script.js"
+     ]
+    },
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "ci.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.44,
+     "note": "last tag v1.0.0, 11 commits since",
+     "evidence": [
+      "v1.0.0"
      ]
     }
    ]
@@ -2160,21 +2997,21 @@
   {
    "schema": 1,
    "repo": "kanca",
-   "head": "4991a3396323aa77c2687f7f5c68f2153fdd9797",
-   "taken_at": "2026-10-12T13:30:55Z",
-   "total_headroom": 3.367,
+   "head": "e5ac272160c6b59cc790775ac36348b91356408e",
+   "taken_at": "2026-10-19T11:15:12Z",
+   "total_headroom": 4.453,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "gdscript": 369083,
+      "gdscript": 395125,
       "python": 6930,
       "shell": 6883
      },
      "unit": "bytes",
      "detail": "primary: gdscript",
      "evidence": [
-      "gdscript 369083 bytes",
+      "gdscript 395125 bytes",
       "python 6930 bytes",
       "shell 6883 bytes"
      ],
@@ -2182,25 +3019,25 @@
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.358,
+     "value": 0.395,
      "unit": "test bytes per source byte",
-     "detail": "281913 source bytes, 100983 test bytes in 4 files",
+     "detail": "293105 source bytes, 115833 test bytes in 4 files",
      "evidence": [
       "tests/ekran.gd",
       "tests/kapi.sh",
       "tests/kapi_sinama.sh",
       "tests/test_kanca.gd"
      ],
-     "headroom": 0.2835874897574784
+     "headroom": 0.20961430204193032
     },
     "test_count": {
      "name": "test_count",
-     "value": 56,
+     "value": 61,
      "unit": "cases",
-     "detail": "56 cases across 2 files",
+     "detail": "61 cases across 2 files",
      "evidence": [
       "tests/ekran.gd: 6",
-      "tests/test_kanca.gd: 50"
+      "tests/test_kanca.gd: 55"
      ],
      "headroom": null
     },
@@ -2225,6 +3062,23 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 11,
+     "unit": "action references",
+     "detail": "11 of 12 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:49 actions/checkout@v7",
+      ".github/workflows/ci.yml:129 actions/checkout@v7",
+      ".github/workflows/ci.yml:154 github/codeql-action/upload-sarif@v4",
+      ".github/workflows/yapi.yml:64 actions/checkout@v7",
+      ".github/workflows/yapi.yml:122 actions/upload-artifact@v7",
+      ".github/workflows/yapi.yml:128 actions/upload-artifact@v7",
+      ".github/workflows/yapi.yml:148 actions/download-artifact@v8",
+      ".github/workflows/yapi.yml:159 actions/configure-pages@v6"
+     ],
+     "headroom": 0.917
+    },
     "readme_commands": {
      "name": "readme_commands",
      "value": 16,
@@ -2244,9 +3098,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 37279,
+     "value": 39010,
      "unit": "bytes",
-     "detail": "37279 bytes, 27 sections, 7 images",
+     "detail": "39010 bytes, 27 sections, 7 images",
      "evidence": [
       "Hızlı başlangıç",
       "Kontroller",
@@ -2271,13 +3125,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 1044,
+     "value": 1192,
      "unit": "lines",
      "detail": "scripts/bolum.gd is the longest source file",
      "evidence": [
       "scripts/bolum.gd"
      ],
-     "headroom": 0.5366666666666666
+     "headroom": 0.66
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -2289,13 +3143,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 22,
+     "value": 29,
      "unit": "commits since last tag",
-     "detail": "last tag v0.5.2, 22 commits since",
+     "detail": "last tag v0.5.2, 29 commits since",
      "evidence": [
       "v0.5.2"
      ],
-     "headroom": 0.88
+     "headroom": 1.0
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -2317,10 +3171,23 @@
     },
     {
      "signal": "release_lag",
-     "headroom": 0.88,
-     "note": "last tag v0.5.2, 22 commits since",
+     "headroom": 1.0,
+     "note": "last tag v0.5.2, 29 commits since",
      "evidence": [
       "v0.5.2"
+     ]
+    },
+    {
+     "signal": "unpinned_actions",
+     "headroom": 0.917,
+     "note": "11 of 12 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:49 actions/checkout@v7",
+      ".github/workflows/ci.yml:129 actions/checkout@v7",
+      ".github/workflows/ci.yml:154 github/codeql-action/upload-sarif@v4",
+      ".github/workflows/yapi.yml:64 actions/checkout@v7",
+      ".github/workflows/yapi.yml:122 actions/upload-artifact@v7",
+      ".github/workflows/yapi.yml:128 actions/upload-artifact@v7"
      ]
     },
     {
@@ -2334,7 +3201,7 @@
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.537,
+     "headroom": 0.66,
      "note": "scripts/bolum.gd is the longest source file",
      "evidence": [
       "scripts/bolum.gd"
@@ -2342,8 +3209,8 @@
     },
     {
      "signal": "test_mass",
-     "headroom": 0.284,
-     "note": "281913 source bytes, 100983 test bytes in 4 files",
+     "headroom": 0.21,
+     "note": "293105 source bytes, 115833 test bytes in 4 files",
      "evidence": [
       "tests/ekran.gd",
       "tests/kapi.sh",
@@ -2356,29 +3223,29 @@
   {
    "schema": 1,
    "repo": "local-notes-search-mcp",
-   "head": "d3323ba835c6e3b7fed7fd5f6c4cd587b02fc1d6",
-   "taken_at": "2026-10-12T13:30:57Z",
-   "total_headroom": 2.146,
+   "head": "162960045865d773a03e8bdd36b06990d26c675c",
+   "taken_at": "2026-10-19T11:15:13Z",
+   "total_headroom": 3.087,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 101068,
+      "python": 129100,
       "javascript": 2317
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 101068 bytes",
+      "python 129100 bytes",
       "javascript 2317 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.747,
+     "value": 0.797,
      "unit": "test bytes per source byte",
-     "detail": "59178 source bytes, 44207 test bytes in 8 files",
+     "detail": "73135 source bytes, 58282 test bytes in 10 files",
      "evidence": [
       "tests/__init__.py",
       "tests/conftest.py",
@@ -2391,35 +3258,37 @@
     },
     "test_count": {
      "name": "test_count",
-     "value": 87,
+     "value": 114,
      "unit": "cases",
-     "detail": "87 cases across 6 files",
+     "detail": "114 cases across 8 files",
      "evidence": [
       "tests/test_ask_notes.py: 15",
       "tests/test_chunking.py: 12",
       "tests/test_cli_and_messages.py: 8",
       "tests/test_embedder_identity.py: 5",
+      "tests/test_hybrid_search.py: 18",
       "tests/test_indexing_and_search.py: 25",
+      "tests/test_mcp_surface.py: 9",
       "tests/test_path_safety.py: 22"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 14,
+     "value": 20,
      "unit": "symbols",
-     "detail": "14 of 30 public symbols carry no doc comment",
+     "detail": "20 of 38 public symbols carry no doc comment",
      "evidence": [
-      "local_notes_search.py:176 Chunk",
-      "local_notes_search.py:220 content_hash",
-      "local_notes_search.py:321 walk_indexable_files",
-      "local_notes_search.py:356 offline_mode",
-      "local_notes_search.py:439 get_connection",
-      "examples/stdio_demo.py:27 show",
-      "examples/stdio_demo.py:31 main",
-      "scripts/demo-uret.py:46 bash"
+      "local_notes_search.py:178 Chunk",
+      "local_notes_search.py:222 content_hash",
+      "local_notes_search.py:323 walk_indexable_files",
+      "local_notes_search.py:358 offline_mode",
+      "local_notes_search.py:492 has_fts",
+      "local_notes_search.py:528 get_connection",
+      "local_notes_search.py:708 SearchResults",
+      "local_notes_search.py:716 IndexedFile"
      ],
-     "headroom": 0.467
+     "headroom": 0.526
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -2431,6 +3300,23 @@
       "yayinla.yml"
      ],
      "headroom": 0.6666666666666666
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 10,
+     "unit": "action references",
+     "detail": "10 of 16 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:19 actions/checkout@v7",
+      ".github/workflows/ci.yml:31 actions/cache@v6",
+      ".github/workflows/ci.yml:57 actions/checkout@v7",
+      ".github/workflows/ci.yml:69 actions/cache@v6",
+      ".github/workflows/ci.yml:88 actions/checkout@v7",
+      ".github/workflows/ci.yml:118 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:94 actions/upload-artifact@v7"
+     ],
+     "headroom": 0.625
     },
     "readme_commands": {
      "name": "readme_commands",
@@ -2451,9 +3337,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 23172,
+     "value": 26050,
      "unit": "bytes",
-     "detail": "23172 bytes, 17 sections, 14 images",
+     "detail": "26050 bytes, 18 sections, 14 images",
      "evidence": [
       "**Semantic search over your own files — as an MCP server.**",
       "Try it in a minute",
@@ -2461,10 +3347,10 @@
       "When to use it, and when not to",
       "🧭 The 30-second pitch",
       "🏗️ How it works",
+      "Hybrid retrieval: meaning and exact words",
       "🧰 MCP tools",
       "🚀 Quickstart",
-      "🔒 What can be indexed",
-      "🗄️ What the index stores"
+      "🔒 What can be indexed"
      ],
      "headroom": 0.0
     },
@@ -2478,13 +3364,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 1015,
+     "value": 1323,
      "unit": "lines",
      "detail": "local_notes_search.py is the longest source file",
      "evidence": [
       "local_notes_search.py"
      ],
-     "headroom": 0.5125
+     "headroom": 0.7691666666666667
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -2498,7 +3384,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (42 commits on HEAD)",
+     "detail": "never tagged (53 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -2513,6 +3399,14 @@
    },
    "opportunities": [
     {
+     "signal": "largest_source_file",
+     "headroom": 0.769,
+     "note": "local_notes_search.py is the longest source file",
+     "evidence": [
+      "local_notes_search.py"
+     ]
+    },
+    {
      "signal": "ci_breadth",
      "headroom": 0.667,
      "note": "2 workflow files, ~11 jobs, runners: ubuntu-latest",
@@ -2522,30 +3416,279 @@
      ]
     },
     {
-     "signal": "largest_source_file",
-     "headroom": 0.512,
-     "note": "local_notes_search.py is the longest source file",
+     "signal": "unpinned_actions",
+     "headroom": 0.625,
+     "note": "10 of 16 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
      "evidence": [
-      "local_notes_search.py"
+      ".github/workflows/ci.yml:19 actions/checkout@v7",
+      ".github/workflows/ci.yml:31 actions/cache@v6",
+      ".github/workflows/ci.yml:57 actions/checkout@v7",
+      ".github/workflows/ci.yml:69 actions/cache@v6",
+      ".github/workflows/ci.yml:88 actions/checkout@v7",
+      ".github/workflows/ci.yml:118 actions/checkout@v7"
+     ]
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.526,
+     "note": "20 of 38 public symbols carry no doc comment",
+     "evidence": [
+      "local_notes_search.py:178 Chunk",
+      "local_notes_search.py:222 content_hash",
+      "local_notes_search.py:323 walk_indexable_files",
+      "local_notes_search.py:358 offline_mode",
+      "local_notes_search.py:492 has_fts",
+      "local_notes_search.py:528 get_connection"
      ]
     },
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (42 commits on HEAD)",
+     "note": "never tagged (53 commits on HEAD)",
+     "evidence": []
+    }
+   ]
+  },
+  {
+   "schema": 1,
+   "repo": "lodeworks",
+   "head": "22f853a7248ebfdd14f8396c48946b59bbe52bf1",
+   "taken_at": "2026-10-19T11:15:17Z",
+   "total_headroom": 4.306,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": {
+      "gdscript": 795285,
+      "shell": 13367,
+      "python": 10055
+     },
+     "unit": "bytes",
+     "detail": "primary: gdscript",
+     "evidence": [
+      "gdscript 795285 bytes",
+      "shell 13367 bytes",
+      "python 10055 bytes"
+     ],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": 0.301,
+     "unit": "test bytes per source byte",
+     "detail": "629518 source bytes, 189189 test bytes in 15 files",
+     "evidence": [
+      "tests/fakes/fake_admob.gd",
+      "tests/fakes/fake_billing.gd",
+      "tests/test_economy.gd",
+      "tests/test_gameplay.gd",
+      "tests/test_grid.gd",
+      "tests/test_monetization.gd"
+     ],
+     "headroom": 0.39894014150508805
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 255,
+     "unit": "cases (lower bound)",
+     "detail": "at least 255 cases across 12 files; 1 further test file(s) declare their cases in a form this cannot count",
+     "evidence": [
+      "tests/test_economy.gd: 21",
+      "tests/test_gameplay.gd: 25",
+      "tests/test_grid.gd: 29",
+      "tests/test_monetization.gd: 22",
+      "tests/test_performance.gd: 8",
+      "tests/test_playthrough.gd: 1",
+      "uncounted: tests/test_runner.gd"
+     ],
+     "headroom": null
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": 6,
+     "unit": "symbols",
+     "detail": "6 of 6 public symbols carry no doc comment",
+     "evidence": [
+      "tools/check-readability.py:26 tiles",
+      "tools/check-readability.py:32 diff",
+      "tools/check-readability.py:42 main",
+      "tools/_inject_keystore.py:19 main",
+      "tools/check-store-assets.py:28 png_info",
+      "tools/check-store-assets.py:37 main"
+     ],
+     "headroom": 1.0
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": 1,
+     "unit": "distinct runners",
+     "detail": "2 workflow files, ~12 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "android.yml",
+      "ci.yml"
+     ],
+     "headroom": 0.6666666666666666
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 13,
+     "unit": "action references",
+     "detail": "13 of 13 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/android.yml:51 actions/checkout@v4",
+      ".github/workflows/android.yml:56 actions/setup-java@v4",
+      ".github/workflows/android.yml:209 actions/upload-artifact@v4",
+      ".github/workflows/android.yml:229 actions/checkout@v4",
+      ".github/workflows/android.yml:240 actions/setup-java@v4",
+      ".github/workflows/android.yml:289 actions/upload-artifact@v4",
+      ".github/workflows/ci.yml:20 actions/checkout@v4",
+      ".github/workflows/ci.yml:87 actions/upload-artifact@v4"
+     ],
+     "headroom": 1.0
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 8,
+     "unit": "commands",
+     "detail": "8 runnable-looking commands in 1 shell blocks",
+     "evidence": [
+      "godot --path . --resolution 720x1440                              # play it",
+      "godot --headless --path . --script res://tests/test_runner.gd     # 137 tests",
+      "godot --headless --path . --script res://tools/selftest_cli.gd    # the device self test, minus the device",
+      "godot --headless --path . --script res://tools/diagnose.gd        # per-tile balance dump",
+      "godot --headless --path . --script res://tools/layout_lab.gd      # score the reference layouts",
+      "godot --headless --path . --script res://tools/layout_search.gd   # hill-climb for a better board",
+      "godot --headless --path . --script res://tools/econ_lab.gd        # compare economic models",
+      "GODOT=$(which godot) tools/store-assets.sh                        # regenerate every store asset"
+     ],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 17755,
+     "unit": "bytes",
+     "detail": "17755 bytes, 12 sections, 1 images",
+     "evidence": [
+      "Learning it",
+      "What the board tells you",
+      "The loop",
+      "Heat that travels",
+      "Why depth is worth it",
+      "No art files, no audio files",
+      "Monetisation, designed in rather than bolted on",
+      "Running it",
+      "What the tests actually test",
+      "Layout"
+     ],
+     "headroom": 0.0
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": 1289,
+     "unit": "lines",
+     "detail": "scripts/ui/main.gd is the longest source file",
+     "evidence": [
+      "scripts/ui/main.gd"
+     ],
+     "headroom": 0.7408333333333333
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": null,
+     "unit": "commits since last tag",
+     "detail": "never tagged (21 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 21 top-level fields, 2 left null",
+     "evidence": [
+      "homepage",
+      "version"
+     ],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "undocumented_surface",
+     "headroom": 1.0,
+     "note": "6 of 6 public symbols carry no doc comment",
+     "evidence": [
+      "tools/check-readability.py:26 tiles",
+      "tools/check-readability.py:32 diff",
+      "tools/check-readability.py:42 main",
+      "tools/_inject_keystore.py:19 main",
+      "tools/check-store-assets.py:28 png_info",
+      "tools/check-store-assets.py:37 main"
+     ]
+    },
+    {
+     "signal": "unpinned_actions",
+     "headroom": 1.0,
+     "note": "13 of 13 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/android.yml:51 actions/checkout@v4",
+      ".github/workflows/android.yml:56 actions/setup-java@v4",
+      ".github/workflows/android.yml:209 actions/upload-artifact@v4",
+      ".github/workflows/android.yml:229 actions/checkout@v4",
+      ".github/workflows/android.yml:240 actions/setup-java@v4",
+      ".github/workflows/android.yml:289 actions/upload-artifact@v4"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.741,
+     "note": "scripts/ui/main.gd is the longest source file",
+     "evidence": [
+      "scripts/ui/main.gd"
+     ]
+    },
+    {
+     "signal": "ci_breadth",
+     "headroom": 0.667,
+     "note": "2 workflow files, ~12 jobs, runners: ubuntu-latest",
+     "evidence": [
+      "android.yml",
+      "ci.yml"
+     ]
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (21 commits on HEAD)",
      "evidence": []
     },
     {
-     "signal": "undocumented_surface",
-     "headroom": 0.467,
-     "note": "14 of 30 public symbols carry no doc comment",
+     "signal": "test_mass",
+     "headroom": 0.399,
+     "note": "629518 source bytes, 189189 test bytes in 15 files",
      "evidence": [
-      "local_notes_search.py:176 Chunk",
-      "local_notes_search.py:220 content_hash",
-      "local_notes_search.py:321 walk_indexable_files",
-      "local_notes_search.py:356 offline_mode",
-      "local_notes_search.py:439 get_connection",
-      "examples/stdio_demo.py:27 show"
+      "tests/fakes/fake_admob.gd",
+      "tests/fakes/fake_billing.gd",
+      "tests/test_economy.gd",
+      "tests/test_gameplay.gd",
+      "tests/test_grid.gd",
+      "tests/test_monetization.gd"
      ]
     }
    ]
@@ -2553,29 +3696,29 @@
   {
    "schema": 1,
    "repo": "masal",
-   "head": "2b48b3276c54a3e39a07b80e07eb461b3e1d112f",
-   "taken_at": "2026-10-12T13:30:58Z",
-   "total_headroom": 2.177,
+   "head": "e194ae54f6ac828248da3210811aa77390e6b347",
+   "taken_at": "2026-10-19T11:15:18Z",
+   "total_headroom": 3.409,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "javascript": 101914,
+      "javascript": 115813,
       "python": 1126
      },
      "unit": "bytes",
      "detail": "primary: javascript",
      "evidence": [
-      "javascript 101914 bytes",
+      "javascript 115813 bytes",
       "python 1126 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.336,
+     "value": 0.348,
      "unit": "test bytes per source byte",
-     "detail": "77140 source bytes, 25900 test bytes in 7 files",
+     "detail": "86763 source bytes, 30176 test bytes in 8 files",
      "evidence": [
       "boyama.test.js",
       "depo.test.js",
@@ -2584,21 +3727,22 @@
       "olcum.test.js",
       "sw.test.js"
      ],
-     "headroom": 0.3284936479128857
+     "headroom": 0.3044039509929348
     },
     "test_count": {
      "name": "test_count",
-     "value": 51,
+     "value": 58,
      "unit": "cases",
-     "detail": "51 cases across 7 files",
+     "detail": "58 cases across 8 files",
      "evidence": [
       "boyama.test.js: 7",
       "depo.test.js: 12",
-      "hikayeler.test.js: 15",
+      "hikayeler.test.js: 16",
       "kontrast.test.js: 1",
       "olcum.test.js: 5",
       "sw.test.js: 9",
-      "turkce.test.js: 2"
+      "turkce.test.js: 2",
+      "yazdir.test.js: 6"
      ],
      "headroom": null
     },
@@ -2622,6 +3766,23 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 9,
+     "unit": "action references",
+     "detail": "9 of 9 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:24 actions/checkout@v7",
+      ".github/workflows/ci.yml:26 actions/setup-node@v7",
+      ".github/workflows/ci.yml:71 actions/checkout@v7",
+      ".github/workflows/ci.yml:73 actions/setup-node@v7",
+      ".github/workflows/ci.yml:117 actions/checkout@v7",
+      ".github/workflows/ci.yml:119 actions/setup-node@v7",
+      ".github/workflows/ci.yml:144 actions/checkout@v7",
+      ".github/workflows/ci.yml:146 actions/setup-node@v7"
+     ],
+     "headroom": 1.0
+    },
     "readme_commands": {
      "name": "readme_commands",
      "value": 0,
@@ -2632,9 +3793,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 12052,
+     "value": 12863,
      "unit": "bytes",
-     "detail": "12052 bytes, 14 sections, 4 images",
+     "detail": "12863 bytes, 14 sections, 4 images",
      "evidence": [
       "Nasıl kullanılır",
       "Neler var",
@@ -2659,13 +3820,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 618,
+     "value": 637,
      "unit": "lines",
      "detail": "app.js is the longest source file",
      "evidence": [
       "app.js"
      ],
-     "headroom": 0.18166666666666667
+     "headroom": 0.1975
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -2677,13 +3838,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 0,
+     "value": 6,
      "unit": "commits since last tag",
-     "detail": "last tag v1.0.0, 0 commits since",
+     "detail": "last tag v1.0.0, 6 commits since",
      "evidence": [
       "v1.0.0"
      ],
-     "headroom": 0.0
+     "headroom": 0.24
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -2704,6 +3865,19 @@
      ]
     },
     {
+     "signal": "unpinned_actions",
+     "headroom": 1.0,
+     "note": "9 of 9 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:24 actions/checkout@v7",
+      ".github/workflows/ci.yml:26 actions/setup-node@v7",
+      ".github/workflows/ci.yml:71 actions/checkout@v7",
+      ".github/workflows/ci.yml:73 actions/setup-node@v7",
+      ".github/workflows/ci.yml:117 actions/checkout@v7",
+      ".github/workflows/ci.yml:119 actions/setup-node@v7"
+     ]
+    },
+    {
      "signal": "ci_breadth",
      "headroom": 0.667,
      "note": "1 workflow files, ~7 jobs, runners: ubuntu-latest",
@@ -2713,8 +3887,8 @@
     },
     {
      "signal": "test_mass",
-     "headroom": 0.328,
-     "note": "77140 source bytes, 25900 test bytes in 7 files",
+     "headroom": 0.304,
+     "note": "86763 source bytes, 30176 test bytes in 8 files",
      "evidence": [
       "boyama.test.js",
       "depo.test.js",
@@ -2725,8 +3899,16 @@
      ]
     },
     {
+     "signal": "release_lag",
+     "headroom": 0.24,
+     "note": "last tag v1.0.0, 6 commits since",
+     "evidence": [
+      "v1.0.0"
+     ]
+    },
+    {
      "signal": "largest_source_file",
-     "headroom": 0.182,
+     "headroom": 0.198,
      "note": "app.js is the longest source file",
      "evidence": [
       "app.js"
@@ -2737,58 +3919,61 @@
   {
    "schema": 1,
    "repo": "mcp-census",
-   "head": "115329c56d9aaf82aa5f2ec41637dd4e5fb43005",
-   "taken_at": "2026-10-12T13:30:59Z",
-   "total_headroom": 1.861,
+   "head": "89cbc18e072c30aebb4a2a1b32da14b4782c5325",
+   "taken_at": "2026-10-19T11:15:19Z",
+   "total_headroom": 2.663,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 100335,
+      "python": 141854,
       "javascript": 2383
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 100335 bytes",
+      "python 141854 bytes",
       "javascript 2383 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.759,
+     "value": 0.83,
      "unit": "test bytes per source byte",
-     "detail": "58407 source bytes, 44311 test bytes in 6 files",
+     "detail": "78836 source bytes, 65401 test bytes in 10 files",
      "evidence": [
       "tests/__init__.py",
       "tests/test_analyze.py",
       "tests/test_cli.py",
+      "tests/test_disa_aktar.py",
       "tests/test_fetch.py",
-      "tests/test_ilk_kullanim.py",
-      "tests/test_saglamlik.py"
+      "tests/test_gorsel.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 100,
+     "value": 146,
      "unit": "cases",
-     "detail": "100 cases across 5 files",
+     "detail": "146 cases across 9 files",
      "evidence": [
       "tests/test_analyze.py: 30",
       "tests/test_cli.py: 12",
+      "tests/test_disa_aktar.py: 11",
       "tests/test_fetch.py: 13",
+      "tests/test_gorsel.py: 12",
       "tests/test_ilk_kullanim.py: 18",
-      "tests/test_saglamlik.py: 27"
+      "tests/test_ingilizce.py: 8",
+      "tests/test_kirilimlar.py: 15"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 22,
+     "value": 24,
      "unit": "symbols",
-     "detail": "22 of 46 public symbols carry no doc comment",
+     "detail": "24 of 56 public symbols carry no doc comment",
      "evidence": [
       "scripts/demo-uret.py:54 bash",
       "scripts/demo-uret.py:61 run_all",
@@ -2799,7 +3984,7 @@
       "mcp_census/cli.py:90 komut_indir",
       "mcp_census/cli.py:125 komut_say"
      ],
-     "headroom": 0.478
+     "headroom": 0.429
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -2813,11 +3998,26 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 6,
+     "unit": "action references",
+     "detail": "6 of 11 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:28 actions/checkout@v7",
+      ".github/workflows/ci.yml:78 actions/checkout@v7",
+      ".github/workflows/sayim.yml:40 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:66 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:84 actions/download-artifact@v8"
+     ],
+     "headroom": 0.545
+    },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 34,
+     "value": 37,
      "unit": "commands",
-     "detail": "34 runnable-looking commands in 9 shell blocks",
+     "detail": "37 runnable-looking commands in 9 shell blocks",
      "evidence": [
       "git clone https://github.com/Furkiozknn/mcp-census && cd mcp-census && uv run mcp-census rapor",
       "git clone https://github.com/Furkiozknn/mcp-census && cd mcp-census",
@@ -2825,27 +4025,27 @@
       "uv run mcp-census --veri veri/ornek say      # a 500-record sample ships with the repo",
       "uv run mcp-census --veri veri/ornek rapor",
       "uv run mcp-census indir --surum latest       # the only command that uses the network (~5 min)",
-      "git clone https://github.com/Furkiozknn/mcp-census && cd mcp-census",
-      "uv run mcp-census rapor                     # yukarıdaki demodaki rapor, ağ yok"
+      "uv run mcp-census --data veri/ornek report   # the same, with English names",
+      "git clone https://github.com/Furkiozknn/mcp-census && cd mcp-census"
      ],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 20016,
+     "value": 23983,
      "unit": "bytes",
-     "detail": "20016 bytes, 17 sections, 9 images",
+     "detail": "23983 bytes, 18 sections, 9 images",
      "evidence": [
       "30 saniyede dene",
       "Neden",
       "İlk bulgu: \"kaç sunucu var\" sorusunun cevabı üçe katlanabiliyor",
       "İkinci bulgu: registry'nin dörtte birinin okunacak kodu yok",
       "Taşıma ve paketleme dağılımı",
+      "Kırılımlar: kurulum biçimi, sunucu başına tür, ad alanı",
       "Veri tazeliği",
       "Sayının kendisi hareket ediyor — ve bunu ölçüyoruz",
       "Aynı soru, aylar sonra",
-      "Kurulum",
-      "Komutlar"
+      "Kurulum"
      ],
      "headroom": 0.0
     },
@@ -2859,13 +4059,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 443,
+     "value": 571,
      "unit": "lines",
      "detail": "mcp_census/analyze.py is the longest source file",
      "evidence": [
       "mcp_census/analyze.py"
      ],
-     "headroom": 0.035833333333333335
+     "headroom": 0.1425
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -2877,13 +4077,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 17,
+     "value": 22,
      "unit": "commits since last tag",
-     "detail": "last tag v0.1.0, 17 commits since",
+     "detail": "last tag v0.1.0, 22 commits since",
      "evidence": [
       "v0.1.0"
      ],
-     "headroom": 0.68
+     "headroom": 0.88
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -2897,8 +4097,8 @@
    "opportunities": [
     {
      "signal": "release_lag",
-     "headroom": 0.68,
-     "note": "last tag v0.1.0, 17 commits since",
+     "headroom": 0.88,
+     "note": "last tag v0.1.0, 22 commits since",
      "evidence": [
       "v0.1.0"
      ]
@@ -2914,9 +4114,22 @@
      ]
     },
     {
+     "signal": "unpinned_actions",
+     "headroom": 0.545,
+     "note": "6 of 11 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:28 actions/checkout@v7",
+      ".github/workflows/ci.yml:78 actions/checkout@v7",
+      ".github/workflows/sayim.yml:40 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:66 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:84 actions/download-artifact@v8"
+     ]
+    },
+    {
      "signal": "undocumented_surface",
-     "headroom": 0.478,
-     "note": "22 of 46 public symbols carry no doc comment",
+     "headroom": 0.429,
+     "note": "24 of 56 public symbols carry no doc comment",
      "evidence": [
       "scripts/demo-uret.py:54 bash",
       "scripts/demo-uret.py:61 run_all",
@@ -2928,7 +4141,7 @@
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.036,
+     "headroom": 0.142,
      "note": "mcp_census/analyze.py is the longest source file",
      "evidence": [
       "mcp_census/analyze.py"
@@ -2939,21 +4152,21 @@
   {
    "schema": 1,
    "repo": "mcp-vet",
-   "head": "836f7a2840a5449ba239fc51b2ba333fd532e2c9",
-   "taken_at": "2026-10-12T13:31:01Z",
-   "total_headroom": 1.721,
+   "head": "60fc9e6c2680dbcabf15fed19006185d20149e58",
+   "taken_at": "2026-10-19T11:15:20Z",
+   "total_headroom": 2.5,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 440055,
+      "python": 503934,
       "javascript": 2383,
       "shell": 118
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 440055 bytes",
+      "python 503934 bytes",
       "javascript 2383 bytes",
       "shell 118 bytes"
      ],
@@ -2961,52 +4174,52 @@
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.506,
+     "value": 0.552,
      "unit": "test bytes per source byte",
-     "detail": "293913 source bytes, 148643 test bytes in 25 files",
+     "detail": "326330 source bytes, 180105 test bytes in 30 files",
      "evidence": [
       "tests/conftest.py",
       "tests/fixtures/clean_server/server.py",
       "tests/fixtures/exfil_server/server.py",
+      "tests/fixtures/lying_annotations/server.py",
       "tests/fixtures/obfuscated/server.py",
-      "tests/fixtures/poisoned_server/server.py",
-      "tests/fixtures/remote_pipe/install.sh"
+      "tests/fixtures/poisoned_server/server.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 352,
+     "value": 417,
      "unit": "cases",
-     "detail": "352 cases across 18 files",
+     "detail": "417 cases across 22 files",
      "evidence": [
+      "tests/test_action_run.py: 15",
+      "tests/test_annotations.py: 15",
       "tests/test_blind_spots.py: 25",
       "tests/test_cli_and_risk.py: 43",
       "tests/test_defensive_context.py: 23",
       "tests/test_diff.py: 19",
       "tests/test_first_run_messages.py: 25",
-      "tests/test_github_and_trust.py: 24",
-      "tests/test_hostile_input.py: 20",
-      "tests/test_http_cache.py: 29"
+      "tests/test_github_and_trust.py: 24"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 48,
+     "value": 53,
      "unit": "symbols",
-     "detail": "48 of 130 public symbols carry no doc comment",
+     "detail": "53 of 140 public symbols carry no doc comment",
      "evidence": [
       "scripts/tarama-ozet.py:23 yukle",
       "scripts/tarama-ozet.py:44 main",
       "scripts/ekosistem-tara.py:34 kabuk",
       "scripts/ekosistem-tara.py:93 main",
+      "scripts/action_run.py:83 summary_markdown",
+      "scripts/action_run.py:132 run",
       "scripts/demo-uret.py:54 bash",
-      "scripts/demo-uret.py:61 run_all",
-      "scripts/demo-uret.py:79 checkout_sha",
-      "scripts/demo-uret.py:87 write_record"
+      "scripts/demo-uret.py:61 run_all"
      ],
-     "headroom": 0.369
+     "headroom": 0.379
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -3019,11 +4232,28 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 10,
+     "unit": "action references",
+     "detail": "10 of 13 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:23 actions/checkout@v7",
+      ".github/workflows/ci.yml:26 actions/setup-python@v7",
+      ".github/workflows/ci.yml:44 actions/checkout@v7",
+      ".github/workflows/ci.yml:46 actions/setup-python@v7",
+      ".github/workflows/ci.yml:179 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:46 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:66 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:87 actions/download-artifact@v8"
+     ],
+     "headroom": 0.769
+    },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 29,
+     "value": 31,
      "unit": "commands",
-     "detail": "29 runnable-looking commands in 10 shell blocks",
+     "detail": "31 runnable-looking commands in 11 shell blocks",
      "evidence": [
       "pipx install git+https://github.com/Furkiozknn/mcp-vet      # or, with nothing installed: uvx --from git+https://github.com/Furkiozknn/mcp-vet mcp-vet --help",
       "git clone --depth 1 https://github.com/<owner>/<server> ./checkout",
@@ -3038,9 +4268,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 32112,
+     "value": 36799,
      "unit": "bytes",
-     "detail": "32112 bytes, 20 sections, 11 images",
+     "detail": "36799 bytes, 22 sections, 11 images",
      "evidence": [
       "What is this",
       "📚 Table of contents",
@@ -3085,7 +4315,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (52 commits on HEAD)",
+     "detail": "never tagged (60 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -3100,6 +4330,19 @@
    },
    "opportunities": [
     {
+     "signal": "unpinned_actions",
+     "headroom": 0.769,
+     "note": "10 of 13 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:23 actions/checkout@v7",
+      ".github/workflows/ci.yml:26 actions/setup-python@v7",
+      ".github/workflows/ci.yml:44 actions/checkout@v7",
+      ".github/workflows/ci.yml:46 actions/setup-python@v7",
+      ".github/workflows/ci.yml:179 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:46 actions/checkout@v7"
+     ]
+    },
+    {
      "signal": "ci_breadth",
      "headroom": 0.667,
      "note": "2 workflow files, ~9 jobs, runners: ubuntu-latest",
@@ -3111,20 +4354,20 @@
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (52 commits on HEAD)",
+     "note": "never tagged (60 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "undocumented_surface",
-     "headroom": 0.369,
-     "note": "48 of 130 public symbols carry no doc comment",
+     "headroom": 0.379,
+     "note": "53 of 140 public symbols carry no doc comment",
      "evidence": [
       "scripts/tarama-ozet.py:23 yukle",
       "scripts/tarama-ozet.py:44 main",
       "scripts/ekosistem-tara.py:34 kabuk",
       "scripts/ekosistem-tara.py:93 main",
-      "scripts/demo-uret.py:54 bash",
-      "scripts/demo-uret.py:61 run_all"
+      "scripts/action_run.py:83 summary_markdown",
+      "scripts/action_run.py:132 run"
      ]
     },
     {
@@ -3140,61 +4383,61 @@
   {
    "schema": 1,
    "repo": "mini-creative-toolkit",
-   "head": "c26d0f5ef120dce75536267a5a6f6cf48ac1ad65",
-   "taken_at": "2026-10-12T13:31:02Z",
-   "total_headroom": 1.748,
+   "head": "a17fdabc5b4915827d0a27fcb1f538e1ebcc31d4",
+   "taken_at": "2026-10-19T11:15:21Z",
+   "total_headroom": 2.373,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 352060,
+      "python": 372686,
       "javascript": 2383
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 352060 bytes",
+      "python 372686 bytes",
       "javascript 2383 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.524,
+     "value": 0.555,
      "unit": "test bytes per source byte",
-     "detail": "232635 source bytes, 121808 test bytes in 13 files",
+     "detail": "241156 source bytes, 133913 test bytes in 16 files",
      "evidence": [
       "tests/conftest.py",
       "tests/helpers.py",
+      "tests/test_annotations_complete.py",
       "tests/test_batch.py",
       "tests/test_capabilities_and_config.py",
-      "tests/test_cli_and_server.py",
-      "tests/test_hosted_generation.py"
+      "tests/test_cli_and_server.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 258,
+     "value": 277,
      "unit": "cases",
-     "detail": "258 cases across 11 files",
+     "detail": "277 cases across 14 files",
      "evidence": [
+      "tests/test_annotations_complete.py: 5",
       "tests/test_batch.py: 17",
       "tests/test_capabilities_and_config.py: 28",
       "tests/test_cli_and_server.py: 46",
+      "tests/test_ffmpeg_protocols.py: 4",
       "tests/test_hosted_generation.py: 19",
       "tests/test_image_tools.py: 33",
-      "tests/test_inspect_optimize_upscale.py: 25",
-      "tests/test_model_caching.py: 7",
-      "tests/test_paths_security.py: 25"
+      "tests/test_inspect_optimize_upscale.py: 25"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 79,
+     "value": 81,
      "unit": "symbols",
-     "detail": "79 of 141 public symbols carry no doc comment",
+     "detail": "81 of 145 public symbols carry no doc comment",
      "evidence": [
       "scripts/mcp_probe.py:28 Client",
       "scripts/mcp_probe.py:81 main",
@@ -3205,7 +4448,7 @@
       "scripts/demo-uret.py:185 write_pages",
       "scripts/demo-uret.py:200 record_video"
      ],
-     "headroom": 0.56
+     "headroom": 0.559
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -3217,6 +4460,23 @@
       "yayinla.yml"
      ],
      "headroom": 0.3333333333333333
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 10,
+     "unit": "action references",
+     "detail": "10 of 18 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:30 actions/checkout@v7",
+      ".github/workflows/ci.yml:68 actions/checkout@v7",
+      ".github/workflows/ci.yml:104 actions/checkout@v7",
+      ".github/workflows/ci.yml:208 actions/checkout@v7",
+      ".github/workflows/ci.yml:235 actions/checkout@v7",
+      ".github/workflows/ci.yml:274 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:94 actions/upload-artifact@v7"
+     ],
+     "headroom": 0.556
     },
     "readme_commands": {
      "name": "readme_commands",
@@ -3237,9 +4497,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 26891,
+     "value": 28529,
      "unit": "bytes",
-     "detail": "26891 bytes, 25 sections, 11 images",
+     "detail": "28529 bytes, 25 sections, 11 images",
      "evidence": [
       "Contents",
       "Why this exists",
@@ -3264,13 +4524,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 826,
+     "value": 909,
      "unit": "lines",
      "detail": "src/mini_creative_toolkit/server.py is the longest source file",
      "evidence": [
       "src/mini_creative_toolkit/server.py"
      ],
-     "headroom": 0.355
+     "headroom": 0.4241666666666667
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -3284,7 +4544,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (49 commits on HEAD)",
+     "detail": "never tagged (55 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -3300,8 +4560,8 @@
    "opportunities": [
     {
      "signal": "undocumented_surface",
-     "headroom": 0.56,
-     "note": "79 of 141 public symbols carry no doc comment",
+     "headroom": 0.559,
+     "note": "81 of 145 public symbols carry no doc comment",
      "evidence": [
       "scripts/mcp_probe.py:28 Client",
       "scripts/mcp_probe.py:81 main",
@@ -3312,14 +4572,27 @@
      ]
     },
     {
+     "signal": "unpinned_actions",
+     "headroom": 0.556,
+     "note": "10 of 18 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:30 actions/checkout@v7",
+      ".github/workflows/ci.yml:68 actions/checkout@v7",
+      ".github/workflows/ci.yml:104 actions/checkout@v7",
+      ".github/workflows/ci.yml:208 actions/checkout@v7",
+      ".github/workflows/ci.yml:235 actions/checkout@v7",
+      ".github/workflows/ci.yml:274 actions/checkout@v7"
+     ]
+    },
+    {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (49 commits on HEAD)",
+     "note": "never tagged (55 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.355,
+     "headroom": 0.424,
      "note": "src/mini_creative_toolkit/server.py is the longest source file",
      "evidence": [
       "src/mini_creative_toolkit/server.py"
@@ -3339,55 +4612,59 @@
   {
    "schema": 1,
    "repo": "model-comparison-harness",
-   "head": "6d13b3e6c55af2de0f6ed5c9cf57783f3e84bc61",
-   "taken_at": "2026-10-12T13:31:03Z",
-   "total_headroom": 1.596,
+   "head": "2fb903c81eb551ad3ba45c5029527843557617e2",
+   "taken_at": "2026-10-19T11:15:22Z",
+   "total_headroom": 2.127,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 126811
+      "python": 166393
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 126811 bytes"
+      "python 166393 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.863,
+     "value": 0.861,
      "unit": "test bytes per source byte",
-     "detail": "68051 source bytes, 58760 test bytes in 5 files",
+     "detail": "89416 source bytes, 76977 test bytes in 9 files",
      "evidence": [
       "tests/test_backends.py",
       "tests/test_cli.py",
       "tests/test_config.py",
-      "tests/test_grading.py",
-      "tests/test_runner.py"
+      "tests/test_cost.py",
+      "tests/test_gateway_poll_contract.py",
+      "tests/test_gateway_poll_retry.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 109,
+     "value": 147,
      "unit": "cases",
-     "detail": "109 cases across 5 files",
+     "detail": "147 cases across 9 files",
      "evidence": [
       "tests/test_backends.py: 28",
       "tests/test_cli.py: 27",
       "tests/test_config.py: 24",
+      "tests/test_cost.py: 12",
+      "tests/test_gateway_poll_contract.py: 9",
+      "tests/test_gateway_poll_retry.py: 5",
       "tests/test_grading.py: 15",
-      "tests/test_runner.py: 15"
+      "tests/test_repeat.py: 12"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 15,
+     "value": 16,
      "unit": "symbols",
-     "detail": "15 of 35 public symbols carry no doc comment",
+     "detail": "16 of 46 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
@@ -3398,7 +4675,7 @@
       "arac/demo-uret.py:81 satir_rengi",
       "arac/demo-uret.py:122 ciz"
      ],
-     "headroom": 0.429
+     "headroom": 0.348
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -3411,11 +4688,26 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 6,
+     "unit": "action references",
+     "detail": "6 of 10 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:25 actions/checkout@v7",
+      ".github/workflows/ci.yml:63 actions/checkout@v7",
+      ".github/workflows/ci.yml:92 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:67 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:88 actions/download-artifact@v8"
+     ],
+     "headroom": 0.6
+    },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 20,
+     "value": 21,
      "unit": "commands",
-     "detail": "20 runnable-looking commands in 6 shell blocks",
+     "detail": "21 runnable-looking commands in 6 shell blocks",
      "evidence": [
       "git clone https://github.com/Furkiozknn/model-comparison-harness.git && cd model-comparison-harness",
       "uv run mch run examples/compare-mocks.yaml --input '{\"prompt\": \"a cat riding a bike\"}'",
@@ -3430,20 +4722,20 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 19502,
+     "value": 26321,
      "unit": "bytes",
-     "detail": "19502 bytes, 11 sections, 4 images",
+     "detail": "26321 bytes, 14 sections, 4 images",
      "evidence": [
+      "Why not promptfoo?",
       "Quick start",
       "Backend types",
+      "Price tables (`cost:`)",
       "The CLI",
+      "Repeated runs (`--repeat N`)",
       "Model-graded scoring (`--rubric`)",
       "Using it as a library",
       "Writing a new backend type",
-      "Development",
-      "Limitations",
-      "`gateway_poll.py` is not ours",
-      "License"
+      "Development"
      ],
      "headroom": 0.0
     },
@@ -3457,13 +4749,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 320,
+     "value": 415,
      "unit": "lines",
-     "detail": "src/model_comparison_harness/backends.py is the longest source file",
+     "detail": "src/model_comparison_harness/cli.py is the longest source file",
      "evidence": [
-      "src/model_comparison_harness/backends.py"
+      "src/model_comparison_harness/cli.py"
      ],
-     "headroom": 0.0
+     "headroom": 0.0125
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -3480,7 +4772,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (36 commits on HEAD)",
+     "detail": "never tagged (45 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -3504,15 +4796,28 @@
      ]
     },
     {
+     "signal": "unpinned_actions",
+     "headroom": 0.6,
+     "note": "6 of 10 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:25 actions/checkout@v7",
+      ".github/workflows/ci.yml:63 actions/checkout@v7",
+      ".github/workflows/ci.yml:92 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:67 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:88 actions/download-artifact@v8"
+     ]
+    },
+    {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (36 commits on HEAD)",
+     "note": "never tagged (45 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "undocumented_surface",
-     "headroom": 0.429,
-     "note": "15 of 35 public symbols carry no doc comment",
+     "headroom": 0.348,
+     "note": "16 of 46 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
@@ -3521,59 +4826,47 @@
       "arac/demo-uret.py:52 kostur",
       "arac/demo-uret.py:64 kayit_yaz"
      ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.013,
+     "note": "src/model_comparison_harness/cli.py is the longest source file",
+     "evidence": [
+      "src/model_comparison_harness/cli.py"
+     ]
     }
    ]
   },
   {
    "schema": 1,
    "repo": "nova-drift",
-   "head": "1639fe84579bc0d80e3a7490ac2f4705ad8221a5",
-   "taken_at": "2026-10-12T13:31:06Z",
-   "total_headroom": 1.494,
+   "head": "220cac7314391aa02eeea1180c69173539a79f54",
+   "taken_at": "2026-10-19T11:15:22Z",
+   "total_headroom": 2.408,
    "signals": {
     "languages": {
      "name": "languages",
-     "value": {
-      "javascript": 123435
-     },
-     "unit": "bytes",
-     "detail": "primary: javascript",
-     "evidence": [
-      "javascript 123435 bytes"
-     ],
+     "value": null,
+     "unit": "",
+     "detail": "no recognised source files",
+     "evidence": [],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 1.192,
-     "unit": "test bytes per source byte",
-     "detail": "56318 source bytes, 67117 test bytes in 18 files",
-     "evidence": [
-      "test/adaptive.spec.js",
-      "test/capture-gif.js",
-      "test/capture-screens.js",
-      "test/capture-shot.js",
-      "test/contrast.spec.js",
-      "test/feel.spec.js"
-     ],
-     "headroom": 0.0
+     "value": null,
+     "unit": "",
+     "detail": "no source files to weigh",
+     "evidence": [],
+     "headroom": null
     },
     "test_count": {
      "name": "test_count",
-     "value": 57,
+     "value": 0,
      "unit": "cases",
-     "detail": "57 cases across 13 files",
-     "evidence": [
-      "test/adaptive.spec.js: 4",
-      "test/contrast.spec.js: 2",
-      "test/feel.spec.js: 2",
-      "test/focus.spec.js: 4",
-      "test/font.spec.js: 3",
-      "test/language.spec.js: 6",
-      "test/menu.spec.js: 12",
-      "test/no-external-requests.spec.js: 3"
-     ],
-     "headroom": null
+     "detail": "no test cases found",
+     "evidence": [],
+     "headroom": 1.0
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
@@ -3585,49 +4878,35 @@
     },
     "ci_breadth": {
      "name": "ci_breadth",
-     "value": 1,
-     "unit": "distinct runners",
-     "detail": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
-     "evidence": [
-      "ci.yml"
-     ],
-     "headroom": 0.6666666666666666
+     "value": null,
+     "unit": "",
+     "detail": "no .github/workflows",
+     "evidence": [],
+     "headroom": null
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": null,
+     "unit": "",
+     "detail": "no workflows and no action.yml",
+     "evidence": [],
+     "headroom": null
     },
     "readme_commands": {
      "name": "readme_commands",
-     "value": 11,
+     "value": 0,
      "unit": "commands",
-     "detail": "11 runnable-looking commands in 3 shell blocks",
-     "evidence": [
-      "git clone https://github.com/Furkiozknn/nova-drift.git",
-      "cd nova-drift",
-      "python3 -m http.server 8000      # then open http://localhost:8000",
-      "npm install",
-      "npx playwright install --with-deps chromium   # first run only",
-      "npm test                                      # 61 tests in 13 spec files",
-      "node test/record-reel.js .capture 18 30            # 18 s of portrait 1080x1920 play, interface hidden -> .capture/f0000.jpg ...",
-      "ffmpeg -y -framerate 30 -start_number 150 -t 6 -i .capture/f%04d.jpg \\"
-     ],
+     "detail": "0 runnable-looking commands in 0 shell blocks",
+     "evidence": [],
      "headroom": null
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 23624,
+     "value": 230,
      "unit": "bytes",
-     "detail": "23624 bytes, 26 sections, 13 images",
-     "evidence": [
-      "Table of Contents",
-      "Gameplay",
-      "Objective",
-      "Controls",
-      "Power-Ups",
-      "Scoring",
-      "Leaderboard",
-      "Daily Challenge",
-      "How It Works",
-      "Scene, Camera & Tunnel"
-     ],
-     "headroom": 0.0
+     "detail": "230 bytes, 0 sections, 0 images",
+     "evidence": [],
+     "headroom": 0.908
     },
     "todo_density": {
      "name": "todo_density",
@@ -3639,38 +4918,35 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 1393,
-     "unit": "lines",
-     "detail": "script.js is the longest source file",
-     "evidence": [
-      "script.js"
-     ],
-     "headroom": 0.8275
+     "value": null,
+     "unit": "",
+     "detail": "no source files",
+     "evidence": [],
+     "headroom": null
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
-     "value": 0,
-     "unit": "runtime dependencies",
-     "detail": "node: 0",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
      "evidence": [],
      "headroom": null
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 0,
+     "value": null,
      "unit": "commits since last tag",
-     "detail": "last tag v1.0.0, 0 commits since",
-     "evidence": [
-      "v1.0.0"
-     ],
-     "headroom": 0.0
+     "detail": "never tagged (2 commits on HEAD)",
+     "evidence": [],
+     "headroom": 0.5
     },
     "metadata_present": {
      "name": "metadata_present",
      "value": true,
      "unit": "",
-     "detail": "present; 22 top-level fields, 1 left null",
+     "detail": "present; 20 top-level fields, 2 left null",
      "evidence": [
+      "license",
       "version"
      ],
      "headroom": null
@@ -3678,92 +4954,94 @@
    },
    "opportunities": [
     {
-     "signal": "largest_source_file",
-     "headroom": 0.828,
-     "note": "script.js is the longest source file",
-     "evidence": [
-      "script.js"
-     ]
+     "signal": "test_count",
+     "headroom": 1.0,
+     "note": "no test cases found",
+     "evidence": []
     },
     {
-     "signal": "ci_breadth",
-     "headroom": 0.667,
-     "note": "1 workflow files, ~3 jobs, runners: ubuntu-latest",
-     "evidence": [
-      "ci.yml"
-     ]
+     "signal": "readme_depth",
+     "headroom": 0.908,
+     "note": "230 bytes, 0 sections, 0 images",
+     "evidence": []
+    },
+    {
+     "signal": "release_lag",
+     "headroom": 0.5,
+     "note": "never tagged (2 commits on HEAD)",
+     "evidence": []
     }
    ]
   },
   {
    "schema": 1,
    "repo": "nvidia-nim-mcp",
-   "head": "62a2a7b71dd5e86315f564e0b01241926e254ae0",
-   "taken_at": "2026-10-12T13:31:07Z",
-   "total_headroom": 2.247,
+   "head": "e8d83d327a1a48b764aae85aedd5753cd2b26f20",
+   "taken_at": "2026-10-19T11:15:23Z",
+   "total_headroom": 3.048,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 125880,
+      "python": 161136,
       "javascript": 2383
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 125880 bytes",
+      "python 161136 bytes",
       "javascript 2383 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.98,
+     "value": 1.179,
      "unit": "test bytes per source byte",
-     "detail": "64786 source bytes, 63477 test bytes in 11 files",
+     "detail": "75052 source bytes, 88467 test bytes in 16 files",
      "evidence": [
       "tests/conftest.py",
       "tests/test_api_key_guard.py",
       "tests/test_build_chat_chain.py",
+      "tests/test_chain_isolation.py",
       "tests/test_check_content_safety_fallback.py",
-      "tests/test_check_provider_health.py",
-      "tests/test_create_embedding_fallback.py"
+      "tests/test_check_provider_health.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 95,
+     "value": 128,
      "unit": "cases",
-     "detail": "95 cases across 10 files",
+     "detail": "128 cases across 15 files",
      "evidence": [
       "tests/test_api_key_guard.py: 10",
       "tests/test_build_chat_chain.py: 7",
+      "tests/test_chain_isolation.py: 4",
       "tests/test_check_content_safety_fallback.py: 3",
       "tests/test_check_provider_health.py: 15",
-      "tests/test_create_embedding_fallback.py: 6",
-      "tests/test_describe_image_fallback.py: 5",
-      "tests/test_fallback.py: 9",
-      "tests/test_first_use.py: 22"
+      "tests/test_create_embedding_fallback.py: 8",
+      "tests/test_describe_image_fallback.py: 6",
+      "tests/test_fallback.py: 9"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 10,
+     "value": 14,
      "unit": "symbols",
-     "detail": "10 of 19 public symbols carry no doc comment",
+     "detail": "14 of 24 public symbols carry no doc comment",
      "evidence": [
+      "nvidia_image.py:988 HealthProbe",
+      "nvidia_image.py:997 HealthReport",
+      "nvidia_image.py:1123 ImageResult",
+      "nvidia_image.py:1162 generate_image_tool",
       "scripts/sonda.py:30 parse",
       "scripts/sonda.py:60 run",
       "scripts/sonda.py:96 main",
-      "scripts/demo-uret.py:54 bash",
-      "scripts/demo-uret.py:61 run_all",
-      "scripts/demo-uret.py:85 checkout_sha",
-      "scripts/demo-uret.py:93 write_record",
-      "scripts/demo-uret.py:173 write_pages"
+      "scripts/demo-uret.py:54 bash"
      ],
-     "headroom": 0.526
+     "headroom": 0.583
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -3775,6 +5053,22 @@
       "yayinla.yml"
      ],
      "headroom": 0.6666666666666666
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 7,
+     "unit": "action references",
+     "detail": "7 of 12 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:27 actions/checkout@v7",
+      ".github/workflows/ci.yml:54 actions/checkout@v7",
+      ".github/workflows/ci.yml:84 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:46 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:93 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:114 actions/download-artifact@v8",
+      ".github/workflows/yayinla.yml:130 actions/checkout@v7"
+     ],
+     "headroom": 0.583
     },
     "readme_commands": {
      "name": "readme_commands",
@@ -3795,20 +5089,20 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 18048,
+     "value": 19484,
      "unit": "bytes",
-     "detail": "18048 bytes, 12 sections, 8 images",
+     "detail": "19484 bytes, 13 sections, 8 images",
      "evidence": [
       "Table of Contents",
       "🧰 Tools",
       "🔄 The fallback chain",
       "⚙️ Setup",
+      "What an MCP client sees besides the text",
       "▶️ Example usage",
       "📁 Output files",
       "🛠 Development",
       "🧪 Testing",
-      "What this server can actually do",
-      "🗂 Project layout"
+      "What this server can actually do"
      ],
      "headroom": 0.0
     },
@@ -3822,13 +5116,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 1065,
+     "value": 1258,
      "unit": "lines",
      "detail": "nvidia_image.py is the longest source file",
      "evidence": [
       "nvidia_image.py"
      ],
-     "headroom": 0.5541666666666667
+     "headroom": 0.715
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -3845,7 +5139,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (40 commits on HEAD)",
+     "detail": "never tagged (56 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -3860,6 +5154,14 @@
    },
    "opportunities": [
     {
+     "signal": "largest_source_file",
+     "headroom": 0.715,
+     "note": "nvidia_image.py is the longest source file",
+     "evidence": [
+      "nvidia_image.py"
+     ]
+    },
+    {
      "signal": "ci_breadth",
      "headroom": 0.667,
      "note": "2 workflow files, ~10 jobs, runners: ubuntu-latest",
@@ -3869,30 +5171,35 @@
      ]
     },
     {
-     "signal": "largest_source_file",
-     "headroom": 0.554,
-     "note": "nvidia_image.py is the longest source file",
+     "signal": "undocumented_surface",
+     "headroom": 0.583,
+     "note": "14 of 24 public symbols carry no doc comment",
      "evidence": [
-      "nvidia_image.py"
+      "nvidia_image.py:988 HealthProbe",
+      "nvidia_image.py:997 HealthReport",
+      "nvidia_image.py:1123 ImageResult",
+      "nvidia_image.py:1162 generate_image_tool",
+      "scripts/sonda.py:30 parse",
+      "scripts/sonda.py:60 run"
      ]
     },
     {
-     "signal": "undocumented_surface",
-     "headroom": 0.526,
-     "note": "10 of 19 public symbols carry no doc comment",
+     "signal": "unpinned_actions",
+     "headroom": 0.583,
+     "note": "7 of 12 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
      "evidence": [
-      "scripts/sonda.py:30 parse",
-      "scripts/sonda.py:60 run",
-      "scripts/sonda.py:96 main",
-      "scripts/demo-uret.py:54 bash",
-      "scripts/demo-uret.py:61 run_all",
-      "scripts/demo-uret.py:85 checkout_sha"
+      ".github/workflows/ci.yml:27 actions/checkout@v7",
+      ".github/workflows/ci.yml:54 actions/checkout@v7",
+      ".github/workflows/ci.yml:84 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:46 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:93 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:114 actions/download-artifact@v8"
      ]
     },
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (40 commits on HEAD)",
+     "note": "never tagged (56 commits on HEAD)",
      "evidence": []
     }
    ]
@@ -3900,59 +5207,61 @@
   {
    "schema": 1,
    "repo": "prompt-template-manager",
-   "head": "da483cc01a7d5ca67b64b54e16aa0191b9d71292",
-   "taken_at": "2026-10-12T13:31:08Z",
-   "total_headroom": 1.667,
+   "head": "af052f885d079d02b0a14026e388c700d2a61255",
+   "taken_at": "2026-10-19T11:15:24Z",
+   "total_headroom": 2.258,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 110812,
+      "python": 158336,
       "javascript": 2380
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 110812 bytes",
+      "python 158336 bytes",
       "javascript 2380 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.626,
+     "value": 0.671,
      "unit": "test bytes per source byte",
-     "detail": "69600 source bytes, 43592 test bytes in 6 files",
+     "detail": "96165 source bytes, 64551 test bytes in 10 files",
      "evidence": [
       "tests/test_cli.py",
+      "tests/test_diffing.py",
       "tests/test_gateway_client.py",
-      "tests/test_loader.py",
-      "tests/test_models.py",
-      "tests/test_renderer.py",
-      "tests/test_untrusted_input.py"
+      "tests/test_gateway_poll_contract.py",
+      "tests/test_gateway_poll_retry.py",
+      "tests/test_loader.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 118,
+     "value": 154,
      "unit": "cases",
-     "detail": "118 cases across 6 files",
+     "detail": "154 cases across 10 files",
      "evidence": [
       "tests/test_cli.py: 27",
+      "tests/test_diffing.py: 9",
       "tests/test_gateway_client.py: 18",
+      "tests/test_gateway_poll_contract.py: 9",
+      "tests/test_gateway_poll_retry.py: 6",
       "tests/test_loader.py: 14",
       "tests/test_models.py: 11",
-      "tests/test_renderer.py: 28",
-      "tests/test_untrusted_input.py: 20"
+      "tests/test_renderer.py: 28"
      ],
      "headroom": null
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 21,
+     "value": 27,
      "unit": "symbols",
-     "detail": "21 of 42 public symbols carry no doc comment",
+     "detail": "27 of 55 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
@@ -3963,7 +5272,7 @@
       "arac/demo-uret.py:54 bash",
       "arac/demo-uret.py:61 run_all"
      ],
-     "headroom": 0.5
+     "headroom": 0.491
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -3975,6 +5284,21 @@
       "yayinla.yml"
      ],
      "headroom": 0.6666666666666666
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 6,
+     "unit": "action references",
+     "detail": "6 of 10 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:25 actions/checkout@v7",
+      ".github/workflows/ci.yml:66 actions/checkout@v7",
+      ".github/workflows/ci.yml:76 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:46 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:66 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:87 actions/download-artifact@v8"
+     ],
+     "headroom": 0.6
     },
     "readme_commands": {
      "name": "readme_commands",
@@ -3995,10 +5319,11 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 22235,
+     "value": 28558,
      "unit": "bytes",
-     "detail": "22235 bytes, 20 sections, 5 images",
+     "detail": "28558 bytes, 23 sections, 5 images",
      "evidence": [
+      "Why not Langfuse or Prompty?",
       "The problem this solves",
       "Install",
       "Your first template (one minute, no checkout needed)",
@@ -4007,8 +5332,7 @@
       "The CLI",
       "`validate`",
       "`render`",
-      "Exit codes",
-      "`info`"
+      "Exit codes"
      ],
      "headroom": 0.0
     },
@@ -4022,11 +5346,11 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 310,
+     "value": 328,
      "unit": "lines",
-     "detail": "src/prompt_template_manager/renderer.py is the longest source file",
+     "detail": "src/prompt_template_manager/cli.py is the longest source file",
      "evidence": [
-      "src/prompt_template_manager/renderer.py"
+      "src/prompt_template_manager/cli.py"
      ],
      "headroom": 0.0
     },
@@ -4046,7 +5370,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (41 commits on HEAD)",
+     "detail": "never tagged (46 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -4070,9 +5394,28 @@
      ]
     },
     {
-     "signal": "undocumented_surface",
+     "signal": "unpinned_actions",
+     "headroom": 0.6,
+     "note": "6 of 10 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:25 actions/checkout@v7",
+      ".github/workflows/ci.yml:66 actions/checkout@v7",
+      ".github/workflows/ci.yml:76 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:46 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:66 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:87 actions/download-artifact@v8"
+     ]
+    },
+    {
+     "signal": "release_lag",
      "headroom": 0.5,
-     "note": "21 of 42 public symbols carry no doc comment",
+     "note": "never tagged (46 commits on HEAD)",
+     "evidence": []
+    },
+    {
+     "signal": "undocumented_surface",
+     "headroom": 0.491,
+     "note": "27 of 55 public symbols carry no doc comment",
      "evidence": [
       "arac/vendor-dogrula.py:50 yerel_kopya",
       "arac/vendor-dogrula.py:66 parmak",
@@ -4081,39 +5424,33 @@
       "arac/terminal-svg.py:40 run",
       "arac/terminal-svg.py:55 main"
      ]
-    },
-    {
-     "signal": "release_lag",
-     "headroom": 0.5,
-     "note": "never tagged (41 commits on HEAD)",
-     "evidence": []
     }
    ]
   },
   {
    "schema": 1,
    "repo": "repo-ratchet",
-   "head": "7a1ed6e13ac627268c68f8cbdb9526748811e379",
-   "taken_at": "2026-10-12T13:31:09Z",
-   "total_headroom": 0.768,
+   "head": "e1e835b1d8193ca7202268b4e78a9f276fbb3afc",
+   "taken_at": "2026-10-19T11:15:25Z",
+   "total_headroom": 1.813,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 131324
+      "python": 142001
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 131324 bytes"
+      "python 142001 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.641,
+     "value": 0.655,
      "unit": "test bytes per source byte",
-     "detail": "80017 source bytes, 51307 test bytes in 6 files",
+     "detail": "85782 source bytes, 56219 test bytes in 6 files",
      "evidence": [
       "tests/conftest.py",
       "tests/test_plan.py",
@@ -4126,14 +5463,14 @@
     },
     "test_count": {
      "name": "test_count",
-     "value": 152,
+     "value": 162,
      "unit": "cases",
-     "detail": "152 cases across 5 files",
+     "detail": "162 cases across 5 files",
      "evidence": [
       "tests/test_plan.py: 10",
       "tests/test_records.py: 25",
-      "tests/test_signals.py: 54",
-      "tests/test_survey_cli.py: 40",
+      "tests/test_signals.py: 59",
+      "tests/test_survey_cli.py: 45",
       "tests/test_verify.py: 23"
      ],
      "headroom": null
@@ -4142,7 +5479,7 @@
      "name": "undocumented_surface",
      "value": 5,
      "unit": "symbols",
-     "detail": "5 of 52 public symbols carry no doc comment",
+     "detail": "5 of 55 public symbols carry no doc comment",
      "evidence": [
       "docs/demo/uret.py:23 steps",
       "docs/demo/uret.py:52 render",
@@ -4150,7 +5487,7 @@
       "docs/demo/kaydet.py:18 run",
       "docs/demo/kaydet.py:25 step"
      ],
-     "headroom": 0.096
+     "headroom": 0.091
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -4162,6 +5499,21 @@
       "tur.yml"
      ],
      "headroom": 0.0
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 6,
+     "unit": "action references",
+     "detail": "6 of 6 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:27 actions/checkout@v7",
+      ".github/workflows/ci.yml:28 actions/setup-python@v7",
+      ".github/workflows/ci.yml:54 actions/checkout@v7",
+      ".github/workflows/ci.yml:57 actions/setup-python@v7",
+      ".github/workflows/tur.yml:35 actions/checkout@v7",
+      ".github/workflows/tur.yml:36 actions/setup-python@v7"
+     ],
+     "headroom": 1.0
     },
     "readme_commands": {
      "name": "readme_commands",
@@ -4182,9 +5534,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 18092,
+     "value": 18374,
      "unit": "bytes",
-     "detail": "18092 bytes, 14 sections, 6 images",
+     "detail": "18374 bytes, 14 sections, 6 images",
      "evidence": [
       "Quick start",
       "A whole round",
@@ -4209,13 +5561,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 606,
+     "value": 666,
      "unit": "lines",
      "detail": "ratchet/signals.py is the longest source file",
      "evidence": [
       "ratchet/signals.py"
      ],
-     "headroom": 0.17166666666666666
+     "headroom": 0.22166666666666668
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -4229,7 +5581,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (22 commits on HEAD)",
+     "detail": "never tagged (27 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -4244,14 +5596,27 @@
    },
    "opportunities": [
     {
+     "signal": "unpinned_actions",
+     "headroom": 1.0,
+     "note": "6 of 6 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:27 actions/checkout@v7",
+      ".github/workflows/ci.yml:28 actions/setup-python@v7",
+      ".github/workflows/ci.yml:54 actions/checkout@v7",
+      ".github/workflows/ci.yml:57 actions/setup-python@v7",
+      ".github/workflows/tur.yml:35 actions/checkout@v7",
+      ".github/workflows/tur.yml:36 actions/setup-python@v7"
+     ]
+    },
+    {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (22 commits on HEAD)",
+     "note": "never tagged (27 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.172,
+     "headroom": 0.222,
      "note": "ratchet/signals.py is the longest source file",
      "evidence": [
       "ratchet/signals.py"
@@ -4259,8 +5624,8 @@
     },
     {
      "signal": "undocumented_surface",
-     "headroom": 0.096,
-     "note": "5 of 52 public symbols carry no doc comment",
+     "headroom": 0.091,
+     "note": "5 of 55 public symbols carry no doc comment",
      "evidence": [
       "docs/demo/uret.py:23 steps",
       "docs/demo/uret.py:52 render",
@@ -4274,53 +5639,53 @@
   {
    "schema": 1,
    "repo": "repo-vet",
-   "head": "fae6545c20201d3b7e893c2391f4594e66486856",
-   "taken_at": "2026-10-12T13:31:11Z",
-   "total_headroom": 1.37,
+   "head": "552e9be541bc27cca1e191505dacf3be8f7fb487",
+   "taken_at": "2026-10-19T11:15:26Z",
+   "total_headroom": 1.802,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 137684,
+      "python": 160189,
       "javascript": 2383
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 137684 bytes",
+      "python 160189 bytes",
       "javascript 2383 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 1.064,
+     "value": 1.117,
      "unit": "test bytes per source byte",
-     "detail": "67866 source bytes, 72201 test bytes in 9 files",
+     "detail": "76783 source bytes, 85789 test bytes in 10 files",
      "evidence": [
       "tests/fakes.py",
       "tests/test_checks.py",
       "tests/test_cli.py",
       "tests/test_first_run.py",
-      "tests/test_readme.py",
-      "tests/test_reads_and_refs.py"
+      "tests/test_license.py",
+      "tests/test_readme.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 188,
+     "value": 215,
      "unit": "cases",
-     "detail": "188 cases across 8 files",
+     "detail": "215 cases across 9 files",
      "evidence": [
       "tests/test_checks.py: 45",
       "tests/test_cli.py: 19",
-      "tests/test_first_run.py: 16",
+      "tests/test_first_run.py: 18",
+      "tests/test_license.py: 21",
       "tests/test_readme.py: 38",
-      "tests/test_reads_and_refs.py: 28",
+      "tests/test_reads_and_refs.py: 29",
       "tests/test_runner_report.py: 13",
-      "tests/test_sources.py: 5",
-      "tests/test_unchecked.py: 24"
+      "tests/test_sources.py: 8"
      ],
      "headroom": null
     },
@@ -4328,18 +5693,18 @@
      "name": "undocumented_surface",
      "value": 10,
      "unit": "symbols",
-     "detail": "10 of 33 public symbols carry no doc comment",
+     "detail": "10 of 38 public symbols carry no doc comment",
      "evidence": [
-      "repo_vet/cli.py:85 slug_ok",
-      "repo_vet/cli.py:91 ref_ok",
-      "repo_vet/cli.py:120 main",
-      "repo_vet/report.py:23 as_text",
+      "repo_vet/cli.py:87 slug_ok",
+      "repo_vet/cli.py:93 ref_ok",
+      "repo_vet/cli.py:122 main",
+      "repo_vet/report.py:24 as_text",
       "scripts/demo-uret.py:56 bash",
       "scripts/demo-uret.py:63 run_all",
       "scripts/demo-uret.py:90 write_record",
       "scripts/demo-uret.py:172 write_pages"
      ],
-     "headroom": 0.303
+     "headroom": 0.263
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -4351,6 +5716,23 @@
       "yayinla.yml"
      ],
      "headroom": 0.6666666666666666
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 8,
+     "unit": "action references",
+     "detail": "8 of 11 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:36 actions/checkout@v7",
+      ".github/workflows/ci.yml:37 actions/setup-python@v7",
+      ".github/workflows/ci.yml:67 actions/checkout@v7",
+      ".github/workflows/ci.yml:80 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:62 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:78 actions/download-artifact@v8",
+      "action.yml:57 actions/setup-python@v7"
+     ],
+     "headroom": 0.727
     },
     "readme_commands": {
      "name": "readme_commands",
@@ -4371,9 +5753,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 14211,
+     "value": 15693,
      "unit": "bytes",
-     "detail": "14211 bytes, 11 sections, 7 images",
+     "detail": "15693 bytes, 11 sections, 7 images",
      "evidence": [
       "Status",
       "What it checks",
@@ -4398,13 +5780,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 310,
+     "value": 479,
      "unit": "lines",
      "detail": "repo_vet/checks.py is the longest source file",
      "evidence": [
       "repo_vet/checks.py"
      ],
-     "headroom": 0.0
+     "headroom": 0.06583333333333333
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -4416,13 +5798,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 10,
+     "value": 2,
      "unit": "commits since last tag",
-     "detail": "last tag v0.1.0, 10 commits since",
+     "detail": "last tag v0.2.0, 2 commits since",
      "evidence": [
-      "v0.1.0"
+      "v0.2.0"
      ],
-     "headroom": 0.4
+     "headroom": 0.08
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -4435,6 +5817,19 @@
    },
    "opportunities": [
     {
+     "signal": "unpinned_actions",
+     "headroom": 0.727,
+     "note": "8 of 11 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:36 actions/checkout@v7",
+      ".github/workflows/ci.yml:37 actions/setup-python@v7",
+      ".github/workflows/ci.yml:67 actions/checkout@v7",
+      ".github/workflows/ci.yml:80 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:62 actions/upload-artifact@v7"
+     ]
+    },
+    {
      "signal": "ci_breadth",
      "headroom": 0.667,
      "note": "2 workflow files, ~10 jobs, runners: ubuntu-latest",
@@ -4444,46 +5839,189 @@
      ]
     },
     {
-     "signal": "release_lag",
-     "headroom": 0.4,
-     "note": "last tag v0.1.0, 10 commits since",
+     "signal": "undocumented_surface",
+     "headroom": 0.263,
+     "note": "10 of 38 public symbols carry no doc comment",
      "evidence": [
-      "v0.1.0"
+      "repo_vet/cli.py:87 slug_ok",
+      "repo_vet/cli.py:93 ref_ok",
+      "repo_vet/cli.py:122 main",
+      "repo_vet/report.py:24 as_text",
+      "scripts/demo-uret.py:56 bash",
+      "scripts/demo-uret.py:63 run_all"
      ]
     },
     {
-     "signal": "undocumented_surface",
-     "headroom": 0.303,
-     "note": "10 of 33 public symbols carry no doc comment",
+     "signal": "release_lag",
+     "headroom": 0.08,
+     "note": "last tag v0.2.0, 2 commits since",
      "evidence": [
-      "repo_vet/cli.py:85 slug_ok",
-      "repo_vet/cli.py:91 ref_ok",
-      "repo_vet/cli.py:120 main",
-      "repo_vet/report.py:23 as_text",
-      "scripts/demo-uret.py:56 bash",
-      "scripts/demo-uret.py:63 run_all"
+      "v0.2.0"
+     ]
+    },
+    {
+     "signal": "largest_source_file",
+     "headroom": 0.066,
+     "note": "repo_vet/checks.py is the longest source file",
+     "evidence": [
+      "repo_vet/checks.py"
      ]
     }
    ]
   },
   {
    "schema": 1,
+   "repo": "social-videos",
+   "head": "9e58ce294a45ccd727db0dfefd66217f90cd223a",
+   "taken_at": "2026-10-19T11:15:26Z",
+   "total_headroom": 1.837,
+   "signals": {
+    "languages": {
+     "name": "languages",
+     "value": null,
+     "unit": "",
+     "detail": "no recognised source files",
+     "evidence": [],
+     "headroom": null
+    },
+    "test_mass": {
+     "name": "test_mass",
+     "value": null,
+     "unit": "",
+     "detail": "no source files to weigh",
+     "evidence": [],
+     "headroom": null
+    },
+    "test_count": {
+     "name": "test_count",
+     "value": 0,
+     "unit": "cases",
+     "detail": "no test cases found",
+     "evidence": [],
+     "headroom": 1.0
+    },
+    "undocumented_surface": {
+     "name": "undocumented_surface",
+     "value": null,
+     "unit": "",
+     "detail": "no Python or Rust public surface",
+     "evidence": [],
+     "headroom": null
+    },
+    "ci_breadth": {
+     "name": "ci_breadth",
+     "value": null,
+     "unit": "",
+     "detail": "no .github/workflows",
+     "evidence": [],
+     "headroom": null
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": null,
+     "unit": "",
+     "detail": "no workflows and no action.yml",
+     "evidence": [],
+     "headroom": null
+    },
+    "readme_commands": {
+     "name": "readme_commands",
+     "value": 0,
+     "unit": "commands",
+     "detail": "0 runnable-looking commands in 0 shell blocks",
+     "evidence": [],
+     "headroom": null
+    },
+    "readme_depth": {
+     "name": "readme_depth",
+     "value": 408,
+     "unit": "bytes",
+     "detail": "408 bytes, 0 sections, 0 images",
+     "evidence": [],
+     "headroom": 0.8368
+    },
+    "todo_density": {
+     "name": "todo_density",
+     "value": 0,
+     "unit": "markers",
+     "detail": "0 TODO/FIXME/XXX/HACK markers in source",
+     "evidence": [],
+     "headroom": 0.0
+    },
+    "largest_source_file": {
+     "name": "largest_source_file",
+     "value": null,
+     "unit": "",
+     "detail": "no source files",
+     "evidence": [],
+     "headroom": null
+    },
+    "declared_dependencies": {
+     "name": "declared_dependencies",
+     "value": null,
+     "unit": "",
+     "detail": "no manifest found",
+     "evidence": [],
+     "headroom": null
+    },
+    "release_lag": {
+     "name": "release_lag",
+     "value": 0,
+     "unit": "commits since last tag",
+     "detail": "last tag ep28-plus, 0 commits since",
+     "evidence": [
+      "ep28-plus"
+     ],
+     "headroom": 0.0
+    },
+    "metadata_present": {
+     "name": "metadata_present",
+     "value": true,
+     "unit": "",
+     "detail": "present; 22 top-level fields, 5 left null",
+     "evidence": [
+      "homepage",
+      "license",
+      "primary_language",
+      "tests",
+      "version"
+     ],
+     "headroom": null
+    }
+   },
+   "opportunities": [
+    {
+     "signal": "test_count",
+     "headroom": 1.0,
+     "note": "no test cases found",
+     "evidence": []
+    },
+    {
+     "signal": "readme_depth",
+     "headroom": 0.837,
+     "note": "408 bytes, 0 sections, 0 images",
+     "evidence": []
+    }
+   ]
+  },
+  {
+   "schema": 1,
    "repo": "tek-tus-kosu",
-   "head": "aca636395f9315ab3c4c8eb7c96eb5446fea9789",
-   "taken_at": "2026-10-12T13:31:14Z",
-   "total_headroom": 3.446,
+   "head": "d4e24babff7af635e0ad03c73565b2bf8bf14bf1",
+   "taken_at": "2026-10-19T11:15:29Z",
+   "total_headroom": 4.55,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "gdscript": 405134,
+      "gdscript": 425094,
       "python": 8094,
       "shell": 4261
      },
      "unit": "bytes",
      "detail": "primary: gdscript",
      "evidence": [
-      "gdscript 405134 bytes",
+      "gdscript 425094 bytes",
       "python 8094 bytes",
       "shell 4261 bytes"
      ],
@@ -4491,23 +6029,23 @@
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.412,
+     "value": 0.439,
      "unit": "test bytes per source byte",
-     "detail": "295584 source bytes, 121905 test bytes in 3 files",
+     "detail": "304065 source bytes, 133384 test bytes in 3 files",
      "evidence": [
       "tests/kapi.sh",
       "tests/kapi_sinama.sh",
       "tests/testler.gd"
      ],
-     "headroom": 0.17515833062682684
+     "headroom": 0.12266127308305785
     },
     "test_count": {
      "name": "test_count",
-     "value": 29,
+     "value": 31,
      "unit": "cases",
-     "detail": "29 cases across 1 files",
+     "detail": "31 cases across 1 files",
      "evidence": [
-      "tests/testler.gd: 29"
+      "tests/testler.gd: 31"
      ],
      "headroom": null
     },
@@ -4535,6 +6073,23 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 11,
+     "unit": "action references",
+     "detail": "11 of 12 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:42 actions/checkout@v5",
+      ".github/workflows/ci.yml:89 actions/checkout@v5",
+      ".github/workflows/ci.yml:118 github/codeql-action/upload-sarif@v4",
+      ".github/workflows/yapi.yml:57 actions/checkout@v5",
+      ".github/workflows/yapi.yml:118 actions/upload-artifact@v6",
+      ".github/workflows/yapi.yml:124 actions/upload-artifact@v6",
+      ".github/workflows/yapi.yml:130 actions/upload-artifact@v6",
+      ".github/workflows/yapi.yml:150 actions/download-artifact@v4"
+     ],
+     "headroom": 0.917
+    },
     "readme_commands": {
      "name": "readme_commands",
      "value": 0,
@@ -4545,9 +6100,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 26033,
+     "value": 28057,
      "unit": "bytes",
-     "detail": "26033 bytes, 11 sections, 5 images",
+     "detail": "28057 bytes, 11 sections, 5 images",
      "evidence": [
       "Kontroller",
       "Oyun içeriği",
@@ -4572,13 +6127,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 1317,
+     "value": 1413,
      "unit": "lines",
      "detail": "scripts/oyun.gd is the longest source file",
      "evidence": [
       "scripts/oyun.gd"
      ],
-     "headroom": 0.7641666666666667
+     "headroom": 0.8441666666666666
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -4590,13 +6145,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 21,
+     "value": 28,
      "unit": "commits since last tag",
-     "detail": "last tag v1.7.3, 21 commits since",
+     "detail": "last tag v1.7.3, 28 commits since",
      "evidence": [
       "v1.7.3"
      ],
-     "headroom": 0.84
+     "headroom": 1.0
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -4621,15 +6176,28 @@
     },
     {
      "signal": "release_lag",
-     "headroom": 0.84,
-     "note": "last tag v1.7.3, 21 commits since",
+     "headroom": 1.0,
+     "note": "last tag v1.7.3, 28 commits since",
      "evidence": [
       "v1.7.3"
      ]
     },
     {
+     "signal": "unpinned_actions",
+     "headroom": 0.917,
+     "note": "11 of 12 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:42 actions/checkout@v5",
+      ".github/workflows/ci.yml:89 actions/checkout@v5",
+      ".github/workflows/ci.yml:118 github/codeql-action/upload-sarif@v4",
+      ".github/workflows/yapi.yml:57 actions/checkout@v5",
+      ".github/workflows/yapi.yml:118 actions/upload-artifact@v6",
+      ".github/workflows/yapi.yml:124 actions/upload-artifact@v6"
+     ]
+    },
+    {
      "signal": "largest_source_file",
-     "headroom": 0.764,
+     "headroom": 0.844,
      "note": "scripts/oyun.gd is the longest source file",
      "evidence": [
       "scripts/oyun.gd"
@@ -4646,8 +6214,8 @@
     },
     {
      "signal": "test_mass",
-     "headroom": 0.175,
-     "note": "295584 source bytes, 121905 test bytes in 3 files",
+     "headroom": 0.123,
+     "note": "304065 source bytes, 133384 test bytes in 3 files",
      "evidence": [
       "tests/kapi.sh",
       "tests/kapi_sinama.sh",
@@ -4659,44 +6227,45 @@
   {
    "schema": 1,
    "repo": "turkce-ajanlar",
-   "head": "16d3e226c9d45e4ebb3a4fa1ce02a336ede314c6",
-   "taken_at": "2026-10-12T13:31:16Z",
-   "total_headroom": 2.2,
+   "head": "6d11a969d4adfae394acbedc924dde04b79cebfe",
+   "taken_at": "2026-10-19T11:15:31Z",
+   "total_headroom": 3.306,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "javascript": 657595
+      "javascript": 676597
      },
      "unit": "bytes",
      "detail": "primary: javascript",
      "evidence": [
-      "javascript 657595 bytes"
+      "javascript 676597 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.136,
+     "value": 0.143,
      "unit": "test bytes per source byte",
-     "detail": "578803 source bytes, 78792 test bytes in 10 files",
+     "detail": "591856 source bytes, 84741 test bytes in 11 files",
      "evidence": [
       "arac/banner-uret-test.js",
       "arac/bicim-kontrol-test.js",
       "arac/disari-aktar-test.js",
       "arac/dogrula-test.js",
       "arac/ekip-kos-test.js",
-      "arac/modul-turu-test.js"
+      "arac/grup-eklentileri-test.js"
      ],
-     "headroom": 0.7277415631916213
+     "headroom": 0.713643183477062
     },
     "test_count": {
      "name": "test_count",
-     "value": 136,
+     "value": 147,
      "unit": "cases (lower bound)",
-     "detail": "at least 136 cases across 3 files; 7 further test file(s) declare their cases in a form this cannot count",
+     "detail": "at least 147 cases across 4 files; 7 further test file(s) declare their cases in a form this cannot count",
      "evidence": [
       "arac/bicim-kontrol-test.js: 33",
+      "arac/grup-eklentileri-test.js: 11",
       "arac/tetik-cakisma-test.js: 19",
       "arac/web-test.js: 84",
       "uncounted: arac/banner-uret-test.js",
@@ -4724,6 +6293,23 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 9,
+     "unit": "action references",
+     "detail": "9 of 9 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/dogrula.yml:25 actions/checkout@v7",
+      ".github/workflows/dogrula.yml:29 actions/setup-node@v7",
+      ".github/workflows/dogrula.yml:165 actions/checkout@v7",
+      ".github/workflows/dogrula.yml:167 actions/setup-node@v7",
+      ".github/workflows/yayinla.yml:40 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:44 actions/setup-node@v7",
+      ".github/workflows/yayinla.yml:56 actions/configure-pages@v6",
+      ".github/workflows/yayinla.yml:58 actions/upload-pages-artifact@v5"
+     ],
+     "headroom": 1.0
+    },
     "readme_commands": {
      "name": "readme_commands",
      "value": 14,
@@ -4743,9 +6329,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 43470,
+     "value": 46762,
      "unit": "bytes",
-     "detail": "43470 bytes, 30 sections, 11 images",
+     "detail": "46762 bytes, 31 sections, 11 images",
      "evidence": [
       "Neden bu var",
       "Ajanlar",
@@ -4788,13 +6374,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 1,
+     "value": 4,
      "unit": "commits since last tag",
-     "detail": "last tag v0.4.1, 1 commits since",
+     "detail": "last tag v0.4.1, 4 commits since",
      "evidence": [
       "v0.4.1"
      ],
-     "headroom": 0.04
+     "headroom": 0.16
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -4807,6 +6393,19 @@
    },
    "opportunities": [
     {
+     "signal": "unpinned_actions",
+     "headroom": 1.0,
+     "note": "9 of 9 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/dogrula.yml:25 actions/checkout@v7",
+      ".github/workflows/dogrula.yml:29 actions/setup-node@v7",
+      ".github/workflows/dogrula.yml:165 actions/checkout@v7",
+      ".github/workflows/dogrula.yml:167 actions/setup-node@v7",
+      ".github/workflows/yayinla.yml:40 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:44 actions/setup-node@v7"
+     ]
+    },
+    {
      "signal": "largest_source_file",
      "headroom": 0.766,
      "note": "arac/web-uret.js is the longest source file",
@@ -4816,15 +6415,15 @@
     },
     {
      "signal": "test_mass",
-     "headroom": 0.728,
-     "note": "578803 source bytes, 78792 test bytes in 10 files",
+     "headroom": 0.714,
+     "note": "591856 source bytes, 84741 test bytes in 11 files",
      "evidence": [
       "arac/banner-uret-test.js",
       "arac/bicim-kontrol-test.js",
       "arac/disari-aktar-test.js",
       "arac/dogrula-test.js",
       "arac/ekip-kos-test.js",
-      "arac/modul-turu-test.js"
+      "arac/grup-eklentileri-test.js"
      ]
     },
     {
@@ -4838,8 +6437,8 @@
     },
     {
      "signal": "release_lag",
-     "headroom": 0.04,
-     "note": "last tag v0.4.1, 1 commits since",
+     "headroom": 0.16,
+     "note": "last tag v0.4.1, 4 commits since",
      "evidence": [
       "v0.4.1"
      ]
@@ -4849,50 +6448,51 @@
   {
    "schema": 1,
    "repo": "voice-io-mcp",
-   "head": "bc4169c44423bcf52bc96041e501e2960b2da824",
-   "taken_at": "2026-10-12T13:31:18Z",
-   "total_headroom": 2.001,
+   "head": "280069c94c0e86e94564828dd0a5fa9021e7e3e4",
+   "taken_at": "2026-10-19T11:15:32Z",
+   "total_headroom": 2.81,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "python": 86251,
+      "python": 104013,
       "javascript": 2362
      },
      "unit": "bytes",
      "detail": "primary: python",
      "evidence": [
-      "python 86251 bytes",
+      "python 104013 bytes",
       "javascript 2362 bytes"
      ],
      "headroom": null
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.875,
+     "value": 0.945,
      "unit": "test bytes per source byte",
-     "detail": "47251 source bytes, 41362 test bytes in 8 files",
+     "detail": "54692 source bytes, 51683 test bytes in 9 files",
      "evidence": [
       "tests/conftest.py",
       "tests/test_check_provider_health.py",
       "tests/test_cli.py",
       "tests/test_local_integration.py",
-      "tests/test_misc.py",
-      "tests/test_speech_to_text.py"
+      "tests/test_mcp_surface.py",
+      "tests/test_misc.py"
      ],
      "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 70,
+     "value": 90,
      "unit": "cases",
-     "detail": "70 cases across 7 files",
+     "detail": "90 cases across 8 files",
      "evidence": [
       "tests/test_check_provider_health.py: 7",
       "tests/test_cli.py: 7",
       "tests/test_local_integration.py: 3",
+      "tests/test_mcp_surface.py: 12",
       "tests/test_misc.py: 8",
-      "tests/test_speech_to_text.py: 20",
+      "tests/test_speech_to_text.py: 28",
       "tests/test_stdio.py: 2",
       "tests/test_text_to_speech.py: 23"
      ],
@@ -4900,20 +6500,20 @@
     },
     "undocumented_surface": {
      "name": "undocumented_surface",
-     "value": 8,
+     "value": 14,
      "unit": "symbols",
-     "detail": "8 of 14 public symbols carry no doc comment",
+     "detail": "14 of 21 public symbols carry no doc comment",
      "evidence": [
+      "voice_io.py:517 TranscriptOutcome",
+      "voice_io.py:762 SpeechResult",
+      "voice_io.py:772 TranscriptResult",
+      "voice_io.py:783 text_to_speech_tool",
+      "voice_io.py:805 speech_to_text_tool",
+      "voice_io.py:818 check_provider_health_tool",
       "scripts/probe.py:25 first_sentence",
-      "scripts/probe.py:31 main",
-      "scripts/demo-uret.py:51 bash",
-      "scripts/demo-uret.py:58 run_all",
-      "scripts/demo-uret.py:78 write_record",
-      "scripts/demo-uret.py:158 write_pages",
-      "scripts/demo-uret.py:174 record_video",
-      "scripts/demo-uret.py:207 main"
+      "scripts/probe.py:31 main"
      ],
-     "headroom": 0.571
+     "headroom": 0.667
     },
     "ci_breadth": {
      "name": "ci_breadth",
@@ -4925,6 +6525,23 @@
       "yayinla.yml"
      ],
      "headroom": 0.6666666666666666
+    },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 8,
+     "unit": "action references",
+     "detail": "8 of 14 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:27 actions/checkout@v7",
+      ".github/workflows/ci.yml:49 actions/checkout@v7",
+      ".github/workflows/ci.yml:77 actions/checkout@v7",
+      ".github/workflows/ci.yml:107 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:97 actions/upload-artifact@v7",
+      ".github/workflows/yayinla.yml:118 actions/download-artifact@v8",
+      ".github/workflows/yayinla.yml:134 actions/checkout@v7"
+     ],
+     "headroom": 0.571
     },
     "readme_commands": {
      "name": "readme_commands",
@@ -4945,9 +6562,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 22460,
+     "value": 24963,
      "unit": "bytes",
-     "detail": "22460 bytes, 13 sections, 8 images",
+     "detail": "24963 bytes, 13 sections, 8 images",
      "evidence": [
       "⚡ Quick start",
       "📖 Table of Contents",
@@ -4972,13 +6589,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 716,
+     "value": 887,
      "unit": "lines",
      "detail": "voice_io.py is the longest source file",
      "evidence": [
       "voice_io.py"
      ],
-     "headroom": 0.2633333333333333
+     "headroom": 0.4058333333333333
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -4994,7 +6611,7 @@
      "name": "release_lag",
      "value": null,
      "unit": "commits since last tag",
-     "detail": "never tagged (36 commits on HEAD)",
+     "detail": "never tagged (47 commits on HEAD)",
      "evidence": [],
      "headroom": 0.5
     },
@@ -5009,6 +6626,19 @@
    },
    "opportunities": [
     {
+     "signal": "undocumented_surface",
+     "headroom": 0.667,
+     "note": "14 of 21 public symbols carry no doc comment",
+     "evidence": [
+      "voice_io.py:517 TranscriptOutcome",
+      "voice_io.py:762 SpeechResult",
+      "voice_io.py:772 TranscriptResult",
+      "voice_io.py:783 text_to_speech_tool",
+      "voice_io.py:805 speech_to_text_tool",
+      "voice_io.py:818 check_provider_health_tool"
+     ]
+    },
+    {
      "signal": "ci_breadth",
      "headroom": 0.667,
      "note": "2 workflow files, ~11 jobs, runners: ubuntu-latest",
@@ -5018,27 +6648,27 @@
      ]
     },
     {
-     "signal": "undocumented_surface",
+     "signal": "unpinned_actions",
      "headroom": 0.571,
-     "note": "8 of 14 public symbols carry no doc comment",
+     "note": "8 of 14 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
      "evidence": [
-      "scripts/probe.py:25 first_sentence",
-      "scripts/probe.py:31 main",
-      "scripts/demo-uret.py:51 bash",
-      "scripts/demo-uret.py:58 run_all",
-      "scripts/demo-uret.py:78 write_record",
-      "scripts/demo-uret.py:158 write_pages"
+      ".github/workflows/ci.yml:27 actions/checkout@v7",
+      ".github/workflows/ci.yml:49 actions/checkout@v7",
+      ".github/workflows/ci.yml:77 actions/checkout@v7",
+      ".github/workflows/ci.yml:107 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:47 actions/checkout@v7",
+      ".github/workflows/yayinla.yml:97 actions/upload-artifact@v7"
      ]
     },
     {
      "signal": "release_lag",
      "headroom": 0.5,
-     "note": "never tagged (36 commits on HEAD)",
+     "note": "never tagged (47 commits on HEAD)",
      "evidence": []
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.263,
+     "headroom": 0.406,
      "note": "voice_io.py is the longest source file",
      "evidence": [
       "voice_io.py"
@@ -5049,21 +6679,21 @@
   {
    "schema": 1,
    "repo": "yercekimi-cevir",
-   "head": "8c30c46b5bc93c0677fe818a0609e650bafb9ded",
-   "taken_at": "2026-10-12T13:31:23Z",
-   "total_headroom": 2.661,
+   "head": "965a20f6d5442d88e6ddd6c5cce03d4de8604e16",
+   "taken_at": "2026-10-19T11:15:37Z",
+   "total_headroom": 3.678,
    "signals": {
     "languages": {
      "name": "languages",
      "value": {
-      "gdscript": 382564,
+      "gdscript": 414884,
       "python": 47715,
       "shell": 6357
      },
      "unit": "bytes",
      "detail": "primary: gdscript",
      "evidence": [
-      "gdscript 382564 bytes",
+      "gdscript 414884 bytes",
       "python 47715 bytes",
       "shell 6357 bytes"
      ],
@@ -5071,24 +6701,24 @@
     },
     "test_mass": {
      "name": "test_mass",
-     "value": 0.496,
+     "value": 0.514,
      "unit": "test bytes per source byte",
-     "detail": "291784 source bytes, 144852 test bytes in 4 files",
+     "detail": "309690 source bytes, 159266 test bytes in 4 files",
      "evidence": [
       "tests/ekran.gd",
       "tests/kapi.sh",
       "tests/kapi_sinama.sh",
       "tests/testler.gd"
      ],
-     "headroom": 0.0071285608532338784
+     "headroom": 0.0
     },
     "test_count": {
      "name": "test_count",
-     "value": 440,
+     "value": 487,
      "unit": "cases",
-     "detail": "440 cases across 1 files",
+     "detail": "487 cases across 1 files",
      "evidence": [
-      "tests/testler.gd: 440"
+      "tests/testler.gd: 487"
      ],
      "headroom": null
     },
@@ -5120,6 +6750,23 @@
      ],
      "headroom": 0.6666666666666666
     },
+    "unpinned_actions": {
+     "name": "unpinned_actions",
+     "value": 10,
+     "unit": "action references",
+     "detail": "10 of 11 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:49 actions/checkout@v7",
+      ".github/workflows/ci.yml:123 actions/checkout@v7",
+      ".github/workflows/ci.yml:146 github/codeql-action/upload-sarif@v4",
+      ".github/workflows/yapi.yml:52 actions/checkout@v7",
+      ".github/workflows/yapi.yml:99 actions/upload-artifact@v7",
+      ".github/workflows/yapi.yml:105 actions/upload-artifact@v7",
+      ".github/workflows/yapi.yml:125 actions/download-artifact@v8",
+      ".github/workflows/yapi.yml:136 actions/configure-pages@v6"
+     ],
+     "headroom": 0.909
+    },
     "readme_commands": {
      "name": "readme_commands",
      "value": 31,
@@ -5139,9 +6786,9 @@
     },
     "readme_depth": {
      "name": "readme_depth",
-     "value": 26140,
+     "value": 27950,
      "unit": "bytes",
-     "detail": "26140 bytes, 18 sections, 12 images",
+     "detail": "27950 bytes, 18 sections, 12 images",
      "evidence": [
       "Nasıl oynarım?",
       "Kontroller",
@@ -5166,13 +6813,13 @@
     },
     "largest_source_file": {
      "name": "largest_source_file",
-     "value": 1104,
+     "value": 1145,
      "unit": "lines",
      "detail": "scripts/oyun.gd is the longest source file",
      "evidence": [
       "scripts/oyun.gd"
      ],
-     "headroom": 0.5866666666666667
+     "headroom": 0.6208333333333333
     },
     "declared_dependencies": {
      "name": "declared_dependencies",
@@ -5184,13 +6831,13 @@
     },
     "release_lag": {
      "name": "release_lag",
-     "value": 23,
+     "value": 30,
      "unit": "commits since last tag",
-     "detail": "last tag v0.7.2, 23 commits since",
+     "detail": "last tag v0.7.2, 30 commits since",
      "evidence": [
       "v0.7.2"
      ],
-     "headroom": 0.92
+     "headroom": 1.0
     },
     "metadata_present": {
      "name": "metadata_present",
@@ -5204,10 +6851,23 @@
    "opportunities": [
     {
      "signal": "release_lag",
-     "headroom": 0.92,
-     "note": "last tag v0.7.2, 23 commits since",
+     "headroom": 1.0,
+     "note": "last tag v0.7.2, 30 commits since",
      "evidence": [
       "v0.7.2"
+     ]
+    },
+    {
+     "signal": "unpinned_actions",
+     "headroom": 0.909,
+     "note": "10 of 11 action references are a tag or branch, not a commit SHA (0 of them outside actions/ and github/)",
+     "evidence": [
+      ".github/workflows/ci.yml:49 actions/checkout@v7",
+      ".github/workflows/ci.yml:123 actions/checkout@v7",
+      ".github/workflows/ci.yml:146 github/codeql-action/upload-sarif@v4",
+      ".github/workflows/yapi.yml:52 actions/checkout@v7",
+      ".github/workflows/yapi.yml:99 actions/upload-artifact@v7",
+      ".github/workflows/yapi.yml:105 actions/upload-artifact@v7"
      ]
     },
     {
@@ -5221,7 +6881,7 @@
     },
     {
      "signal": "largest_source_file",
-     "headroom": 0.587,
+     "headroom": 0.621,
      "note": "scripts/oyun.gd is the longest source file",
      "evidence": [
       "scripts/oyun.gd"
@@ -5238,17 +6898,6 @@
       "arac/uret_bolumler.py:230 karsi",
       "arac/uret_bolumler.py:273 kur",
       "arac/uret_bolumler.py:421 main"
-     ]
-    },
-    {
-     "signal": "test_mass",
-     "headroom": 0.007,
-     "note": "291784 source bytes, 144852 test bytes in 4 files",
-     "evidence": [
-      "tests/ekran.gd",
-      "tests/kapi.sh",
-      "tests/kapi_sinama.sh",
-      "tests/testler.gd"
      ]
     }
    ]

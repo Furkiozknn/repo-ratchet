@@ -6,8 +6,8 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/Furkiozknn.git",
    "archived": false,
-   "size_kb": 1716986,
-   "description": "Source of the profile README - agent infrastructure, developer tooling and the MCP servers underneath. Every number on the page is traced to the suite run that printed it (see TESTLER.md). Hand-written SVG, no generated stat cards.",
+   "size_kb": 1717043,
+   "description": "Source of the profile README: agent infrastructure, developer tooling and the MCP servers underneath. Every number is traced to the suite run that printed it. Hand-written SVG, no stat cards. · Profil README'sinin kaynağı; her sayı onu üreten test koşusuna dayanır, SVG'ler elle yazıldı.",
    "skip_reason": null
   },
   {
@@ -15,8 +15,8 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/Furkiozknn.github.io.git",
    "archived": false,
-   "size_kb": 5983,
-   "description": "The searchable project directory for this account. Every card is rendered from the project-meta.json a repository carries, so the page cannot claim anything the repository does not; a scheduled workflow rebuilds it from the live metadata every week.",
+   "size_kb": 6471,
+   "description": "Searchable project directory for this account. Each card is rendered from the repo's own project-meta.json, so the page cannot claim more than the repo does; rebuilt weekly. · Bu hesabın aranabilir proje dizini; her kart deponun project-meta.json dosyasından üretilir, her hafta yenilenir.",
    "skip_reason": null
   },
   {
@@ -24,8 +24,8 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/ai-job-gateway.git",
    "archived": false,
-   "size_kb": 3111,
-   "description": "The async job contract fal.ai, Black Forest Labs and RunPod each arrived at independently, as one hardened reference server: submit, poll, webhook. Idempotency keys that survive a restart, SSRF-guarded signed webhooks, and expiry as a status you can read rather than a silent 404. 156 tests.",
+   "size_kb": 2955,
+   "description": "Provider-agnostic server and Python client for the async AI job contract (submit, poll, webhook) with restart-safe idempotency keys and SSRF-guarded signed webhooks. · Asenkron yapay zekâ işleri için sağlayıcıdan bağımsız sunucu ve Python istemcisi; idempotency anahtarları, SSRF korumalı webhook'lar.",
    "skip_reason": null
   },
   {
@@ -33,8 +33,8 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/ai-workflow-engine.git",
    "archived": false,
-   "size_kb": 2172,
-   "description": "A pipeline is a plain YAML DAG in git, not a diagram in a visual editor - and it is validated before it runs. A step that reads another step's result without declaring the dependency is rejected at load time, typo and all. Layers run concurrently, capped and backed off so width never becomes a burst. 72 tests.",
+   "size_kb": 2230,
+   "description": "Python CLI (awe) for AI generation pipelines as plain YAML DAGs in git, validated before the first job runs: a step that reads an undeclared dependency is rejected at load time. · Yapay zekâ üretim hatlarını git'teki YAML DAG'ler olarak çalıştıran Python CLI (awe); hat ilk işten önce doğrulanır.",
    "skip_reason": null
   },
   {
@@ -42,8 +42,8 @@
    "default_branch": "master",
    "clone_url": "https://github.com/Furkiozknn/ajans-os.git",
    "archived": false,
-   "size_kb": 4700,
-   "description": "An AI agency OS built research-first: 40 agent projects read with file:line evidence, then 11 ADRs, 6 machine-readable contracts and 13 modules. Its strongest proof is an acceptance run killed mid-task, reloaded from disk and resumed - then checked that no side effect repeated. Zero dependencies, 142 tests.",
+   "size_kb": 4756,
+   "description": "Research-first AI agency OS core in zero-dependency Node.js: ADRs, machine-readable contracts and an acceptance run killed mid-task, resumed from disk with no side effect repeated. · Araştırma öncelikli yapay zekâ ajansı çekirdeği; bağımlılıksız Node.js, yarıda kesilip kaldığı yerden süren kabul testi.",
    "skip_reason": null
   },
   {
@@ -51,8 +51,8 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/asset-provenance-toolkit.git",
    "archived": false,
-   "size_kb": 5944,
-   "description": "Which model, provider, params and job made this file - written into the file itself, so the record outlives the database row. PNG gets a lossless text chunk, JPEG a private APP1 marker spliced into container bytes with no re-encoding, everything else a sidecar. Honest about what C2PA does that this does not. 86 tests.",
+   "size_kb": 6009,
+   "description": "Python CLI (aprov) that writes which model, provider and parameters made a file into the file itself (PNG text chunks, JPEG APP1, MP4/MOV uuid boxes, no re-encoding) or a sidecar. · Dosyayı hangi model, sağlayıcı ve parametrelerin ürettiğini yeniden kodlamadan dosyanın içine ya da yan dosyaya yazar.",
    "skip_reason": null
   },
   {
@@ -60,8 +60,17 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/buradane.git",
    "archived": false,
-   "size_kb": 17687,
-   "description": "\"What do I need, and where is the nearest one?\" 167,829 real OpenStreetMap places across all 81 provinces of Türkiye - pulled from each province's true boundary, not a box around its capital, so all 973 district centres have data within 15 km. Bearing, distance and a one-tap \"still here?\" on every result. 324 tests.",
+   "size_kb": 17556,
+   "description": "Need-first finder for public places in Türkiye (toilets, parks, drinking water, mosques and more) from OpenStreetMap, all 81 provinces, with direction, distance and freshness. · İhtiyaca göre en yakın tuvaleti, parkı, içme suyunu, camiyi bulur; 81 ilde OpenStreetMap verisi, yön ve mesafeyle.",
+   "skip_reason": null
+  },
+  {
+   "name": "canli-dunyalar",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/canli-dunyalar.git",
+   "archived": false,
+   "size_kb": 3964,
+   "description": "Single-file living 3D worlds in Three.js, tuned for laptop iGPUs · Laptop ekran kartına uygun, tek dosyalık canlı 3D Three.js dünyaları",
    "skip_reason": null
   },
   {
@@ -69,8 +78,8 @@
    "default_branch": "master",
    "clone_url": "https://github.com/Furkiozknn/claude-code-intelligence.git",
    "archived": false,
-   "size_kb": 1377,
-   "description": "Where the tokens went, what it cost, and when the limit resets. Every number carries an evidence class - observed, derived, estimated - and one that fails the reconciliation gate is not printed at all. No prompt, response or file content is defined in any type, so a privacy review is a grep. Local-first. 261 tests.",
+   "size_kb": 1460,
+   "description": "Local-first Claude Code usage intelligence: where the tokens went, what they cost, when the quota resets. Every number carries an evidence class; prompts and file contents are never recorded. · Yerel Claude Code kullanım analizi: token, maliyet, kota sıfırlanması; prompt ve dosya içeriği kaydedilmez.",
    "skip_reason": null
   },
   {
@@ -87,8 +96,17 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/derin-kazi.git",
    "archived": false,
-   "size_kb": 5973,
-   "description": "Side-view digging and upgrade loop in Godot 4: mine ore, watch the fuel, sell, upgrade the rig, reach the core at 250 m. Turkish UI.",
+   "size_kb": 5773,
+   "description": "Side-view dig-sell-upgrade game in Godot 4: mine ore, watch the fuel, upgrade the rig, reach the core at 250 m. Seeded daily worlds, TR/EN UI, playable in the browser. · Godot 4 kaz-sat-geliştir oyunu: cevher kaz, yakıtı izle, makineyi geliştir, 250 m'deki çekirdeğe in. Tarayıcıda oynanır.",
+   "skip_reason": null
+  },
+  {
+   "name": "frk-components",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/frk-components.git",
+   "archived": false,
+   "size_kb": 64368,
+   "description": "Single-file, dependency-free UI components that animate frame by frame; each one is a live demo, a HyperFrames video scene and copyable code, with real measurements · Tek dosyalık, kütüphanesiz, kare kare oynatılabilen arayüz parçaları; her biri canlı demo, HyperFrames video sahnesi ve kopyalanabilir kod",
    "skip_reason": null
   },
   {
@@ -96,8 +114,8 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/godot-2d-sablon.git",
    "archived": false,
-   "size_kb": 2201,
-   "description": "Two Godot 4.7 starters that already feel right to play: top-down with 8-way accelerated movement, and side-view with coyote time, jump buffering and variable jump height. The feel is measured, not guessed - the jump curves come from running the real _physics_process at the project's 60 Hz fixed step.",
+   "size_kb": 2255,
+   "description": "Two ready-to-run Godot 4.7 2D starters: top-down with accelerated 8-way movement, side-view with coyote time and jump buffering, jump curves measured from the real physics step. · Hemen çalışan iki Godot 4.7 2D şablonu: ivmeli 8 yönlü kuşbakışı hareket ve coyote time, jump buffering içeren platform.",
    "skip_reason": null
   },
   {
@@ -105,8 +123,17 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/godot-refcheck.git",
    "archived": false,
-   "size_kb": 4656,
-   "description": "Godot reports a broken resource reference only when that scene loads, and a dead signal connection never at all. godot-refcheck reads the project files instead: missing paths, case-only breakage, uid problems, connections to nodes that are gone. It repairs the ones with a single provable answer.",
+   "size_kb": 4569,
+   "description": "Rust CLI and GitHub Action that finds broken resource references, uid problems and dead signal connections in Godot projects without the editor, and repairs those with one provable fix. · Godot projelerinde kırık referansları, uid sorunlarını ve ölü sinyalleri editörsüz bulur, kanıtlanabilir olanları onarır.",
+   "skip_reason": null
+  },
+  {
+   "name": "isik-tuneli",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/isik-tuneli.git",
+   "archived": false,
+   "size_kb": 37037,
+   "description": "Işık Tüneli (Light Tunnel): endless browser space-runner with Three.js bloom and a Web Audio engine synthesized live, no sound files, no build step. Daily seeded run. · Işık Tüneli: Three.js ışımalı, sesi Web Audio ile anlık sentezlenen sonsuz uzay koşusu; derleme yok, herkese aynı günlük parkur.",
    "skip_reason": null
   },
   {
@@ -114,17 +141,35 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/kanca.git",
    "archived": false,
-   "size_kb": 4254,
-   "description": "Hook the ceiling, swing, release at the right moment and carry the momentum - a speed-focused 2D swinging platformer in Godot 4; medal times measured on 13 of 14 levels by a scripted bot. Turkish UI.",
+   "size_kb": 4112,
+   "description": "Speed-focused 2D swinging platformer in Godot 4: hook the ceiling, swing and release to carry momentum through 14 levels, 13 with bot-measured medal times. TR/EN UI, playable in the browser. · Godot 4 ile hız odaklı kancalı platform: tavana tutun, salın, bırak, hızını bölümler boyunca taşı. Tarayıcıda oynanır.",
    "skip_reason": null
+  },
+  {
+   "name": "kor",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/kor.git",
+   "archived": false,
+   "size_kb": 13228,
+   "description": "Top-down roguelite in Godot 4 set in a dark foundry where heat is vision, not ammo: shooting warms you and widens your sight, dashing vents heat and leaves you blind · Karanlık bir dökümhanede geçen Godot 4 roguelite: ısı mermi değil görüş; ateş ettikçe görüşün açılır, dalış ısıyı boşaltır ve seni kör bırakır",
+   "skip_reason": "denylisted: this repository is out of the engine's reach by rule"
   },
   {
    "name": "local-notes-search-mcp",
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/local-notes-search-mcp.git",
    "archived": false,
-   "size_kb": 9046,
-   "description": "Ask your own files a question in plain language instead of guessing the keyword you typed six months ago. Semantic search as an MCP server: sqlite-vec + a multilingual ONNX model, incremental re-indexing, answers returned as file:line. No server, no API key, no network at query time. Grounded LLM Q&A is opt-in. 50 tests.",
+   "size_kb": 9963,
+   "description": "Semantic search over your own notes and files as an MCP server: sqlite-vec with a multilingual ONNX model, answers cited as file:line. No API key and no network at query time. · Kendi notlarında anlamsal arama yapan MCP sunucusu: sqlite-vec, çok dilli model, dosya:satır kaynaklı yanıtlar, sorguda ağ yok.",
+   "skip_reason": null
+  },
+  {
+   "name": "lodeworks",
+   "default_branch": "main",
+   "clone_url": "https://github.com/Furkiozknn/lodeworks.git",
+   "archived": false,
+   "size_kb": 53027,
+   "description": "Idle machine-grid builder for Android in Godot 4.7: place machines that feed each other by adjacency, manage heat and descend the strata · Godot 4.7 ile Android için idle makine ızgarası oyunu: komşuluğa göre birbirini besleyen makineler kur, ısıyı yönet, katmanlara in",
    "skip_reason": null
   },
   {
@@ -132,8 +177,8 @@
    "default_branch": "master",
    "clone_url": "https://github.com/Furkiozknn/masal.git",
    "archived": false,
-   "size_kb": 4866,
-   "description": "A bedtime story written around one child's name, age and hometown, with the colouring page drawn into it as vectors that fill cleanly instead of raster art that smudges past the outline. Six themes and a branch on page three - twelve readings. Turkish suffix engine, no photo upload, no download, no API key.",
+   "size_kb": 4932,
+   "description": "Personalised Turkish bedtime stories built around a child's name, age and hometown, with vector colouring pages drawn into the story. Runs in the browser; no upload, no API key. · Çocuğun adı, yaşı ve şehriyle kişiselleşen uyku masalları ve boyama sayfaları; tarayıcıda çalışır, fotoğraf yüklemez.",
    "skip_reason": null
   },
   {
@@ -141,8 +186,8 @@
    "default_branch": "master",
    "clone_url": "https://github.com/Furkiozknn/mcp-census.git",
    "archived": false,
-   "size_kb": 4494,
-   "description": "Reproducible count of the official MCP Registry: the same question asked three ways gives three different numbers, and this measures why.",
+   "size_kb": 4614,
+   "description": "Reproducible count of the official MCP Registry: the same question asked three ways gives three different numbers, and this measures why. Zero-dependency Python. · Resmî MCP Registry'nin yeniden üretilebilir sayımı: aynı soru üç yoldan sorulunca üç farklı sayı çıkıyor, bu araç nedenini ölçüyor.",
    "skip_reason": null
   },
   {
@@ -150,8 +195,8 @@
    "default_branch": "master",
    "clone_url": "https://github.com/Furkiozknn/mcp-vet.git",
    "archived": false,
-   "size_kb": 7228,
-   "description": "An MCP tool description is read by the model on every single call, and nobody scrolls past it. mcp-vet reads the source before you install: 31 rules covering tool poisoning, exfiltration paths, install hooks and registry provenance, every finding quoted with file:line. Never executes what it audits. Zero dependencies, 289 tests.",
+   "size_kb": 7367,
+   "description": "Static security auditor for MCP servers: reads the source before you install, quotes every finding (tool poisoning, exfiltration paths, install hooks) with file:line, never runs what it audits. · MCP sunucuları için statik güvenlik denetçisi: kurmadan önce kodu okur, bulguyu dosya:satır ile gösterir.",
    "skip_reason": null
   },
   {
@@ -159,8 +204,8 @@
    "default_branch": "master",
    "clone_url": "https://github.com/Furkiozknn/mini-creative-toolkit.git",
    "archived": false,
-   "size_kb": 7340,
-   "description": "23 CPU-first media tools behind one MCP server: background removal, EXIF/GPS stripping, resize, thumbnails, GIFs, video trim. 22 of them report \"network\": \"none\" in their own response payload rather than in a README, and a test fails if any other module ever imports an HTTP client. No GPU, no paid API. 326 tests.",
+   "size_kb": 7526,
+   "description": "CPU-first media tools as an MCP server and CLI: background removal, EXIF/GPS stripping, resize, GIFs, video trim. Most run offline and say so in their own reply. No GPU required. · CPU'da çalışan medya araçları (arka plan silme, EXIF/GPS temizleme, boyutlandırma, GIF, video kırpma); MCP sunucusu ve CLI.",
    "skip_reason": null
   },
   {
@@ -168,8 +213,8 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/model-comparison-harness.git",
    "archived": false,
-   "size_kb": 3981,
-   "description": "Fire one request at N model backends at once and read latency, success and output side by side. --rubric adds a judge model returning pass/fail, a 0-1 score and a reason, so you compare quality too, not just who answered first. Every failure carries an error_type a script can branch on. CLI: mch. 74 tests.",
+   "size_kb": 3418,
+   "description": "Python CLI (mch) that sends one request to several model backends at once and compares latency, success and output side by side, with optional judge-model scoring and typed errors. · Tek isteği birkaç model arka ucuna birden gönderip gecikme, başarı ve çıktıyı yan yana karşılaştıran Python CLI.",
    "skip_reason": null
   },
   {
@@ -177,8 +222,8 @@
    "default_branch": "master",
    "clone_url": "https://github.com/Furkiozknn/nova-drift.git",
    "archived": false,
-   "size_kb": 36780,
-   "description": "Endless browser space-runner with real Three.js bloom, hand-written particles and an audio engine synthesized live in Web Audio - not one sound file in the repo. Skim an obstacle without touching it and take the near-miss bonus. A daily run seeded from the UTC date deals every player the same obstacles. 0.7 MB, no build step.",
+   "size_kb": 2,
+   "description": "Redirect: Nova Drift is now Işık Tüneli · Yönlendirme: Nova Drift'in yeni adı Işık Tüneli",
    "skip_reason": null
   },
   {
@@ -186,8 +231,8 @@
    "default_branch": "master",
    "clone_url": "https://github.com/Furkiozknn/nvidia-nim-mcp.git",
    "archived": false,
-   "size_kb": 2465,
-   "description": "Seven MCP tools on NVIDIA NIM's free tier - image, vision, translation, chat, content safety, embeddings, plus a health probe that tells you which models are still alive. Two of them need no API key at all. Falls through to Groq, Mistral, Gemini or Cerebras when a model is rate-limited or quietly retired. 80 tests.",
+   "size_kb": 1798,
+   "description": "MCP server for NVIDIA NIM's free tier (image, vision, translation, chat, safety, embeddings) falling back to Groq, Mistral, Gemini or Cerebras when a model is rate-limited or retired. · NVIDIA NIM ücretsiz katmanı için MCP sunucusu; model sınıra takılınca Groq, Mistral, Gemini ya da Cerebras'a geçer.",
    "skip_reason": null
   },
   {
@@ -195,8 +240,8 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/prompt-template-manager.git",
    "archived": false,
-   "size_kb": 5106,
-   "description": "Your prompts deserve git diff, not a database row. Templates as plain YAML, rendered through Jinja's SandboxedEnvironment with StrictUndefined so a typo'd variable fails loudly instead of rendering blank - plus a ${var} form that keeps an integer an integer instead of stringifying it. CLI: ptm. 61 tests.",
+   "size_kb": 5101,
+   "description": "Python CLI and library (ptm) for prompt templates as plain YAML in git, rendered through sandboxed, strict Jinja so a typo'd variable fails loudly instead of rendering blank. · Prompt şablonları için git tabanlı YAML aracı; katı Jinja sayesinde yanlış yazılmış değişken boş geçmez, hata verir.",
    "skip_reason": null
   },
   {
@@ -204,8 +249,8 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/repo-ratchet.git",
    "archived": false,
-   "size_kb": 3235,
-   "description": "The engine that keeps every repository on this account moving forward: it measures what each one can currently do, ranks where the headroom is, and refuses to record work that no check actually verified.",
+   "size_kb": 3282,
+   "description": "Zero-dependency Python CLI (ratchet) that measures what each repository can currently do, ranks where the headroom is, and refuses to record work that no check actually verified. · Depoların şu an neler yapabildiğini ölçer, gelişme payını sıralar, hiçbir kontrolün doğrulamadığı işi kaydetmez.",
    "skip_reason": null
   },
   {
@@ -213,8 +258,17 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/repo-vet.git",
    "archived": false,
-   "size_kb": 4053,
-   "description": "Checks what a GitHub repository claims about itself - install commands, badges, links, releases, published sites - against what is actually there. Six checks over the GitHub API, no clone, zero dependencies.",
+   "size_kb": 4153,
+   "description": "Checks what a GitHub repository claims about itself (install commands, badges, links, releases, published sites) against what is actually there. Python CLI and GitHub Action, no clone. · Bir deponun kurulum komutu, rozet, bağlantı ve sürüm iddialarını gerçekle karşılaştırır; klonlamadan, bağımlılıksız.",
+   "skip_reason": null
+  },
+  {
+   "name": "social-videos",
+   "default_branch": "master",
+   "clone_url": "https://github.com/Furkiozknn/social-videos.git",
+   "archived": false,
+   "size_kb": 2,
+   "description": "Video hosting for the Built with Claude Code series (Shorts, Reels, Stories) · Built with Claude Code serisinin kısa videoları için barındırma",
    "skip_reason": null
   },
   {
@@ -222,8 +276,8 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/tek-tus-kosu.git",
    "archived": false,
-   "size_kb": 5397,
-   "description": "One-button endless rooftop runner in Godot 4: a rhythm mode that lays every obstacle on the music beat grid, plus a post-run timing histogram. Turkish UI.",
+   "size_kb": 5139,
+   "description": "One-button endless rooftop runner in Godot 4 with a rhythm mode that lays obstacles on the music's beat grid and a post-run timing histogram. TR/EN UI, playable in the browser. · Godot 4 ile tek tuşlu sonsuz çatı koşusu; ritim modunda engeller müziğin vuruşlarına dizilir. Tarayıcıda oynanır.",
    "skip_reason": null
   },
   {
@@ -231,8 +285,8 @@
    "default_branch": "master",
    "clone_url": "https://github.com/Furkiozknn/turkce-ajanlar.git",
    "archived": false,
-   "size_kb": 12103,
-   "description": "70 Claude Code sub-agents that think in Turkish rather than translate into it - they know PowerShell 5.1 has no &&, that cp1254 kills a Python tool before its first line prints, and that a heredoc eats backslashes. Plus 3 commands, 2 skills and an eval suite. One source, exported to Cursor, OpenCode, Copilot and Codex.",
+   "size_kb": 12187,
+   "description": "Claude Code sub-agents that write in Turkish and know the traps of Turkish Windows (PowerShell 5.1, cp1254), with commands, skills and an eval suite; exported to Cursor, OpenCode, Copilot, Codex. · Türkçe yazan, Türkçe Windows tuzaklarını bilen Claude Code alt ajanları, komutları ve skill'leri.",
    "skip_reason": null
   },
   {
@@ -240,8 +294,8 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/voice-io-mcp.git",
    "archived": false,
-   "size_kb": 7369,
-   "description": "Speech in and speech out, needing no API key at all: Groq's free hosted tier when a key is set, Kokoro-82M and faster-whisper locally when it is not. Transcription checks extension and size before it ever opens the file, so \"transcribe the audio at .env\" is refused locally instead of uploaded. 4 tools, 35 tests.",
+   "size_kb": 6621,
+   "description": "Text-to-speech and speech-to-text MCP server for Claude Code: Groq's free tier when a key is set, local Kokoro-82M and faster-whisper when not. Disallowed files are refused before any upload. · Metni sese, sesi metne çeviren MCP sunucusu; anahtar varsa Groq, yoksa yerel Kokoro-82M ve faster-whisper.",
    "skip_reason": null
   },
   {
@@ -249,8 +303,8 @@
    "default_branch": "main",
    "clone_url": "https://github.com/Furkiozknn/yercekimi-cevir.git",
    "archived": false,
-   "size_kb": 3199,
-   "description": "No jump button - one key flips gravity and you fall onto the ceiling. 20 hand-built precision platformer rooms in Godot 4. Turkish UI.",
+   "size_kb": 3109,
+   "description": "Precision platformer in Godot 4 with no jump button: one key flips gravity across 20 hand-built rooms with bot-measured medal times. TR/EN UI, playable in the browser. · Zıplama tuşu olmayan Godot 4 hassas platform oyunu: tek tuş yerçekimini çevirir, 20 elle tasarlanmış oda. Tarayıcıda oynanır.",
    "skip_reason": null
   }
  ]
